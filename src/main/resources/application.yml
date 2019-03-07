@@ -1,0 +1,26 @@
+server:
+  port: 8088
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/hospital
+    driver-class-name: com.mysql.jdbc.Driver
+    username: njt123
+    password: 123456
+    type: com.alibaba.druid.pool.DruidDataSource
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    encoding: UTF-8
+    cache: false
+    mode: HTML5
+    servlet:
+      content-type: text/html
+  mvc:
+    static-path-pattern: /**
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: com.wxthxy.zj.entity
+  http:
+    multipart:
+      maxFileSize: 500Mb
+      maxRequestSize: 500Mb
