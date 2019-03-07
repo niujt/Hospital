@@ -10,7 +10,7 @@
             <a href="javascript:;">系统管理</a>
             <dl class="layui-nav-child">
                 <dd><a href="/admin/doctorManage">医生管理</a></dd>
-                <dd><a href="">患者管理</a></dd>
+                <dd><a href="/admin/patientManage">患者管理</a></dd>
             </dl>
         </li>
     </ul>

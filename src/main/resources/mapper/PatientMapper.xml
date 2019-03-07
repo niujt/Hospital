@@ -15,6 +15,9 @@
   <sql id="Base_Column_List">
     id, name, age, sex, address, Hospitalizationid, drugsids, appointmentid, loginid
   </sql>
+  <select id="findAll" resultType="com.hospital.entity.Patient">
+    select * from patient
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

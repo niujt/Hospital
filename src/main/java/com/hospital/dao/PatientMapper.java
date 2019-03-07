@@ -2,7 +2,10 @@ package com.hospital.dao;
 
 import com.hospital.entity.Patient;
 
+import java.util.List;
+
 public interface PatientMapper {
+    List<Patient> findAll();
     int deleteByPrimaryKey(Integer id);
 
     int insert(Patient record);
