@@ -22,6 +22,6 @@
                 欢迎&nbsp;&nbsp;&nbsp;&nbsp;贤心
             </a>
         </li>
-        <li class="layui-nav-item"><a href="">退了</a></li>
+        <li class="layui-nav-item"><a href="">退出登录</a></li>
     </ul>
 </div>

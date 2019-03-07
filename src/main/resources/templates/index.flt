@@ -8,7 +8,7 @@
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
-    <#include "menu.flt"/>
+    <#include "admin/menu.flt"/>
 
 
     <div class="layui-body">
