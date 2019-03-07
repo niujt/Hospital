@@ -39,8 +39,8 @@
                 <#list appointments as a>
                     <tr>
                         <td>${a_index+1}</td>
-                        <td></td>
-                        <td></td>
+                        <td>${a.patientname}</td>
+                        <td>${a.doctorname}</td>
                         <td>${(a.time?string("yyyy-MM-dd"))!}</td>
                         <td>
                             <button class="layui-btn" onclick="edit(${a.id})"><i class="layui-icon">&#xe642;</i></button>

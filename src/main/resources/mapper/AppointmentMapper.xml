@@ -11,7 +11,9 @@
     id, patientid, doctorid, time
   </sql>
   <select id="findAll" resultType="com.hospital.entity.Appointment">
-    select * from appointment
+    select a.*,p.name as patientname,d.name as doctorname from appointment a
+    left join patient p on a.patientid=p.id
+    left join doctor d on d.id=a.doctorid
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 

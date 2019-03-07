@@ -12,9 +12,10 @@ public class Appointment {
     private Integer id;
 
     private Integer patientid;
+    private String patientname;
 
     private Integer doctorid;
-
+    private String doctorname;
     private Date time;
 
 }

@@ -39,7 +39,7 @@
                 <#list medicalhistorys as m>
                     <tr>
                         <td>${m_index+1}</td>
-                        <td></td>
+                        <td>${m.patientname}</td>
                         <td>${m.name}</td>
                         <td>${(m.time?string("yyyy-MM-dd"))!}</td>
                         <td>

@@ -12,7 +12,8 @@
     id,floor, bed, door, patientid
   </sql>
   <select id="findAll" resultType="com.hospital.entity.Hospitalization">
-    select * from hospitalization
+    select h.*,p.name as patientname from hospitalization h
+    left join patient p on p.id=h.patientid
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 

@@ -46,7 +46,7 @@
                             <#if p.sex==0>男</#if>
                             <#if p.sex==1>女</#if>
                         </td>
-                        <td></td>
+                        <td>${p.doctorname}</td>
                         <td>
                             <#if p.isout==0>未出院</#if>
                             <#if p.isout==1>已入院</#if>

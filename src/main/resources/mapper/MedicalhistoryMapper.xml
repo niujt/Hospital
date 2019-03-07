@@ -10,7 +10,8 @@
     id, patientid, name,time
   </sql>
   <select id="findAll" resultType="com.hospital.entity.Medicalhistory">
-    select * from Medicalhistory
+    select m.*,p.name as patientname from Medicalhistory m
+    left join patient p on p.id=m.patientid
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 

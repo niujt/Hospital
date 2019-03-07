@@ -33,6 +33,7 @@
                     <th>床号</th>
                     <th>患者</th>
                     <th>住院时间</th>
+                    <th>出院时间</th>
                     <th>操作&nbsp;&nbsp;&nbsp;&nbsp;
                         <button class="layui-btn"><i class="layui-icon">&#xe608;</i> 添加</button>
                     </th>
@@ -45,8 +46,9 @@
                         <td>${h.floor}</td>
                         <td>${h.door}</td>
                         <td>${h.bed}</td>
-                        <td></td>
-                        <td>${(h.time?string("yyyy-MM-dd"))!}</td>
+                        <td>${h.patientname}</td>
+                        <td>${(h.intime?string("yyyy-MM-dd"))!}</td>
+                        <td>${(h.outtime?string("yyyy-MM-dd"))!}</td>
                         <td>
                             <button class="layui-btn" onclick="edit(${h.id})"><i class="layui-icon">&#xe642;</i></button>
                             <button class="layui-btn" onclick="del(${h.id})"><i class="layui-icon">&#xe640;</i></button>

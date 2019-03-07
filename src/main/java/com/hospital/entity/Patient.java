@@ -26,4 +26,5 @@ public class Patient {
 
     private Integer loginid;
     private Integer isout;
+    private String doctorname;
 }

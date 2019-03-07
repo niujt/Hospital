@@ -20,6 +20,8 @@ public class Hospitalization {
     private String door;
 
     private Integer patientid;
-    private Date time;
+    private String patientname;
+    private Date intime;
+    private Date outtime;
 
 }
