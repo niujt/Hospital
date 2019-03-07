@@ -3,16 +3,18 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>患者页面管理</title>
+    <title>住院信息管理</title>
     <link rel="stylesheet" href="../static/css/layui.min.css">
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <#include "../menu.flt"/>
+
+
     <div class="layui-body">
+        <h5>住院信息管理</h5>
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
-            <h5>患者管理</h5>
             <table class="layui-table">
                 <colgroup>
                     <col width="150">
@@ -21,41 +23,33 @@
                     <col width="200">
                     <col width="200">
                     <col width="200">
-                    <col width="200">
                     <col>
                 </colgroup>
+                <thead>
                 <tr>
                     <th>序号</th>
-                    <th>昵称</th>
-                    <th>年纪</th>
-                    <th>性别</th>
-                    <th>主治医生</th>
-                    <th>是否出院</th>
-                    <th>家庭住址</th>
+                    <th>楼层号</th>
+                    <th>门牌号</th>
+                    <th>床号</th>
+                    <th>患者</th>
+                    <th>住院时间</th>
                     <th>操作&nbsp;&nbsp;&nbsp;&nbsp;
                         <button class="layui-btn"><i class="layui-icon">&#xe608;</i> 添加</button>
                     </th>
                 </tr>
+                </thead>
                 <tbody>
-                <#list patients as p>
+                <#list hospitalizations as h>
                     <tr>
-                        <td>${p_index+1}</td>
-                        <td>${p.name}</td>
-                        <td>${p.age}</td>
-                        <td>
-                            <#if p.sex==0>男</#if>
-                            <#if p.sex==1>女</#if>
-                        </td>
+                        <td>${h_index+1}</td>
+                        <td>${h.floor}</td>
+                        <td>${h.door}</td>
+                        <td>${h.bed}</td>
                         <td></td>
+                        <td>${(h.time?string("yyyy-MM-dd"))!}</td>
                         <td>
-                            <#if p.isout==0>未出院</#if>
-                            <#if p.isout==1>已入院</#if>
-                            <#if p.isout==2>已出院</#if>
-                        </td>
-                        <td>${p.address}</td>
-                        <td>
-                            <button class="layui-btn" onclick="edit(${p.id})"><i class="layui-icon">&#xe642;</i></button>
-                            <button class="layui-btn" onclick="del(${p.id})"><i class="layui-icon">&#xe640;</i></button>
+                            <button class="layui-btn" onclick="edit(${h.id})"><i class="layui-icon">&#xe642;</i></button>
+                            <button class="layui-btn" onclick="del(${h.id})"><i class="layui-icon">&#xe640;</i></button>
                         </td>
                     </tr>
                 </#list>

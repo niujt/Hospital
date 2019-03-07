@@ -25,4 +25,5 @@ public class Patient {
     private Integer appointmentid;
 
     private Integer loginid;
+    private Integer isout;
 }

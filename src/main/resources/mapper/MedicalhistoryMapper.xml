@@ -7,8 +7,11 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, patientid, name
+    id, patientid, name,time
   </sql>
+  <select id="findAll" resultType="com.hospital.entity.Medicalhistory">
+    select * from Medicalhistory
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -20,9 +23,9 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.hospital.entity.Medicalhistory">
-    insert into medicalhistory (id, patientid, name
+    insert into medicalhistory (id, patientid, name,time
       )
-    values (#{id,jdbcType=INTEGER}, #{patientid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}
+    values (#{id,jdbcType=INTEGER}, #{patientid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},#{time}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.hospital.entity.Medicalhistory">
@@ -37,6 +40,9 @@
       <if test="name != null">
         name,
       </if>
+      <if test="time != null">
+        time,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -47,6 +53,9 @@
       </if>
       <if test="name != null">
         #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="time != null">
+        #{time},
       </if>
     </trim>
   </insert>
@@ -59,13 +68,16 @@
       <if test="name != null">
         name = #{name,jdbcType=VARCHAR},
       </if>
+      <if test="time != null">
+        time = #{time},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.hospital.entity.Medicalhistory">
     update medicalhistory
     set patientid = #{patientid,jdbcType=INTEGER},
-      name = #{name,jdbcType=VARCHAR}
+      name = #{name,jdbcType=VARCHAR},time=#{time}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -2,6 +2,8 @@ package com.hospital.dao;
 
 import com.hospital.entity.Appointment;
 
+import java.util.List;
+
 public interface AppointmentMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +16,5 @@ public interface AppointmentMapper {
     int updateByPrimaryKeySelective(Appointment record);
 
     int updateByPrimaryKey(Appointment record);
+    List<Appointment> findAll();
 }

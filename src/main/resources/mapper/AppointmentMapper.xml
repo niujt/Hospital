@@ -10,6 +10,9 @@
   <sql id="Base_Column_List">
     id, patientid, doctorid, time
   </sql>
+  <select id="findAll" resultType="com.hospital.entity.Appointment">
+    select * from appointment
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
