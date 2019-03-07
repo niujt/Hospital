@@ -9,6 +9,9 @@
   <sql id="Base_Column_List">
     id, name, type
   </sql>
+  <select id="findAll" resultType="com.hospital.entity.Drugs">
+    select  * from drugs
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

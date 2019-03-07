@@ -13,5 +13,6 @@ public class Login {
     private String username;
 
     private String password;
+    private Integer role;
 
 }

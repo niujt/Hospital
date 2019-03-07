@@ -3,53 +3,45 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>患者页面管理</title>
+    <title>管理员管理</title>
     <link rel="stylesheet" href="../static/css/layui.min.css">
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <#include "../menu.flt"/>
+
+
     <div class="layui-body">
+        <h5>管理员管理</h5>
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
-            <h5>患者管理</h5>
             <table class="layui-table">
                 <colgroup>
                     <col width="150">
                     <col width="200">
                     <col width="200">
                     <col width="200">
-                    <col width="200">
-                    <col width="200">
-                    <col width="200">
                     <col>
                 </colgroup>
+                <thead>
                 <tr>
                     <th>序号</th>
-                    <th>昵称</th>
-                    <th>年纪</th>
-                    <th>性别</th>
-                    <th>主治医生</th>
-                    <th>家庭住址</th>
+                    <th>账号</th>
+                    <th>密码</th>
                     <th>操作&nbsp;&nbsp;&nbsp;&nbsp;
                         <button class="layui-btn"><i class="layui-icon">&#xe608;</i> 添加</button>
                     </th>
                 </tr>
+                </thead>
                 <tbody>
-                <#list patients as p>
+                <#list admins as a>
                     <tr>
-                        <td>${p_index+1}</td>
-                        <td>${p.name}</td>
-                        <td>${p.age}</td>
+                    <td>${a_index+1}</td>
+                    <td>${a.username}</td>
+                    <td>**********</td>
                         <td>
-                            <#if p.sex==0>男</#if>
-                            <#if p.sex==1>女</#if>
-                        </td>
-                        <td></td>
-                        <td>${p.address}</td>
-                        <td>
-                            <button class="layui-btn" onclick="edit(${p.id})"><i class="layui-icon">&#xe642;</i></button>
-                            <button class="layui-btn" onclick="del(${p.id})"><i class="layui-icon">&#xe640;</i></button>
+                            <button class="layui-btn" onclick="edit(${a.id})"><i class="layui-icon">&#xe642;</i></button>
+                            <button class="layui-btn" onclick="del(${a.id})"><i class="layui-icon">&#xe640;</i></button>
                         </td>
                     </tr>
                 </#list>
