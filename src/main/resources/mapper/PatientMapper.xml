@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hospital.dao.PatientMapper">
+  <resultMap id="BaseResultMap" type="com.hospital.entity.Patient">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="age" jdbcType="INTEGER" property="age" />
+    <result column="sex" jdbcType="INTEGER" property="sex" />
+    <result column="address" jdbcType="VARCHAR" property="address" />
+    <result column="Hospitalizationid" jdbcType="INTEGER" property="hospitalizationid" />
+    <result column="drugsids" jdbcType="VARCHAR" property="drugsids" />
+    <result column="appointmentid" jdbcType="INTEGER" property="appointmentid" />
+    <result column="loginid" jdbcType="INTEGER" property="loginid" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, age, sex, address, Hospitalizationid, drugsids, appointmentid, loginid
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from patient
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from patient
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.hospital.entity.Patient">
+    insert into patient (id, name, age, 
+      sex, address, Hospitalizationid, 
+      drugsids, appointmentid, loginid
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, 
+      #{sex,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, #{hospitalizationid,jdbcType=INTEGER}, 
+      #{drugsids,jdbcType=VARCHAR}, #{appointmentid,jdbcType=INTEGER}, #{loginid,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.hospital.entity.Patient">
+    insert into patient
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="age != null">
+        age,
+      </if>
+      <if test="sex != null">
+        sex,
+      </if>
+      <if test="address != null">
+        address,
+      </if>
+      <if test="hospitalizationid != null">
+        Hospitalizationid,
+      </if>
+      <if test="drugsids != null">
+        drugsids,
+      </if>
+      <if test="appointmentid != null">
+        appointmentid,
+      </if>
+      <if test="loginid != null">
+        loginid,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        #{age,jdbcType=INTEGER},
+      </if>
+      <if test="sex != null">
+        #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="address != null">
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="hospitalizationid != null">
+        #{hospitalizationid,jdbcType=INTEGER},
+      </if>
+      <if test="drugsids != null">
+        #{drugsids,jdbcType=VARCHAR},
+      </if>
+      <if test="appointmentid != null">
+        #{appointmentid,jdbcType=INTEGER},
+      </if>
+      <if test="loginid != null">
+        #{loginid,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.hospital.entity.Patient">
+    update patient
+    <set>
+      <if test="name != null">
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="age != null">
+        age = #{age,jdbcType=INTEGER},
+      </if>
+      <if test="sex != null">
+        sex = #{sex,jdbcType=INTEGER},
+      </if>
+      <if test="address != null">
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="hospitalizationid != null">
+        Hospitalizationid = #{hospitalizationid,jdbcType=INTEGER},
+      </if>
+      <if test="drugsids != null">
+        drugsids = #{drugsids,jdbcType=VARCHAR},
+      </if>
+      <if test="appointmentid != null">
+        appointmentid = #{appointmentid,jdbcType=INTEGER},
+      </if>
+      <if test="loginid != null">
+        loginid = #{loginid,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.hospital.entity.Patient">
+    update patient
+    set name = #{name,jdbcType=VARCHAR},
+      age = #{age,jdbcType=INTEGER},
+      sex = #{sex,jdbcType=INTEGER},
+      address = #{address,jdbcType=VARCHAR},
+      Hospitalizationid = #{hospitalizationid,jdbcType=INTEGER},
+      drugsids = #{drugsids,jdbcType=VARCHAR},
+      appointmentid = #{appointmentid,jdbcType=INTEGER},
+      loginid = #{loginid,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
