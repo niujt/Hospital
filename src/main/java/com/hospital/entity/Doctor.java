@@ -21,4 +21,5 @@ public class Doctor {
     private String address;
 
     private Integer loginid;
+    private String department;
 }

@@ -19,7 +19,7 @@ spring:
     expose-spring-macro-helpers: true
     request-context-attribute: request
   mvc:
-    static-path-pattern: /**
+    static-path-pattern: /static/**
 mybatis:
   mapper-locations: classpath:/mapper/*.xml
   type-aliases-package: com.hospital.entity

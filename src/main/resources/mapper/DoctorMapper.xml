@@ -9,10 +9,14 @@
     <result column="patientids" jdbcType="VARCHAR" property="patientids" />
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="loginid" jdbcType="INTEGER" property="loginid" />
+    <result column="department" jdbcType="VARCHAR" property="department" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, name, age, sex, patientids, address, loginid
+    id, name, age, sex, patientids, address, loginid,department
   </sql>
+  <select id="getAll" resultType="com.hospital.entity.Doctor">
+    select * from doctor;
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -25,11 +29,11 @@
   </delete>
   <insert id="insert" parameterType="com.hospital.entity.Doctor">
     insert into doctor (id, name, age, 
-      sex, patientids, address, 
+      sex, patientids, address,department,
       loginid)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, 
-      #{sex,jdbcType=INTEGER}, #{patientids,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
-      #{loginid,jdbcType=INTEGER})
+      #{sex,jdbcType=INTEGER}, #{patientids,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR},
+        #{department},#{loginid,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.hospital.entity.Doctor">
     insert into doctor
@@ -111,7 +115,8 @@
       sex = #{sex,jdbcType=INTEGER},
       patientids = #{patientids,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
-      loginid = #{loginid,jdbcType=INTEGER}
+      loginid = #{loginid,jdbcType=INTEGER},
+      department=#{department}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -1,0 +1,25 @@
+<div class="layui-header">
+    <div class="layui-logo">医疗系统后台管理</div>
+    <!-- 头部区域（可配合layui已有的水平导航） -->
+    <ul class="layui-nav layui-layout-left">
+        <li class="layui-nav-item"><a href="/test">首页</a></li>
+        <li class="layui-nav-item"><a href="">病史管理</a></li>
+        <li class="layui-nav-item"><a href="">预约管理</a></li>
+        <li class="layui-nav-item"><a href="">管理员管理</a></li>
+        <li class="layui-nav-item">
+            <a href="javascript:;">系统管理</a>
+            <dl class="layui-nav-child">
+                <dd><a href="/admin/doctorManage">医生管理</a></dd>
+                <dd><a href="">患者管理</a></dd>
+            </dl>
+        </li>
+    </ul>
+    <ul class="layui-nav layui-layout-right">
+        <li class="layui-nav-item">
+            <a href="javascript:;">
+                欢迎&nbsp;&nbsp;&nbsp;&nbsp;贤心
+            </a>
+        </li>
+        <li class="layui-nav-item"><a href="">退了</a></li>
+    </ul>
+</div>
