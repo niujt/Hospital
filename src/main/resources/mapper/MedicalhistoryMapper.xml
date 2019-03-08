@@ -11,7 +11,7 @@
   </sql>
   <select id="findAll" resultType="com.hospital.entity.Medicalhistory">
     select m.*,p.name as patientname from Medicalhistory m
-    left join patient p on p.id=m.patientid
+    left join patient p on p.id=m.patientid order by m.id
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 

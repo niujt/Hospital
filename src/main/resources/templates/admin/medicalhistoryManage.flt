@@ -31,7 +31,7 @@
                     <th>患病名称</th>
                     <th>患病时间</th>
                     <th>操作&nbsp;&nbsp;&nbsp;&nbsp;
-                        <button class="layui-btn"><i class="layui-icon">&#xe608;</i> 添加</button>
+                        <button class="layui-btn" onclick="showAdd('/admin/medicalhistoryAdd')"><i class="layui-icon">&#xe608;</i> 添加</button>
                     </th>
                 </tr>
                 </thead>
@@ -43,8 +43,8 @@
                         <td>${m.name}</td>
                         <td>${(m.time?string("yyyy-MM-dd"))!}</td>
                         <td>
-                            <button class="layui-btn" onclick="edit(${m.id})"><i class="layui-icon">&#xe642;</i></button>
-                            <button class="layui-btn" onclick="del(${m.id})"><i class="layui-icon">&#xe640;</i></button>
+                            <button class="layui-btn" onclick="edit('/admin/medicalhistory/',${m.id})"><i class="layui-icon">&#xe642;</i></button>
+                            <button class="layui-btn" onclick="del('/admin/medicalhistory/',${m.id})"><i class="layui-icon">&#xe640;</i></button>
                         </td>
                     </tr>
                 </#list>
@@ -54,15 +54,8 @@
         </div>
     </div>
     <#include "../foot.flt"/>
-
 </div>
-<script src="../static/js/layui.all.js"></script>
 <script>
-    //JavaScript代码区域
-    layui.use('element', function(){
-        var element = layui.element;
-
-    });
     layui.use('laypage', function(){
         var laypage = layui.laypage;
 
