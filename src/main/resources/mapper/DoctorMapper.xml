@@ -6,13 +6,12 @@
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="age" jdbcType="INTEGER" property="age" />
     <result column="sex" jdbcType="INTEGER" property="sex" />
-    <result column="patientids" jdbcType="VARCHAR" property="patientids" />
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="loginid" jdbcType="INTEGER" property="loginid" />
     <result column="department" jdbcType="VARCHAR" property="department" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, name, age, sex, patientids, address, loginid,department
+    id, name, age, sex, address, loginid,department
   </sql>
   <select id="getAll" resultType="com.hospital.entity.Doctor">
     select * from doctor order by id
@@ -29,10 +28,10 @@
   </delete>
   <insert id="insert" parameterType="com.hospital.entity.Doctor">
     insert into doctor (id, name, age, 
-      sex, patientids, address,department,
+      sex, address,department,
       loginid)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, 
-      #{sex,jdbcType=INTEGER}, #{patientids,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR},
+      #{sex,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR},
         #{department},#{loginid,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" parameterType="com.hospital.entity.Doctor">
@@ -49,9 +48,6 @@
       </if>
       <if test="sex != null">
         sex,
-      </if>
-      <if test="patientids != null">
-        patientids,
       </if>
       <if test="address != null">
         address,
@@ -73,9 +69,6 @@
       <if test="sex != null">
         #{sex,jdbcType=INTEGER},
       </if>
-      <if test="patientids != null">
-        #{patientids,jdbcType=VARCHAR},
-      </if>
       <if test="address != null">
         #{address,jdbcType=VARCHAR},
       </if>
@@ -96,9 +89,6 @@
       <if test="sex != null">
         sex = #{sex,jdbcType=INTEGER},
       </if>
-      <if test="patientids != null">
-        patientids = #{patientids,jdbcType=VARCHAR},
-      </if>
       <if test="address != null">
         address = #{address,jdbcType=VARCHAR},
       </if>
@@ -113,7 +103,6 @@
     set name = #{name,jdbcType=VARCHAR},
       age = #{age,jdbcType=INTEGER},
       sex = #{sex,jdbcType=INTEGER},
-      patientids = #{patientids,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
       loginid = #{loginid,jdbcType=INTEGER},
       department=#{department}

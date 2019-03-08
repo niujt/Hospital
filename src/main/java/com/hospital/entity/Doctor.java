@@ -16,7 +16,6 @@ public class Doctor {
 
     private Integer sex;
 
-    private String patientids;
     private String address;
     private Integer loginid;
     private String department;

@@ -22,6 +22,7 @@
                     <col width="200">
                     <col width="200">
                     <col width="200">
+                    <col width="200">
                     <col>
                 </colgroup>
                 <thead>
@@ -30,6 +31,7 @@
                     <th>患者</th>
                     <th>患病名称</th>
                     <th>患病时间</th>
+                    <th>确诊人</th>
                     <th>操作&nbsp;&nbsp;&nbsp;&nbsp;
                         <button class="layui-btn" onclick="showAdd('/admin/medicalhistoryAdd')"><i class="layui-icon">&#xe608;</i> 添加</button>
                     </th>
@@ -42,6 +44,7 @@
                         <td>${m.patientname}</td>
                         <td>${m.name}</td>
                         <td>${(m.time?string("yyyy-MM-dd"))!}</td>
+                        <td>${m.doctorname}</td>
                         <td>
                             <button class="layui-btn" onclick="edit('/admin/medicalhistory/',${m.id})"><i class="layui-icon">&#xe642;</i></button>
                             <button class="layui-btn" onclick="del('/admin/medicalhistory/',${m.id})"><i class="layui-icon">&#xe640;</i></button>

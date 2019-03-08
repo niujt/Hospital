@@ -14,8 +14,9 @@ public class Medicalhistory {
 
     private Integer patientid;
     private String patientname;
-
     private String name;
     private Date time;
     private Integer hospitalizationid;
+    private Integer doctorid;
+    private String doctorname;
 }
