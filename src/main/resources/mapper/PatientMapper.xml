@@ -18,7 +18,7 @@
   <select id="findAll" resultType="com.hospital.entity.Patient">
     select p.*,d.name as doctorname from patient p
     left join appointment a on p.appointmentid=a.id
-    left join doctor d on d.id=a.doctorid
+    left join doctor d on d.id=a.doctorid order by p.id
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 

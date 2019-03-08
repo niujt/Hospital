@@ -23,7 +23,7 @@ public class Patient {
     private String drugsids;
 
     private Integer appointmentid;
-
+    private String certId;
     private Integer loginid;
     private Integer isout;
     private String doctorname;

@@ -15,7 +15,7 @@
     id, name, age, sex, patientids, address, loginid,department
   </sql>
   <select id="getAll" resultType="com.hospital.entity.Doctor">
-    select * from doctor;
+    select * from doctor order by id
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 

@@ -22,6 +22,7 @@
                     <col width="200">
                     <col width="200">
                     <col width="200">
+                    <col width="200">
                     <col>
                 </colgroup>
                 <thead>
@@ -30,6 +31,7 @@
                     <th>昵称</th>
                     <th>年纪</th>
                     <th>性别</th>
+                    <th>证件号</th>
                     <th>所属部门</th>
                     <th>家庭住址</th>
                     <th>操作&nbsp;&nbsp;&nbsp;&nbsp;
@@ -47,6 +49,7 @@
                             <#if d.sex==0>男</#if>
                             <#if d.sex==1>女</#if>
                         </td>
+                        <td>${d.certId}</td>
                         <td>${d.department}</td>
                         <td>${d.address}</td>
                         <td>
