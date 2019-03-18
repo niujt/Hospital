@@ -7,4 +7,5 @@ import java.util.List;
 public interface DrugsService {
     List<Drugs> getAllDrugs();
     String delDrug(Integer id);
+    String addDrug(Drugs drugs);
 }

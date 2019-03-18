@@ -23,4 +23,16 @@ public class DrugsServiceImpl implements DrugsService {
     public String delDrug(Integer id) {
         return drugsMapper.deleteByPrimaryKey(id)>0? CommonService.del_message_success:CommonService.del_message_error;
     }
+
+    @Override
+    public String addDrug(Drugs drugs) {
+        String message;
+        if(drugsMapper.findByName(drugs.getName())!=null){
+            message=CommonService.add_message_error2;
+        }
+        else{
+            message=drugsMapper.insert(drugs)>0?CommonService.add_message_success:CommonService.add_message_error;
+        }
+        return message;
+    }
 }

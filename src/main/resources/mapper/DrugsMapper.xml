@@ -12,6 +12,9 @@
   <select id="findAll" resultType="com.hospital.entity.Drugs">
     select  * from drugs
   </select>
+  <select id="findByName" resultType="com.hospital.entity.Drugs" parameterType="String">
+    select  * from drugs where name=#{name}
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -23,9 +26,9 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.hospital.entity.Drugs">
-    insert into drugs (id, name, type
+    insert into drugs (name, type
       )
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}
+    values ( #{name,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.hospital.entity.Drugs">
