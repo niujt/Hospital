@@ -29,7 +29,7 @@
                     <th>账号</th>
                     <th>密码</th>
                     <th>操作&nbsp;&nbsp;&nbsp;&nbsp;
-                        <button class="layui-btn"><i class="layui-icon">&#xe608;</i> 添加</button>
+                        <button class="layui-btn" onclick="showAdd('/admin/adminAdd')"><i class="layui-icon">&#xe608;</i> 添加</button>
                     </th>
                 </tr>
                 </thead>
@@ -40,8 +40,8 @@
                     <td>${a.username}</td>
                     <td>**********</td>
                         <td>
-                            <button class="layui-btn" onclick="edit(${a.id})"><i class="layui-icon">&#xe642;</i></button>
-                            <button class="layui-btn" onclick="del(${a.id})"><i class="layui-icon">&#xe640;</i></button>
+                            <button class="layui-btn" onclick="edit('/admin/admin/',${a.id})"><i class="layui-icon">&#xe642;</i></button>
+                            <button class="layui-btn" onclick="del('/admin/admin/',${a.id})"><i class="layui-icon">&#xe640;</i></button>
                         </td>
                     </tr>
                 </#list>

@@ -7,4 +7,5 @@ public class CommonService {
     public static String upd_message_error="更新失败";
     public static String add_message_success="添加成功";
     public static String add_message_error="添加失败";
+    public static String add_message_error2="已存在";
 }

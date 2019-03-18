@@ -1,6 +1,7 @@
 package com.hospital.dao;
 
 import com.hospital.entity.Login;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -17,4 +18,6 @@ public interface LoginMapper {
 
     int updateByPrimaryKey(Login record);
     List<Login> findAllAdmin();
+    int insertAdmin(Login login);
+    Login findByUsername(@Param("username")String username);
 }

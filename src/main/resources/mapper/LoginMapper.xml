@@ -13,6 +13,9 @@
   <select id="findAllAdmin" resultType="com.hospital.entity.Login">
     select * from login where role=1
   </select>
+  <select id="findByUsername" resultType="com.hospital.entity.Login" parameterType="String">
+    select * from login where username=#{username}
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -26,8 +29,14 @@
   <insert id="insert" parameterType="com.hospital.entity.Login">
     insert into login (id, username, password,role
       )
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},#{role}
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},0
       )
+  </insert>
+  <insert id="insertAdmin" parameterType="com.hospital.entity.Login">
+    insert into login (id, username, password,role
+    )
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},1
+           )
   </insert>
   <insert id="insertSelective" parameterType="com.hospital.entity.Login">
     insert into login
