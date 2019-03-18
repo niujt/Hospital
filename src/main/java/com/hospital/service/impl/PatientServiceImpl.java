@@ -1,5 +1,6 @@
 package com.hospital.service.impl;
 
+import com.hospital.common.CommonService;
 import com.hospital.dao.PatientMapper;
 import com.hospital.entity.Patient;
 import com.hospital.service.PatientService;
@@ -14,5 +15,10 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public List<Patient> getAllPatients() {
         return patientMapper.findAll();
+    }
+
+    @Override
+    public String delPatient(Integer id) {
+        return patientMapper.deleteByPrimaryKey(id)>0? CommonService.del_message_success:CommonService.del_message_error;
     }
 }

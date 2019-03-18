@@ -1,5 +1,6 @@
 package com.hospital.service.impl;
 
+import com.hospital.common.CommonService;
 import com.hospital.dao.DrugsMapper;
 import com.hospital.entity.Drugs;
 import com.hospital.service.DrugsService;
@@ -16,5 +17,10 @@ public class DrugsServiceImpl implements DrugsService {
     @Override
     public List<Drugs> getAllDrugs() {
         return drugsMapper.findAll();
+    }
+
+    @Override
+    public String delDrug(Integer id) {
+        return drugsMapper.deleteByPrimaryKey(id)>0? CommonService.del_message_success:CommonService.del_message_error;
     }
 }

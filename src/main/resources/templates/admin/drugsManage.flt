@@ -48,7 +48,7 @@
                         </td>
                         <td>
                             <button class="layui-btn" onclick="edit(${d.id})"><i class="layui-icon">&#xe642;</i></button>
-                            <button class="layui-btn" onclick="del(${d.id})"><i class="layui-icon">&#xe640;</i></button>
+                            <button class="layui-btn" onclick="del('/admin/drug/',${d.id})"><i class="layui-icon">&#xe640;</i></button>
                         </td>
                     </tr>
                 </#list>

@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface PatientService {
     List<Patient> getAllPatients();
+    String delPatient(Integer id);
 }
