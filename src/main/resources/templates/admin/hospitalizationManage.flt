@@ -35,7 +35,7 @@
                     <th>住院时间</th>
                     <th>出院时间</th>
                     <th>操作&nbsp;&nbsp;&nbsp;&nbsp;
-                        <button class="layui-btn"><i class="layui-icon">&#xe608;</i> 添加</button>
+                        <button class="layui-btn" onclick="showAdd('/admin/hospitalizationAdd')"><i class="layui-icon">&#xe608;</i> 添加</button>
                     </th>
                 </tr>
                 </thead>
@@ -51,7 +51,7 @@
                         <td>${(h.outtime?string("yyyy-MM-dd"))!}</td>
                         <td>
                             <button class="layui-btn" onclick="edit(${h.id})"><i class="layui-icon">&#xe642;</i></button>
-                            <button class="layui-btn" onclick="del(${h.id})"><i class="layui-icon">&#xe640;</i></button>
+                            <button class="layui-btn" onclick="del('/admin/hospitalization/',${h.id})"><i class="layui-icon">&#xe640;</i></button>
                         </td>
                     </tr>
                 </#list>
