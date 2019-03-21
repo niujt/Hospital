@@ -13,6 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 public class LoginController {
     @Autowired
     LoginService loginService;
+    @RequestMapping(value = "/hospital")
+    public String loginAndregist(){
+        return "login&regist";
+    }
     @RequestMapping("/admin/adminManage")
     public String adminManage(HttpServletRequest request){
         request.setAttribute("admins",loginService.findAllAdmin());
