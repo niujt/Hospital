@@ -1,6 +1,7 @@
 package com.hospital.dao;
 
 import com.hospital.entity.Doctor;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -17,4 +18,5 @@ public interface DoctorMapper {
     int updateByPrimaryKeySelective(Doctor record);
 
     int updateByPrimaryKey(Doctor record);
+    Doctor getDoctorByCertId(@Param("certId")String certId);
 }

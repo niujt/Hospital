@@ -19,7 +19,7 @@
             contentType: "application/json;charset=utf-8",
             success:function(data){
                 console.log(data.message);
-                if(data.message=="已存在"){
+                if(data.message=="已存在"||data.message=="该身份证已被注册或使用"){
                     $("#message").text(data.message);
                 }
                 else {

@@ -1,13 +1,11 @@
 package com.hospital.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.hospital.entity.Doctor;
 import com.hospital.service.DoctorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -26,5 +24,16 @@ public class DoctorController {
         JSONObject json=new JSONObject();
         json.put("message",doctorService.delDoctor(id));
         return json;
+    }
+    @RequestMapping(value = "/admin/doctor",method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject AddDoctor(@RequestBody Doctor doctor){
+        JSONObject json=new JSONObject();
+        json.put("message",doctorService.addDoctor(doctor));
+        return json;
+    }
+    @RequestMapping("/admin/doctorAdd")
+    public String doctorAddPage(){
+        return "admin/add/doctoradd";
     }
 }

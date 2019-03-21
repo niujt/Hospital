@@ -16,6 +16,9 @@
   <select id="getAll" resultType="com.hospital.entity.Doctor">
     select * from doctor order by id
   </select>
+  <select id="getDoctorByCertId" resultType="com.hospital.entity.Doctor" parameterType="String">
+    select * from doctor where certId=#{certId}
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -29,10 +32,10 @@
   <insert id="insert" parameterType="com.hospital.entity.Doctor">
     insert into doctor (id, name, age, 
       sex, address,department,
-      loginid)
+      loginid,certId)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, 
       #{sex,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR},
-        #{department},#{loginid,jdbcType=INTEGER})
+        #{department},#{loginid,jdbcType=INTEGER},#{certId})
   </insert>
   <insert id="insertSelective" parameterType="com.hospital.entity.Doctor">
     insert into doctor

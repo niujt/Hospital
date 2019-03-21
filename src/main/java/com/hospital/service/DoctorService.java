@@ -7,4 +7,5 @@ import java.util.List;
 public interface DoctorService {
     List<Doctor> getAllDoctor();
     String delDoctor(Integer id);
+    String addDoctor(Doctor doctor);
 }
