@@ -47,7 +47,7 @@
                             <#if d.type==5>胶囊剂</#if>
                         </td>
                         <td>
-                            <button class="layui-btn" onclick="edit(${d.id})"><i class="layui-icon">&#xe642;</i></button>
+                            <button class="layui-btn" onclick="edit('/admin/drug/',${d.id})"><i class="layui-icon">&#xe642;</i></button>
                             <button class="layui-btn" onclick="del('/admin/drug/',${d.id})"><i class="layui-icon">&#xe640;</i></button>
                         </td>
                     </tr>

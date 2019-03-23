@@ -8,4 +8,6 @@ public interface DrugsService {
     List<Drugs> getAllDrugs();
     String delDrug(Integer id);
     String addDrug(Drugs drugs);
+    Drugs getDrug(Integer id);
+    String updateDrug(Drugs drugs);
 }

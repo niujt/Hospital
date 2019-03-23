@@ -35,4 +35,14 @@ public class DrugsServiceImpl implements DrugsService {
         }
         return message;
     }
+
+    @Override
+    public Drugs getDrug(Integer id) {
+        return drugsMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public String updateDrug(Drugs drugs) {
+        return drugsMapper.updateByPrimaryKey(drugs)>0?CommonService.upd_message_success:CommonService.upd_message_error;
+    }
 }

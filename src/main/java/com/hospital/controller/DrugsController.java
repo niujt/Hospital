@@ -36,4 +36,16 @@ public class DrugsController {
     public String drugAddPage(){
         return  "/admin/add/drugadd";
     }
+    @RequestMapping(value = "/admin/drug/{id}",method = RequestMethod.GET)
+    public String drugInfo(HttpServletRequest request,@PathVariable Integer id) {
+        request.setAttribute("drug",drugsService.getDrug(id));
+        return  "/admin/info/drugsinfo";
+    }
+    @RequestMapping(value = "/admin/drug",method = RequestMethod.PUT)
+    @ResponseBody
+    public JSONObject updateDrug(@RequestBody Drugs drugs) {
+        JSONObject json=new JSONObject();
+        json.put("message",drugsService.updateDrug(drugs));
+        return  json;
+    }
 }
