@@ -45,4 +45,9 @@ public class LoginServiceImpl implements LoginService {
     public String delAdmin(Integer id) {
         return loginMapper.deleteByPrimaryKey(id)>0?CommonService.del_message_success:CommonService.del_message_error;
     }
+
+    @Override
+    public Login getAdmin(Integer id) {
+        return loginMapper.selectByPrimaryKey(id);
+    }
 }

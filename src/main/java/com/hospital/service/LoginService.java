@@ -9,4 +9,5 @@ public interface LoginService {
     String addAmin(Login login);
     String updateAdmin(Login login);
     String delAdmin(Integer id);
+    Login getAdmin(Integer id);
 }
