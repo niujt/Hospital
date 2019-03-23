@@ -19,7 +19,12 @@
             contentType: "application/json;charset=utf-8",
             success:function(data){
                 console.log(data.message);
-                parent.location.reload();
+                if(data.message=="已存在"){
+                    $("#message").text(data.message);
+                }
+                else {
+                    parent.location.reload();
+                }
             },
             error:function (data) {
                 layer.msg(data.message, {

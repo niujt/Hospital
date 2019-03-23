@@ -33,7 +33,7 @@
                 <tr>
                     <td>操作：</td>
                     <td>
-                        <button type="submit" class="layui-btn">更新</button>
+                        <button type="submit" class="layui-btn">更新</button>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: red;" id="message"></span>
                     </td>
                 </tr>
                 <tbody>
