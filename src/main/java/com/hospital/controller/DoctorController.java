@@ -25,11 +25,23 @@ public class DoctorController {
         json.put("message",doctorService.delDoctor(id));
         return json;
     }
+    @RequestMapping(value = "/admin/doctor/{id}",method = RequestMethod.GET)
+    public String doctorInfo(@PathVariable Integer id,HttpServletRequest request){
+        request.setAttribute("doctor",doctorService.getDoctor(id));
+        return "admin/info/doctorinfo";
+    }
     @RequestMapping(value = "/admin/doctor",method = RequestMethod.POST)
     @ResponseBody
     public JSONObject AddDoctor(@RequestBody Doctor doctor){
         JSONObject json=new JSONObject();
         json.put("message",doctorService.addDoctor(doctor));
+        return json;
+    }
+    @RequestMapping(value = "/admin/doctor",method = RequestMethod.PUT)
+    @ResponseBody
+    public JSONObject updateDoctor(@RequestBody Doctor doctor){
+        JSONObject json=new JSONObject();
+        json.put("message",doctorService.upDoctor(doctor));
         return json;
     }
     @RequestMapping("/admin/doctorAdd")

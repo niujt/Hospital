@@ -20,4 +20,7 @@ public class Doctor {
     private Integer loginid;
     private String department;
     private String certId;
+    /***/
+    private String username;
+    private String password;
 }

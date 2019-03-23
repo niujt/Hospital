@@ -29,7 +29,7 @@
             type: 2,
             title: '详情页面',
             closeBtn: 0,
-            area:['800px','600px'],
+            area:['800px','800px'],
             content: [url+id,'yes'],
             btn: ['取消'],
             yes: function(index){

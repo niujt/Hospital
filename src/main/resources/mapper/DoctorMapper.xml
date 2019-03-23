@@ -19,9 +19,8 @@
   <select id="getDoctorByCertId" resultType="com.hospital.entity.Doctor" parameterType="String">
     select * from doctor where certId=#{certId}
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.hospital.entity.Doctor">
+    select *
     from doctor
     where id = #{id,jdbcType=INTEGER}
   </select>
@@ -108,7 +107,8 @@
       sex = #{sex,jdbcType=INTEGER},
       address = #{address,jdbcType=VARCHAR},
       loginid = #{loginid,jdbcType=INTEGER},
-      department=#{department}
+      department=#{department},
+      certId=#{department}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
