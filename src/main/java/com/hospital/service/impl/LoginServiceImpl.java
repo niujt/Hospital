@@ -59,6 +59,7 @@ public class LoginServiceImpl implements LoginService {
             if(!login2.getPassword().equals(login.getPassword())){
                 message="，密码错误";
             }
+            login.setRole(login2.getRole());
             message="登录成功";
         }
         else{

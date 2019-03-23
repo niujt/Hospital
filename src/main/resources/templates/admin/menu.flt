@@ -3,7 +3,7 @@
     <!-- 头部区域（可配合layui已有的水平导航） -->
     <ul class="layui-nav layui-layout-left">
         <li class="layui-nav-item"><a href="/test">首页</a></li>
-        <li class="layui-nav-item">
+        <li class="layui-nav-item" <#if login.role!=1>style="display:none"</#if>>
             <a href="javascript:;">系统管理</a>
             <dl class="layui-nav-child">
                 <dd><a href="/admin/doctorManage">医生管理</a></dd>
@@ -11,10 +11,10 @@
                 <dd><a href="/admin/drugsManage">药品管理</a></dd>
             </dl>
         </li>
-        <li class="layui-nav-item"><a href="/admin/appointmentManage">预约管理</a></li>
-        <li class="layui-nav-item"><a href="/admin/medicalhistoryManage">病史管理</a></li>
-        <li class="layui-nav-item"><a href="/admin/hospitalizationManage">住院信息管理</a></li>
-        <li class="layui-nav-item"><a href="/admin/adminManage">管理员管理</a></li>
+        <li class="layui-nav-item" <#if login.role!=1>style="display:none"</#if>><a href="/admin/appointmentManage">预约管理</a></li>
+        <li class="layui-nav-item" <#if login.role!=1>style="display:none"</#if>><a href="/admin/medicalhistoryManage">病史管理</a></li>
+        <li class="layui-nav-item" <#if login.role!=1>style="display:none"</#if>><a href="/admin/hospitalizationManage">住院信息管理</a></li>
+        <li class="layui-nav-item" <#if login.role!=1>style="display:none"</#if>><a href="/admin/adminManage">管理员管理</a></li>
         <li class="layui-nav-item"><a href="#">病史</a></li>
         <li class="layui-nav-item"><a href="#">住院信息</a></li>
         <li class="layui-nav-item"><a href="#">挂号</a></li>
