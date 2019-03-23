@@ -1,12 +1,8 @@
 <div class="layui-header">
-    <div class="layui-logo">医疗系统后台管理</div>
+    <div class="layui-logo"><span style="display: none">欢迎进入</span>医疗系统<span>后台管理<span></div>
     <!-- 头部区域（可配合layui已有的水平导航） -->
     <ul class="layui-nav layui-layout-left">
         <li class="layui-nav-item"><a href="/test">首页</a></li>
-        <li class="layui-nav-item"><a href="/admin/appointmentManage">预约管理</a></li>
-        <li class="layui-nav-item"><a href="/admin/medicalhistoryManage">病史管理</a></li>
-        <li class="layui-nav-item"><a href="/admin/hospitalizationManage">住院信息管理</a></li>
-        <li class="layui-nav-item"><a href="/admin/adminManage">管理员管理</a></li>
         <li class="layui-nav-item">
             <a href="javascript:;">系统管理</a>
             <dl class="layui-nav-child">
@@ -15,13 +11,22 @@
                 <dd><a href="/admin/drugsManage">药品管理</a></dd>
             </dl>
         </li>
+        <li class="layui-nav-item"><a href="/admin/appointmentManage">预约管理</a></li>
+        <li class="layui-nav-item"><a href="/admin/medicalhistoryManage">病史管理</a></li>
+        <li class="layui-nav-item"><a href="/admin/hospitalizationManage">住院信息管理</a></li>
+        <li class="layui-nav-item"><a href="/admin/adminManage">管理员管理</a></li>
+        <li class="layui-nav-item"><a href="#">病史</a></li>
+        <li class="layui-nav-item"><a href="#">住院信息</a></li>
+        <li class="layui-nav-item"><a href="#">挂号</a></li>
+        <li class="layui-nav-item"><a href="#">就医</a></li>
+        <li class="layui-nav-item"><a href="#">查看病史</a></li>
     </ul>
     <ul class="layui-nav layui-layout-right">
         <li class="layui-nav-item">
             <a href="javascript:;">
-                欢迎&nbsp;&nbsp;&nbsp;&nbsp;贤心
+                欢迎&nbsp;&nbsp;&nbsp;&nbsp;{username}
             </a>
         </li>
-        <li class="layui-nav-item"><a href="">退出登录</a></li>
+        <li class="layui-nav-item"><a href="/loginout">退出登录</a></li>
     </ul>
 </div>

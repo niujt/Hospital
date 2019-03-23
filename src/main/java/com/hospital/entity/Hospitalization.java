@@ -23,5 +23,5 @@ public class Hospitalization {
     private String patientname;
     private Date intime;
     private Date outtime;
-
+    private String medicalname;
 }

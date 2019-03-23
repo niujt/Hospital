@@ -1,6 +1,7 @@
 package com.hospital.dao;
 
 import com.hospital.entity.Medicalhistory;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 

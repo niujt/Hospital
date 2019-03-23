@@ -60,7 +60,7 @@
                         </td>
                         <td>${p.address}</td>
                         <td>
-                            <button class="layui-btn" onclick="edit(${p.id})"><i class="layui-icon">&#xe642;</i></button>
+                            <button class="layui-btn" onclick="edit('/admin/patient/',${p.id})"><i class="layui-icon">&#xe642;</i></button>
                             <button class="layui-btn" onclick="del('/admin/patient/',${p.id})"><i class="layui-icon">&#xe640;</i></button>
                         </td>
                     </tr>

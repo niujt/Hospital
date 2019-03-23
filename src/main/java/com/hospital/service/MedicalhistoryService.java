@@ -10,5 +10,4 @@ public interface MedicalhistoryService {
     Medicalhistory getMedicalhistory(Integer id);
     String UpdateMedicalhistory(Medicalhistory medicalhistory);
     String addMedicalhistory(Medicalhistory medicalhistory);
-
 }

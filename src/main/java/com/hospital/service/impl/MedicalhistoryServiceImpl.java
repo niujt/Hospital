@@ -36,4 +36,5 @@ public class MedicalhistoryServiceImpl implements MedicalhistoryService {
     public String addMedicalhistory(Medicalhistory medicalhistory) {
         return medicalhistoryMapper.insert(medicalhistory)>0?CommonService.add_message_success:CommonService.add_message_error;
     }
+
 }

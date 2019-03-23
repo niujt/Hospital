@@ -18,11 +18,14 @@
             <table class="layui-table">
                 <colgroup>
                     <col width="150">
-                    <col width="200">
-                    <col width="200">
-                    <col width="200">
-                    <col width="200">
-                    <col width="200">
+                    <col width="150">
+                    <col width="150">
+                    <col width="150">
+                    <col width="150">
+                    <col width="150">
+                    <col width="150">
+                    <col width="150">
+                    <col width="300">
                     <col>
                 </colgroup>
                 <thead>
@@ -32,10 +35,12 @@
                     <th>门牌号</th>
                     <th>床号</th>
                     <th>患者</th>
+                    <th>患病</th>
                     <th>住院时间</th>
                     <th>出院时间</th>
                     <th>操作&nbsp;&nbsp;&nbsp;&nbsp;
                         <button class="layui-btn" onclick="showAdd('/admin/hospitalizationAdd')"><i class="layui-icon">&#xe608;</i> 添加</button>
+                        <button class="layui-btn" onclick="alert("导出住院管理信息")">导出excel</button>
                     </th>
                 </tr>
                 </thead>
@@ -47,6 +52,7 @@
                         <td>${h.door}</td>
                         <td>${h.bed}</td>
                         <td>${h.patientname!''}</td>
+                        <td>${h.medicalname}</td>
                         <td>${(h.intime?string("yyyy-MM-dd"))!}</td>
                         <td>${(h.outtime?string("yyyy-MM-dd"))!}</td>
                         <td>

@@ -10,4 +10,5 @@ public interface HospitalizationService {
     String deleteHospitalization(Integer id);
     Hospitalization getHospitalization(Integer id);
     String updateHospitalization(Hospitalization hospitalization);
+    List<Hospitalization> getPatientMessage(Integer patientId);
 }

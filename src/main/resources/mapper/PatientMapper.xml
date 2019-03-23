@@ -23,9 +23,8 @@
   <select id="findPatientByCertId" resultType="com.hospital.entity.Patient" parameterType="String">
     select * from patient where certId=#{patient}
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.hospital.entity.Patient">
+    select *
     from patient
     where id = #{id,jdbcType=INTEGER}
   </select>

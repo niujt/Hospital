@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class LoginController {
@@ -51,5 +52,9 @@ public class LoginController {
         JSONObject json=new JSONObject();
         json.put("message",loginService.delAdmin(id));
         return json;
+    }
+    @RequestMapping(value = "/loginout",method = RequestMethod.GET)
+    public String loginout(HttpSession session){
+        return "login&regist";
     }
 }

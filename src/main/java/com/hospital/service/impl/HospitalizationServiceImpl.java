@@ -38,4 +38,9 @@ public class HospitalizationServiceImpl implements HospitalizationService {
     public String updateHospitalization(Hospitalization hospitalization) {
         return hospitalizationMapper.updateByPrimaryKey(hospitalization)>0?CommonService.upd_message_success:CommonService.upd_message_error;
     }
+
+    @Override
+    public List<Hospitalization> getPatientMessage(Integer patientId) {
+        return hospitalizationMapper.selectByPatientId(patientId);
+    }
 }

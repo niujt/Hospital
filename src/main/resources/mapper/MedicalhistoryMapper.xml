@@ -15,6 +15,11 @@
     left join doctor d on m.doctorid=d.id
     order by m.id
   </select>
+  <select id="selectByPatientId" parameterType="java.lang.Integer" resultType="com.hospital.entity.Medicalhistory">
+    select *
+    from medicalhistory
+    where patientid = #{patientid}
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

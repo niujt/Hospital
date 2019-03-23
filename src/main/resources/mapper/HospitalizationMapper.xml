@@ -20,17 +20,22 @@
     from hospitalization
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectByPatientId" parameterType="java.lang.Integer" resultType="com.hospital.entity.Hospitalization">
+    select *
+    from Hospitalization
+    where patientid = #{patientid}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from hospitalization
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.hospital.entity.Hospitalization">
     insert into hospitalization (id,floor,
-      bed, door, patientid,intime,outtime
+      bed, door, patientid,intime,outtime,medicalname
       )
     values (#{id,jdbcType=INTEGER}, #{floor,jdbcType=VARCHAR},
       #{bed,jdbcType=VARCHAR}, #{door,jdbcType=VARCHAR}, #{patientid,jdbcType=INTEGER},
-      #{intime},#{outtime}
+      #{intime},#{outtime},#{medicalname}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.hospital.entity.Hospitalization">

@@ -17,6 +17,9 @@
                     <col width="200" >
                     <col width="200">
                     <col width="200">
+                    <col width="200">
+                    <col width="200">
+                    <col width="200">
                     <col>
                 </colgroup>
                 <tr>
@@ -73,6 +76,12 @@
                                 </select>
                             </div>
                         </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>患病：</td>
+                    <td>
+                        <input type="text" name="medicalname" value="${h.medicalname}" required  lay-verify="required"  autocomplete="off" class="layui-input">
                     </td>
                 </tr>
                 <tr>

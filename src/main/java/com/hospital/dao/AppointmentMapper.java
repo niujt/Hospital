@@ -1,6 +1,7 @@
 package com.hospital.dao;
 
 import com.hospital.entity.Appointment;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -17,4 +18,5 @@ public interface AppointmentMapper {
 
     int updateByPrimaryKey(Appointment record);
     List<Appointment> findAll();
+    List<Appointment> selectByPatientId(@Param("patientid")Integer patientId);
 }
