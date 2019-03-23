@@ -15,9 +15,8 @@
     select h.*,p.name as patientname from hospitalization h
     left join patient p on p.id=h.patientid order by h.id
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.hospital.entity.Hospitalization">
+    select *
     from hospitalization
     where id = #{id,jdbcType=INTEGER}
   </select>
@@ -95,7 +94,9 @@
       floor = #{floor,jdbcType=VARCHAR},
       bed = #{bed,jdbcType=VARCHAR},
       door = #{door,jdbcType=VARCHAR},
-      patientid = #{patientid,jdbcType=INTEGER}
+      patientid = #{patientid,jdbcType=INTEGER},
+      intime=#{intime},
+      outtime=#{outtime}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

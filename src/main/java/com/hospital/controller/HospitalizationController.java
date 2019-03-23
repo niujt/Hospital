@@ -40,4 +40,17 @@ public class HospitalizationController {
         json.put("message",hospitalizationService.deleteHospitalization(id));
         return json;
     }
+    @RequestMapping(value = "/admin/hospitalization/{id}",method = RequestMethod.GET)
+    public String hospitalizationInfo(HttpServletRequest request,@PathVariable Integer id){
+        request.setAttribute("h",hospitalizationService.getHospitalization(id));
+        request.setAttribute("patients",patientService.getAllPatients());
+        return"admin/info/hospitalizationinfo";
+    }
+    @RequestMapping(value = "/admin/hospitalization",method = RequestMethod.PUT)
+    @ResponseBody
+    public JSONObject delHospitalization(@RequestBody Hospitalization hospitalization){
+        JSONObject json=new JSONObject();
+        json.put("message",hospitalizationService.updateHospitalization(hospitalization));
+        return json;
+    }
 }

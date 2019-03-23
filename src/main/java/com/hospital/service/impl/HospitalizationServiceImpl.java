@@ -28,4 +28,14 @@ public class HospitalizationServiceImpl implements HospitalizationService {
     public String deleteHospitalization(Integer id) {
         return hospitalizationMapper.deleteByPrimaryKey(id)>0?CommonService.del_message_success:CommonService.add_message_error;
     }
+
+    @Override
+    public Hospitalization getHospitalization(Integer id) {
+        return hospitalizationMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public String updateHospitalization(Hospitalization hospitalization) {
+        return hospitalizationMapper.updateByPrimaryKey(hospitalization)>0?CommonService.upd_message_success:CommonService.upd_message_error;
+    }
 }
