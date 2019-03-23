@@ -41,10 +41,10 @@
                 <#list medicalhistorys as m>
                     <tr>
                         <td>${m_index+1}</td>
-                        <td>${m.patientname}</td>
-                        <td>${m.name}</td>
+                        <td>${m.patientname!''}</td>
+                        <td>${m.name!''}</td>
                         <td>${(m.time?string("yyyy-MM-dd"))!}</td>
-                        <td>${m.doctorname}</td>
+                        <td>${m.doctorname!''}</td>
                         <td>
                             <button class="layui-btn" onclick="edit('/admin/medicalhistory/',${m.id})"><i class="layui-icon">&#xe642;</i></button>
                             <button class="layui-btn" onclick="del('/admin/medicalhistory/',${m.id})"><i class="layui-icon">&#xe640;</i></button>

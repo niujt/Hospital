@@ -46,7 +46,7 @@
                         <td>${h.floor}</td>
                         <td>${h.door}</td>
                         <td>${h.bed}</td>
-                        <td>${h.patientname}</td>
+                        <td>${h.patientname!''}</td>
                         <td>${(h.intime?string("yyyy-MM-dd"))!}</td>
                         <td>${(h.outtime?string("yyyy-MM-dd"))!}</td>
                         <td>
