@@ -10,7 +10,6 @@
 
 <link rel="stylesheet" href="../static/css/style.css">
 
-
 </head>
 
 <body>
@@ -18,26 +17,20 @@
   <h2>医疗管理系统</h2>
 <div class="container" id="container">
 	<div class="form-container sign-up-container">
-		<form action="#">
+		<form action="/regist" id="regest" onsubmit="return regest()">
 			<h1>注册</h1>
 			<input type="certId" placeholder="身份证号(若注册管理员则不需要)" />
 			<input type="username" placeholder="账号" />
 			<input type="password" placeholder="密码" />
-			<button>注册</button>
+			<button type="submit">注册</button>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form action="#">
+		<form  id="login" onsubmit="return login()">
 			<h1>登录</h1>
-			<input type="username" placeholder="账号" />
-			<input type="password" placeholder="密码" />
-			<select>
-				<option value="docter">医生</option>
-				<option value="patient">患者</option>
-				<option value="admin">管理员</option>
-			</select>
-			<a href="#">忘记密码？</a>
-			<button>登录</button>
+			<input type="username" name="username" placeholder="账号" />
+			<input type="password"  name="password" placeholder="密码" />
+			<button type="submit">登录</button>
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -45,17 +38,53 @@
 			<div class="overlay-panel overlay-left">
 				<h1>欢迎回来！</h1>
 				<p>请您先登录的个人信息，进行操作。</p>
-				<button class="ghost" id="signIn">登录</button>
+				<button class="ghost" id="signIn">登录</button> &nbsp;&nbsp;&nbsp;<span id="message"></span>
 			</div>
 			<div class="overlay-panel overlay-right">
 				<h1>你好朋友！</h1>
 				<p>输入您的个人信息注册。</p>
-				<button class="ghost" id="signUp">注册</button>
+				<button  class="ghost" id="signUp">注册</button>
 			</div>
 		</div>
 	</div>
 </div>
-  
+  <script src="/static/js/layui.all.js"></script>
+  <script src="/static/js/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript">
+	  function regest(){
+	  	alert(111);
+	  }
+	  function login(){
+		  var d = {};
+		  var t = $('#login').serializeArray();
+		  $.each(t, function() {
+			  d[this.name] = this.value;
+		  });
+		  var json=JSON.stringify(d)
+		  $.ajax({
+			  url:"/login",
+			  type:'post',
+			  data:json,
+			  contentType: "application/json;charset=utf-8",
+			  success:function(data){
+				  console.log(data.message);
+				  if(data.message=="登录成功"){
+					  location.href="/index"
+				  }
+				  else {
+					  $("#message").text(data.message);
+
+				  }
+			  },
+			  error:function (data) {
+				  layer.msg(data.message, {
+					  time: 2000, //2s后自动关闭
+				  });
+			  }
+		  });
+		  return false
+	  }
+  </script>
   
 
 <script  src="../static/js/index.js"></script>

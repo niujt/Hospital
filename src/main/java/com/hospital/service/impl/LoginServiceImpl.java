@@ -50,4 +50,20 @@ public class LoginServiceImpl implements LoginService {
     public Login getAdmin(Integer id) {
         return loginMapper.selectByPrimaryKey(id);
     }
+
+    @Override
+    public String login(Login  login) {
+        String message="";
+        Login login2=loginMapper.findByUsername(login.getUsername());
+        if(login2!=null){
+            if(!login2.getPassword().equals(login.getPassword())){
+                message="，密码错误";
+            }
+            message="登录成功";
+        }
+        else{
+            message="用户名不存在";
+        }
+        return message;
+    }
 }

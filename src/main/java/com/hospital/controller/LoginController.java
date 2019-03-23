@@ -23,6 +23,10 @@ public class LoginController {
         request.setAttribute("admins",loginService.findAllAdmin());
         return "/admin/adminManage";
     }
+    @RequestMapping("/index")
+    public String adminIndex(){
+        return "index";
+    }
     @RequestMapping("/admin/admin/{id}")
     public String adminInfo(HttpServletRequest request,@PathVariable Integer id){
         request.setAttribute("login",loginService.getAdmin(id));
@@ -55,6 +59,15 @@ public class LoginController {
     }
     @RequestMapping(value = "/loginout",method = RequestMethod.GET)
     public String loginout(HttpSession session){
+        session.removeAttribute("login");
         return "login&regist";
+    }
+    @RequestMapping(value = "/login",method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject login(@RequestBody Login login,HttpSession session){
+        JSONObject json=new JSONObject();
+        json.put("message",loginService.login(login));
+        session.setAttribute("login",login);
+        return json;
     }
 }

@@ -24,7 +24,7 @@
     <ul class="layui-nav layui-layout-right">
         <li class="layui-nav-item">
             <a href="javascript:;">
-                欢迎&nbsp;&nbsp;&nbsp;&nbsp;{username}
+                欢迎&nbsp;&nbsp;&nbsp;&nbsp;${login.username}
             </a>
         </li>
         <li class="layui-nav-item"><a href="/loginout">退出登录</a></li>

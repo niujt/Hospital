@@ -10,4 +10,5 @@ public interface LoginService {
     String updateAdmin(Login login);
     String delAdmin(Integer id);
     Login getAdmin(Integer id);
+    String login(Login  login);
 }
