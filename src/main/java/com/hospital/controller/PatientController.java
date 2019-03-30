@@ -3,16 +3,11 @@ package com.hospital.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.hospital.entity.Patient;
 import com.hospital.service.*;
-import com.hospital.uitls.PatientUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.Date;
-import java.util.Iterator;
-import java.util.Map;
-import java.util.Set;
 
 @Controller
 public class PatientController {
@@ -46,10 +41,9 @@ public class PatientController {
     }
     @RequestMapping(value = "/admin/patient",method = RequestMethod.PUT)
     @ResponseBody
-    public JSONObject patientInfo(@RequestBody Map map,HttpServletRequest request){
+    public JSONObject patientInfo(@RequestBody Patient patient){
         JSONObject json=new JSONObject();
-        json.put("message",map);
-     //   System.out.println(PatientUtils.getListByJsonMessage(map));
+        json.put("message",patientService.updatePatient(patient));
         return json;
     }
 }
