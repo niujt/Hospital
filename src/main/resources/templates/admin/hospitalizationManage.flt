@@ -40,7 +40,7 @@
                     <th>出院时间</th>
                     <th>操作&nbsp;&nbsp;&nbsp;&nbsp;
                         <button class="layui-btn" onclick="showAdd('/admin/hospitalizationAdd')"><i class="layui-icon">&#xe608;</i> 添加</button>
-                        <button class="layui-btn" onclick="alert("导出住院管理信息")">导出excel</button>
+                        <button class="layui-btn" onclick="location.href='/admin/getHospitalization'">导出excel</button>
                     </th>
                 </tr>
                 </thead>
