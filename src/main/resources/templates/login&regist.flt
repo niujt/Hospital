@@ -30,7 +30,7 @@
 			<h1>登录</h1>
 			<input type="username" name="username" placeholder="账号" />
 			<input type="password"  name="password" placeholder="密码" />
-			<button type="submit">登录</button>
+			<button type="submit">登录</button>&nbsp;&nbsp;&nbsp;&nbsp;<span id="message" style="color: red"></span>
 		</form>
 	</div>
 	<div class="overlay-container">

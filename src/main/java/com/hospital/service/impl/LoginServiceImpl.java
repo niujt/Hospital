@@ -57,10 +57,12 @@ public class LoginServiceImpl implements LoginService {
         Login login2=loginMapper.findByUsername(login.getUsername());
         if(login2!=null){
             if(!login2.getPassword().equals(login.getPassword())){
-                message="，密码错误";
+                message="密码错误";
             }
-            login.setRole(login2.getRole());
-            message="登录成功";
+            else{
+                login.setRole(login2.getRole());
+                message="登录成功";
+            }
         }
         else{
             message="用户名不存在";
