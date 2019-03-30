@@ -34,12 +34,10 @@
   </delete>
   <insert id="insert" parameterType="com.hospital.entity.Patient">
     insert into patient (id, name, age, 
-      sex, address, Hospitalizationid, 
-      drugsids, appointmentid, loginid
+      sex, address,isout
       )
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, 
-      #{sex,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR}, #{hospitalizationid,jdbcType=INTEGER}, 
-      #{drugsids,jdbcType=VARCHAR}, #{appointmentid,jdbcType=INTEGER}, #{loginid,jdbcType=INTEGER}
+      #{sex,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR},#{isout}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.hospital.entity.Patient">

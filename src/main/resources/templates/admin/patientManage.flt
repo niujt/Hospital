@@ -37,7 +37,7 @@
                     <th>是否出院</th>
                     <th>家庭住址</th>
                     <th>操作&nbsp;&nbsp;&nbsp;&nbsp;
-                        <button class="layui-btn"><i class="layui-icon">&#xe608;</i> 添加</button>
+                        <button class="layui-btn" onclick="showAdd('/admin/patientAdd')"><i class="layui-icon">&#xe608;</i> 添加</button>
                     </th>
                 </tr>
                 </thead>
@@ -54,7 +54,7 @@
                         <td>${p.certId}</td>
                         <td>${p.doctorname!''}</td>
                         <td>
-                            <#if p.isout==0>未出院</#if>
+                            <#if p.isout==0>未入院</#if>
                             <#if p.isout==1>已入院</#if>
                             <#if p.isout==2>已出院</#if>
                         </td>

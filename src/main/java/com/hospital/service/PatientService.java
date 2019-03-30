@@ -9,4 +9,5 @@ public interface PatientService {
     String delPatient(Integer id);
     Patient getPatient(Integer id);
     String updatePatient(Patient patient);
+    String addPatient(Patient patient);
 }

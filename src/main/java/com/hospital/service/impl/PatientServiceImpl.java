@@ -43,4 +43,16 @@ public class PatientServiceImpl implements PatientService {
         login.setId(patient.getLoginid());
         return (patientMapper.updateByPrimaryKey(patient)>0&&loginMapper.updateByPrimaryKey(login)>0)?CommonService.upd_message_success:CommonService.upd_message_error;
     }
+
+    @Override
+    public String addPatient(Patient patient) {
+        String message="";
+        if(patientMapper.findPatientByCertId(patient.getCertId())!=null){
+            message=CommonService.add_message_error2;
+        }
+        else{
+           message=patientMapper.insert(patient)>0?CommonService.add_message_success:CommonService.add_message_error;
+        }
+        return message;
+    }
 }

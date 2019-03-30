@@ -39,11 +39,22 @@ public class PatientController {
         request.setAttribute("doctors",doctorService.getAllDoctor());
         return "admin/info/patientinfo";
     }
+    @RequestMapping(value = "/admin/patientAdd",method = RequestMethod.GET)
+    public String patientAddPage(){
+        return "admin/add/patientadd";
+    }
     @RequestMapping(value = "/admin/patient",method = RequestMethod.PUT)
     @ResponseBody
     public JSONObject patientInfo(@RequestBody Patient patient){
         JSONObject json=new JSONObject();
         json.put("message",patientService.updatePatient(patient));
+        return json;
+    }
+    @RequestMapping(value = "/admin/patient",method = RequestMethod.DELETE)
+    @ResponseBody
+    public JSONObject delPatient(@RequestBody Patient patient){
+        JSONObject json=new JSONObject();
+        json.put("message",patientService.addPatient(patient));
         return json;
     }
 }
