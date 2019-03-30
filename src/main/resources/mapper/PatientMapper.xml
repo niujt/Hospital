@@ -139,9 +139,6 @@
       age = #{age,jdbcType=INTEGER},
       sex = #{sex,jdbcType=INTEGER},
       address = #{address,jdbcType=VARCHAR},
-      Hospitalizationid = #{hospitalizationid,jdbcType=INTEGER},
-      drugsids = #{drugsids,jdbcType=VARCHAR},
-      appointmentid = #{appointmentid,jdbcType=INTEGER},
       loginid = #{loginid,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>

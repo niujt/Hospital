@@ -11,17 +11,6 @@
     <div style="padding: 15px;">
         <form class="layui-form"  onsubmit="return upd('/admin/patient')">
             <table class="layui-table">
-                <#--<colgroup>-->
-                    <#--<col width="150" >-->
-                    <#--<col width="200" >-->
-                    <#--<col width="200" >-->
-                    <#--<col width="200">-->
-                    <#--<col width="200">-->
-                    <#--<col width="200">-->
-                    <#--<col width="200">-->
-                    <#--<col width="200">-->
-                    <#--<col>-->
-                <#--</colgroup>-->
                 <thead>
                 <tr>
                     <td colspan="2">基本信息</td>
@@ -89,7 +78,7 @@
                     <td>
                         <div class="layui-form">
                             <div class="layui-form-item">
-                                <select name="floor" >
+                                <select name="floor" readonly="readonly">
                                     <option value=""></option>
                                     <option value="1" <#if hospitalization.floor=="1">selected</#if>>一层</option>
                                     <option value="2" <#if hospitalization.floor=="2">selected</#if>>二层</option>
@@ -104,7 +93,7 @@
                 <tr>
                     <td>门牌号：</td>
                     <td>
-                        <input type="text" name="door" value="${hospitalization.door}"  required  lay-verify="required"  autocomplete="off" class="layui-input">
+                        <input readonly="readonly" type="text" name="door" value="${hospitalization.door}"  required  lay-verify="required"  autocomplete="off" class="layui-input">
                         <#--<input type="hidden" name="medicalhistoryid" value="${hospitalizationid}">-->
                     </td>
                 </tr>
@@ -113,7 +102,7 @@
                     <td>
                         <div class="layui-form">
                             <div class="layui-form-item">
-                                <select name="bed" >
+                                <select name="bed" readonly="readonly">
                                     <option value=""></option>
                                     <option value="1" <#if hospitalization.bed=="1">selected</#if>>一号床</option>
                                     <option value="2" <#if hospitalization.bed=="2">selected</#if>>二号床</option>
@@ -127,19 +116,19 @@
                 <tr>
                     <td>患病：</td>
                     <td>
-                        <input type="text" name="medicalname" value="${hospitalization.medicalname}" required  lay-verify="required"  autocomplete="off" class="layui-input">
+                        <input type="text" readonly="readonly" name="medicalname" value="${hospitalization.medicalname}" required  lay-verify="required"  autocomplete="off" class="layui-input">
                     </td>
                 </tr>
                 <tr>
                     <td>住院时间：</td>
                     <td>
-                        <input type="date" name="intime" value="${(hospitalization.intime?string('yyyy-MM-dd'))!}" required  lay-verify="required"  autocomplete="off" class="layui-input">
+                        <input type="date" readonly="readonly" name="intime" value="${(hospitalization.intime?string('yyyy-MM-dd'))!}" required  lay-verify="required"  autocomplete="off" class="layui-input">
                     </td>
                 </tr>
                 <tr>
                     <td>住院时间：</td>
                     <td>
-                        <input type="date" name="outtime" required value="${(hospitalization.outtime?string('yyyy-MM-dd'))!}"  lay-verify="required"  autocomplete="off" class="layui-input">
+                        <input type="date" readonly="readonly" name="outtime" required value="${(hospitalization.outtime?string('yyyy-MM-dd'))!}"  lay-verify="required"  autocomplete="off" class="layui-input">
                     </td>
                 </tr>
                 </#list>
@@ -158,7 +147,7 @@
                     <td>
                         <div class="layui-form">
                             <div class="layui-form-item">
-                                <select name="doctorid">
+                                <select name="doctorid" readonly="readonly">
                                     <option value=""></option>
                                     <#list doctors as d>
                                         <option value="${d.id}"
@@ -173,7 +162,7 @@
                 <tr>
                     <td>预约时间：</td>
                     <td>
-                        <input type="date" value="${(appointment.time?string('yyyy-MM-dd'))!}" name="time" required  lay-verify="required" autocomplete="off" class="layui-input">
+                        <input readonly="readonly" type="date" value="${(appointment.time?string('yyyy-MM-dd'))!}" name="time" required  lay-verify="required" autocomplete="off" class="layui-input">
                         <#--<input type="hidden" value="${patient.appointmentid}" name="appointmentid" >-->
                     </td>
                 </tr>
