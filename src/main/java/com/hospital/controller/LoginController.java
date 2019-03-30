@@ -70,4 +70,12 @@ public class LoginController {
         session.setAttribute("login",login);
         return json;
     }
+    @RequestMapping(value = "/regest",method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject regest(@RequestBody Login login){
+        JSONObject json=new JSONObject();
+        json.put("message",loginService.regist(login));
+        return json;
+    }
+
 }

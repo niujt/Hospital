@@ -21,7 +21,7 @@
     left join doctor d on d.id=a.doctorid order by p.id
   </select>
   <select id="findPatientByCertId" resultType="com.hospital.entity.Patient" parameterType="String">
-    select * from patient where certId=#{patient}
+    select * from patient where certId=#{certId}
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.hospital.entity.Patient">
     select *

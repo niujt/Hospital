@@ -11,4 +11,5 @@ public interface LoginService {
     String delAdmin(Integer id);
     Login getAdmin(Integer id);
     String login(Login  login);
+    String regist(Login login);
 }

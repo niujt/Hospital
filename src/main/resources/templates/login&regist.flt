@@ -19,10 +19,10 @@
 	<div class="form-container sign-up-container">
 		<form action="/regist" id="regest" onsubmit="return regest()">
 			<h1>注册</h1>
-			<input type="certId" placeholder="身份证号(若注册管理员则不需要)" />
-			<input type="username" placeholder="账号" />
-			<input type="password" placeholder="密码" />
-			<button type="submit">注册</button>
+			<input type="certId" name="certId" placeholder="身份证号(若注册管理员则不需要)" />
+			<input type="username" name="username" placeholder="账号" />
+			<input type="password" name="password" placeholder="密码" />
+			<button type="submit">注册</button>&nbsp;&nbsp;&nbsp;&nbsp;<span id="message2" style="color: red"></span>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
@@ -38,7 +38,7 @@
 			<div class="overlay-panel overlay-left">
 				<h1>欢迎回来！</h1>
 				<p>请您先登录的个人信息，进行操作。</p>
-				<button class="ghost" id="signIn">登录</button> &nbsp;&nbsp;&nbsp;<span id="message"></span>
+				<button class="ghost" id="signIn">登录</button>
 			</div>
 			<div class="overlay-panel overlay-right">
 				<h1>你好朋友！</h1>
@@ -52,7 +52,34 @@
   <script src="/static/js/jquery-3.3.1.min.js"></script>
   <script type="text/javascript">
 	  function regest(){
-	  	alert(111);
+		  var d = {};
+		  var t = $('#regest').serializeArray();
+		  $.each(t, function() {
+			  d[this.name] = this.value;
+		  });
+		  var json=JSON.stringify(d)
+		  $.ajax({
+			  url:"/regest",
+			  type:'post',
+			  data:json,
+			  contentType: "application/json;charset=utf-8",
+			  success:function(data){
+				  console.log(data.message);
+				  if(data.message=="注册成功"){
+					  location.href="/hospital"
+				  }
+				  else {
+					  $("#message2").text(data.message);
+
+				  }
+			  },
+			  error:function (data) {
+				  layer.msg(data.message, {
+					  time: 2000, //2s后自动关闭
+				  });
+			  }
+		  });
+		  return false
 	  }
 	  function login(){
 		  var d = {};

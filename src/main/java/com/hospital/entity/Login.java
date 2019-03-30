@@ -14,5 +14,6 @@ public class Login {
 
     private String password;
     private Integer role;
+    private String certId;
 
 }
