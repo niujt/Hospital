@@ -18,8 +18,7 @@
         <li class="layui-nav-item" <#if login.role!=3>style="display:none"</#if>><a href="#">病史</a></li>
         <li class="layui-nav-item" <#if login.role!=3>style="display:none"</#if>><a href="#">住院信息</a></li>
         <li class="layui-nav-item" <#if login.role!=3>style="display:none"</#if>><a href="#">挂号</a></li>
-        <li class="layui-nav-item" <#if login.role!=2>style="display:none"</#if>><a href="/doctor/seekMedicalAdvice">就医</a></li>
-        <li class="layui-nav-item" <#if login.role!=2>style="display:none"</#if>><a href="#">查看病史</a></li>
+        <li class="layui-nav-item" <#if login.role!=2>style="display:none"</#if>><a href="/doctor/seekMedicalAdvice">就医&nbsp;&nbsp;查看病史</a></li>
     </ul>
     <ul class="layui-nav layui-layout-right">
         <li class="layui-nav-item">

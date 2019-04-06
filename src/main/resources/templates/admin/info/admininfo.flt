@@ -20,14 +20,14 @@
                 <tr>
                     <td style="width: 100px">管理员账号：</td>
                     <td>
-                        <input type="text" value="${login.username}" name="username" required  class="layui-input" >
-                        <input type="hidden" value="${login.id}" name="id" required  class="layui-input" >
+                        <input type="text" value="${admin.username}" name="username" required  class="layui-input" >
+                        <input type="hidden" value="${admin.id}" name="id" required  class="layui-input" >
                     </td>
                 </tr>
                 <tr>
                     <td style="width: 100px">管理员密码：</td>
                     <td>
-                        <input type="text" value="${login.password}" name="password" required  class="layui-input" >
+                        <input type="text" value="${admin.password}" name="password" required  class="layui-input" >
                     </td>
                 </tr>
                 <tr>

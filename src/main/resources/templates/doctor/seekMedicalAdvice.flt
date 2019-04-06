@@ -35,7 +35,10 @@
                         <td>${a_index+1}</td>
                         <td>${a.patientname!''}</td>
                         <td>${(a.time?string("yyyy-MM-dd"))!}</td>
-                        <td>  <button class="layui-btn" onclick="seek(${a.patientid})">就医</button></td>
+                        <td>
+                            <button class="layui-btn" onclick="seek(${a.patientid})">就医</button>
+                            <button class="layui-btn" onclick="check(${a.patientid})">查看病史</button>
+                        </td>
                     </tr>
                 </#list>
                 </tbody>
@@ -52,6 +55,20 @@
             closeBtn: 0,
             area:['800px','800px'],
             content: ['/doctor/seek/'+id,'yes'],
+            btn: ['取消'],
+            yes: function(index){
+                //事件
+                layer.close(index);
+            }
+        });
+    }
+    function check(id){
+        layer.open({
+            type: 2,
+            title: '查看病史',
+            closeBtn: 0,
+            area:['800px','800px'],
+            content: ['/doctor/medicalhistory/'+id,'yes'],
             btn: ['取消'],
             yes: function(index){
                 //事件

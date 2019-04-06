@@ -29,7 +29,7 @@ public class LoginController {
     }
     @RequestMapping("/admin/admin/{id}")
     public String adminInfo(HttpServletRequest request,@PathVariable Integer id){
-        request.setAttribute("login",loginService.getAdmin(id));
+        request.setAttribute("admin",loginService.getAdmin(id));
         return "/admin/info/admininfo";
     }
     @RequestMapping("/admin/adminAdd")

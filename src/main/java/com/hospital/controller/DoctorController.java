@@ -30,6 +30,8 @@ public class DoctorController {
     DrugsService drugsService;
     @Autowired
     HospitalizationService hospitalizationService;
+    @Autowired
+    MedicalhistoryService medicalhistoryService;
     @RequestMapping("/admin/doctorManage")
     public String doctorManage(HttpServletRequest request){
         request.setAttribute("doctors",doctorService.getAllDoctor());
@@ -96,6 +98,11 @@ public class DoctorController {
         JSONObject json=new JSONObject();
         json.put("message",hospitalizationService.AddHospitalization(hospitalization));
         return json;
+    }
+    @RequestMapping(value = "/doctor/medicalhistory/{id}")
+    public String medicalhistory(@PathVariable Integer id,HttpServletRequest request){
+        request.setAttribute("medicalhistorys",medicalhistoryService.getMedicalhistoryByPatientId(id));
+        return "doctor/medicalhistory";
     }
 
 }

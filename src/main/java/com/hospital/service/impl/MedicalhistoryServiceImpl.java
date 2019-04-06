@@ -37,4 +37,8 @@ public class MedicalhistoryServiceImpl implements MedicalhistoryService {
         return medicalhistoryMapper.insert(medicalhistory)>0?CommonService.add_message_success:CommonService.add_message_error;
     }
 
+    @Override
+    public List<Medicalhistory> getMedicalhistoryByPatientId(Integer id) {
+        return medicalhistoryMapper.selectByPatientId(id);
+    }
 }
