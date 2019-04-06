@@ -19,4 +19,5 @@ public interface PatientMapper {
 
     int updateByPrimaryKey(Patient record);
     Patient findPatientByCertId(@Param("certId")String certId);
+    Patient findPatientByLoginId(@Param("loginid")Integer loginid);
 }

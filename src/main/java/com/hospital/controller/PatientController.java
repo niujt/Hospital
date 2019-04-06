@@ -1,6 +1,8 @@
 package com.hospital.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.hospital.entity.Login;
+import com.hospital.entity.Medicalhistory;
 import com.hospital.entity.Patient;
 import com.hospital.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class PatientController {
@@ -19,6 +22,8 @@ public class PatientController {
     AppointmentService appointmentService;
     @Autowired
     HospitalizationService hospitalizationService;
+    @Autowired
+    MedicalhistoryService medicalhistoryService;
     @RequestMapping("/admin/patientManage")
     public String patientlist(HttpServletRequest request){
         request.setAttribute("patients",patientService.getAllPatients());
@@ -56,5 +61,12 @@ public class PatientController {
         JSONObject json=new JSONObject();
         json.put("message",patientService.addPatient(patient));
         return json;
+    }
+    @RequestMapping(value = "/patient/medicalhistory")
+    public String medicalhistory(HttpSession session,HttpServletRequest request){
+        Login login=(Login)session.getAttribute("login");
+        Patient patient=patientService.findPatientByLoginId(login.getId());
+        request.setAttribute("medicalhistorys",medicalhistoryService.getMedicalhistoryByPatientId(patient.getId()));
+        return "patient/medicalhistory";
     }
 }

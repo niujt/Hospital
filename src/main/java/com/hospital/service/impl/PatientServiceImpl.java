@@ -60,4 +60,9 @@ public class PatientServiceImpl implements PatientService {
     public String seek(Patient patient) {
         return patientMapper.updateByPrimaryKeySelective(patient)>0?CommonService.upd_message_success:CommonService.upd_message_error;
     }
+
+    @Override
+    public Patient findPatientByLoginId(Integer loginid) {
+        return patientMapper.findPatientByLoginId(loginid);
+    }
 }
