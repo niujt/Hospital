@@ -19,4 +19,6 @@ public interface HospitalizationMapper {
     int updateByPrimaryKey(Hospitalization record);
     List<Hospitalization> findAll();
     List<Hospitalization> selectByPatientId(@Param("patientid")Integer patientId);
+    Hospitalization findTheLastHospitalization(@Param("id")Integer id);
+    List<Hospitalization> findOtherHospitalization(Hospitalization record);
 }

@@ -1,1 +1,110 @@
-住院信息
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>住院信息</title>
+    <link rel="stylesheet" href="/static/css/layui.min.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <#include "../menu.flt"/>
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">
+        <h2>住院信息</h2>
+            <table class="layui-table">
+                <colgroup>
+                    <col width="150" >
+                    <col width="200" >
+                    <col width="200" >
+                    <col width="200">
+                    <col width="200">
+                    <col width="200">
+                </colgroup>
+                <tr>
+                    <td style="width: 100px">楼层：</td>
+                    <td>${theLast.floor}</td>
+                </tr>
+                <tr>
+                    <td>门牌号：</td>
+                    <td>
+                       ${theLast.door}
+                    </td>
+                </tr>
+                <tr>
+                    <td>床号：</td>
+                    <td>
+                        ${theLast.bed}
+                    </td>
+                </tr>
+                <tr>
+                    <td>患病：</td>
+                    <td>
+                       ${theLast.medicalname}
+                    </td>
+                </tr>
+                <tr>
+                    <td>住院时间：</td>
+                    <td>
+                        ${(theLast.intime?string('yyyy-MM-dd'))!}
+                    </td>
+                </tr>
+                <tr>
+                    <td>出院时间：</td>
+                    <td>
+                       ${(theLast.outtime?string('yyyy-MM-dd'))!}
+                    </td>
+                </tr>
+            </table>
+    </div>
+    <hr>
+    <button class="layui-bg-black" onclick="showHistroy()">住院历史信息</button>
+    <hr>
+        <table class="layui-table" style="display: none" id="table">
+            <colgroup>
+                <col width="150">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+                <col width="150">
+                <col width="300">
+                <col>
+            </colgroup>
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>楼层号</th>
+                <th>门牌号</th>
+                <th>床号</th>
+                <th>患者</th>
+                <th>患病</th>
+                <th>住院时间</th>
+                <th>出院时间</th>
+            </tr>
+            </thead>
+            <tbody>
+            <#list others as h>
+                <tr>
+                    <td>${h_index+1}</td>
+                    <td>${h.floor}</td>
+                    <td>${h.door}</td>
+                    <td>${h.bed}</td>
+                    <td>${h.patientname!''}</td>
+                    <td>${h.medicalname}</td>
+                    <td>${(h.intime?string("yyyy-MM-dd"))!}</td>
+                    <td>${(h.outtime?string("yyyy-MM-dd"))!}</td>
+                </tr>
+            </#list>
+            </tbody>
+        </table>
+</div>
+<script src="/static/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    function showHistroy(){
+        $("table").show();
+    }
+</script>
+</body>
+</html>

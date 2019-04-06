@@ -11,4 +11,6 @@ public interface HospitalizationService {
     Hospitalization getHospitalization(Integer id);
     String updateHospitalization(Hospitalization hospitalization);
     List<Hospitalization> getPatientMessage(Integer patientId);
+    Hospitalization findTheLastHospitalization(Integer id);
+    List<Hospitalization> findOtherHospitalization(Hospitalization hospitalization);
 }

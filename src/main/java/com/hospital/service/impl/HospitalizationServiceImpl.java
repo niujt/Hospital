@@ -43,4 +43,14 @@ public class HospitalizationServiceImpl implements HospitalizationService {
     public List<Hospitalization> getPatientMessage(Integer patientId) {
         return hospitalizationMapper.selectByPatientId(patientId);
     }
+
+    @Override
+    public Hospitalization findTheLastHospitalization(Integer id) {
+        return hospitalizationMapper.findTheLastHospitalization(id);
+    }
+
+    @Override
+    public List<Hospitalization> findOtherHospitalization(Hospitalization hospitalization) {
+        return hospitalizationMapper.findOtherHospitalization(hospitalization);
+    }
 }

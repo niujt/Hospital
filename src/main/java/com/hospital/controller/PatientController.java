@@ -1,6 +1,7 @@
 package com.hospital.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.hospital.entity.Hospitalization;
 import com.hospital.entity.Login;
 import com.hospital.entity.Medicalhistory;
 import com.hospital.entity.Patient;
@@ -68,5 +69,16 @@ public class PatientController {
         Patient patient=patientService.findPatientByLoginId(login.getId());
         request.setAttribute("medicalhistorys",medicalhistoryService.getMedicalhistoryByPatientId(patient.getId()));
         return "patient/medicalhistory";
+    }
+    @RequestMapping(value = "/patient/hospitalization")
+    public String hospitalization(HttpSession session,HttpServletRequest request){
+        Login login=(Login)session.getAttribute("login");
+        Patient patient=patientService.findPatientByLoginId(login.getId());
+        request.setAttribute("theLast",hospitalizationService.findTheLastHospitalization(patient.getHospitalizationid()));
+        Hospitalization hospitalization=new Hospitalization();
+        hospitalization.setPatientid(patient.getId());
+        hospitalization.setId(patient.getHospitalizationid());
+        request.setAttribute("others",hospitalizationService.findOtherHospitalization(hospitalization));
+        return "patient/hospitalization";
     }
 }

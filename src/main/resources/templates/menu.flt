@@ -16,7 +16,7 @@
         <li class="layui-nav-item" <#if login.role!=1>style="display:none"</#if>><a href="/admin/hospitalizationManage">住院信息管理</a></li>
         <li class="layui-nav-item" <#if login.role!=1>style="display:none"</#if>><a href="/admin/adminManage">管理员管理</a></li>
         <li class="layui-nav-item" <#if login.role!=3>style="display:none"</#if>><a href="/patient/medicalhistory">病史</a></li>
-        <li class="layui-nav-item" <#if login.role!=3>style="display:none"</#if>><a href="#">住院信息</a></li>
+        <li class="layui-nav-item" <#if login.role!=3>style="display:none"</#if>><a href="/patient/hospitalization">住院信息</a></li>
         <li class="layui-nav-item" <#if login.role!=3>style="display:none"</#if>><a href="#">挂号</a></li>
         <li class="layui-nav-item" <#if login.role!=2>style="display:none"</#if>><a href="/doctor/seekMedicalAdvice">就医&nbsp;&nbsp;查看病史</a></li>
     </ul>

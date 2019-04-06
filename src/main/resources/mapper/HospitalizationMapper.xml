@@ -25,6 +25,14 @@
     from Hospitalization
     where patientid = #{patientid}
   </select>
+  <select id="findTheLastHospitalization" resultType="com.hospital.entity.Hospitalization" parameterType="Integer">
+    SELECT  h.*,p.name as patientname from hospitalization h
+                                             left join patient p on p.id=h.patientid where h.id=#{id};
+  </select>
+  <select id="findOtherHospitalization" resultType="com.hospital.entity.Hospitalization" parameterType="com.hospital.entity.Hospitalization">
+    SELECT  h.*,p.name as patientname from hospitalization h
+                                             left join patient p on p.id=h.patientid where h.id &lt;&gt; #{id} and patientid=#{patientid};
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from hospitalization
     where id = #{id,jdbcType=INTEGER}
