@@ -77,5 +77,10 @@ public class LoginController {
         json.put("message",loginService.regist(login));
         return json;
     }
+    @RequestMapping("/hospital/index")
+    public String index(HttpSession session){
+        session.getAttribute("login");
+        return "index";
+    }
 
 }

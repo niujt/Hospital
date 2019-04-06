@@ -100,6 +100,11 @@
             </tbody>
         </table>
 </div>
+<div class="layui-footer">
+    <!-- 底部固定区域 -->
+    © createdBy 20190404
+</div>
+<script src="../static/js/layui.all.js"></script>
 <script src="/static/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
     function showHistroy(){
