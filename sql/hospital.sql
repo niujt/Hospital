@@ -11,7 +11,7 @@
  Target Server Version : 50712
  File Encoding         : 65001
 
- Date: 31/03/2019 00:17:53
+ Date: 06/04/2019 16:18:52
 */
 
 SET NAMES utf8mb4;
@@ -27,7 +27,7 @@ CREATE TABLE `appointment`  (
   `doctorid` int(11) NULL DEFAULT NULL COMMENT '医生id',
   `time` date NULL DEFAULT NULL COMMENT '预约时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of appointment
@@ -39,6 +39,8 @@ INSERT INTO `appointment` VALUES (9, 4, 1, '2023-02-01');
 INSERT INTO `appointment` VALUES (10, 4, 2, '2019-03-05');
 INSERT INTO `appointment` VALUES (13, 3, 1, '2019-03-31');
 INSERT INTO `appointment` VALUES (14, 4, 1, '2017-02-05');
+INSERT INTO `appointment` VALUES (15, 1, 2, '2019-04-06');
+INSERT INTO `appointment` VALUES (16, 1, 2, '2019-04-27');
 
 -- ----------------------------
 -- Table structure for doctor
@@ -99,7 +101,7 @@ CREATE TABLE `hospitalization`  (
   `intime` date NULL DEFAULT NULL COMMENT '住院时间',
   `outtime` date NULL DEFAULT NULL COMMENT '出院时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of hospitalization
@@ -110,6 +112,7 @@ INSERT INTO `hospitalization` VALUES (3, '2', '2', '305', 'asd', 3, '2019-03-07'
 INSERT INTO `hospitalization` VALUES (4, '2', '1', '305', 'dsad', 4, '2019-03-07', '2019-03-18');
 INSERT INTO `hospitalization` VALUES (5, '3', '2', '306', 'add', 4, '2019-03-07', '2019-03-19');
 INSERT INTO `hospitalization` VALUES (8, '1', '2', '102', 'adasdasd', 3, '2019-03-28', '2019-03-31');
+INSERT INTO `hospitalization` VALUES (9, '1', '1', '102', '脑残', 1, '2019-04-06', NULL);
 
 -- ----------------------------
 -- Table structure for login
@@ -185,7 +188,7 @@ CREATE TABLE `patient`  (
 -- ----------------------------
 -- Records of patient
 -- ----------------------------
-INSERT INTO `patient` VALUES (1, '赵老一', 20, '111', 0, '江苏/苏州', 1, '1,2', 0, 1, 5);
+INSERT INTO `patient` VALUES (1, '赵老一', 20, '111', 0, '江苏/苏州', 1, '1,2,3,4', 0, 15, 5);
 INSERT INTO `patient` VALUES (2, '赵老二', 21, '222', 0, '江苏/无锡', 2, '2', 0, 7, 6);
 INSERT INTO `patient` VALUES (3, '赵老三', 22, '333', 0, '江苏/淮安', 3, '3', 1, 8, 7);
 INSERT INTO `patient` VALUES (4, '赵老四', 23, '444', 0, '江苏/镇江', 4, '4', 2, 9, 8);
