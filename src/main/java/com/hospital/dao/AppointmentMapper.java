@@ -19,4 +19,5 @@ public interface AppointmentMapper {
     int updateByPrimaryKey(Appointment record);
     List<Appointment> findAll();
     List<Appointment> selectByPatientId(@Param("patientid")Integer patientId);
+    List<Appointment> selectByDoctorId(@Param("doctorId")Integer doctorId);
 }

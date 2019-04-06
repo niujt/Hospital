@@ -11,4 +11,5 @@ public interface DoctorService {
     String addDoctor(Doctor doctor);
     Doctor getDoctor(Integer id);
     String upDoctor(Doctor doctor);
+    Doctor getDoctorByLoginId(Integer loginid);
 }

@@ -2,17 +2,34 @@ package com.hospital.controller;
 
 import com.alibaba.fastjson.JSONObject;
 import com.hospital.entity.Doctor;
-import com.hospital.service.DoctorService;
+import com.hospital.entity.Hospitalization;
+import com.hospital.entity.Login;
+import com.hospital.entity.Patient;
+import com.hospital.service.*;
+import com.hospital.uitls.DrugsUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import java.util.Map;
+
+import static javax.swing.text.html.CSS.getAttribute;
 
 @Controller
 public class DoctorController {
     @Autowired
     DoctorService doctorService;
+    @Autowired
+    AppointmentService appointmentService;
+    @Autowired
+    PatientService patientService;
+    @Autowired
+    DrugsService drugsService;
+    @Autowired
+    HospitalizationService hospitalizationService;
     @RequestMapping("/admin/doctorManage")
     public String doctorManage(HttpServletRequest request){
         request.setAttribute("doctors",doctorService.getAllDoctor());
@@ -48,4 +65,37 @@ public class DoctorController {
     public String doctorAddPage(){
         return "admin/add/doctoradd";
     }
+
+    @RequestMapping("/doctor/seekMedicalAdvice")
+    public String seekMedicalAdvice(HttpServletRequest request, HttpSession session){
+        Login login=(Login)session.getAttribute("login");
+        Doctor doctor=doctorService.getDoctorByLoginId(login.getId());
+        request.setAttribute("appointments" ,appointmentService.selectByDoctorId(doctor.getId()));
+        return "doctor/seekMedicalAdvice";
+    }
+    @RequestMapping("/doctor/seek/{id}")
+    public String seek(@PathVariable Integer id,HttpServletRequest request){
+        request.setAttribute("patient",patientService.getPatient(id));
+        request.setAttribute("drugs",drugsService.getAllDrugs());
+        return "doctor/seek";
+    }
+    @RequestMapping(value = "/doctor/drug",method = RequestMethod.PUT)
+    @ResponseBody
+    public JSONObject drug(@RequestBody Map map){
+        JSONObject json=new JSONObject();
+        Patient patient=new Patient();
+        System.out.println(map);
+        patient.setDrugsids(DrugsUtils.vaild(map));
+        patient.setId(Integer.parseInt((String)map.get("patientid")));
+        json.put("message",patientService.seek(patient));
+        return json;
+    }
+    @RequestMapping(value = "/doctor/zation",method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject zation(@RequestBody Hospitalization hospitalization){
+        JSONObject json=new JSONObject();
+        json.put("message",hospitalizationService.AddHospitalization(hospitalization));
+        return json;
+    }
+
 }

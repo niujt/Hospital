@@ -55,4 +55,9 @@ public class PatientServiceImpl implements PatientService {
         }
         return message;
     }
+
+    @Override
+    public String seek(Patient patient) {
+        return patientMapper.updateByPrimaryKeySelective(patient)>0?CommonService.upd_message_success:CommonService.upd_message_error;
+    }
 }

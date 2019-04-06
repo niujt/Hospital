@@ -91,7 +91,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>住院时间：</td>
+                    <td>出院时间：</td>
                     <td>
                         <input type="date" name="outtime" required value="${(h.outtime?string('yyyy-MM-dd'))!}"  lay-verify="required"  autocomplete="off" class="layui-input">
                     </td>
@@ -102,9 +102,6 @@
                         <button type="submit" class="layui-btn">更新</button>
                     </td>
                 </tr>
-                <tbody>
-
-                </tbody>
             </table>
         </form>
     </div>

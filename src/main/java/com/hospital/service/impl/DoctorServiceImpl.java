@@ -59,4 +59,9 @@ public class DoctorServiceImpl implements DoctorService {
         login.setId(doctor.getLoginid());
         return (doctorMapper.updateByPrimaryKey(doctor)>0&&loginMapper.updateByPrimaryKey(login)>0)?CommonService.upd_message_success:CommonService.upd_message_error;
     }
+
+    @Override
+    public Doctor getDoctorByLoginId(Integer loginid) {
+        return doctorMapper.getDoctorByLoginId(loginid);
+    }
 }

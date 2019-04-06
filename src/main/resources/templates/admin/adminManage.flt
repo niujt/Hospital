@@ -8,7 +8,7 @@
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
-    <#include "menu.flt"/>
+    <#include "../menu.flt"/>
 
 
     <div class="layui-body">
@@ -53,7 +53,6 @@
     <#include "../foot.flt"/>
 
 </div>
-<script src="../static/js/layui.all.js"></script>
 <script>
     //JavaScript代码区域
     layui.use('element', function(){

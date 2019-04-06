@@ -1,5 +1,5 @@
 <div class="layui-header">
-    <div class="layui-logo"><span style="display: none">欢迎进入</span>医疗系统<span>后台管理<span></div>
+    <div class="layui-logo"><span style="display: none">欢迎进入</span>医疗系统<span <#if login.role!=1>style="display:none"</#if>>后台管理<span></div>
     <!-- 头部区域（可配合layui已有的水平导航） -->
     <ul class="layui-nav layui-layout-left">
         <li class="layui-nav-item"><a href="/test">首页</a></li>
@@ -15,11 +15,11 @@
         <li class="layui-nav-item" <#if login.role!=1>style="display:none"</#if>><a href="/admin/medicalhistoryManage">病史管理</a></li>
         <li class="layui-nav-item" <#if login.role!=1>style="display:none"</#if>><a href="/admin/hospitalizationManage">住院信息管理</a></li>
         <li class="layui-nav-item" <#if login.role!=1>style="display:none"</#if>><a href="/admin/adminManage">管理员管理</a></li>
-        <li class="layui-nav-item" <#if login.role!=2>style="display:none"</#if>><a href="#">病史</a></li>
-        <li class="layui-nav-item" <#if login.role!=2>style="display:none"</#if>><a href="#">住院信息</a></li>
+        <li class="layui-nav-item" <#if login.role!=3>style="display:none"</#if>><a href="#">病史</a></li>
+        <li class="layui-nav-item" <#if login.role!=3>style="display:none"</#if>><a href="#">住院信息</a></li>
         <li class="layui-nav-item" <#if login.role!=3>style="display:none"</#if>><a href="#">挂号</a></li>
-        <li class="layui-nav-item" <#if login.role!=3>style="display:none"</#if>><a href="#">就医</a></li>
-        <li class="layui-nav-item" <#if login.role!=3>style="display:none"</#if>><a href="#">查看病史</a></li>
+        <li class="layui-nav-item" <#if login.role!=2>style="display:none"</#if>><a href="/doctor/seekMedicalAdvice">就医</a></li>
+        <li class="layui-nav-item" <#if login.role!=2>style="display:none"</#if>><a href="#">查看病史</a></li>
     </ul>
     <ul class="layui-nav layui-layout-right">
         <li class="layui-nav-item">

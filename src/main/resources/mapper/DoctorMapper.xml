@@ -19,6 +19,9 @@
   <select id="getDoctorByCertId" resultType="com.hospital.entity.Doctor" parameterType="String">
     select * from doctor where certId=#{certId}
   </select>
+  <select id="getDoctorByLoginId" resultType="com.hospital.entity.Doctor" parameterType="Integer">
+    select * from doctor where loginid=#{loginid}
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.hospital.entity.Doctor">
     select *
     from doctor

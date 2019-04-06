@@ -1,1 +1,64 @@
-就医
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>就医</title>
+    <link rel="stylesheet" href="../static/css/layui.min.css">
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <#include "../menu.flt"/>
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <div style="padding: 15px;">
+            <table class="layui-table">
+                <colgroup>
+                    <col width="150" >
+                    <col width="200" >
+                    <col width="200" >
+                    <col width="200" >
+                    <col width="200" >
+                    <col>
+                </colgroup>
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>患者名称</th>
+                    <th>预约时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                <#list appointments as a>
+                    <tr>
+                        <td>${a_index+1}</td>
+                        <td>${a.patientname!''}</td>
+                        <td>${(a.time?string("yyyy-MM-dd"))!}</td>
+                        <td>  <button class="layui-btn" onclick="seek(${a.patientid})">就医</button></td>
+                    </tr>
+                </#list>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="/static/js/layui.all.js"></script>
+<script type="text/javascript">
+    function seek(id){
+        layer.open({
+            type: 2,
+            title: '就医',
+            closeBtn: 0,
+            area:['800px','800px'],
+            content: ['/doctor/seek/'+id,'yes'],
+            btn: ['取消'],
+            yes: function(index){
+                //事件
+                layer.close(index);
+            }
+        });
+    }
+</script>
+</body>
+</html>

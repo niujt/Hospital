@@ -16,9 +16,18 @@
     left join doctor d on d.id=a.doctorid order by a.id
   </select>
   <select id="selectByPatientId" parameterType="java.lang.Integer" resultType="com.hospital.entity.Appointment">
-    select *
-    from Appointment
+    select a.*,p.name as patientname,d.name as doctorname from appointment a
+    left join patient p on a.patientid=p.id
+   left join doctor d on d.id=a.doctorid
     where patientid = #{patientid}
+    order by a.id
+  </select>
+  <select id="selectByDoctorId" parameterType="java.lang.Integer" resultType="com.hospital.entity.Appointment">
+    select a.*,p.name as patientname,d.name as doctorname from appointment a
+    left join patient p on a.patientid=p.id
+    left join doctor d on d.id=a.doctorid
+    where doctorid = #{doctorId}
+    order by a.id
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 

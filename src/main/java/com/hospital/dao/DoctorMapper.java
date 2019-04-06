@@ -19,4 +19,5 @@ public interface DoctorMapper {
 
     int updateByPrimaryKey(Doctor record);
     Doctor getDoctorByCertId(@Param("certId")String certId);
+    Doctor getDoctorByLoginId(@Param("loginid")Integer loginid);
 }
