@@ -1,10 +1,7 @@
 package com.hospital.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.hospital.entity.Hospitalization;
-import com.hospital.entity.Login;
-import com.hospital.entity.Medicalhistory;
-import com.hospital.entity.Patient;
+import com.hospital.entity.*;
 import com.hospital.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -80,5 +77,25 @@ public class PatientController {
         hospitalization.setId(patient.getHospitalizationid());
         request.setAttribute("others",hospitalizationService.findOtherHospitalization(hospitalization));
         return "patient/hospitalization";
+    }
+    @RequestMapping(value = "/patient/appointment")
+    public String appointmentInfo(HttpServletRequest request,HttpSession session){
+        Login login=(Login)session.getAttribute("login");
+        Patient patient=patientService.findPatientByLoginId(login.getId());
+        request.setAttribute("patientid",patient.getId());
+        request.setAttribute("doctors",doctorService.getAllDoctor());
+        return "patient/appointment";
+    }
+    @RequestMapping(value = "/patient/appointment",method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject appointment(@RequestBody Appointment appointment){
+        JSONObject json=new JSONObject();
+        Patient patient=new Patient();
+        String message=appointmentService.addAppointment(appointment);
+        patient.setAppointmentid(appointmentService.selectTheLastAppointment(appointment.getPatientid()));
+        patient.setId(appointment.getPatientid());
+        patientService.updateAppointMent(patient);
+        json.put("message",message);
+        return json;
     }
 }

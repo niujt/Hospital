@@ -29,6 +29,10 @@
     where doctorid = #{doctorId}
     order by a.id
   </select>
+  <select id="selectTheLast" parameterType="Integer"  resultType="Integer">
+    select max(id) from Appointment
+    where patientid = #{patientid}
+  </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

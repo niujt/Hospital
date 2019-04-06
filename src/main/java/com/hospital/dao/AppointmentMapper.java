@@ -20,4 +20,5 @@ public interface AppointmentMapper {
     List<Appointment> findAll();
     List<Appointment> selectByPatientId(@Param("patientid")Integer patientId);
     List<Appointment> selectByDoctorId(@Param("doctorId")Integer doctorId);
+    Integer selectTheLast(@Param("patientid")Integer patientId);
 }

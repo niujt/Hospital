@@ -48,4 +48,9 @@ public class AppointmentServiceImpl implements AppointmentService {
     public List<Appointment> selectByDoctorId(Integer doctorId) {
         return appointmentMapper.selectByDoctorId(doctorId);
     }
+
+    @Override
+    public Integer selectTheLastAppointment(Integer patientId) {
+        return appointmentMapper.selectTheLast(patientId);
+    }
 }

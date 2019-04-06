@@ -12,4 +12,5 @@ public interface PatientService {
     String addPatient(Patient patient);
     String seek(Patient patient);
     Patient findPatientByLoginId(Integer loginid);
+    String updateAppointMent(Patient patient);
 }
