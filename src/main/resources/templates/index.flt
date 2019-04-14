@@ -65,10 +65,6 @@
         </li>
     </ul>
 </div>
-    <div class="layui-footer">
-        <!-- 底部固定区域 -->
-        © createdBy 20190404
-    </div>
     <script src="../static/js/layui.all.js"></script>
 </body>
 </html>
