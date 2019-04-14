@@ -22,7 +22,9 @@
 			<input type="certId" name="certId" placeholder="身份证号(若注册管理员则不需要)" />
 			<input type="username" name="username" placeholder="账号" />
 			<input type="password" name="password" placeholder="密码" />
-			<button type="submit">注册</button>&nbsp;&nbsp;&nbsp;&nbsp;<span id="message2" style="color: red"></span>
+			<div>
+			<button type="submit">注册</button><button type="reset">重置</button>&nbsp;&nbsp;&nbsp;&nbsp;<span id="message2" style="color: red"></span>
+			</div>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
@@ -30,7 +32,9 @@
 			<h1>登录</h1>
 			<input type="username" name="username" placeholder="账号" />
 			<input type="password"  name="password" placeholder="密码" />
-			<button type="submit">登录</button>&nbsp;&nbsp;&nbsp;&nbsp;<span id="message" style="color: red"></span>
+			<div>
+				<button type="submit">登录</button><button type="reset">重置</button>&nbsp;&nbsp;&nbsp;&nbsp;<span id="message" style="color: red"></span>
+			</div>
 		</form>
 	</div>
 	<div class="overlay-container">
