@@ -2,21 +2,33 @@ package com.hospital.service.impl;
 
 import com.hospital.common.CommonService;
 import com.hospital.dao.HospitalizationMapper;
+import com.hospital.dao.PatientMapper;
 import com.hospital.entity.Hospitalization;
 import com.hospital.service.HospitalizationService;
+import com.hospital.uitls.DateUtils;
+import com.hospital.uitls.PatientDoctorutils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Service
 public class HospitalizationServiceImpl implements HospitalizationService {
     @Autowired
     HospitalizationMapper hospitalizationMapper;
+    @Autowired
+    PatientMapper patientMapper;
+    @Override
+    public List<Hospitalization> getAllHospitalizations(String patientname, String intime) {
+        List<Integer> patientIds=PatientDoctorutils.getPatientIds(patientname,patientMapper);
+        return hospitalizationMapper.findAll(patientIds,intime);
+    }
 
     @Override
     public List<Hospitalization> getAllHospitalizations() {
-        return hospitalizationMapper.findAll();
+        return hospitalizationMapper.findAll(null,null);
     }
 
     @Override

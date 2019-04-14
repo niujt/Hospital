@@ -4,7 +4,6 @@ import com.hospital.dao.DoctorMapper;
 import com.hospital.dao.PatientMapper;
 import com.hospital.entity.Doctor;
 import com.hospital.entity.Patient;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -48,5 +47,24 @@ public class PatientDoctorutils {
         map.put("patientids",patientids);
         map.put("doctorids",doctorids);
         return map;
+    }
+    public  static List<Integer> getPatientIds(String patientname, PatientMapper patientMapper){
+        Integer patientid=99999999;
+        List<Integer> patientids=new ArrayList<>();
+        if(patientname!="" &&patientname!=null){
+            patientname=patientname.trim();
+            List<Patient> patientList=patientMapper.getPatientByName(patientname);
+            if(patientList!=null){
+                patientids.add(patientid);
+                for(Patient patient:patientList){
+                    patientid=patient.getId();
+                    patientids.add(patientid);
+                }
+            }
+        }
+        else{
+            patientids=null;
+        }
+        return patientids;
     }
 }

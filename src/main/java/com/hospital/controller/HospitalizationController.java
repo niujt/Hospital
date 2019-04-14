@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Date;
 import java.util.List;
 
 @Controller
@@ -21,8 +22,8 @@ public class HospitalizationController {
     @Autowired
     PatientService patientService;
     @RequestMapping("/admin/hospitalizationManage")
-    public String hospitalizationManage(HttpServletRequest request){
-        request.setAttribute("hospitalizations",hospitalizationService.getAllHospitalizations());
+    public String hospitalizationManage(HttpServletRequest request,@RequestParam(value = "patientname",required = false)String patientname,@RequestParam(value = "intime",required = false)String intime){
+        request.setAttribute("hospitalizations",hospitalizationService.getAllHospitalizations(patientname,intime));
         return "admin/hospitalizationManage";
     }
     @RequestMapping("/admin/hospitalizationAdd")
