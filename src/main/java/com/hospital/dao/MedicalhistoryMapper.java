@@ -19,5 +19,5 @@ public interface MedicalhistoryMapper {
     int updateByPrimaryKeySelective(Medicalhistory record);
 
     int updateByPrimaryKey(Medicalhistory record);
-    List<Medicalhistory> findAll();
+    List<Medicalhistory> findAll(List<Integer> doctorids,List<Integer> patientids);
 }

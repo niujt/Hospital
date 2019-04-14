@@ -13,6 +13,20 @@
     select m.*,p.name as patientname,d.name as doctorname from Medicalhistory m
     left join patient p on p.id=m.patientid
     left join doctor d on m.doctorid=d.id
+    where 1=1
+    <if test="patientids !=null">
+      and m.patientid in
+      <foreach collection="patientids" item="patientid" index="index" open="(" close=")" separator=",">
+        #{patientid}
+      </foreach>
+
+    </if>
+    <if test="doctorids !=null">
+      and m.doctorid in
+      <foreach collection="doctorids" item="doctorid" index="index" open="(" close=")" separator=",">
+        #{doctorid}
+      </foreach>
+    </if>
     order by m.id
   </select>
   <select id="selectByPatientId" parameterType="java.lang.Integer" resultType="com.hospital.entity.Medicalhistory">
