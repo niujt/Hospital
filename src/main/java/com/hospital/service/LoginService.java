@@ -5,7 +5,7 @@ import com.hospital.entity.Login;
 import java.util.List;
 
 public interface LoginService {
-    List<Login> findAllAdmin();
+    List<Login> findAllAdmin(String username);
     String addAmin(Login login);
     String updateAdmin(Login login);
     String delAdmin(Integer id);

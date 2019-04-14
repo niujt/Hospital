@@ -17,7 +17,7 @@ public interface LoginMapper {
     int updateByPrimaryKeySelective(Login record);
 
     int updateByPrimaryKey(Login record);
-    List<Login> findAllAdmin();
+    List<Login> findAllAdmin(@Param("username")String username);
     int insertAdmin(Login login);
     Login findByUsername(@Param("username")String username);
 }

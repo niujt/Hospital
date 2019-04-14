@@ -10,8 +10,12 @@
   <sql id="Base_Column_List">
     id, username, password,role
   </sql>
-  <select id="findAllAdmin" resultType="com.hospital.entity.Login">
+  <select id="findAllAdmin" resultType="com.hospital.entity.Login" parameterType="String">
     select * from login where role=1
+    <if test="username!='' and username!=null">
+      and username like concat('%',#{username},'%')
+
+    </if>
   </select>
   <select id="findByUsername" resultType="com.hospital.entity.Login" parameterType="String">
     select * from login where username=#{username}

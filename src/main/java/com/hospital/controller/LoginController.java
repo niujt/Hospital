@@ -19,8 +19,8 @@ public class LoginController {
         return "login&regist";
     }
     @RequestMapping("/admin/adminManage")
-    public String adminManage(HttpServletRequest request){
-        request.setAttribute("admins",loginService.findAllAdmin());
+    public String adminManage(HttpServletRequest request,@RequestParam(value = "username",required = false)String username){
+        request.setAttribute("admins",loginService.findAllAdmin(username));
         return "/admin/adminManage";
     }
     @RequestMapping("/index")

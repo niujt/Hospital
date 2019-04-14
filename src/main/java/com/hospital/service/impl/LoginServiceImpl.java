@@ -21,8 +21,8 @@ public class LoginServiceImpl implements LoginService {
     @Autowired
     DoctorMapper doctorMapper;
     @Override
-    public List<Login> findAllAdmin() {
-        return loginMapper.findAllAdmin();
+    public List<Login> findAllAdmin(String username) {
+        return loginMapper.findAllAdmin(username);
     }
 
     @Override
