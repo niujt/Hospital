@@ -61,8 +61,9 @@ public class AppointmentServiceImpl implements AppointmentService {
     }
 
     @Override
-    public List<Appointment> selectByDoctorId(Integer doctorId) {
-        return appointmentMapper.selectByDoctorId(doctorId);
+    public List<Appointment> selectByDoctorId(Integer doctorId,String patientname,String time) {
+        List<Integer> patientids=PatientDoctorutils.getPatientIds(patientname,patientMapper);
+        return appointmentMapper.selectByDoctorId(doctorId,patientids,time);
     }
 
     @Override

@@ -12,6 +12,6 @@ public interface AppointmentService {
     String UpdateAppointment(Appointment appointment);
     String addAppointment(Appointment appointment);
     List<Appointment> getPatientMessage(Integer patientId);
-    List<Appointment> selectByDoctorId(Integer doctorId);
+    List<Appointment> selectByDoctorId(Integer doctorId,String patientname,String time);
     Integer selectTheLastAppointment(Integer patientId);
 }

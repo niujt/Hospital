@@ -42,6 +42,15 @@
     left join patient p on a.patientid=p.id
     left join doctor d on d.id=a.doctorid
     where doctorid = #{doctorId}
+    <if test="patientids !=null">
+      and a.patientid in
+      <foreach collection="patientids" item="patientid" index="index" open="(" close=")" separator=",">
+        #{patientid}
+      </foreach>
+    </if>
+    <if test="time !=null and time!=''">
+      and a.time=#{time}
+    </if>
     order by a.id
   </select>
   <select id="selectTheLast" parameterType="Integer"  resultType="Integer">

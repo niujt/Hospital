@@ -12,6 +12,17 @@
     <div class="layui-body">
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
+            <form action="/doctor/seekMedicalAdvice" method="get">
+                <table>
+                    <tr>
+                        <td>患者:</td>
+                        <td><input name="patientname" autocomplete="off"  class="layui-input lay-size=sm" ></td>
+                        <td>&nbsp;&nbsp;预约时间:</td>
+                        <td><input name="time" type="date" autocomplete="off" class="layui-input lay-size=sm" ></td>
+                        <td>   <button class="layui-btn" type="submit"><i class="layui-icon">&#xe615;</i></button></div></td>
+        </tr>
+        </table>
+        </form>
             <table class="layui-table">
                 <colgroup>
                     <col width="150" >
