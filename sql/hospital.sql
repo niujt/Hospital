@@ -11,7 +11,7 @@
  Target Server Version : 50712
  File Encoding         : 65001
 
- Date: 06/04/2019 16:18:52
+ Date: 14/04/2019 16:23:18
 */
 
 SET NAMES utf8mb4;
@@ -22,11 +22,11 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `appointment`;
 CREATE TABLE `appointment`  (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `patientid` int(11) NULL DEFAULT NULL COMMENT '患者id',
-  `doctorid` int(11) NULL DEFAULT NULL COMMENT '医生id',
-  `time` date NULL DEFAULT NULL COMMENT '预约时间',
-  PRIMARY KEY (`id`) USING BTREE
+                              `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+                              `patientid` int(11) NULL DEFAULT NULL COMMENT '患者id',
+                              `doctorid` int(11) NULL DEFAULT NULL COMMENT '医生id',
+                              `time` date NULL DEFAULT NULL COMMENT '预约时间',
+                              PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 17 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -39,7 +39,7 @@ INSERT INTO `appointment` VALUES (9, 4, 1, '2023-02-01');
 INSERT INTO `appointment` VALUES (10, 4, 2, '2019-03-05');
 INSERT INTO `appointment` VALUES (13, 3, 1, '2019-03-31');
 INSERT INTO `appointment` VALUES (14, 4, 1, '2017-02-05');
-INSERT INTO `appointment` VALUES (15, 1, 2, '2019-04-06');
+INSERT INTO `appointment` VALUES (15, 1, 1, '2019-04-06');
 INSERT INTO `appointment` VALUES (16, 1, 2, '2019-04-27');
 
 -- ----------------------------
@@ -47,15 +47,15 @@ INSERT INTO `appointment` VALUES (16, 1, 2, '2019-04-27');
 -- ----------------------------
 DROP TABLE IF EXISTS `doctor`;
 CREATE TABLE `doctor`  (
-  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '姓名',
-  `age` int(11) NULL DEFAULT NULL COMMENT '年龄',
-  `certId` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '身份证',
-  `sex` int(10) NULL DEFAULT NULL COMMENT '性别',
-  `department` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '部门',
-  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '家庭住址',
-  `loginid` int(11) NULL DEFAULT NULL COMMENT '登录',
-  PRIMARY KEY (`id`) USING BTREE
+                         `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键',
+                         `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '姓名',
+                         `age` int(11) NULL DEFAULT NULL COMMENT '年龄',
+                         `certId` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '身份证',
+                         `sex` int(10) NULL DEFAULT NULL COMMENT '性别',
+                         `department` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '部门',
+                         `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '家庭住址',
+                         `loginid` int(11) NULL DEFAULT NULL COMMENT '登录',
+                         PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -70,10 +70,10 @@ INSERT INTO `doctor` VALUES (3, '王五', 56, '888', 1, '妇产科', 'sasasas', 
 -- ----------------------------
 DROP TABLE IF EXISTS `drugs`;
 CREATE TABLE `drugs`  (
-  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '药品名称',
-  `type` int(10) NULL DEFAULT NULL COMMENT '药品类型',
-  PRIMARY KEY (`id`) USING BTREE
+                        `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键',
+                        `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '药品名称',
+                        `type` int(10) NULL DEFAULT NULL COMMENT '药品类型',
+                        PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -92,15 +92,15 @@ INSERT INTO `drugs` VALUES (13, 'werwer', 2);
 -- ----------------------------
 DROP TABLE IF EXISTS `hospitalization`;
 CREATE TABLE `hospitalization`  (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `floor` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '楼层',
-  `bed` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '床号',
-  `door` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '房间号',
-  `medicalname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '病名称',
-  `patientid` int(11) NULL DEFAULT NULL COMMENT '患者id',
-  `intime` date NULL DEFAULT NULL COMMENT '住院时间',
-  `outtime` date NULL DEFAULT NULL COMMENT '出院时间',
-  PRIMARY KEY (`id`) USING BTREE
+                                  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+                                  `floor` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '楼层',
+                                  `bed` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '床号',
+                                  `door` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '房间号',
+                                  `medicalname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '病名称',
+                                  `patientid` int(11) NULL DEFAULT NULL COMMENT '患者id',
+                                  `intime` date NULL DEFAULT NULL COMMENT '住院时间',
+                                  `outtime` date NULL DEFAULT NULL COMMENT '出院时间',
+                                  PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -119,11 +119,11 @@ INSERT INTO `hospitalization` VALUES (9, '1', '1', '102', '脑残', 1, '2019-04-
 -- ----------------------------
 DROP TABLE IF EXISTS `login`;
 CREATE TABLE `login`  (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '账号',
-  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '密码',
-  `role` int(255) NULL DEFAULT NULL COMMENT '权限',
-  PRIMARY KEY (`id`) USING BTREE
+                        `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+                        `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '账号',
+                        `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '密码',
+                        `role` int(255) NULL DEFAULT NULL COMMENT '权限',
+                        PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -148,13 +148,13 @@ INSERT INTO `login` VALUES (13, '111', '123456', 1);
 -- ----------------------------
 DROP TABLE IF EXISTS `medicalhistory`;
 CREATE TABLE `medicalhistory`  (
-  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `patientid` int(10) NULL DEFAULT NULL COMMENT '患者id',
-  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '病史名称',
-  `time` date NULL DEFAULT NULL COMMENT '患病时间',
-  `hospitalizationid` int(11) NULL DEFAULT NULL COMMENT '住院信息',
-  `doctorid` int(11) NULL DEFAULT NULL COMMENT '确诊人',
-  PRIMARY KEY (`id`) USING BTREE
+                                 `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+                                 `patientid` int(10) NULL DEFAULT NULL COMMENT '患者id',
+                                 `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '病史名称',
+                                 `time` date NULL DEFAULT NULL COMMENT '患病时间',
+                                 `hospitalizationid` int(11) NULL DEFAULT NULL COMMENT '住院信息',
+                                 `doctorid` int(11) NULL DEFAULT NULL COMMENT '确诊人',
+                                 PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
@@ -171,18 +171,18 @@ INSERT INTO `medicalhistory` VALUES (5, 1, '狂犬病', '2019-03-23', 1, 2);
 -- ----------------------------
 DROP TABLE IF EXISTS `patient`;
 CREATE TABLE `patient`  (
-  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键',
-  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '姓名',
-  `age` int(10) NULL DEFAULT NULL COMMENT '年龄',
-  `certId` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '身份证',
-  `sex` int(10) NULL DEFAULT NULL COMMENT '性别',
-  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '家庭住址',
-  `Hospitalizationid` int(10) NULL DEFAULT NULL COMMENT '住院信息',
-  `drugsids` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '药品信息',
-  `isout` int(255) NULL DEFAULT NULL COMMENT '是否出院',
-  `appointmentid` int(11) NULL DEFAULT NULL COMMENT '预约信息',
-  `loginid` int(11) NULL DEFAULT NULL COMMENT '登录',
-  PRIMARY KEY (`id`) USING BTREE
+                          `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键',
+                          `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '姓名',
+                          `age` int(10) NULL DEFAULT NULL COMMENT '年龄',
+                          `certId` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '身份证',
+                          `sex` int(10) NULL DEFAULT NULL COMMENT '性别',
+                          `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '家庭住址',
+                          `Hospitalizationid` int(10) NULL DEFAULT NULL COMMENT '住院信息',
+                          `drugsids` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '药品信息',
+                          `isout` int(255) NULL DEFAULT NULL COMMENT '是否出院',
+                          `appointmentid` int(11) NULL DEFAULT NULL COMMENT '预约信息',
+                          `loginid` int(11) NULL DEFAULT NULL COMMENT '登录',
+                          PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
