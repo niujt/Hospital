@@ -33,8 +33,8 @@ public class DoctorController {
     @Autowired
     MedicalhistoryService medicalhistoryService;
     @RequestMapping("/admin/doctorManage")
-    public String doctorManage(HttpServletRequest request){
-        request.setAttribute("doctors",doctorService.getAllDoctor());
+    public String doctorManage(HttpServletRequest request,@RequestParam(value="name",required = false) String name,@RequestParam(value="certId",required = false) String certId){
+        request.setAttribute("doctors",doctorService.getAllDoctor(name,certId));
         return "admin/doctorManage";
     }
     @RequestMapping(value = "/admin/doctor/{id}",method = RequestMethod.DELETE)

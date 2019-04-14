@@ -17,8 +17,13 @@ public class PatientServiceImpl implements PatientService {
     @Autowired
     LoginMapper loginMapper;
     @Override
+    public List<Patient> getAllPatients(String name,String certId) {
+        return patientMapper.findAll(name,certId);
+    }
+
+    @Override
     public List<Patient> getAllPatients() {
-        return patientMapper.findAll();
+        return patientMapper.findAll("","");
     }
 
     @Override

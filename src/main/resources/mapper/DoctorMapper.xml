@@ -14,7 +14,15 @@
     id, name, age, sex, address, loginid,department
   </sql>
   <select id="getAll" resultType="com.hospital.entity.Doctor">
-    select * from doctor order by id
+    select * from doctor
+    where 1=1
+    <if test="name !='' and name !=null">
+      and name like CONCAT('%', #{name}, '%')
+    </if>
+    <if test="certId !='' and certId !=null">
+      and certId like CONCAT('%',#{certId},'%')
+    </if>
+    order by id
   </select>
   <select id="getDoctorByCertId" resultType="com.hospital.entity.Doctor" parameterType="String">
     select * from doctor where certId=#{certId}

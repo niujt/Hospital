@@ -17,6 +17,6 @@ public interface DrugsMapper {
     int updateByPrimaryKeySelective(Drugs record);
 
     int updateByPrimaryKey(Drugs record);
-    List<Drugs> findAll();
+    List<Drugs> findAll(Drugs drugs);
     Drugs findByName(@Param("name")String name);
 }

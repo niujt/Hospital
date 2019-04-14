@@ -15,10 +15,18 @@
   <sql id="Base_Column_List">
     id, name, age, sex, address, Hospitalizationid, drugsids, appointmentid, loginid
   </sql>
-  <select id="findAll" resultType="com.hospital.entity.Patient">
+  <select id="findAll" resultType="com.hospital.entity.Patient" parameterType="String">
     select p.*,d.name as doctorname from patient p
     left join appointment a on p.appointmentid=a.id
-    left join doctor d on d.id=a.doctorid order by p.id
+    left join doctor d on d.id=a.doctorid
+    where 1=1
+    <if test="name !='' and name !=null">
+      and p.name like CONCAT('%', #{name}, '%')
+    </if>
+    <if test="certId !='' and certId !=null">
+      and p.certId like CONCAT('%',#{certId},'%')
+    </if>
+    order by p.id
   </select>
   <select id="findPatientByCertId" resultType="com.hospital.entity.Patient" parameterType="String">
     select * from patient where certId=#{certId}

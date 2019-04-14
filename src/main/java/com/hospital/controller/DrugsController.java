@@ -14,8 +14,11 @@ public class DrugsController {
     @Autowired
     DrugsService drugsService;
     @RequestMapping("admin/drugsManage")
-    public String drugsManage(HttpServletRequest request){
-        request.setAttribute("drugs",drugsService.getAllDrugs());
+    public String drugsManage(HttpServletRequest request,@RequestParam(value="name",required = false) String name,@RequestParam(value="type",required = false) Integer type){
+        Drugs drugs=new Drugs();
+        drugs.setName(name);
+        drugs.setType(type);
+        request.setAttribute("drugs",drugsService.getAllDrugs(drugs));
         return "/admin/drugsManage";
     }
     @RequestMapping(value = "/admin/drug/{id}",method = RequestMethod.DELETE)

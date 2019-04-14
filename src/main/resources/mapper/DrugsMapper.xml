@@ -9,8 +9,15 @@
   <sql id="Base_Column_List">
     id, name, type
   </sql>
-  <select id="findAll" resultType="com.hospital.entity.Drugs">
+  <select id="findAll" resultType="com.hospital.entity.Drugs" parameterType="com.hospital.entity.Drugs">
     select  * from drugs
+    where 1=1
+    <if test="name !='' and name != null">
+      and name like concat('%',#{name},'%')
+    </if>
+    <if test="type != null">
+     and type like concat('%',#{type},'%')
+    </if>
   </select>
   <select id="findByName" resultType="com.hospital.entity.Drugs" parameterType="String">
     select  * from drugs where name=#{name}

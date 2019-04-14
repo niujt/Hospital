@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface PatientMapper {
-    List<Patient> findAll();
+    List<Patient> findAll(@Param("name")String name,@Param("certId")String certId);
     int deleteByPrimaryKey(Integer id);
 
     int insert(Patient record);

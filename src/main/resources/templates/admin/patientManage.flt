@@ -13,6 +13,17 @@
         <!-- 内容主体区域 -->
         <div style="padding: 15px;">
             <h5>患者管理</h5>
+            <form action="/admin/patientManage" method="get">
+                <table>
+                    <tr>
+                        <td>昵称:</td>
+                        <td><input name="name" autocomplete="off"  class="layui-input lay-size=sm" ></td>
+                        <td>&nbsp;&nbsp;证件号:</td>
+                        <td><input name="certId" autocomplete="off" class="layui-input lay-size=sm" ></td>
+                        <td>   <button class="layui-btn" type="submit"><i class="layui-icon">&#xe615;</i></button></div></td>
+        </tr>
+        </table>
+        </form>
             <table class="layui-table">
                 <colgroup>
                     <col width="150">

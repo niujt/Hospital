@@ -22,7 +22,12 @@ public class DoctorServiceImpl implements DoctorService {
     LoginMapper loginMapper;
     @Override
     public List<Doctor> getAllDoctor() {
-        return doctorMapper.getAll();
+        return doctorMapper.getAll("","");
+    }
+
+    @Override
+    public List<Doctor> getAllDoctor(String name, String certId) {
+        return doctorMapper.getAll(name,certId);
     }
 
     @Override

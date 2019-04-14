@@ -16,7 +16,12 @@ public class DrugsServiceImpl implements DrugsService {
 
     @Override
     public List<Drugs> getAllDrugs() {
-        return drugsMapper.findAll();
+        return drugsMapper.findAll(null);
+    }
+
+    @Override
+    public List<Drugs> getAllDrugs(Drugs drugs) {
+        return drugsMapper.findAll(drugs);
     }
 
     @Override
