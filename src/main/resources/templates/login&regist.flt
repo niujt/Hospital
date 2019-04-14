@@ -31,8 +31,8 @@
 	<div class="form-container sign-in-container">
 		<form  id="login" onsubmit="return login()">
 			<h1>登录</h1>
-			<input type="username" name="username" placeholder="账号" />
-			<input type="password"  name="password" placeholder="密码" />
+			<input type="username" name="username" placeholder="账号" value="admin1"/>
+			<input type="password"  name="password" placeholder="密码" value="123456"/>
 			<div>
 				<button type="submit">登录</button><button type="reset">重置</button>
 			</div>

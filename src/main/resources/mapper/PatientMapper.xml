@@ -31,6 +31,9 @@
   <select id="findPatientByCertId" resultType="com.hospital.entity.Patient" parameterType="String">
     select * from patient where certId=#{certId}
   </select>
+  <select id="getPatientByName" resultType="com.hospital.entity.Patient" parameterType="String">
+    select * from patient where name like concat('%',#{name},'%')
+  </select>
   <select id="findPatientByLoginId" resultType="com.hospital.entity.Patient" parameterType="Integer">
     select * from patient where loginid=#{loginid}
   </select>

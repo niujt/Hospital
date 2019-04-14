@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 public class AppointmentController {
@@ -20,8 +21,9 @@ public class AppointmentController {
     @Autowired
     PatientService patientService;
     @RequestMapping("/admin/appointmentManage")
-    public String appointmentManage(HttpServletRequest request){
-        request.setAttribute("appointments" ,appointmentService.getAllAppointments());
+    public String appointmentManage(HttpServletRequest request,@RequestParam(value = "doctorname",required = false)String doctorname,@RequestParam(value = "patientname",required = false)String patientname){
+        List<Appointment> appointmentList=appointmentService.getAllAppointments(doctorname,patientname);
+        request.setAttribute("appointments" ,appointmentList);
         return"admin/appointmentManage";
     }
     @RequestMapping("/admin/appointmentAdd")

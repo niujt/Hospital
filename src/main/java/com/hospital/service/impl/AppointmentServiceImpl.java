@@ -2,21 +2,37 @@ package com.hospital.service.impl;
 
 import com.hospital.common.CommonService;
 import com.hospital.dao.AppointmentMapper;
+import com.hospital.dao.DoctorMapper;
+import com.hospital.dao.PatientMapper;
 import com.hospital.entity.Appointment;
+import com.hospital.entity.Doctor;
+import com.hospital.entity.Patient;
 import com.hospital.service.AppointmentService;
+import com.hospital.uitls.PatientDoctorutils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class AppointmentServiceImpl implements AppointmentService {
     @Autowired
     AppointmentMapper appointmentMapper;
-
+    @Autowired
+    PatientMapper patientMapper;
+    @Autowired
+    DoctorMapper doctorMapper;
     @Override
     public List<Appointment> getAllAppointments() {
-        return appointmentMapper.findAll();
+        return appointmentMapper.findAll(null,null);
+    }
+
+    @Override
+    public List<Appointment> getAllAppointments(String doctorname, String patientname) {
+        Map map= PatientDoctorutils.getDoctorIdsAndPatientIds(doctorname,doctorMapper,patientname,patientMapper);
+        return appointmentMapper.findAll((List)map.get("doctorids"),(List)map.get("patientids"));
     }
 
     @Override

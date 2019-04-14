@@ -13,7 +13,22 @@
   <select id="findAll" resultType="com.hospital.entity.Appointment">
     select a.*,p.name as patientname,d.name as doctorname from appointment a
     left join patient p on a.patientid=p.id
-    left join doctor d on d.id=a.doctorid order by a.id
+    left join doctor d on d.id=a.doctorid
+    where 1=1
+    <if test="patientids !=null">
+      and a.patientid in
+          <foreach collection="patientids" item="patientid" index="index" open="(" close=")" separator=",">
+      #{patientid}
+    </foreach>
+
+    </if>
+    <if test="doctorids !=null">
+      and a.doctorid in
+      <foreach collection="doctorids" item="doctorid" index="index" open="(" close=")" separator=",">
+        #{doctorid}
+      </foreach>
+    </if>
+    order by a.id
   </select>
   <select id="selectByPatientId" parameterType="java.lang.Integer" resultType="com.hospital.entity.Appointment">
     select a.*,p.name as patientname,d.name as doctorname from appointment a

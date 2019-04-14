@@ -2,6 +2,7 @@ package com.hospital.dao;
 
 import com.hospital.entity.Doctor;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -20,4 +21,5 @@ public interface DoctorMapper {
     int updateByPrimaryKey(Doctor record);
     Doctor getDoctorByCertId(@Param("certId")String certId);
     Doctor getDoctorByLoginId(@Param("loginid")Integer loginid);
+    List<Doctor> getDoctorByName(@Param("name")String name);
 }

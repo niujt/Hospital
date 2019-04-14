@@ -17,7 +17,7 @@ public interface AppointmentMapper {
     int updateByPrimaryKeySelective(Appointment record);
 
     int updateByPrimaryKey(Appointment record);
-    List<Appointment> findAll();
+    List<Appointment> findAll(List<Integer> doctorids,List<Integer> patientids);
     List<Appointment> selectByPatientId(@Param("patientid")Integer patientId);
     List<Appointment> selectByDoctorId(@Param("doctorId")Integer doctorId);
     Integer selectTheLast(@Param("patientid")Integer patientId);
