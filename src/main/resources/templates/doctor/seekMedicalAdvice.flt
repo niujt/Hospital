@@ -53,7 +53,7 @@
             type: 2,
             title: '就医',
             closeBtn: 0,
-            area:['800px','800px'],
+            area:['800px','600px'],
             content: ['/doctor/seek/'+id,'yes'],
             btn: ['取消'],
             yes: function(index){
@@ -67,7 +67,7 @@
             type: 2,
             title: '查看病史',
             closeBtn: 0,
-            area:['800px','800px'],
+            area:['800px','600px'],
             content: ['/doctor/medicalhistory/'+id,'yes'],
             btn: ['取消'],
             yes: function(index){

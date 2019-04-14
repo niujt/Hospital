@@ -23,8 +23,9 @@
 			<input type="username" name="username" placeholder="账号" />
 			<input type="password" name="password" placeholder="密码" />
 			<div>
-			<button type="submit">注册</button><button type="reset">重置</button>&nbsp;&nbsp;&nbsp;&nbsp;<span id="message2" style="color: red"></span>
+			<button type="submit">注册</button><button type="reset">重置</button>
 			</div>
+			<span id="message2" style="color: red"></span>
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
@@ -33,8 +34,9 @@
 			<input type="username" name="username" placeholder="账号" />
 			<input type="password"  name="password" placeholder="密码" />
 			<div>
-				<button type="submit">登录</button><button type="reset">重置</button>&nbsp;&nbsp;&nbsp;&nbsp;<span id="message" style="color: red"></span>
+				<button type="submit">登录</button><button type="reset">重置</button>
 			</div>
+			<span id="message" style="color: red"></span>
 		</form>
 	</div>
 	<div class="overlay-container">
