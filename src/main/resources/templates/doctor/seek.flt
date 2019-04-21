@@ -9,11 +9,15 @@
 <body>
 <div class="layui-tab">
     <ul class="layui-tab-title">
+        <li>诊断</li>
         <li class="layui-this">开药</li>
         <li>入院手续</li>
     </ul>
     <div class="layui-tab-content">
         <div class="layui-tab-item layui-show">
+             就诊信息
+        </div>
+        <div class="layui-tab-item">
             <form class="layui-form" onsubmit="return drug()">
                 <table class="layui-table">
                     <tr>
