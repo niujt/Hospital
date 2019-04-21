@@ -36,10 +36,6 @@
                         <div class="layui-form">
                             <div class="layui-form-item">
                                 <select name="doctorid" id="doctorid">
-                                    <#--<option value=""></option>-->
-                                    <#--<#list doctors as d>-->
-                                        <#--<option value="${d.id}">${d.name}</option>-->
-                                    <#--</#list>-->
                                 </select>
                             </div>
                         </div>
