@@ -70,7 +70,7 @@ public class LoginServiceImpl implements LoginService {
             else{
                 login.setId(login2.getId());
                 login.setRole(login2.getRole());
-                message="登录成功";
+                message="登录成功"+login2.getRole();
             }
         }
         else{

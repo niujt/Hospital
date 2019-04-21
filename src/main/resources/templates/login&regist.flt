@@ -101,8 +101,17 @@
 			  contentType: "application/json;charset=utf-8",
 			  success:function(data){
 				  console.log(data.message);
-				  if(data.message=="登录成功"){
-					  location.href="/index"
+				  if(data.message.indexOf("登录成功")!=-1){
+				  	if(data.message.indexOf("1")!=-1){
+						location.href="/hospital/patient/index"
+					}
+					else  if(data.message.indexOf("2")!=-1){
+						location.href="/hospital/doctor/index"
+					  }
+					else if(data.message.indexOf("3")!=-1){
+						location.href="/hospital/admin/index"
+					  }
+
 				  }
 				  else {
 					  $("#message").text(data.message);
