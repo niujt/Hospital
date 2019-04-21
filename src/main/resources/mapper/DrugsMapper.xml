@@ -23,8 +23,7 @@
     select  * from drugs where name=#{name}
   </select>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
+    select *
     from drugs
     where id = #{id,jdbcType=INTEGER}
   </select>
@@ -33,9 +32,9 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.hospital.entity.Drugs">
-    insert into drugs (name, type
+    insert into drugs (name, type,price,number
       )
-    values ( #{name,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER}
+    values ( #{name,jdbcType=VARCHAR}, #{type,jdbcType=INTEGER},#{price},#{number}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.hospital.entity.Drugs">
@@ -78,7 +77,7 @@
   <update id="updateByPrimaryKey" parameterType="com.hospital.entity.Drugs">
     update drugs
     set name = #{name,jdbcType=VARCHAR},
-      type = #{type,jdbcType=INTEGER}
+      type = #{type,jdbcType=INTEGER},number=#{number},price=#{price}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

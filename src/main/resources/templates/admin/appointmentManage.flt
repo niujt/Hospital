@@ -38,8 +38,10 @@
                 <tr>
                     <th>序号</th>
                     <th>患者名称</th>
+                    <th>科室</th>
                     <th>预约医生</th>
                     <th>预约时间</th>
+                    <th>门诊费</th>
                     <th>操作&nbsp;&nbsp;&nbsp;&nbsp;
                         <button class="layui-btn" onclick="showAdd('/admin/appointmentAdd')"><i class="layui-icon">&#xe608;</i> 添加</button>
                     </th>
@@ -50,8 +52,10 @@
                     <tr>
                         <td>${a_index+1}</td>
                         <td>${a.patientname!''}</td>
+                        <td>${a.department!''}</td>
                         <td>${a.doctorname!''}</td>
                         <td>${(a.time?string("yyyy-MM-dd"))!}</td>
+                        <td>${a.expenses}(元)</td>
                         <td>
                             <button class="layui-btn" onclick="edit('/admin/appointment/',${a.id})"><i class="layui-icon">&#xe642;</i></button>
                             <button class="layui-btn" onclick="del('/admin/appointment/',${a.id})"><i class="layui-icon">&#xe640;</i></button>

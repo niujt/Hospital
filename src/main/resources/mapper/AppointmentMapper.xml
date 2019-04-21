@@ -11,7 +11,7 @@
     id, patientid, doctorid, time
   </sql>
   <select id="findAll" resultType="com.hospital.entity.Appointment">
-    select a.*,p.name as patientname,d.name as doctorname from appointment a
+    select a.*,p.name as patientname,d.name as doctorname,d.department as department from appointment a
     left join patient p on a.patientid=p.id
     left join doctor d on d.id=a.doctorid
     where 1=1
@@ -69,9 +69,9 @@
   </delete>
   <insert id="insert" parameterType="com.hospital.entity.Appointment">
     insert into appointment (patientid, doctorid,
-      time)
+      time,expenses)
     values (#{patientid,jdbcType=INTEGER}, #{doctorid,jdbcType=INTEGER},
-      #{time,jdbcType=DATE})
+      #{time,jdbcType=DATE},#{expenses})
   </insert>
   <insert id="insertSelective" parameterType="com.hospital.entity.Appointment">
     insert into appointment

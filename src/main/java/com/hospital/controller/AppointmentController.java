@@ -29,7 +29,7 @@ public class AppointmentController {
     @RequestMapping("/admin/appointmentAdd")
     public String appointmentAddPage(HttpServletRequest request){
         request.setAttribute("patients",patientService.getAllPatients());
-        request.setAttribute("doctors",doctorService.getAllDoctor());
+        //request.setAttribute("doctors",doctorService.getAllDoctor());
         return"admin/add/appointmentadd";
     }
     @RequestMapping(value = "/admin/appointment/{id}",method = RequestMethod.DELETE)

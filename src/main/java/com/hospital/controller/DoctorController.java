@@ -105,4 +105,12 @@ public class DoctorController {
         return "doctor/medicalhistory";
     }
 
+    @RequestMapping( value = "/doctor/{department}",method = RequestMethod.GET)
+    @ResponseBody
+    public JSONObject getDoctorByDepartment(@PathVariable String department){
+        JSONObject json=new JSONObject();
+        json.put("doctors",doctorService.getDoctorByDepartment(department));
+        return json;
+    }
+
 }
