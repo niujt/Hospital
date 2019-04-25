@@ -1,0 +1,38 @@
+.bread{padding-top:30px;}
+.bread a{color:#707070;}
+.bread a:hover{color:#2e2e2e;}
+.left{width:747px;float:right;}
+.left h1{font-size:16px;color:#FFFFFF;margin-left:15px; margin-bottom:15px;}
+.left .main{height:auto;width:747px;margin-top:10px;}
+.left .main .list{padding-top:18px;margin-left:15px;height:175px;width:747px;}
+.left .main .list .one{float:left;overflow:hidden;height:175px;width:258px;}
+.left .main .list .two{float:left;width:463px;margin-left:10px;margin-top:5px;}
+.left .main .list .two h1 a{color:#474747;font-size:14px;}
+.left .main .list .two h1 a:hover{color:#808080;}
+.left .main .list .two p{color:#707070;font-size:12px;margin-left:15px;margin-top:5px;line-height:1.8;}
+.left .main .list .two .more{float:right;margin-top:10px;}
+.left .main .list .two .more a{color:#909090;font-size:12px;}
+.left .main .list .two .more a:hover{color:#808080;}
+.left .page{height:65px;width:660px;margin-top:-3px;text-align:center;padding-top:22px;margin-left:-1px;width:420px; margin:0 auto;}
+.left .page a{display:block;width:25px;height:25px;color:#707070;float:left;margin-left:5px;padding-top:4px;}
+.left .page a.now{display:block;width:25px;height:25px;color:#fff;float:left;}
+.left .page a:hover{display:block;width:25px;height:25px;color:#fff;float:left;}
+
+.right0{width:1000px;height:auto;}
+.top{background:url(../imgs/top.png) 0 0 no-repeat;height:46px;width:1000px;padding:0 0 0 50px;}
+.top h1{font-size:18px;color:#fff;line-height:2.6;}
+table{background:#f8f8f8;width:748px;border:1px solid #dadada;border-collapse: collapse;}
+table tr{height:48px;}
+table tr:hover{}
+table tr:hover td{color:#5088B7;}
+table tr td,th{border:1px solid #dadada;}
+table tr th{color:#474747;font-size:14px;font-weight:normal;}
+table tr td{color:#707070;font-size:14px;}
+.page{text-align:center;width:100%;padding-top:35px;height:60px;}
+.page a{display:inline-block;width:25px;height:22px;background:#ebebeb;color:#707070;text-decoration: none;padding-top:3px;}
+.page a:hover{background:#5088b7;color:#fff;}
+.page a.now{background:#5088b7;color:#fff;}
+
+#DoctorList table {
+    text-indent: 0em;
+}

@@ -34,4 +34,29 @@
         });
         return false
     }
+    layui.use(['layer', 'form'], function(){
+        var layer = layui.layer
+            ,form = layui.form;
+        form.on('select(department)', function(data){
+            var department=(data.value);
+             $.ajax({
+                 type: 'GET',
+                 url: '/doctor/'+department,
+                 dataType:  'json',
+                 success: function(data){
+                     $("#doctorid").empty();
+                     data=data.doctors
+                    data.forEach(function(item){
+                        var name=item.name
+                        console.log(name);
+                        var id=item.id
+                        console.log(id);
+                        $("#doctorid").append("<option value="+id+">"+name+"</option>");
+                    })
+                     form.render('select');
+                 }
+             });
+        });
+
+    });
 </script>

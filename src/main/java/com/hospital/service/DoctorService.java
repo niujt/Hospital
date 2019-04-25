@@ -1,8 +1,6 @@
 package com.hospital.service;
 
 import com.hospital.entity.Doctor;
-
-import javax.print.Doc;
 import java.util.List;
 
 public interface DoctorService {
@@ -13,4 +11,5 @@ public interface DoctorService {
     Doctor getDoctor(Integer id);
     String upDoctor(Doctor doctor);
     Doctor getDoctorByLoginId(Integer loginid);
+    List<Doctor> getDoctorByDepartment(String department);
 }

@@ -27,6 +27,9 @@
   <select id="getDoctorByCertId" resultType="com.hospital.entity.Doctor" parameterType="String">
     select * from doctor where certId=#{certId}
   </select>
+  <select id="getDoctorByDepartment" resultType="com.hospital.entity.Doctor" parameterType="String">
+    select * from doctor where department=#{department}
+  </select>
   <select id="getDoctorByName" resultType="com.hospital.entity.Doctor" parameterType="String">
     select * from doctor where name like concat('%',#{name},'%')
   </select>

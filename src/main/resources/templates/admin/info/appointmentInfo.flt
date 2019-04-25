@@ -17,6 +17,7 @@
                     <col width="200" >
                     <col width="200">
                     <col width="200">
+                    <col width="200">
                     <col>
                 </colgroup>
                 <tr>
@@ -35,6 +36,23 @@
                         </div>
                     </td>
                 </tr>
+                <#--<tr>-->
+                    <#--<td>预约科室：</td>-->
+                    <#--<td>-->
+                        <#--<div class="layui-form">-->
+                            <#--<div class="layui-form-item">-->
+                                <#--<select name="doctorid">-->
+                                    <#--<option value=""></option>-->
+                                    <#--<#list doctors as d>-->
+                                        <#--<option value="${d.id}"-->
+                                                <#--<#if d.id==appointment.doctorid>selected</#if>-->
+                                        <#-->${d.name}</option>-->
+                                    <#--</#list>-->
+                                <#--</select>-->
+                            <#--</div>-->
+                        <#--</div>-->
+                    <#--</td>-->
+                <#--</tr>-->
                 <tr>
                     <td>预约医生：</td>
                     <td>

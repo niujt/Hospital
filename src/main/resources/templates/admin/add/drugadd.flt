@@ -41,6 +41,18 @@
                     </td>
                 </tr>
                 <tr>
+                    <td style="width: 100px">价格：</td>
+                    <td>
+                        <input type="text" name="price" required  class="layui-input" >
+                    </td>
+                </tr>
+                <tr>
+                    <td style="width: 100px">数量：</td>
+                    <td>
+                        <input type="number"  name="number" required  class="layui-input" min="1">
+                    </td>
+                </tr>
+                <tr>
                     <td>操作：</td>
                     <td>
                         <button type="submit" class="layui-btn">添加</button>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: red;" id="message"></span>

@@ -69,4 +69,9 @@ public class DoctorServiceImpl implements DoctorService {
     public Doctor getDoctorByLoginId(Integer loginid) {
         return doctorMapper.getDoctorByLoginId(loginid);
     }
+
+    @Override
+    public List<Doctor> getDoctorByDepartment(String department) {
+        return doctorMapper.getDoctorByDepartment(department);
+    }
 }

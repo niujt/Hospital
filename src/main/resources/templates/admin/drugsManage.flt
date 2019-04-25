@@ -49,6 +49,8 @@
                     <th>序号</th>
                     <th>药品名称</th>
                     <th>药品类型</th>
+                    <th>数量（盒）</th>
+                    <th>单价（盒/元）</th>
                     <th>操作&nbsp;&nbsp;&nbsp;&nbsp;
                         <button class="layui-btn" onclick="showAdd('/admin/drugAdd')"><i class="layui-icon">&#xe608;</i> 添加</button>
                     </th>
@@ -67,6 +69,8 @@
                             <#if d.type==4>片剂</#if>
                             <#if d.type==5>胶囊剂</#if>
                         </td>
+                        <td>${d.number}</td>
+                        <td>${d.price}</td>
                         <td>
                             <button class="layui-btn" onclick="edit('/admin/drug/',${d.id})"><i class="layui-icon">&#xe642;</i></button>
                             <button class="layui-btn" onclick="del('/admin/drug/',${d.id})"><i class="layui-icon">&#xe640;</i></button>

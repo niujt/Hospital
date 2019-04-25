@@ -14,7 +14,7 @@ import javax.servlet.http.HttpSession;
 public class LoginController {
     @Autowired
     LoginService loginService;
-    @RequestMapping(value = "/hospital")
+    @RequestMapping(value = "/hospital/login")
     public String loginAndregist(){
         return "login&regist";
     }
@@ -22,10 +22,6 @@ public class LoginController {
     public String adminManage(HttpServletRequest request,@RequestParam(value = "username",required = false)String username){
         request.setAttribute("admins",loginService.findAllAdmin(username));
         return "/admin/adminManage";
-    }
-    @RequestMapping("/index")
-    public String adminIndex(){
-        return "index";
     }
     @RequestMapping("/admin/admin/{id}")
     public String adminInfo(HttpServletRequest request,@PathVariable Integer id){
@@ -77,10 +73,21 @@ public class LoginController {
         json.put("message",loginService.regist(login));
         return json;
     }
-    @RequestMapping("/hospital/index")
-    public String index(HttpSession session){
-        session.getAttribute("login");
+    @RequestMapping("/hospital")
+    public String hospital(){
         return "index";
+    }
+    @RequestMapping("/hospital/patient/index")
+    public String patientIndex(){
+        return "/patient/index";
+    }
+    @RequestMapping("/hospital/doctor/index")
+    public String doctorIndex(){
+        return "/doctor/index";
+    }
+    @RequestMapping("/hospital/admin/index")
+    public String adminIndex(){
+        return "/admin/index";
     }
 
 }

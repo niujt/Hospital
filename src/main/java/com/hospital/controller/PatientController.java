@@ -98,4 +98,8 @@ public class PatientController {
         json.put("message",message);
         return json;
     }
+    @RequestMapping(value="/patient/search",method=RequestMethod.GET)
+    public String search(){
+        return "patient/search";
+    }
 }

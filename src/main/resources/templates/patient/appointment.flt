@@ -13,15 +13,29 @@
         <form class="layui-form"  onsubmit="return appointment()">
             <table class="layui-table">
                 <tr>
+                    <td>科室：</td>
+                    <td>
+                        <div class="layui-form">
+                            <div class="layui-form-item">
+                                <select id="department" lay-filter="department" >
+                                    <option value="">请选择科室</option>
+                                    <option value="精神科">精神科</option>
+                                    <option value="妇产科">妇产科</option>
+                                    <option value="口腔科">口腔科</option>
+                                    <option value="骨科">骨科</option>
+                                    <option value="外科">外科</option>
+                                    <option value="内科">内科</option>
+                                </select>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
                     <td>预约医生：</td>
                     <td>
                         <div class="layui-form">
                             <div class="layui-form-item">
-                                <select name="doctorid">
-                                    <option value=""></option>
-                                    <#list doctors as d>
-                                        <option value="${d.id}">${d.name}</option>
-                                    </#list>
+                                <select name="doctorid" id="doctorid">
                                 </select>
                             </div>
                         </div>
@@ -32,6 +46,12 @@
                     <td>
                         <input type="date" name="time" required  lay-verify="required"  autocomplete="off" class="layui-input">
                         <input type="hidden" name="patientid" va required  lay-verify="required" value="${patientid}"  autocomplete="off" class="layui-input">
+                    </td>
+                </tr>
+                <tr>
+                    <td>门诊收费(元)：</td>
+                    <td>
+                        <input type="text" name="expenses" required  lay-verify="required"  autocomplete="off" class="layui-input">
                     </td>
                 </tr>
                 <tr>
@@ -79,6 +99,31 @@
         });
         return false
     }
+    layui.use(['layer', 'form'], function(){
+        var layer = layui.layer
+            ,form = layui.form;
+        form.on('select(department)', function(data){
+            var department=(data.value);
+            $.ajax({
+                type: 'GET',
+                url: '/doctor/'+department,
+                dataType:  'json',
+                success: function(data){
+                    $("#doctorid").empty();
+                    data=data.doctors
+                    data.forEach(function(item){
+                        var name=item.name
+                        console.log(name);
+                        var id=item.id
+                        console.log(id);
+                        $("#doctorid").append("<option value="+id+">"+name+"</option>");
+                    })
+                    form.render('select');
+                }
+            });
+        });
+
+    });
 </script>
 </body>
 </html>

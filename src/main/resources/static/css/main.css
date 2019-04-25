@@ -1,0 +1,241 @@
+@charset "utf-8";
+/* CSS Document */
+body{margin:0px; padding:0px; font-size:14px; font-family:"微软雅黑"; color:#707070; min-width: 1004px;}
+a{color:#707070; text-decoration:none; outline:none;}
+a:active{star:expression(this.onFocus=this.blur());} 
+img{border:0px;}
+a:link {text-decoration: none; outline:none;}
+a:visited{text-decoration: none; outline:none;}
+a:hover{text-decoration:none; color:#5292c8; outline:none;}
+ul, p, dl, dt, dd{padding:0px; margin:0px;}
+li{list-style-position:outside; list-style-type:none;}
+h1, h2, h3, h4, h5{font-size:14px; padding:0px; margin:0px;}
+h1{font-size:16px; font-weight:400;}
+h5{font-size:12px;}
+.fl{float:left; width:666px; position:relative;}
+.fr{float:right; font-size:12px; width:235px;}
+.jksp{ width:212px; height:127px; position:relative;}
+#minviod{ position:absolute;}
+#viodtc{ position:absolute;}
+.clear_f{clear:both; height:27px; padding:0px; margin:0px; display:block; _display:inherit;}
+.clear_l{ height:35px;}
+.h10{height:10px; overflow:hidden; clear:both;}
+.h50{height:50px; overflow:hidden; clear:both;}
+.w221{width:221px;}
+.w747{width:747px; overflow:hidden;}
+.w900{width:1000px; overflow:hidden;}
+.w1000{width:1000px; overflow:hidden;}
+.w676{width:676px;; overflow:hidden; float:left;}
+.w293{width:293px; overflow:hidden;}
+.yx {float: right; width: 747px;}
+.ewmLayer {
+    background:  repeat scroll 0 0 ;
+    display: none;
+    height: 403px;
+    left: 50%;
+    margin-left: -190px;
+    margin-top: -200px;
+    overflow: hidden;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    width: 379px;
+    z-index: 100;
+}
+
+.ewmLayer h1 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    height: 55px;
+    line-height: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.ewmLayer .close {
+    background:  no-repeat scroll center center ;
+    display: block;
+    height: 40px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    z-index: 101;
+}
+.ewmLayer {
+    text-align: center;
+}
+
+
+.gwewmLayer {
+    background:  repeat scroll 0 0 ;
+    display: none;
+    height: 403px;
+    left: 50%;
+    margin-left: -190px;
+    margin-top: -200px;
+    overflow: hidden;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    width: 379px;
+    z-index: 100;
+}
+
+.gwewmLayer h1 {
+    color: #fff;
+    font-size: 20px;
+    font-weight: 400;
+    height: 55px;
+    line-height: 50px;
+    overflow: hidden;
+    position: relative;
+}
+
+.gwewmLayer .close {
+    background:  scroll center center ;
+    display: block;
+    height: 40px;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    z-index: 101;
+}
+.gwewmLayer {
+    text-align: center;
+}
+
+em, i{font-style:normal;}
+input{padding:0px; border:0px; background:transparent; font-family:"微软雅黑"; color:#999; outline:none;}
+
+.wal{width:1003px; margin:0px auto;}
+
+.fr p {font-size: 14px; width:335px;}
+.content p {line-height: 24px; width:710px; margin:0 auto;}
+.lcontent p{width:670px; text-indent:2em;}
+.headDiv, .headDiv .wal{height:115px; overflow:hidden;/* background:url(../image/headBg.gif) top repeat-x;*/ position:relative;}
+.headDiv .list{display:none;}
+.headDiv .list li{float:left;}
+.headDiv .list a{display:block; float:left; height:49px; line-height:49px; padding:0 13px; color:#FFF;}
+.headDiv .list a:hover{background:#428fd0;}
+.headDiv .logo{position:absolute; z-index:1; left:0px; top:29px;}
+.topLanguage{position:absolute; z-index:1; right:-6px; top:74px;}
+.topLanguage li{float:left; padding:0 6px;}
+
+.nav{background: top repeat-x; height:50px; overflow:hidden; position:relative;}
+.nav li{float:left; height:50px; right top no-repeat; padding-right:1px;}
+.nav a{display:block; float:left; font-size:14px; height:48px; line-height:40px; position:relative; top:2px; padding:0 25px;}
+.nav .aNow, .nav .aNow1{background:#3073ab; color:#FFF;}
+.nav li:hover{background:#6aa2d1;}
+.nav a:hover{color:#FFFFFF;}
+.topSearch{position:absolute; z-index:1; top:12px; right:20px;  width:197px; height:23px;}
+.topSearch .input1{float:left; width:150px; height:23px; line-height:20px; padding-left:15px; color:#999;}
+.topSearch .btn1{float:left; width:30px; height:23px; cursor:pointer;}
+
+.fr.newsPart5 a {display: block;height: 94px;text-align: center;width: 40px;}
+.sNav{position:absolute; z-index:100; left:50%; margin-left:-502px; top:165px; top:185px\9;  height:40px; width:1003px; display:none;}
+*+html .sNav{ top:165px;}
+.wal.jr {position: relative;}
+.sNav li{float:left;}
+.sNav a{display:block; float:left; height:40px; line-height:40px; overflow:hidden; color:#FFF; padding:0 13px;}
+.sNav a:hover{text-decoration:underline;}
+.sNav div{display:none; height:40px; padding-left:85px;}
+/*.sNav_01{padding-left:125px;}
+.sNav_03{padding-left:337px;}
+.sNav_04{padding-left:447px;}*/
+
+.pageNow{padding:25px 0 20px 0; color:#909090; font-size:14px;}
+.pageNow a{color:#909090;}
+.pageNow a:hover{color:#5292c8;}
+.sNav_02 ul li {width: 85px;}
+.sNav_03 ul li {width: 85px;}
+.sNav_04 ul li { width:85px;}
+.sNav_02{ margin: 0 auto;}
+.sNav_05{ margin: 0 auto;}
+.pageSearch{height:43px; overflow:hidden; background:#5292c8; margin-bottom:40px;}
+.pageSearch li{float:left; color:#FFF; font-size:14px; padding:11px 0 0 16px; line-height:22px;}
+.pageSearch .selectDiv{float:left; background: width:221px; height:24px; line-height:22px; text-align:center; color:#999;}
+.pageSearch .selectDiv2{background:) width:141px;}
+ 
+.pageSearch .btn1{float:left; background: width:60px; height:43px; cursor:pointer;}
+
+.footLink{height:90px; overflow:hidden; background:#f4f4f4; position:relative;}
+.footLink .leftBtn{display:block; background: left top no-repeat; width:49px; height:93px; overflow:hidden; position:absolute; z-index:10; left:50%; margin-left:-550px; top:30px;}
+.footLink .rightBtn{display:block; left top no-repeat; width:49px; height:93px; overflow:hidden; position:absolute; z-index:10; right:50%; margin-right:-550px; top:30px;}
+.footLink .wal{width:1004px; overflow:hidden; position:relative;}
+.footLink ul{width:2000%;}
+.footLink li{float:left; width:251px; text-align:center; overflow:hidden; padding-top:15px;}
+
+.footDiv{height:260px; overflow:hidden; background:#286496; color:#FFF; position:relative;}
+.footDiv a{color:#FFF; font-size:12px;}
+.footDiv a:hover{text-decoration:underline;}
+.footDiv li{float:left; width:95px; overflow:hidden; line-height:20px;}
+.footDiv li h2{padding:30px 0 10px 0; height:20px; overflow:hidden;}
+.footDiv .fr{width:335px; overflow:hidden; text-align:right; line-height:20px; padding-top:32px;}
+.footDiv .fr .msg{padding-top:25px; font-size:11px;}
+.msg a{ font-size:11px;}
+
+.pageTitle{height:43px; line-height:42px; overflow:hidden; background:#578ab5; color:#FFF; font-size:18px; padding-left:18px;}
+
+.pageTitle2{height:50px; overflow:hidden; position:relative; background: left 48px repeat-x;}
+.pageTitle2 h1{float:left; height:47px; line-height:47px; overflow:hidden; border-bottom:#4687cb solid 3px; color:#313131; font-size:18px;}
+.pageTitle2_1{background:none;}
+.pageTitle2 .more{position:absolute; z-index:1; top:0px; right:0px; line-height:50px; font-size:14px;}
+.pageTitle2 .btnDiv{position:absolute; z-index:1; top:18px; right:10px;}
+.pageTitle2 .btnDiv a{display:block; float:left; height:20px; line-height:20px; padding:0 8px; background:#cdcdcd; color:#FFF; margin-left:1px;}
+.pageTitle2 .btnDiv a:hover{background:#4687cb;}
+.pageTitle2 .btnDiv .leftBtn{width:20px; padding:0px; background:#cdcdcd ) center no-repeat;}
+.pageTitle2 .btnDiv .leftBtn:hover{background:#4687cb center no-repeat;}
+.pageTitle2 .btnDiv .rightBtn{width:20px; padding:0px;  center no-repeat;}
+.pageTitle2 .btnDiv .rightBtn:hover{background:#4687cb  center no-repeat;}
+
+.sideBar{position:fixed; z-index:100; right:50%; margin-right:-650px; top:215px; width:72px; overflow:hidden;}
+.sideBar li{height:75px; overflow:hidden;}
+.sideBar a{display:block; height:73px; overflow:hidden; text-align:center; cursor:pointer; color:#FFF; background: left bottom no-repeat;}
+.sideBar a:hover{background: left top no-repeat;}
+.sideBar a div{padding:12px 0 7px 0;}
+
+.sideTitle{height:43px; line-height:42px; overflow:hidden; padding-left:20px; background:#d07f81; color:#FFF; font-size:18px;}
+.sideTitle_1{background:#caa378;}
+.sideTitle_2{background:#68b4b5;}
+.sideTitle_3{background:#5e95b5;}
+.sideTitleMy{ background:#7182b2;}
+
+.sideList{background:#f4f4f4; margin-bottom:25px;}
+.sideList li{height:39px; line-height:38px; overflow:hidden; border-bottom:#FFF solid 2px; padding-left:20px; font-size:14px;}
+.sideList a span{padding:0 28px;}
+/**/
+.sideList2 li{background: 20px center no-repeat; padding-left:45px;}
+
+.pageNum{height:35px; overflow:hidden; padding-top:35px; text-align:center;}
+.pageNum a{display:inline-block; margin:0 3px; height:25px; line-height:25px; padding:0 8px; background:#ebebeb; font-size:14px;}
+.pageNum a:hover, .pageNum .aNow{background:#5088b7; color:#FFF;}
+.pageNum span{display:inline-block; margin:0 3px; height:25px; line-height:25px; padding:0 8px;}
+
+.selectDiv{cursor:pointer;}
+.selectDiv span{padding-left:5px;}
+.selectDiv select{display:none;}
+ /**/
+.selectLayer{position:absolute; z-index:100; display:none; background:#FFF; border:#bababa solid 1px;}
+.selectLayer li{height:22px; line-height:22px; overflow:hidden; padding-left:5px; color:#666;}
+
+.tabContent{display:none;}
+.content div {font-size: 14px;}
+.fry{ width:62px;}
+.fly{ width:936px; height:43px;}
+.list ul li .name {font-size: 14px;}
+.ewmLayer h1 {color: #fff;font-size: 20px;font-weight: 400;height: 55px; line-height: 50px;overflow: hidden; position: relative;margin:0px;}
+.ewmLayer .close { background:  no-repeat scroll center center;display: block; height: 40px; overflow: hidden; position: absolute; right: 0; top: 0; width: 40px; z-index: 101;}
+
+.gwewmLayer h1 {color: #fff;font-size: 20px;font-weight: 400;height: 55px; line-height: 50px;overflow: hidden; position: relative;margin:0px;}
+.gwewmLayer .close { background:  no-repeat scroll center center;display: block; height: 40px; overflow: hidden; position: absolute; right: 0; top: 0; width: 40px; z-index: 101;}
+img {border: 0 none;}
+.newblock {
+    bottom: -32px;
+    position: absolute;
+    right: 0;
+}
