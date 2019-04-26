@@ -13,10 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-
 import java.util.Map;
-
-import static javax.swing.text.html.CSS.getAttribute;
 
 @Controller
 public class DoctorController {

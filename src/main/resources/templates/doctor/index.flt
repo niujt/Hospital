@@ -49,19 +49,19 @@
     <br><br>
     <ul id="demo">
         <li class="active">
-            <img src="/static/imgs/1.png"  />
+            <img src="/static/images/1.png"  />
         </li>
         <li>
-            <img src="/static/imgs/2.png"  />
+            <img src="/static/images/2.png"  />
         </li>
         <li>
-            <img src="/static/imgs/3.png"  />
+            <img src="/static/images/3.png"  />
         </li>
         <li>
-            <img src="/static/imgs/4.png"  />
+            <img src="/static/images/4.png"  />
         </li>
         <li>
-            <img src="/static/imgs/5.png"  />
+            <img src="/static/images/5.png"  />
         </li>
     </ul>
 </div>

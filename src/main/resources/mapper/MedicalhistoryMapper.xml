@@ -10,7 +10,7 @@
     id, patientid, name,time
   </sql>
   <select id="findAll" resultType="com.hospital.entity.Medicalhistory">
-    select m.*,p.name as patientname,d.name as doctorname from medicalhistory m
+    select m.*,p.name as patientname,d.name as doctorname from Medicalhistory m
     left join patient p on p.id=m.patientid
     left join doctor d on m.doctorid=d.id
     where 1=1
@@ -30,7 +30,7 @@
     order by m.id
   </select>
   <select id="selectByPatientId" parameterType="java.lang.Integer" resultType="com.hospital.entity.Medicalhistory">
-    select m.*,p.name as patientname,d.name as doctorname from medicalhistory m
+    select m.*,p.name as patientname,d.name as doctorname from Medicalhistory m
     left join patient p on p.id=m.patientid
     left join doctor d on m.doctorid=d.id
     where patientid = #{patientid}
