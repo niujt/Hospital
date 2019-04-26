@@ -281,7 +281,7 @@
 
 <section class="importBase">
     <div class="title">重点科室</div>
-    <div class="prevNext"><a class="prevBtn" href="javascript:"></a><a class="nextBtn" href="javascript:;"></a></div>
+    <div class="prevNext"><a class="prevBtn" href="javascript:"></a><a class="nextBtn" href="javascript:"></a></div>
     <div class="imports">
         <ul>
             <li class="frist">
@@ -363,7 +363,7 @@
 
 <section class="BaseMark expertBase">
     <div class="title"><span>知名专家</span></div>
-    <div class="prevNext"><a class="prevBtn" href="javascript:;"></a><a class="nextBtn" href="javascript:"></a></div>
+    <div class="prevNext"><a class="prevBtn" href="javascript:"></a><a class="nextBtn" href="javascript:"></a></div>
     <div class="SearchBase">
         <div class="expertSearch"><a href="/hospital/expert">按科室查看</a></div>
     </div>
