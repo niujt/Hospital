@@ -11,7 +11,7 @@
         $.each(t, function() {
             d[this.name] = this.value;
         });
-        var json=JSON.stringify(d)
+        var json=JSON.stringify(d);
         $.ajax({
             url:url,
             type:'post',
@@ -45,14 +45,14 @@
                  dataType:  'json',
                  success: function(data){
                      $("#doctorid").empty();
-                     data=data.doctors
+                     data=data.doctors;
                     data.forEach(function(item){
-                        var name=item.name
+                        var name=item.name;
                         console.log(name);
-                        var id=item.id
+                        var id=item.id;
                         console.log(id);
                         $("#doctorid").append("<option value="+id+">"+name+"</option>");
-                    })
+                    });
                      form.render('select');
                  }
              });

@@ -63,7 +63,7 @@
 		  $.each(t, function() {
 			  d[this.name] = this.value;
 		  });
-		  var json=JSON.stringify(d)
+		  var json=JSON.stringify(d);
 		  $.ajax({
 			  url:"/regest",
 			  type:'post',
@@ -93,7 +93,7 @@
 		  $.each(t, function() {
 			  d[this.name] = this.value;
 		  });
-		  var json=JSON.stringify(d)
+		  var json=JSON.stringify(d);
 		  $.ajax({
 			  url:"/login",
 			  type:'post',

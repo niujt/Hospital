@@ -6,7 +6,7 @@
         <li class="layui-nav-item"><a href="/hospital/patient/index" <#if login.role!=2>style="display:none"</#if>>首页</a></li>
         <li class="layui-nav-item"><a href="/hospital/doctor/index" <#if login.role!=3>style="display:none"</#if>>首页</a></li>
         <li class="layui-nav-item" <#if login.role!=1>style="display:none"</#if>>
-            <a href="javascript:;">系统管理</a>
+            <a href="javascript:">系统管理</a>
             <dl class="layui-nav-child">
                 <dd><a href="/admin/doctorManage">医生管理</a></dd>
                 <dd><a href="/admin/patientManage">患者管理</a></dd>
@@ -25,7 +25,7 @@
     </ul>
     <ul class="layui-nav layui-layout-right">
         <li class="layui-nav-item">
-            <a href="javascript:;">
+            <a href="javascript:">
                 欢迎&nbsp;&nbsp;&nbsp;&nbsp;${login.username}
             </a>
         </li>

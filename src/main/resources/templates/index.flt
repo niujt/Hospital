@@ -20,7 +20,7 @@
 <header>
     <a class="logo" href="/hospital"><img src="/static/images/logo.png" width="350" height="51"/></a>
     <ul>
-        <li><a href="javascript:;">预约挂号</a></li>
+        <li><a href="javascript:">预约挂号</a></li>
         <li><a href="/hospital/seekguide">来院路线</a></li>
         <li><a href="/hospital/login">内部登录</a></li>
     </ul>
@@ -148,10 +148,10 @@
                         </div>
                         <div class="nav_Route2 nav_Route8">
                             <ul>
-                                <li><a class="green" href="javascript:;"><img alt="" src="/static/images/ico_27.png"
-                                                                              width="50"
-                                                                              height="50"></a>
-                                    <h2><a href="javascript:;">信息查询</a></h2><em>Information Service</em></li>
+                                <li><a class="green" href="javascript:"><img alt="" src="/static/images/ico_27.png"
+                                                                             width="50"
+                                                                             height="50"></a>
+                                    <h2><a href="javascript:">信息查询</a></h2><em>Information Service</em></li>
                             </ul>
                         </div>
                         <div class="clear"></div>
@@ -164,16 +164,16 @@
                         <div class="navMenus">
                             <ul>
                                 <li><a href="/hospital/guide" title="来院路线">来院路线</a></li>
-                                <li><a href="javascript:;" title="预约挂号">预约挂号</a></li>
+                                <li><a href="javascript:" title="预约挂号">预约挂号</a></li>
                                 <li><a href="/hospital/seekguide" title="坐诊时间表">坐诊时间表</a></li>
                             </ul>
                         </div>
                         <div class="nav_Route2 nav_Route3">
                             <ul>
-                                <li class="first"><a class="green" href="javascript:;"><img
+                                <li class="first"><a class="green" href="javascript:"><img
                                                 src="/static/images/ico_30.png"
                                                 width="50" height="54"></a>
-                                    <h2><a href="javascript:;">预约挂号</a></h2><em>Make an Appointment</em></li>
+                                    <h2><a href="javascript:">预约挂号</a></h2><em>Make an Appointment</em></li>
                                 <li><a class="yellow" href="/hospital/seekguide"><img src="/static/images/ico_29.png"
                                                                                       width="40"
                                                                                       height="50"></a>
@@ -239,7 +239,7 @@
             <li class="grey bgff"><a href="/hospital/seekguide"><span class="style03"></span>就医指南</a></li>
             <li class="bggrey"><a href="/hospital/seekguide"><span class="style04"></span>坐诊时间</a></li>
             <li class="grey"><a href="/hospital/seekguide"><span class="style06"></span>来院路线</a></li>
-            <li class="bggrey"><a href="javascript:;"><span class="style08"></span>信息查询</a></li>
+            <li class="bggrey"><a href="javascript:"><span class="style08"></span>信息查询</a></li>
         </ul>
     </div>
     <div class="focusBox">
@@ -267,13 +267,13 @@
         <div class="txt-bg"></div>
         <div class="txt" id="BannerInfo"></div>
         <ul class="num">
-            <li><a href="javascript:;"></a></li>
-            <li><a href="javascript:;"></a></li>
-            <li><a href="javascript:;"></a></li>
-            <li><a href="javascript:;"></a></li>
-            <li><a href="javascript:;"></a></li>
-            <li><a href="javascript:;"></a></li>
-            <li><a href="javascript:;"></a></li>
+            <li><a href="javascript:"></a></li>
+            <li><a href="javascript:"></a></li>
+            <li><a href="javascript:"></a></li>
+            <li><a href="javascript:"></a></li>
+            <li><a href="javascript:"></a></li>
+            <li><a href="javascript:"></a></li>
+            <li><a href="javascript:"></a></li>
         </ul>
     </div>
     <div class="clear"></div>
@@ -281,7 +281,7 @@
 
 <section class="importBase">
     <div class="title">重点科室</div>
-    <div class="prevNext"><a class="prevBtn" href="javascript:;"></a><a class="nextBtn" href="javascript:;"></a></div>
+    <div class="prevNext"><a class="prevBtn" href="javascript:"></a><a class="nextBtn" href="javascript:;"></a></div>
     <div class="imports">
         <ul>
             <li class="frist">
@@ -363,7 +363,7 @@
 
 <section class="BaseMark expertBase">
     <div class="title"><span>知名专家</span></div>
-    <div class="prevNext"><a class="prevBtn" href="javascript:;"></a><a class="nextBtn" href="javascript:;"></a></div>
+    <div class="prevNext"><a class="prevBtn" href="javascript:;"></a><a class="nextBtn" href="javascript:"></a></div>
     <div class="SearchBase">
         <div class="expertSearch"><a href="/hospital/expert">按科室查看</a></div>
     </div>
@@ -591,12 +591,12 @@
         <div class="QRcode"><img src="/static/images/QRcode.jpg" width="104" height="104"><br/>手机扫一扫关注人民医院官方微信</div>
     </div>
 </footer>
-<div class="zfk"><a class="weibo" target="_blank" href="javascript:;"><em>新浪微博</em></a><a class="yy" target="_blank"
-                                                                                          href="javascript:;"><em>zmxrmyy</em></a><a
+<div class="zfk"><a class="weibo" target="_blank" href="javascript:"><em>新浪微博</em></a><a class="yy" target="_blank"
+                                                                                         href="javascript:"><em>zmxrmyy</em></a><a
             class="qq" target="_blank"
             href="tencent://message/?amp;Uin=2747519242&Site=zmxrmyy.com&Menu=yes"><em>QQ在线</em></a><a class="top"
                                                                                                        target="_blank"
-                                                                                                       href="javascript:;"><em>返回顶部</em></a>
+                                                                                                       href="javascript:"><em>返回顶部</em></a>
 </div>
 <div id="Footer_CodeDiv">
     <script>

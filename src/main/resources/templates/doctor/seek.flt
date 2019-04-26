@@ -134,7 +134,7 @@
         $.each(t, function() {
             d[this.name] = this.value;
         });
-        var json=JSON.stringify(d)
+        var json=JSON.stringify(d);
         $.ajax({
             url:"/doctor/drug",
             type:'put',
@@ -163,7 +163,7 @@
         $.each(t, function() {
             d[this.name] = this.value;
         });
-        var json=JSON.stringify(d)
+        var json=JSON.stringify(d);
         $.ajax({
             url:"/doctor/zation",
             type:'post',

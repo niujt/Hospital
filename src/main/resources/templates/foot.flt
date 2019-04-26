@@ -19,7 +19,7 @@
                 layer.close(index);
             }
         });
-    };
+    }
     function edit(url,id){
         layer.open({
             type: 2,
@@ -33,7 +33,7 @@
                 layer.close(index);
             }
     });
-    };
+    }
     function del(url,id) {
         layer.confirm('确认要删除吗？', {
             btn : [ '确定', '取消' ]//按钮
@@ -54,5 +54,5 @@
                 }
             });
         });
-    };
+    }
 </script>

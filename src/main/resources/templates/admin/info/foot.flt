@@ -11,7 +11,7 @@
         $.each(t, function() {
             d[this.name] = this.value;
         });
-        var json=JSON.stringify(d)
+        var json=JSON.stringify(d);
         $.ajax({
             url:url,
             type:'put',
