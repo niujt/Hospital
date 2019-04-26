@@ -1,373 +1,146 @@
-.pageBanner{height:400px; overflow:hidden; position:relative;}
-.pageBanner .form{position:absolute; z-index:1; right:0px; top:214px; background: left top no-repeat; width:230px; height:174px; overflow:hidden;}
-.pageBanner .form .btn{display:block; width:34px; height:18px; overflow:hidden; position:absolute; z-index:10; left:0px; top:80px;}
-.pageBanner .form .btnNow{left:-5px;}
-.pageBanner .form h2{color:#FFF; padding:15px 0 15px 48px;}
-.pageBanner .form li{height:40px; overflow:hidden; position:relative; left:37px; background: left top no-repeat;}
-.pageBanner .form .liNow{background: left top no-repeat;}
-.pageBanner .form .input1{float:left; padding-left:10px; width:135px; height:25px; line-height:23px; color:#FFF;}
-.pageBanner .form .btn1{float:left; cursor:pointer; width:25px; height:25px;}
- 
-.indexFlash li{position:absolute; z-index:1; left:0px; top:0px; display:none;}
-.indexFlash .btnDiv{width:100%; position:absolute; z-index:10; left:0px; bottom:15px; text-align:center;}
-.indexFlash .btnDiv span{display:inline-block; width:10px; height:10px; margin:0 5px; background:#FFF; cursor:pointer;}
-.indexFlash .btnDiv .spanNow{background:#5292c8;}
+﻿.bannerBase{margin-top:30px;}
+.quickMenu{ width:328px; border:1px solid #dddddd; float:left; display:block; overflow:hidden;}
+.quickMenu .title{ height:75px; padding-left:20px; line-height:75px; font-size:22px; font-weight:bold; color:#333; border-bottom:1px solid #dddddd;}
+.quickMenu ul li{ width:164px; height:91px; float:left;}
+.quickMenu ul li a{ display:block;line-height:90px; font-size:14px; color:#333;}
+.quickMenu ul li.grey{ background:#f2f2f2;}
+.quickMenu ul li span{ width:24px; height:24px; margin-left:35px; margin-right:12px; display:inline-block; vertical-align:middle;}
+.quickMenu ul li span.style01{ background:url(../images/ico_01.png) center center no-repeat;}
+.quickMenu ul li span.style02{ background:url(../images/ico_02.png) center center no-repeat;}
+.quickMenu ul li span.style03{ background:url(../images/ico_03.png) center center no-repeat;}
+.quickMenu ul li span.style04{ background:url(../images/ico_04.png) center center no-repeat;}
+.quickMenu ul li span.style05{ background:url(../images/ico_05.png) center center no-repeat;}
+.quickMenu ul li span.style06{ background:url(../images/ico_06.png) center center no-repeat;}
+.quickMenu ul li span.style07{ background:url(../images/ico_07.png) center center no-repeat;}
+.quickMenu ul li span.style08{ background:url(../images/ico_08.png) center center no-repeat;}
+.quickMenu ul li a:hover{ background:url(../images/bg_01.jpg) center center no-repeat; background-size:100%; color:#fff;}
+.quickMenu ul li a:hover span.style01{ background:url(../images/ico_01_hover.png) center center no-repeat;}
+.quickMenu ul li a:hover span.style02{ background:url(../images/ico_02_hover.png) center center no-repeat;}
+.quickMenu ul li a:hover span.style03{ background:url(../images/ico_03_hover.png) center center no-repeat;}
+.quickMenu ul li a:hover span.style04{ background:url(../images/ico_04_hover.png) center center no-repeat;}
+.quickMenu ul li a:hover span.style05{ background:url(../images/ico_05_hover.png) center center no-repeat;}
+.quickMenu ul li a:hover span.style06{ background:url(../images/ico_06_hover.png) center center no-repeat;}
+.quickMenu ul li a:hover span.style07{ background:url(../images/ico_07_hover.png) center center no-repeat;}
+.quickMenu ul li a:hover span.style08{ background:url(../images/ico_08_hover.png) center center no-repeat;}
+/* banner css */
+.focusBox { position:relative; width:848px; height:440px; overflow:hidden; float:right;}
+.focusBox .pic img { width:848px; height:440px; display: block; }
+.focusBox .txt-bg { position:absolute; bottom:10px;  height:60px; width:100%;  background:#0084c6; filter: alpha(opacity=90); opacity: 0.9; overflow: hidden; }
+.focusBox .txt{ position: absolute; bottom:10px; height:60px; width:699px; overflow:hidden;color:#fff; font-size:14px; line-height:60px; text-indent:30px; }
+.focusBox .num { position: absolute;bottom:33px; right:28px; }
+.focusBox .num li{ float:left; position:relative; width:14px; height:14px; margin-right:7px; cursor: pointer; }
+.focusBox .num li a{ position: absolute;display: block; width:14px; height:14px; background:#fff; border-radius:7px; opacity:0.35;}
+.focusBox .num li.on a,.focusBox .num a:hover{opacity:1; box-shadow:0px 1px 5px 2px rgba(0 ,0 ,0 ,0.25);-webkit-box-shadow:0px 1px 5px 2px rgba(0 ,0 ,0 ,0.25); -moz-box-shadow:0px 1px 5px 2px rgba(0 ,0 ,0 ,0.25); position:relative;}
+
+.importBase{ height:440px; margin-top:72px; position:relative;}
+.importBase .title{ font-size:26px; color:#333; text-align:center; line-height:36px;}
+.importBase .prevNext{ width:100%; height:24px; position:absolute; top:6px;}
+.importBase .prevNext .prevBtn{ width:24px; height:24px; display:block; background:url(../images/ico_10.png) center center no-repeat; position:absolute; left:0;}
+.importBase .prevNext .nextBtn{ width:24px; height:24px; display:block; background:url(../images/ico_11.png) center center no-repeat; position:absolute; right:0;}
+.importBase .imports{ width:100%; height:380px; overflow:hidden; position:relative; margin-top:23px;}
+.importBase .imports ul{ position:absolute; top:0px; left:0px; width:500%; height:380px;}
+.importBase .imports ul li{ width:197px; height:380px; margin-left:50px; text-align:center; position:relative; float:left;}
+.importBase .imports ul li.frist{ margin-left:0;}
+.importBase .imports ul li .shadow{ width:100%; height:42px; position:absolute; z-index:0; bottom:0; opacity:0; background:url(../images/yinying.png) center center no-repeat; background-size:100%;}
+.importBase .imports ul li .ico{ position:absolute; width:112px; height:112px; position:absolute; z-index:2; top:0; left:50%; margin-left:-56px;}
+.importBase .imports ul li .ico01{ background:url(../images/heart.png) center center no-repeat;}
+.importBase .imports ul li .ico02{ background:url(../images/sj.png) center center no-repeat;}
+.importBase .imports ul li .ico03{ background:url(../images/ebh.png) center center no-repeat;}
+.importBase .imports ul li .ico04{ background:url(../images/ganz.png) center center no-repeat;}
+.importBase .imports ul li .ico05{ background:url(../images/zhliu.png) center center no-repeat;}
+.importBase .imports ul li .ico06{ background:url(../images/zhongyi.png) center center no-repeat;}
+.importBase .imports ul li .ico07{ background:url(../images/child.png) center center no-repeat;}
+.importBase .imports ul li dl{ background:#f2f2f2; width:195px; height:242px; padding-top:56px; position:absolute; z-index:1; top:56px; border:1px solid #f2f2f2;}
+.importBase .imports ul li dl dt{ font-size:16px; line-height:40px;}
+.importBase .imports ul li dl dd{ width:130px; margin:0 auto; text-align:left; background:url(../images/ico_12.png) left center no-repeat; padding-left:10px; height:22px; line-height:22px; color:#888; display:block; overflow:hidden;}
+.importBase .imports ul li .btn{ position:absolute; width:29px; height:30px; position:absolute; z-index:2; top:290px; left:50%; margin-left:-15px; background:url(../images/ico_13.png) center center no-repeat;}
+.importBase .imports ul li:hover dl{ background:#fff;}
+.importBase .imports ul li:hover .shadow{ opacity:1;}
+.importBase .imports ul li:hover .ico01{ background:url(../images/heart_hover.png) center center no-repeat;}
+.importBase .imports ul li:hover .ico02{ background:url(../images/sj_hover.png) center center no-repeat;}
+.importBase .imports ul li:hover .ico03{ background:url(../images/ebh_hover.png) center center no-repeat;}
+.importBase .imports ul li:hover .ico04{ background:url(../images/ganz_hover.png) center center no-repeat;}
+.importBase .imports ul li:hover .ico05{ background:url(../images/zhliu_hover.png) center center no-repeat;}
+.importBase .imports ul li:hover .ico06{ background:url(../images/zhongyi_hover.png) center center no-repeat;}
+.importBase .imports ul li:hover .ico07{ background:url(../images/child_hover.png) center center no-repeat;}
+.importBase .imports ul li:hover .btn{ background:url(../images/ico_14.png) center center no-repeat;}
+
+.expertBase{ margin-top:33px; position:relative; display:block; overflow:visible;}
+.expertBase .title{ font-size:22px; font-weight:bold; color:#333; height:66px; line-height:66px; border-bottom:1px #dddddd solid;}
+.expertBase .title span{ height:68px; background:url(../images/ico_06.gif) left bottom no-repeat; display:block;}
+.expertBase .prevNext{ height:24px; position:absolute; top:21px; right:0;}
+.expertBase .prevNext a{ width:24px; height:24px; display:inline-block; margin-left:12px;}
+.expertBase .prevNext .prevBtn{ background:url(../images/ico_10.png) center center no-repeat;}
+.expertBase .prevNext .nextBtn{background:url(../images/ico_11.png) center center no-repeat;}
+.expertBase .prevNext .prevBtn:hover{ background:url(../images/ico_16.png) center center no-repeat;}
+.expertBase .prevNext .nextBtn:hover{background:url(../images/ico_15.png) center center no-repeat;}
+.SearchBase{ width:98px; height:30px; position:absolute; right:100px; top:17px; z-index:2;}
+.SearchBase .expertSearch a{ width:98px; height:30px; border:1px solid #dddddd; display:block; text-align:center; line-height:30px; color:#999;}
+.SearchBase .expertSearch a:hover{ background:#0081c1; color:#fff; border:1px solid #0081c1;}
+.SearchBase .SearchList{ width:1153px; display:none; max-height:503px; padding:15px; padding-left:30px;  overflow-y:scroll; position:absolute; left:-1002px; top:43px; background:#fff; border:1px solid #dddddd; box-shadow:0px 3px 15px 6px rgba(128 ,128 ,128 ,0.3);-webkit-box-shadow:0px 3px 15px 6px rgba(128 ,128 ,128 ,0.3); -moz-box-shadow:0px 3px 15px 6px rgba(128 ,128 ,128 ,0.3);}
+.SearchBase .SearchList dl dd{ line-height:24px; margin-bottom:10px;}
+.SearchBase .SearchList dl dt{ font-size:14px; font-weight:bold; color:#0081c1; line-height:60px;}
+.SearchBase .SearchList dl dd span{ width:100px; height:24px; display:inline-block; background:#e7e7e7; text-align:center; color:#333; }
+.SearchBase .SearchList dl dd a{ width:61px; height:24px; font-size:14px; line-height:24px; display:inline-block; margin-left:10px;}
+
+.expertBase .experts{ width:100%; margin-top:30px; height:179px; display:block; overflow:hidden; position:relative;}
+.expertBase .experts ul{ width:8888px; height:179px; position:absolute; top:0px; left:0px;}
+.expertBase .experts ul li{ width:120px; height:179px; float:left; margin-right:32px; border:1px solid #dde4e6; position:relative;}
+.expertBase .experts ul li .txt{ width:100%; color:#fff; background:rgba(0,132,198,0.8); position:absolute; left:0px; bottom:0px; text-align:center; }
+.expertBase .experts ul li .txt p{ font-size:12px; line-height:18px; }
+.expertBase .experts ul li .txt em{  display:block;font-size:16px;line-height:24px; }
 
 
-.visit .tips{height:54px; line-height:54px; overflow:hidden; padding-left:18px; font-size:14px;}
-.visit .tips em{color:#437cab; padding-right:60px;}
-.visit .tips i{color:#cc8c44;}
-.visit th{height:38px; background:#f4f4f4; font-size:14px;}
-.visit td{height:60px; text-align:center; font-size:14px;}
-.visit .timeDiv{background: left top no-repeat; width:131px; height:57px; padding:29px 0 0 23px; overflow:hidden; margin:0 auto;}
-.visit .timeDiv li{float:left; width:18px; height:25px; line-height:25px; text-align:center; color:#cf9350;}
+.indexNews{ height:383px; margin-top:90px;}
+/* 本例子css */
+.indexNews .notice { width:781px; float:left; overflow:hidden; }
+.indexNews .notice .tab-hd { width:100%; height:46px; color:#666; line-height:46px;}
+.indexNews .notice .tab-hd li{ float:left; width:193px; height:46px; line-height:46px; font-size:16px; margin-left:3px; text-align:center;}
+.indexNews .notice .tab-hd li.frist{ margin-left:0;}
+.indexNews .notice .tab-hd li.active a{ background:url(../images/title_1.jpg) center center no-repeat; widows:193px; height:46px; border:none; color:#fff;}
+.indexNews .notice .tab-hd li a{ width:191px; height:44px; display:block; border:1px solid #d9d9d9;}
+.indexNews .notice .tab-bd{ height:260px; border:1px solid #d9d9d9; border-top:none; padding:30px;display:none;overflow:hidden;}
+.indexNews .notice .tab-bd.active{ display:block;}
+.indexNews .notice .tab-bd ul{ overflow:hidden; zoom:1; }
+.indexNews .notice .tab-bd li{ height:70px; margin-bottom:20px; line-height:20px; overflow:hidden;}
+.indexNews .notice .tab-bd li a{ font-size:14px; color:#333; line-height:28px;}
+.indexNews .notice .tab-bd li a:hover{ color:#0084c6; text-decoration:underline;}
+.indexNews .notice .tab-bd li span{ width:60px; height:60px; padding:10px; text-align:center; background:#f2f2f2; float:left; margin-right:27px;}
+.indexNews .notice .tab-bd li span b{ font-size:30px; font-family:"黑体"; color:#0084c6; line-height:30px;}
 
-.videoShow h1{text-align:center; font-size:20px; color:#474747; padding:35px 0 20px 0;}
-.videoShow .imgDiv{text-align:center;}
-.videoShow .btnDiv{height:65px; line-height:20px; overflow:hidden; padding-top:20px;}
-.videoShow .btnDiv li{float:left; padding-left:143px;}
-.videoShow .btnDiv li img{display:none;}
+.indexNews .DepartNav{ width:360px; float:right;}
+.indexNews .DepartNav .title{ font-size:22px; font-weight:bold; color:#333; height:45px; border-bottom:1px #dddddd solid;}
+.indexNews .DepartNav .title span{ height:47px; background:url(../images/ico_06.gif) left bottom no-repeat; display:block;}
+.indexNews .DepartNav .list{ height:259px; padding:30px 20px; background:#f2f2f2; margin-top:1px;}
+.indexNews .DepartNav .list a{display:inline-block; height:38px; margin-right:8px; line-height:38px; font-size:14px;}
+.indexNews .DepartNav .list a em{ width:4px; height:4px; background:#dbdbdb; border-radius:2px; margin-right:6px; display:inline-block; vertical-align:middle;}
+.indexNews .DepartNav .list a:hover{ text-decoration:underline;}
+.indexNews .DepartNav .list a:hover em{ background:#0084c6;}
 
-.videoRelevant{width:676px; height:200px; overflow:hidden; position:relative; padding-top:25px;}
-.videoRelevant ul{width:2000%;}
-.videoRelevant li{float:left; width:212px; height:200px; overflow:hidden; position:relative; text-align:center; margin-right:20px;}
-.videoRelevant .btn{display:block; background: center no-repeat; width:212px; height:126px; overflow:hidden; position:absolute; z-index:10; left:0px; top:0px;}
-.videoRelevant .name{padding-top:10px;}
+@media all and (min-width: 1px) and (max-width:1279px){
+	.quickMenu{ width:120px;}
+	.quickMenu .title{ display:none;}
+	.quickMenu ul li{ width:120px; height:55px;}
+	.quickMenu ul li.bgff{ background:#fff;}
+	.quickMenu ul li.bggrey{ background:#f2f2f2;}
+	.quickMenu ul li a{line-height:55px;}
+	.quickMenu ul li span{ margin-left:12px;}
+	.importBase .imports ul li{ width:160px; margin-left:44px;}
+	.importBase .imports ul li dl{ width:160px;}
+	.importBase .imports ul li dd{ width:100px;}
+	
+	.expertBase .experts ul li{margin-right:21px;}
 
-.HealthyPart1, .HealthyPart2, .HealthyPart3{height:240px; width:475px; overflow:hidden; color:#707070;}
-.HealthyPart1 a, .HealthyPart2 a, .HealthyPart3 a{color:#707070;}
-.HealthyPart1 a:hover, .HealthyPart2 a:hover, .HealthyPart3 a:hover{color:#5292c8;}
-/**/
-.HealthyPart1 .list{width:230px; overflow:hidden; position:relative; top:-6px;}
-.HealthyPart1 li{font-size:14px; height:26px; line-height:26px; overflow:hidden;}
-/**/
-.HealthyPart2 dl{height:98px; overflow:hidden; position:relative;}
-.HealthyPart2 dt{position:absolute; z-index:1; left:0px; top:0px;}
-.HealthyPart2 dd{padding-left:170px;}
-.HealthyPart2 dd h2{font-weight:400;}
-.HealthyPart2 dd .content{padding:6px 0 3px 0;}
-.HealthyPart2 li{font-size:14px; height:26px; line-height:26px; overflow:hidden; position:relative;}
-.HealthyPart2 li span{position:absolute; z-index:1; top:0px; right:0px;}
-/**/
-.HealthyPart3 li{font-size:14px; height:26px; line-height:26px; overflow:hidden; position:relative; top:-6px;}
-.HealthyPart3 li span{position:absolute; z-index:1; top:0px; right:0px;}
-
-.newsTime{height:43px; line-height:42px; overflow:hidden; background:#5292c8; font-size:14px; color:#FFF; padding:0 20px; margin:25px 0; letter-spacing:1px;}
-#nowCnYearIs{ letter-spacing:2px;}
-#nowCnDateIs{ letter-spacing:2px;}
-.newsTime span {letter-spacing: 2px;}
-.newsPart1{width:635px; height:235px; overflow:hidden; position:relative;}
-.newsPart1 .fl{width:313px; height:213px; overflow:hidden; position:relative; top:10px;}
-.newsPart1 .fl li{position:absolute; z-index:1; left:0px; top:0px; width:313px; height:213px; overflow:hidden; display:none;}
-.newsPart1 .fl .name{position:absolute; z-index:2; left:0px; bottom:0px; height:28px; line-height:28px; width:100%; overflow:hidden; }
-.newsPart1 .fl .name a{color:#FFF; padding-left:12px;}
-.newsPart1 .fl .btnDiv{position:absolute; z-index:10; right:10px; bottom:5px;}
-.newsPart1 .fl .btnDiv span{display:block; float:left; background: center top no-repeat; width:13px; height:13px; overflow:hidden; cursor:pointer;}
-.newsPart1 .fl .btnDiv .spanNow{background: center top no-repeat;}
-.newsPart1 .fr{width:300px;}
-.newsPart1 .fr li{height:100px; overflow:hidden; position:relative; top:15px;}
-.newsPart1 .fr h1 a{color:#333;}
-.newsPart1 .fr h1 a:hover{color:#5292c8;}
-.newsPart1 .fr .content{line-height:18px; color:#707070; padding-top:6px; text-align:justify; width:265px;}
-.newsPart1 .fr .more{position:absolute; z-index:1; right:60px; margin-top:-17px; color:#1d68b7;}
-
-.newsPart2{width:329px; height:227px; overflow:hidden; position:relative;}
-.newsPart2 dl{height:82px; overflow:hidden; position:relative;}
-.newsPart2 dt{position:absolute; z-index:1; left:0px; top:0px;}
-.newsPart2 dd{padding-left:127px;}
-.newsPart2 dd .content{color:#707070; padding-top:6px;}
-.newsPart2 li{height:24px; line-height:24px; overflow:hidden; font-size:14px;}
-.newsPart2 li a{color:#707070;}
-.newsPart2 li a:hover{color:#5292c8;}
-
-.newsPart3{width:313px; height:340px; overflow:hidden; position:relative; padding-right:23px;}
-.newsPart3 li{height:24px; line-height:24px; overflow:hidden; font-size:14px;}
-.newsPart3 li a{color:#707070;}
-.newsPart3 li a:hover{color:#5292c8;}
-
-.newsPart4{width:317px; height:340px; overflow:hidden; position:relative;}
-.newsPart4 .list{padding-bottom:2px;}
-.newsPart4 li{height:24px; line-height:24px; overflow:hidden; font-size:14px;}
-.newsPart4 li a{color:#707070;}
-.newsPart4 li a:hover{color:#5292c8;}
-
-.newsPart5{width:329px; height:350px; overflow:hidden; position:relative;}
-.newsPart5 .list{width:329px; height:100px; position:relative;}
-.newsPart5 ul{width:120%;}
-.newsPart5 li{float:left; width:155px; height:94px; position:relative; overflow:hidden; margin-right:20px;}
-.newsPart5 li .name{color:#FFF; width:155px; text-align:center; position:absolute; z-index:1; left:0px; bottom:2px;}
-.newsPart5 dl{height:110px; overflow:hidden; position:relative;}
-.newsPart5 dt{position:absolute; z-index:1; left:0px; top:0px;}
-.newsPart5 dd{line-height:18px; color:#707070; padding-left:168px;}
-.newsPart5 dd .name{color:#FFF; height:30px; line-height:30px; width:155px; text-align:center;position:absolute; z-index:1; left:0px; bottom:0px;}
-
-.newsPart6{height:223px; overflow:hidden; position:relative; background:#fcfcfc;}
-.newsPart6 .leftBtn{display:block; background: left top no-repeat; width:27px; height:55px; overflow:hidden; position:absolute; z-index:10; left:0px; top:75px;}
-.newsPart6 .leftBtn:hover{background:left top no-repeat;}
-.newsPart6 .rightBtn{display:block; background: left top no-repeat; width:27px; height:55px; overflow:hidden; position:absolute; z-index:10; right:0px; top:75px;}
-.newsPart6 .rightBtn:hover{background: left top no-repeat;}
-.newsPart6 .list{width:990px; overflow:hidden; margin:0 auto; position:relative;}
-.newsPart6 ul{width:2000%;}
-
-.newsPart6 li {
-    border: 2px solid #fff;
-    float: left;
-    height: 186px;
-    overflow: hidden;
-    padding-top: 18px;
-    position: relative;
-    text-align: center;
-    width: 161px;
+	.indexNews .notice { width:658px;}
+	.indexNews .notice .tab-hd li{ width:163px; margin-left:2px;}
+	.indexNews .notice .tab-hd li a{ width:161px;}
+	.indexNews .DepartNav{ width:280px;}
+	.indexNews .DepartNav ul{ height:269px; padding:30px 15px;}
+	.indexNews .DepartNav ul a{ width:83px;}
+	.indexNews .DepartNav ul a em{ margin-right:4px;}
 }
-.newsPart6 li .name{color:#FFF; height:30px; line-height:30px; width:100%; text-align:center;  position:absolute; z-index:1;bottom:0px;}
-
-.servicePart1{height:315px; width:1003px; overflow:hidden; position:relative; top:-10px;}
-.servicePart1 ul{width:120%;}
-.servicePart1 li{float:left; height:160px; padding-top:10px; width:531px; overflow:hidden; position:relative;}
-.servicePart1 .ico{position:absolute; z-index:1; left:0px; top:10px;}
-.servicePart1 h1{height:58px; line-height:56px; overflow:hidden; color:#313131; font-size:24px; padding-left:75px;}
-.servicePart1 dd{float:left; width:142px; height:37px; overflow:hidden; position:relative; left:75px;}
-.servicePart1 dd a{color:#707070; font-size:14px; padding-left:14px;}
-.servicePart1 dd a:hover{color:#5292c8;}
-
-.servicePart2{width:315px; height:250px; overflow:hidden; padding-right:40px;}
-.servicePart2 .title{height:35px; overflow:hidden; position:relative;}
-.servicePart2 .title h1{font-size:18px; color:#313131; position:relative; top:-2px;}
-.servicePart2 .title .more{position:absolute; z-index:1; top:2px; right:0px;}
-.servicePart2 li{height:26px; line-height:26px; overflow:hidden; position:relative; color:#707070; font-size:14px;}
-.servicePart2 li a{color:#707070;}
-.servicePart2 li a:hover{color:#5292c8;}
-.servicePart2 li span{position:absolute; top:0px; right:0px;}
-
-.servicePart3{width:340px; height:250px; overflow:hidden;}
-.servicePart3 li{float:left; width:168px; height:128px; overflow:hidden;}
-.servicePart3 a{display:block; width:149px; height:112px; overflow:hidden; text-align:center; color:#FFF; cursor:pointer; }
-.servicePart3 a div{padding:15px 0 5px 0;}
-
-.servicePart4{width:295px; height:240px; background:#f4f4f4; overflow:hidden;}
-.servicePart4 li{position:relative; left:25px; top:30px; height:74px; overflow:hidden; background: left top no-repeat;}
-.servicePart4 .input1{float:left; width:195px; height:33px; line-height:33px; padding-left:15px;}
-.servicePart4 .btn1{float:left; cursor:pointer; height:33px; width:25px;}
-
-.seriveList li{padding-bottom:10px;}
-.seriveList h1{height:43px; line-height:42px; overflow:hidden; font-size:16px; padding-left:18px; background:#e4f2f6 right center no-repeat; cursor:pointer;}
-.seriveList .content{line-height:24px; padding:18px; display:none;}
-.seriveList .content .msg{font-size:14px; color:#474747; padding-top:15px;}
-.seriveList .content .msg span{color:#578ab5;}
-.seriveList .liNow {color:#FFF;}
-.seriveList .liNow .content{display:block;}
-
-.DepartmentPart1{height:375px; overflow:hidden; position:relative;}
-.DepartmentPart1 .imgDiv{height:352px; overflow:hidden;}
-.DepartmentPart1 .contentDiv{position:absolute; z-index:1; top:0px; right:0px; color:#FFF; height:315px; width:222px; overflow:hidden; }
-.DepartmentPart1 h1{padding:12px 0 10px 0; text-align:center; font-size:20px;}
-.DepartmentPart1 .content{padding:0 35px 18px 35px; line-height:18px; text-align:justify;}
-.DepartmentPart1 .btn{display:block; width:153px; height:35px; line-height:35px; text-align:center; overflow:hidden; background:#5088b7; color:#FFF; font-size:14px; margin:0 auto;}
-.DepartmentPart1 .keyWord{height:43px; line-height:42px; overflow:hidden; background:#5088b7; color:#FFF; font-size:16px; padding-left:20px;}
-.DepartmentPart1 .keyWord a{color:#FFF;}
-
-.DepartmentPart2{text-align:justify; line-height:22px; padding:15px 0 35px 0;}
-
-.DepartmentPart3{min-height:180px; _height:180px; line-height:22px; padding-top:15px;}
-.DepartmentPart3 li{width:315px;}
-
-.DepartmentPart4{height:110px; width:676px; padding-top:15px; overflow:hidden; position:relative;}
-.DepartmentPart4 ul{width:120%;}
-.DepartmentPart4 li{float:left; width:185px; padding-left:60px; height:56px; overflow:hidden; line-height:22px; position:relative;}
-.DepartmentPart4 li span{position:absolute; z-index:1; left:0px; top:0px; white-space:nowrap;}
-.DepartmentPart4 .btn{display:block; width:155px; height:35px; line-height:35px; text-align:center; background:#5088b7; color:#FFF; font-size:14px; position:absolute; z-index:10; left:490px; top:60px;}
-
-.DepartmentPart5{height:160px; width:676px; overflow:hidden; padding-top:20px;}
-.DepartmentPart5 ul{width:2000%;}
-.DepartmentPart5 li{float:left; width:229px; overflow:hidden;}
-
-.Department h1{height:43px; line-height:42px; overflow:hidden; background:#578ab5; color:#FFF; font-size:18px; padding-left:18px;}
-.Department .list{padding:15px 0 20px 18px;}
-.Department li{float:left; width:182px; height:34px; line-height:34px; overflow:hidden;}
-.Department li a{ padding-left:10px; font-size:14px;}
-.Department li a:hover{color:#5088b7;}
-
-.team li{height:208px; overflow:hidden; position:relative; padding-left:153px;}
-.team .imgDiv{position:absolute; z-index:1; left:0px; top:22px;}
-.team h1{padding:29px 0 12px 0; border-bottom:#eaeaea solid 1px; font-size:18px; color:#474747;}
-.team h1 span{font-size:17px; font-family:Arial; padding-left:6px;}
-.team .msg{position:absolute; z-index:1; top:34px; right:0px; white-space:nowrap; color:#4579a4; font-size:14px;}
-.team .content{line-height:18px; text-align:justify; color:#707070; padding-top:10px;}
-
-.newsImg{ width:284px; overflow:hidden; position:relative; padding-top:15px; margin: 0 auto; padding-bottom:15px;}
-.newsImg ul{width:200%;}
-.newsImg li{float:left; width:283px; height:208px; overflow:hidden; margin-right:30px; position:relative;}
-.newsImg .name{height:40px; line-height:40px; width:100%;  position:absolute; z-index:10; left:0px; bottom:0px;}
-.newsImg .name a{color:#FFF; padding-left:20px; font-size:14px;}
-
-.newsList{margin-bottom:30px; }
-.newsList li{height:47px; line-height:45px; font-size:14px; border-bottom:1px dashed #dedede; background:#f4f4f4; overflow:hidden; position:relative;}
-.newsList li span{position:absolute; z-index:1; top:0px; right:20px;}
-.newsList li a{ padding-left:38px;}
-
-.newShow h1{text-align:center; font-size:18px; color:#313131;}
-.newShow .time{text-align:center; padding:10px 0 25px 0; font-size:16px;}
-.newShow .content{line-height:20px; text-align:justify; color:#707070;}
-.newShow .btnDiv{padding-top:25px; text-align:right;}
-.btnDiv{padding-bottom:0px; margin-top:6px;}
-.newShow .btnDiv a{display:inline-block; width:155px; height:35px; line-height:35px; text-align:center; overflow:hidden; background:#5088b7; color:#FFF; margin-left:10px; font-size:14px;}
-
-.DoctorPart1{width:264px; padding-left:96px; height:110px; overflow:hidden; position:relative;}
-.DoctorPart1 h1{position:absolute; z-index:1; left:0px; top:0px; width:96px; height:58px; overflow:hidden; background:#54a2bb; color:#FFF; font-size:16px; text-align:center; line-height:24px; padding-top:12px;}
-.DoctorPart1 li{float:left; width:23px; height:23px; line-height:23px; text-align:center; overflow:hidden; background:#f4f4f4; border-left:#FFF solid 1px; border-bottom:#FFF solid 1px; font-size:14px;}
-.DoctorPart1 li a{color:#707070; font-family:Arial;}
-.DoctorPart1 li a:hover{color:#5292c8;}
-
-.DoctorPart2{width:274px; padding-left:96px; position:relative;}
-.DoctorPart2 h1{position:absolute; z-index:1; left:0px; top:0px; width:96px; height:70px; line-height:70px; overflow:hidden; background:#54a2bb; color:#FFF; font-size:16px; text-align:center;}
-.DoctorPart2 li{float:left; width:90px; height:35px; line-height:35px; text-align:center; background:#f4f4f4; border-left:#FFF solid 1px; border-bottom:#FFF solid 1px; font-size:14px;}
-.DoctorPart2 li a{color:#707070;}
-.DoctorPart2 li a:hover{color:#5292c8;}
-
-.DoctorList th{height:43px; background:#5088b7; color:#FFF; font-size:14px; font-weight:400; border:0px none;}
-.DoctorList td{height:39px; background:#f4f4f4; border-top:#FFF solid 2px; text-align:center; font-size:14px;}
-.DoctorList td div{text-align:center; padding-left:20px;}
-.DoctorList .tdOdd{background:#fcfcfc;}
-.DoctorList .tdNow{background:#5088b7; color:#FFF;}
-.DoctorList .tdNow a, .DoctorList .tdNow a:hover{color:#FFF;}
-
-.aboutPart1{height:375px; overflow:hidden; position:relative;}
-.aboutPart1 .contentDiv{position:absolute; z-index:10; top:0px; right:0px; width:250px; height:347px; overflow:hidden; color:#FFF;}
-.aboutPart1 h1{text-align:center; font-size:18px; font-weight:bold; padding:50px 0 10px 0;}
-.aboutPart1 .content{line-height:18px; text-align:justify; width:175px; overflow:hidden; margin:0 auto;}
-
-.aboutPart2{width:747px; overflow:hidden; position:relative;}
-.aboutPart2 ul{width:120%;}
-.aboutPart2 li{float:left; width:357px; height:355px; overflow:hidden; background:#f4f4f4; margin-right:32px; margin-bottom:32px;}
-.aboutPart2 h1{padding:15px 0 10px; color:#333; font-size:18px; text-align:center;}
-.aboutPart2 h1 img{position:relative; top:5px; left:-6px;}
-.aboutPart2 .content{line-height:18px; text-align:justify; padding:0 25px; font-size:12px;}
-
-.aboutPart3{width:747px; overflow:hidden; position:relative;}
-.aboutPart3 ul{width:120%;}
-.aboutPart3 li{float:left; width:229px; height:190px; overflow:hidden; text-align:center; margin-right:30px;}
-.aboutPart3 h2{padding:8px 0px;}
-.aboutPart3 a{color:#707070; font-weight: 100;}
-
-.SurveyPart1{padding:25px 30px; background:#f4f4f4; margin-bottom:30px;}
-.SurveyPart1 h1{font-size:18px; color:#474747;}
-.SurveyPart1 .content{line-height:24px; padding-top:15px; font-size:14px;}
-
-.Survey h1{height:43px; line-height:42px; overflow:hidden; font-size:18px; padding-left:18px;cursor:pointer; margin-bottom:10px;}
-.Survey .list{padding:15px 0 15px 18px; display:none;}
-.Survey .h1Now{color:#FFF;}
-.Survey li{height:72px; overflow:hidden;}
-.Survey .name{padding-bottom:10px;}
-.fdname{ background: scroll 0 0; bottom: 40px; height: 28px; left: 0; line-height: 28px; overflow: hidden; position: absolute; width: 283px; z-index: 2;}
-.Survey dd{float:left; width:95px; overflow:hidden; line-height:18px; font-size:14px;}
-.Survey dd input{float:left; position:relative; left:-2px;}
-.Survey .btnDiv{text-align:center; padding-top:20px;}
-.Survey .btnDiv a{display:inline-block; width:115px; height:34px; line-height:32px; text-align:center; overflow:hidden; color:#FFF; font-size:14px; margin:0 8px;}
-.btnDivlyc span{background: no-repeat scroll 0 0; width:15px; height:11px; display:block; float:left;}
-.btnDivlyc {height: 11px; position: absolute; width: 35px; right:5px; top:9px;}
-
-.ExpertsPart1{min-height:300px; _height:300px; position:relative; padding-bottom:20px;}
-.ExpertsPart1 .imgDiv{position:absolute; z-index:1; left:0px; top:25px;}
-.ExpertsPart1 .btn{position:absolute; z-index:1; right:0px; top:25px; display:block; width:155px; height:35px; line-height:35px; text-align:center; overflow:hidden; background:#5088b7; color:#FFF; font-size:14px;}
-.ExpertsPart1 .content{font-size:14px; line-height:26px; padding:40px 0 0 192px; min-height:215px; _height:215px;}
-.ExpertsPart1 .content b{color:#474747;}
-.ExpertsPart1 th{height:57px; background:#e8e7e7; border-right:#f1f1f1 solid 1px; font-size:14px; color:#474747;}
-.ExpertsPart1 td{height:60px; background:#f4f4f4; border-right:#fff solid 1px; border-top:#fff solid 1px; text-align:center; font-size:14px; line-height:20px;}
-.ExpertsPart1 .td_01{background:#eee;}
-.ExpertsPart1 .td_02{background:#509eb7; color:#FFF; font-size:12px;}
-
-.ExpertsPart2{text-align:justify; line-height:24px; padding:15px 0 25px 0; text-indent:2em;}
-
-.indexPart1{padding-top:25px; width:1003px; height:126px; overflow:hidden; position:relative;}
-.indexPart1 ul{width:200%;}
-.indexPart1 li{float:left; width:206px; height:135px; overflow:hidden; position:relative;}
-.indexPart1 li a{display:block; width:186px; height:104px; text-align:center; overflow:hidden; background:#d07f81; color:#FFF;}
-.indexPart1 .bg{background:left top no-repeat; width:186px; height:114px; overflow:hidden; position:absolute; z-index:10; left:0px; top:0px; display:none;}
-.indexPart1 .imgDiv{padding:10px 0;}
-.indexPart1 .li_02 a{background:#5e95b5;}
-.indexPart1 .li_03 a{background:#caa378;}
-.indexPart1 .li_04 a{background:#68b4b5;}
-.indexPart1 .li_05 a{background:#7182b2;}
-
-.indexPart1Layer{position:absolute; z-index:100; left:50%; top:50%; background:#d07f81; width:520px; height:207px; overflow:hidden; display:none;}
-.indexPart1Layer .fl{width:250px; overflow:hidden; padding-top:12px;}
-.indexPart1Layer li{height:30px; line-height:30px; overflow:hidden;}
-.indexPart1Layer li a{ padding-left:40px; font-size:14px; color:#FFF;}
-.indexPart1Layer li a:hover{text-decoration:underline;}
-.indexPart1Layer .fr{padding:20px 20px 0 0;}
-/**/
-.indexPart1Layer_02{background:#5e95b5;}
-.indexPart1Layer_03{background:#caa378;}
-.indexPart1Layer_04{background:#68b4b5;}
-.indexPart1Layer_05{background:#7182b2;}
-
-.indexTitle{height:50px; line-height:47px; overflow:hidden; position:relative;}
-.indexTitle li{float:left; margin-right:20px; height:47px; overflow:hidden; font-size:18px; color:#707070;}
-.indexTitle .liNow{color:#333; border-bottom:#4d8bcd solid 3px;}
-.indexTitle .more{position:absolute; z-index:1; right:0px; top:0px; font-size:15px;}
-
-.indexPart2{width:610px; height:285px; overflow:hidden;}
-.indexPart2 .tabContent{height:240px; position:relative;}
-.indexPart2 .imgDiv li{position:absolute; z-index:1; left:0px; top:25px; display:none;}
-.indexPart2 h1{font-size:16px; padding:20px 0 5px 0; width:265px;}
-.indexPart2 h1 a{color:#333;}
-.indexPart2 h1 a:hover{color:#5292c8;}
-.indexPart2 .content{line-height:18px; color:#707070; text-align:justify;}
-.indexPart2 .more{text-align:right; padding:4px 0;}
-.indexPart2 .more a{color:#12579f;}
-.indexPart2 .more a:hover{text-decoration:underline;}
-.indexPart2 .list li a{color:#707070;}
-.indexPart2 .list li a:hover{color:#5292c8;}
-#pagelist div {margin-bottom: 5px;margin-right: 10px;margin-top: 5px;}
-
-.indexPart3{width:352px; height:285px; overflow:hidden; position:relative;}
-.indexPart3 .list{width:352px; height:280px; position:relative; overflow:hidden;}
-.indexPart3 .list ul{width:2000%;}
-.indexPart3 .list li{float:left; width:172px; padding-left:180px; height:280px; position:relative; overflow:hidden;}
-.indexPart3 .list .imgDiv{position:absolute; z-index:1; left:0px; top:25px;}
-.indexPart3 .list .name{ position:absolute; z-index:2; left:0px; top:206px; width:95px; height:28px; line-height:28px; overflow:hidden;}
-.indexPart3 .list .name a{color:#FFF; padding-left:10px; font-size:14px;}
-.indexPart3 .list h2{padding:20px 0 5px 0; line-height:20px; font-weight:100; font-size:16px; margin-bottom:8px; height:37px; overflow:hidden;}
-.indexPart3 .list h2 a{color:#333;}
-.indexPart3 .list h2 a:hover{color:#5292c8;}
-.indexPart3 .list .content{line-height:18px; text-align:justify; padding:3px 0 3px 0;}
-.indexPart3 .list .btnDiv a{display:block; width:85px; height:23px; line-height:23px; text-align:center; background:#3679bf; color:#FFF;}
-.indexPart3 .list .btnDiv a:hover{text-decoration:underline;}
-.indexPart3 .leftBtn{display:block; background: left top no-repeat; width:29px; height:28px; overflow:hidden; position:absolute; z-index:3; left:95px; top:256px;}
-.indexPart3 .rightBtn{display:block; background: left top no-repeat; width:29px; height:28px; overflow:hidden; position:absolute; z-index:3; left:124px; top:256px;}
-
-.indexPart4{height:270px; width:333px; overflow:hidden; position:relative;}
-.indexPart4 .tabContent{padding-top:20px;}
-.indexPart4 .tabContent h1{line-height:24px; padding:0 0 10px 0;}
-.indexPart4 .tabContent h1 a{color:#333;}
-.indexPart4 .tabContent h1 a:hover{color:#5292c8;}
-.indexPart4 .tabContent li{height:24px; line-height:24px; overflow:hidden; font-size:14px;}
-.indexPart4 .tabContent li a{color:#707070;}
-.indexPart4 .tabContent li a:hover{color:#5292c8;}
-.indexPart4 .list{padding-top:18px;}
-.indexPart4 .list li{float:left; width:148px; height:24px; line-height:26px; overflow:hidden; font-size:14px;}
-.indexPart4 .list li a{color:#707070;}
-.indexPart4 .list li a:hover{color:#5292c8;}
-
-.cios {height: 90px; overflow: hidden; position: absolute; width: 157px;}
-.History{min-height:500px; _height:500px;position:relative; padding-top:40px;}
-.History .bgT{position:absolute; z-index:1; left:0px; top:0px; height:40px; width:350px; background:#fafafa;}
-.History .bgB{position:absolute; z-index:1; left:220px; bottom:0px; height:65px; width:70px; background:#fafafa;}
-.bgB{ left:235px;}
-.History li{padding-bottom:0px;}
-
-.History h1 { cursor:pointer;   color: #707070;  font-size: 18px;  height: 105px;  left: 50px;  line-height: 40px;  overflow: hidden;  position: relative; width: 710px;}
-.History h1 span{display:inline-block; text-align:right; color:#707070; width:182px; text-align:right; padding-right:80px;}
-.History .list{display:none;}
-.History .imgDiv{padding:0 0 0 306px;}
-.History dl{min-height:25px; _height:25px; position:relative; color:#5088b7;}
-.History dt{position:absolute; z-index:1; left:0px; top:20px; width:253px; padding-right:40px; height:25px; line-height:25px; overflow:hidden; text-align:right; font-size:16px;}
-.History dd{padding:20px 40px 20px 305px; line-height:18px;}
-.History .liNow h1{ color:#5088b7;}
-.History .liNow h1 span{color:#5088b7;}
-.History .liNow .list{display:block;}
-.form form {bottom: 0; height: 126px; position: absolute; right: 46px;width: 179px;}
-.fl.fadeFlash.indexflash {top: 22px;}
-.winlist { background: none repeat scroll 0 0 #cce8f6; border: medium none; left: 0; position: absolute; width: 274px; z-index: 999; display: none; }
-.winlist td {  border: 1px solid #fff;}
-.fr.DoctorPart2 ul { position: relative; }
+/*
+@media all and (min-width: 1280px) and (max-width:1580px){
+}
+@media all and (min-width: 1581px) and (max-width:3840px){
+}*/
