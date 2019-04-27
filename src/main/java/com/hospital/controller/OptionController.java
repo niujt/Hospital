@@ -13,27 +13,27 @@ import javax.servlet.http.HttpServletRequest;
 public class OptionController {
     @Autowired
     OptionService optionService;
-    @RequestMapping("admin/optionManage")
-    public String drugsManage(HttpServletRequest request){
+    @RequestMapping("/admin/optionManage")
+    public String optionManage(HttpServletRequest request){
         request.setAttribute("options",optionService.getAll());
         return "/admin/optionManage";
     }
     @RequestMapping(value = "/admin/option/{id}",method = RequestMethod.DELETE)
     @ResponseBody
-    public JSONObject delDrug(@PathVariable Integer id){
+    public JSONObject delOption(@PathVariable Integer id){
         JSONObject json=new JSONObject();
         json.put("message",optionService.deleteOption(id));
         return json;
     }
     @RequestMapping(value = "/admin/option",method = RequestMethod.POST)
     @ResponseBody
-    public JSONObject addDrug(@RequestBody Option option){
+    public JSONObject addOption(@RequestBody Option option){
         JSONObject json=new JSONObject();
         json.put("message",optionService.insert(option));
         return json;
     }
     @RequestMapping("/admin/optionAdd")
-    public String drugAddPage(){
+    public String optionAddPage(){
         return  "/admin/add/optionadd";
     }
     @RequestMapping(value = "/admin/option/{id}",method = RequestMethod.GET)
@@ -43,7 +43,7 @@ public class OptionController {
     }
     @RequestMapping(value = "/admin/option",method = RequestMethod.PUT)
     @ResponseBody
-    public JSONObject updateDrug(@RequestBody Option option) {
+    public JSONObject updateOption(@RequestBody Option option) {
         JSONObject json=new JSONObject();
         json.put("message",optionService.updateBOption(option));
         return  json;

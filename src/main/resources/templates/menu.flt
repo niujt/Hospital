@@ -12,6 +12,7 @@
                 <dd><a href="/admin/patientManage">患者管理</a></dd>
                 <dd><a href="/admin/drugsManage">药品管理</a></dd>
                 <dd><a href="/admin/optionManage">科目查询管理</a></dd>
+                <dd><a href="/admin/illnessManage">疾病管理</a></dd>
             </dl>
         </li>
         <li class="layui-nav-item" <#if login.role!=1>style="display:none"</#if>><a href="/admin/appointmentManage">预约管理</a></li>
