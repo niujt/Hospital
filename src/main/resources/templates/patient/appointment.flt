@@ -19,14 +19,6 @@
         <li><a href="/patient/appointment">挂号</a></li>
         <li><a href="/patient/search">查询</a></li>
     </ul>
-    <div class="searchBase">
-        <form method="get" action="Search.html" onsubmit="return Kunyi.CheckSearchForm()">
-            <input type="submit" value="" class="search"/>
-            <input type="text" name="SearchWords" placeholder="输入你想要搜索的内容..." value="" autocomplete="off"
-                   onfocus="Kunyi.cls(event)" onblur="Kunyi.res(event)" maxlength="28" id="SearchWords"
-                   class="searchword"/>
-        </form>
-    </div>
 </header>
 <div class="layui-layout layui-layout-admin">
     <#--<#include "../menu.flt"/>-->
