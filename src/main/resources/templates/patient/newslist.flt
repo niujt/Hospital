@@ -24,7 +24,6 @@
 <header>
     <a class="logo" href="/hospital"><img src="/static/images/logo.png" width="350" height="51"/></a>
     <ul>
-        <li><a href="javascript:;">预约挂号</a></li>
         <li><a href="/hospital/seekguide">来院路线</a></li>
         <li><a href="/hospital/login">内部登录</a></li>
     </ul>
