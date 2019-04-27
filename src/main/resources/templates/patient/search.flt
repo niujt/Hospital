@@ -4,15 +4,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>查看病史</title>
     <link rel="stylesheet" href="/static/css/layui.min.css">
+    <link rel="stylesheet" href="/static/css/normalize.css" type="text/css"/>
+    <link rel="stylesheet" href="/static/css/secondary.css" type="text/css"/>
+    <script language="javascript" type="text/javascript" src="/static/js/KunyiHTML5.min.js"></script>
+    <script language="javascript" type="text/javascript" src="/static/js/Kunyilibrary.js"></script>
 </head>
 <body class="layui-layout-body">
+<header>
+    <a class="logo" href="/hospital"><img src="/static/images/logo.png" width="350" height="51"/></a>
+    <ul>
+        <li><a href="/loginout">退出登录</a></li>
+        <li><a href="/patient/medicalhistory">病史</a></li>
+        <li><a href="/patient/hospitalization">住院</a></li>
+        <li><a href="/patient/appointment">挂号</a></li>
+        <li><a href="/patient/search">查询</a></li>
+    </ul>
+    <div class="searchBase">
+        <form method="get" action="Search.html" onsubmit="return Kunyi.CheckSearchForm()">
+            <input type="submit" value="" class="search"/>
+            <input type="text" name="SearchWords" placeholder="输入你想要搜索的内容..." value="" autocomplete="off"
+                   onfocus="Kunyi.cls(event)" onblur="Kunyi.res(event)" maxlength="28" id="SearchWords"
+                   class="searchword"/>
+        </form>
+    </div>
+</header>
 <div class="layui-layout layui-layout-admin">
-    <#include "../menu.flt"/>
+    <#--<#include "../menu.flt"/>-->
     <!-- 内容主体区域 -->
     <div style="padding: 15px;">
             查询页面！！！！！
     </div>
 </div>
+<footer>
+    <div class="footBase">
+        <h3>咨询电话：门诊导医电话 ：1111111 （上午8：00至12:00）（下午14:00至17:00）
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>医院办公室电话：111111（全天）</span></h3>
+        <p>主办单位：人民医院 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;东区地址：省市城关解放路64号 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;西区地址：省市商都大道2996号<br/>版权所有：省人民医院
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备案号：000000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
+        <div class="QRcode"><img src="/static/images/QRcode.jpg" width="104" height="104"><br/>手机扫一扫关注人民医院官方微信</div>
+    </div>
+</footer>
 <script src="../static/js/layui.all.js"></script>
 </body>
 </html>
