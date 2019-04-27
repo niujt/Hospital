@@ -29,7 +29,7 @@
             <table class="layui-table" lay-even lay-skin="nob" style="width: 60%;margin: 0 auto">
                 <tr>
                     <td>科室：</td>
-                    <td>
+                    <td colspan="2">
                         <div class="layui-form">
                             <div class="layui-form-item">
                                 <select id="department" lay-filter="department">
@@ -47,7 +47,7 @@
                 </tr>
                 <tr>
                     <td>预约医生：</td>
-                    <td>
+                    <td colspan="2">
                         <div class="layui-form">
                             <div class="layui-form-item">
                                 <select name="doctorid" id="doctorid">
@@ -58,7 +58,7 @@
                 </tr>
                 <tr>
                     <td>预约时间：</td>
-                    <td>
+                    <td colspan="2">
                         <input type="date" name="time" required lay-verify="required" autocomplete="off"
                                class="layui-input">
                         <input type="hidden" name="patientid" va required lay-verify="required" value="${patientid}"
@@ -67,7 +67,7 @@
                 </tr>
                 <tr>
                     <td>门诊收费(元)：</td>
-                    <td>
+                    <td colspan="2">
                         <input type="text" name="expenses" required lay-verify="required" autocomplete="off"
                                class="layui-input">
                     </td>
@@ -76,6 +76,9 @@
                     <td>操作：</td>
                     <td>
                         <button type="submit" class="layui-btn layui-btn-normal">预约</button>
+                    </td>
+                    <td>
+                        <button type="submit" class="layui-btn layui-btn-normal" onclick="alert('pdf')">生成预约挂号单</button>
                     </td>
                 </tr>
                 <tbody>
