@@ -79,7 +79,7 @@ public class LoginController {
     }
     @RequestMapping("/hospital/patient/index")
     public String patientIndex(){
-        return "/patient/index";
+        return "/patient/search";
     }
     @RequestMapping("/hospital/doctor/index")
     public String doctorIndex(){
