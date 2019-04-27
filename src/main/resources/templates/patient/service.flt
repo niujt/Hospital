@@ -331,13 +331,6 @@
         <div class="QRcode"><img src="/static/images/QRcode.jpg" width="104" height="104"><br/>手机扫一扫关注人民医院官方微信</div>
     </div>
 </footer>
-<div class="zfk"><a class="weibo" target="_blank" href="javascript:;"><em>新浪微博</em></a><a class="yy" target="_blank"
-                                                                                          href="javascript:;"><em>zmxrmyy</em></a><a
-            class="qq" target="_blank"
-            href="tencent://message/?amp;Uin=2747519242&Site=zmxrmyy.com&Menu=yes"><em>QQ在线</em></a><a class="top"
-                                                                                                       target="_blank"
-                                                                                                       href="javascript:;"><em>返回顶部</em></a>
-</div>
 <div id="Footer_CodeDiv">
     <script>
         var _hmt = _hmt || [];
