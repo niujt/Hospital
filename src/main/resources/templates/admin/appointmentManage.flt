@@ -37,6 +37,7 @@
                 <thead>
                 <tr>
                     <th>序号</th>
+                    <th>预约号</th>
                     <th>患者名称</th>
                     <th>科室</th>
                     <th>预约医生</th>
@@ -51,6 +52,7 @@
                 <#list appointments as a>
                     <tr>
                         <td>${a_index+1}</td>
+                        <td>${a.id}</td>
                         <td>${a.patientname!''}</td>
                         <td>${a.department!''}</td>
                         <td>${a.doctorname!''}</td>
