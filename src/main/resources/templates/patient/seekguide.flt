@@ -23,11 +23,13 @@
 <body>
 
 <header>
-    <a class="logo" href="/hospital"><img src="/static/images/logo.png" width="350" height="51"/></a>
-    <ul>
+    <a class="logo" href="/hospital"><img src="/static/images/logoa.png" width="120" height="70"/>
+    <img src="/static/images/zt.png" width="300" height="70"/></a>
+    <!--<ul>
+        <li><a href="javascript:;">预约挂号</a></li>
         <li><a href="/hospital/seekguide">来院路线</a></li>
         <li><a href="/hospital/login">内部登录</a></li>
-    </ul>
+    </ul>-->
     <div class="searchBase">
         <form method="get" action="Search.html" onsubmit="return Kunyi.CheckSearchForm()">
             <input type="submit" value="" class="search"/>
@@ -42,239 +44,34 @@
     <div class="nav">
         <ul>
             <li class="PMenu"><a href="/hospital" class="PAMenu">网站首页</a></li>
-            <li class="PMenu"><a href="/hospital/introduction" id="Nav_AMenu0" class="PAMenu" title="医院简介">医院简介</a>
-                <div class="navboxBase">
-                    <div class="navbox">
-                        <div class="navMenus">
-                            <ul>
-                                <li><a href="/hospital/introduction" title="医院简介">医院简介</a></li>
-                                <li><a title="院长寄语">院长寄语</a></li>
-                                <li><a title="领导团队">领导团队</a></li>
-                                <li><a title="医院文化">医院文化</a></li>
-                                <li><a title="医院标识">医院标识</a></li>
-                                <li><a title="荣誉资质">荣誉资质</a></li>
-                                <li><a title="发展历程">发展历程</a></li>
-                                <li><a title="院报">院报</a></li>
-                                <li><a title="联系我们">联系我们</a></li>
-                                <li><a title="院区环境">院区环境</a></li>
-                            </ul>
-                        </div>
-                        <div class="nav_Menu01">
-                            <dl>
-                                <dt>医院简介</dt>
-                                <dd>
-                                    <img src="/static/images/pic01.jpg" width="260" height="130">
-                                    <p>
-                                        人民医院是最大的一所集医疗、教学、科研三位一体的综合性医院。始建于1952年，1995年荣获国家卫生部首批命名的“二级甲等”医院和“爱婴”医院。连年被评为市文明单位，并成为市职工医疗保险……</p>
-                                    <a class="more" >了解更多</a>
-                                </dd>
-                            </dl>
-                            <dl class="second">
-                                <dt>领导班子</dt>
-                                <dd>
-                                    <img src="/static/images/pic02.jpg" width="260" height="130">
-                                    <h3>白金娥</h3>
-                                    <p>人民医院院长 </p>
-                                    <p>省市党代表,政协委员,市人大代表</p>
-                                    <a class="more" >了解更多</a>
-                                </dd>
-                            </dl>
-                        </div>
-                        <div class="nav_Route">
-                            <dl>
-                                <dt>联系我们</dt>
-                                <dd class="adress"><em>东区地址：</em>省市城关解放路64号</dd>
-                                <dd class="adress"><em>西区地址：</em>省市商都大道2996号</dd>
-                                <dd class="bus"><em>乘车路线（东区）：</em>
-                                    <p>汽车东站乘坐：至公交车解放路官渡西路下车，向北步行300米。
-                                        <br/>汽车站(公交站)乘坐：6路（绿博园方向）邮政局下车，步行300米</p></dd>
-                                <dd class="bus"><em>乘车路线（西区）：</em>
-                                    <p> 汽车东站高铁站乘坐：至公交人民医院（新区）下车<br/>汽车站（公交站）乘坐：1路公交人民医院（新区）下车
-                                    </p></dd>
-                                <dd class="tel"><em>门诊导医电话：</em>1111111 <br/><em>医院办公室电话：</em>111111（全天）</dd>
-                            </dl>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
+            <li class="PMenu"><a href="/hospital/introduction" id="Nav_AMenu0" class="PAMenu" title="医院简介">医院简介</a>               
             </li>
-            <li class="PMenu"><a href="/hospital/patientservice" id="Nav_AMenu1" class="PAMenu" title="患者服务">患者服务</a>
-                <div class="navboxBase">
-                    <div class="navbox">
-                        <div class="navMenus">
-                            <ul>
-                                <li><a href="/hospital/service" title="科室介绍">科室介绍</a></li>
-                                <li><a href="/hospital/expert" title="专家介绍">专家介绍</a></li>
-                                <li><a  title="特色技术">特色技术</a></li>
-                            </ul>
-                        </div>
-                        <div class="nav_Menu02">
-                            <dl class="list01">
-                                <dt>专家介绍</dt>
-                                <dd><a>李瑞</a>西区门诊</dd>
-
-                                <dd><a>马仲顺</a>西区门诊</dd>
-
-                                <dd><a>孔秀珍</a>西区门诊</dd>
-
-                                <dd><a>韩书安</a>东区门诊</dd>
-
-                                <dd><a>吕建伟</a>东区门诊</dd>
-
-                                <dd><a>张豫庆</a>西区门诊</dd>
-
-                                <dd><a>武国兴</a>西区门诊</dd>
-
-                                <dd><a>袁宝先</a>东区门诊</dd>
-
-                                <dd><a>马新社 </a>感染性疾病科</dd>
-
-                                <dd><a class="more" href="/hospital/expert">了解更多</a></dd>
-                            </dl>
-                            <dl>
-                                <dt>特色技术</dt>
-                                <dd><a title='神经内科脑血管造影及脑血管疾病介入治疗'><img
-                                                src="/static/images/pic03.jpg" width="260" height="130"></a>
-                                    <h3><a
-                                           title='神经内科脑血管造影及脑血管疾病介入治疗'>神经内科脑血管造影及脑血管疾病介入治疗</a><br/><em>2016-10-24</em>
-                                    </h3></dd>
-                                <dd>
-                                    <ul>
-                                        <li><a >心内科心血管介入技术</a></li>
-
-                                        <li><a >胸外科腔镜肺肿瘤手术</a></li>
-
-                                        <li><a >普外科腔镜简介</a></li>
-
-                                    </ul>
-                                </dd>
-                                <dd><a class="more" >了解更多</a></dd>
-                            </dl>
-                        </div>
-                        <div class="nav_Route2 nav_Route8">
-                            <ul>
-                                <li><a class="green" href="javascript:;"><img alt="" src="/static/images/ico_27.png"
-                                                                              width="50"
-                                                                              height="50"></a>
-                                    <h2><a href="javascript:;">信息查询</a></h2><em>Information Service</em></li>
-                                <li><a class="yellow" ><img alt=""
-                                                                                   src="/static/images/ico_28.png"
-                                                                                   width="54" height="40"></a>
-                                    <h2><a >医保服务</a></h2><em>Medical Insurance Service</em></li>
-                            </ul>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
+            <li class="PMenu"><a href="/hospital/service" id="Nav_AMenu1" class="PAMenu" title="患者服务">患者服务</a>                
             </li>
-            <li class="PMenu current"><a href="/hospital/seekguide" id="Nav_AMenu2" class="PAMenu" title="就医指南">就医指南</a>
-                <div class="navboxBase">
-                    <div class="navbox">
-                        <div class="navMenus">
-                            <ul>
-                                <li><a href="/hospital/seekguide" title="来院路线">来院路线</a></li>
-                                <li><a href="javascript:;" title="预约挂号">预约挂号</a></li>
-                                <li><a href="/hospital/seekguide" title="坐诊时间表">坐诊时间表</a></li>
-                                <li><a  title="一卡通就诊流程">一卡通就诊流程</a></li>
-                                <li><a  title="急诊就诊流程">急诊就诊流程</a></li>
-                                <li><a  title="门诊住院流程">门诊住院流程</a></li>
-                                <li><a  title="医保患者门诊流程">医保患者门诊流程</a></li>
-                                <li><a  title="医保患者住院流程">医保患者住院流程</a></li>
-                            </ul>
-                        </div>
-                        <div class="nav_Route2 nav_Route3">
-                            <ul>
-                                <li class="first"><a class="green" href="javascript:;"><img
-                                                src="/static/images/ico_30.png"
-                                                width="50" height="54"></a>
-                                    <h2><a href="javascript:;">预约挂号</a></h2><em>Make an Appointment</em></li>
-                                <li><a class="yellow" href="/hospital/seekguide"><img src="/static/images/ico_29.png"
-                                                                               width="40"
-                                                                               height="50"></a>
-                                    <h2><a href="/hospital/seekguide">坐诊时间表</a></h2><em>坐诊时间表</em></li>
-                            </ul>
-                        </div>
-                        <div class="nav_Route nav_Route3">
-                            <dl>
-                                <dt>联系我们</dt>
-                                <dd class="adress"><em>东区地址：</em>省市城关解放路64号</dd>
-                                <dd class="adress"><em>西区地址：</em>省市商都大道2996号</dd>
-                                <dd class="bus"><em>乘车路线（东区）：</em>
-                                    <p>汽车东站乘坐：至公交车解放路官渡西路下车，向北步行300米。
-                                        <br/>汽车站(公交站)乘坐：6路（绿博园方向）邮政局下车，步行300米</p></dd>
-                                <dd class="bus"><em>乘车路线（西区）：</em>
-                                    <p> 汽车东站高铁站乘坐：至公交人民医院（新区）下车<br/>汽车站（公交站）乘坐：1路公交人民医院（新区）下车
-                                    </p></dd>
-                                <dd class="tel"><em>门诊导医电话：</em>1111111 <br/><em>医院办公室电话：</em>111111（全天）</dd>
-                            </dl>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
+            <li class="PMenu current"><a href="/hospital/seekguide" id="Nav_AMenu2" class="PAMenu" title="就医指南">就医指南</a>               
             </li>
-            <li class="PMenu"><a href="/hospital/news" id="Nav_AMenu4" class="PAMenu" title="新闻中心">新闻中心</a>
-                <div class="navboxBase">
-                    <div class="navbox">
-                        <div class="navMenus">
-                            <ul>
-                                <li><a href="/hospital/news" title="新闻中心">新闻中心</a></li>
-                                <li><a title="医院公告">医院公告</a></li>
-                                <li><a title="院务公开">院务公开</a></li>
-                                <li><a title="媒体报道">媒体报道</a></li>
-                                <li><a title="专题报道">专题报道</a></li>
-                            </ul>
-                        </div>
-                        <div class="nav_Mine02">
-                            <dl>
-                                <dt>新闻中心</dt>
-                                <dd><a>牟医 故事 | 他用两个小时，帮她拨开了“半辈子”的雾霾......</a><br/><em>2017-01-12</em>
-                                </dd>
-                                <dd><a>牟医 故事 | “十面埋伏”下，他们奋勇突围！</a><br/><em>2017-01-04</em>
-                                </dd>
-                                <dd><a>一天内三人入院，有76岁老人、64岁阿姨、还有44岁壮年，到底发生了什么...</a><br/><em>2016-12-24</em>
-                                </dd>
-                                <dd><a>牟医 新闻 | 市政法委督导小组莅临我院检查“平安医院”创建工作</a><br/><em>2016-12-24</em>
-                                </dd>
-                                <dd><a>小伙身上被扎了24针，究竟是谁这么狠？</a><br/><em>2016-12-24</em></dd>
-                                <dd><a>注意，注意！三九贴开始啦</a><br/><em>2016-12-23</em></dd>
-                                <a class="more" href="/hospital/news">了解更多</a>
-                            </dl>
-                        </div>
-                        <div class="nav_Route2 nav_Route5">
-                            <ul>
-                                <li><a class="green" href="NewsList-38.html"><img src="/static/images/ico_31.png"
-                                                                                  width="50"
-                                                                                  height="49"></a>
-                                    <h2><a href="NewsList-38.html">媒体报道</a></h2><em>Media Coverage</em></li>
-                                <li class="first"><a class="yellow" href="NewsList-39.html"><img
-                                                src="/static/images/ico_32.png"
-                                                width="50" height="48"></a>
-                                    <h2><a href="NewsList-39.html">专题报道</a></h2><em>Special Report</em></li>
-                            </ul>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
+            <li class="PMenu"><a href="/hospital/news" id="Nav_AMenu4" class="PAMenu" title="新闻中心">新闻中心</a>                
             </li>
+            <li class="PMenu"><a href="/hospital/login" id="Nav_AMenu5" class="PAMenu" title="登录注册">登录注册</a></li>
         </ul>
         <div class="clear"></div>
     </div>
 </nav>
 <section class="listbanner banner03">
     <div class="banner">
-        <div class="title"><h3>Medical Guidelines</h3>
-            <h2>就医指南</h2></div>
+        <div class="title"><h3>Consultation Schedule</h3>
+            <h2>坐诊时间表</h2></div>
     </div>
 </section>
 
 <section class="listmain">
-    <div class="bread">当前位置：<a href="/hospital">首页</a> > <a href="/hospital/seekguide">就医指南</a> > 坐诊时间表</div>
+    <div class="bread">当前位置：<a href="/hospital">首页</a> >  坐诊时间表</div>
     <div class="xzys zzsj">
         <div class="title">坐诊时间表</div>
         <div class="title01">
             <a class="active" href="DutyTime-1.html" title="内科">内科</a>
             <a title="外科">外科</a>
-            <a title="妇儿">妇儿</a>
+            <a title="急诊">急诊</a>
             <a title="门诊部">门诊部</a></div>
         <div class="visitdate">
             <div class="visittitle">
@@ -282,240 +79,172 @@
                         class="blue">星期六</span><span class="blue">星期日</span></div>
 
             <dl>
-                <dt><a href="Office-1.html">心血管内科一病区</a></dt>
+                <dt><h3>内科</h3></dt>
                 <dd class="am"><p>上午</p>
-                    <span><a target="_blank" href="Doctor-86.html">袁宝先</a><a target="_blank"
-                        >韩书明</a></span>
+                    <span><a target="_blank" href="/hospital/expertintroduction">李雷</a><a target="_blank"
+                        >韩梅梅</a></span>
 
-                    <span><a target="_blank" href="Doctor-155.html">孔秀珍</a><a target="_blank"
-                        >韩书明</a></span>
+                    <span><a target="_blank" href="/hospital/expertintroduction2">王一一</a><a target="_blank"
+                        >韩梅梅</a></span>
 
-                    <span><a target="_blank" href="Doctor-127.html">衡奇霞</a><a target="_blank"
-                        >韩书明</a></span>
+                    <span><a target="_blank" href="Doctor-127.html">李雷</a><a target="_blank"
+                        >刘瑞</a></span>
 
-                    <span><a target="_blank" href="Doctor-155.html">孔秀珍</a><a target="_blank"
-                        >韩书明</a></span>
+                    <span><a target="_blank" href="Doctor-155.html">王一一</a><a target="_blank"
+                        >韩梅梅</a></span>
 
                     <span>&nbsp;</span>
 
-                    <span><a target="_blank" href="Doctor-128.html">韩书明</a><a target="_blank"
-                        >衡奇霞</a></span>
+                    <span><a target="_blank" href="Doctor-128.html">韩梅梅</a><a target="_blank"
+                        >刘瑞</a></span>
 
-                    <span><a target="_blank" href="Doctor-128.html">韩书明</a></span></dd>
+                    <span><a target="_blank" href="Doctor-128.html">韩梅梅</a></span></dd>
                 <dd class="pm"><p>下午</p>
 
-                    <span><a target="_blank" href="Doctor-86.html">袁宝先</a><a target="_blank"
-                        >韩书明</a></span>
+                    <span><a target="_blank" href="Doctor-86.html">李雷</a><a target="_blank"
+                        >刘瑞</a></span>
 
                     <span>&nbsp;</span>
 
-                    <span><a target="_blank" href="Doctor-127.html">衡奇霞</a><a target="_blank"
-                        >韩书明</a></span>
+                    <span><a target="_blank" href="Doctor-127.html">李雷</a><a target="_blank"
+                        >王一一</a></span>
 
                     <span>&nbsp;</span>
 
                     <span>&nbsp;</span>
 
-                    <span><a target="_blank">韩书明</a><a target="_blank"
-                        >衡奇霞</a></span>
+                    <span><a target="_blank">刘瑞</a><a target="_blank"
+                        >李雷</a></span>
 
-                    <span><a target="_blank">韩书明</a></span>
+                    <span><a target="_blank">韩梅梅</a></span>
                 </dd>
                 <dd class="clear"></dd>
             </dl>
 
             <dl>
-                <dt><a>心血管内科二病区 </a></dt>
+                <dt><h3>外科</h3></dt>
                 <dd class="am"><p>上午</p>
-                    <span>&nbsp;</span>
+                    <span><a target="_blank">王五</a><a target="_blank"
+                        >赵志</a></span>
 
-                    <span>&nbsp;</span>
+                    <span><a target="_blank">王五</a></span>
 
-                    <span>&nbsp;</span>
+                    <span><a target="_blank">丁丽</a></span>
 
-                    <span>&nbsp;</span>
+                    <span><a target="_blank">王五</a><a target="_blank"
+                        >赵志</a></span>
 
-                    <span><a target="_blank">赵志中</a></span>
+                    <span><a target="_blank">赵志</a></span>
 
-                    <span>&nbsp;</span>
+                    <span><a target="_blank">王青</a><a target="_blank"
+                        >丁丽 </a></span>
 
-                    <span><a target="_blank">赵志中</a></span></dd>
+                    <span><a target="_blank">王青</a><a target="_blank"
+                        >丁丽</a></span></dd>
                 <dd class="pm"><p>下午</p>
 
-                    <span>&nbsp;</span>
+                    <span><a target="_blank">丁丽</a><a target="_blank"
+                        >赵志</a></span>
 
-                    <span>&nbsp;</span>
+                    <span><a target="_blank">王青</a></span>
 
-                    <span>&nbsp;</span>
+                    <span><a target="_blank">王五</a></span>
 
-                    <span>&nbsp;</span>
+                    <span><a target="_blank">王青</a><a target="_blank"
+                        >赵志</a></span>
 
-                    <span><a target="_blank">赵志中</a></span>
+                    <span><a target="_blank">王青</a></span>
 
-                    <span>&nbsp;</span>
+                    <span><a target="_blank">赵志</a><a target="_blank"
+                        >丁丽 </a></span>
 
-                    <span><a target="_blank">赵志中</a></span>
+                    <span><a target="_blank">赵志</a><a target="_blank"
+                        >丁丽</a></span>
                 </dd>
                 <dd class="clear"></dd>
             </dl>
 
             <dl>
-                <dt><a href="Office-3.html">神经内科一病区</a></dt>
+                <dt><h3>急诊</h3></dt>
                 <dd class="am"><p>上午</p>
-                    <span><a target="_blank">陈振山</a><a target="_blank"
-                        >马慧敏</a></span>
+                    <span><a target="_blank">杨丽娟</a></span>
 
-                    <span><a target="_blank">陈振山</a></span>
+                    <span><a target="_blank">郝新景</a></span>
 
-                    <span><a target="_blank">陈振山</a></span>
+                    <span><a target="_blank">邢一川</a></span>
 
-                    <span><a target="_blank">陈振山</a><a target="_blank"
-                        >师松强</a></span>
+                    <span><a target="_blank">朱铭</a></span>
 
-                    <span><a target="_blank">陈振山</a></span>
+                    <span><a target="_blank">李鑫</a></span>
 
-                    <span><a target="_blank">陈振山</a><a target="_blank"
-                        >王卯 </a></span>
+                    <span><a target="_blank">杨丽娟</a></span>
 
-                    <span><a target="_blank">陈振山</a><a target="_blank"
-                        >邵一平</a></span></dd>
+                    <span><a target="_blank">邢一川</a></span></dd>
                 <dd class="pm"><p>下午</p>
 
-                    <span><a target="_blank">陈振山</a><a target="_blank"
-                        >马慧敏</a></span>
+                    <span><a target="_blank">郝新景</a></span>
 
-                    <span><a target="_blank">陈振山</a></span>
+                    <span><a target="_blank">朱铭</a></span>
 
-                    <span><a target="_blank">陈振山</a></span>
+                    <span><a target="_blank">李鑫</a></span>
 
-                    <span><a target="_blank">陈振山</a><a target="_blank"
-                        >师松强</a></span>
+                    <span><a target="_blank">邢一川</a></span>
 
-                    <span><a target="_blank">陈振山</a></span>
+                    <span><a target="_blank">杨丽娟</a></span>
 
-                    <span><a target="_blank">陈振山</a><a target="_blank"
-                        >王卯 </a></span>
+                    <span><a target="_blank">郝新景</a></span>
 
-                    <span><a target="_blank">陈振山</a><a target="_blank"
-                        >邵一平</a></span>
+                    <span><a target="_blank">朱铭</a></span>
                 </dd>
                 <dd class="clear"></dd>
             </dl>
 
             <dl>
-                <dt><a href="Office-5.html">神经内科二病区</a></dt>
+                <dt><a>门诊</a></dt>
                 <dd class="am"><p>上午</p>
-                    <span><a target="_blank">孔雪丽</a></span>
+                    <span><a target="_blank">邵一博</a></span>
 
-                    <span><a target="_blank">武俊波</a></span>
+                    <span><a target="_blank">邵一博</a><a target="_blank"
+                        >丁晓</a></span>
 
-                    <span><a target="_blank">刘利娟</a></span>
+                    <span><a target="_blank">邵一博</a><a target="_blank"
+                        >丁晓</a></span>
 
-                    <span><a target="_blank">孟玲玲</a></span>
+                    <span><a target="_blank">王斌</a><a target="_blank"
+                        >丁晓</a></span>
 
-                    <span><a target="_blank">张丽荣</a></span>
+                    <span><a target="_blank">师诗</a><a target="_blank"
+                        >马勇</a></span>
 
-                    <span><a target="_blank">刘利娟</a></span>
+                    <span><a target="_blank">师诗</a><a target="_blank"
+                        >马勇</a></span>
 
-                    <span><a target="_blank">孔雪丽</a></span></dd>
+                    <span><a target="_blank">马勇</a></span></dd>
                 <dd class="pm"><p>下午</p>
 
-                    <span><a target="_blank">孔雪丽</a></span>
+                    <span><a target="_blank">师诗</a></span>
 
-                    <span><a target="_blank">武俊波</a></span>
+                    <span><a target="_blank">师诗</a><a target="_blank"
+                        >马勇</a></span>
 
-                    <span><a target="_blank">刘利娟</a></span>
+                    <span><a target="_blank">师诗</a><a target="_blank"
+                        >马勇</a></span>
 
-                    <span><a target="_blank">孟玲玲</a></span>
+                    <span><a target="_blank">王昊</a><a target="_blank"
+                        >马勇</a></span>
 
-                    <span><a target="_blank">张丽荣</a></span>
+                    <span><a target="_blank">王昊</a><a target="_blank"
+                        >马勇</a></span>
 
-                    <span><a target="_blank">刘利娟</a></span>
+                    <span><a target="_blank">王昊</a><a target="_blank"
+                        >马勇</a></span>
 
-                    <span><a target="_blank">孔雪丽</a></span>
+                    <span><a target="_blank">马勇</a></span>
                 </dd>
                 <dd class="clear"></dd>
             </dl>
 
-            <dl>
-                <dt><a>中医康复科</a></dt>
-                <dd class="am"><p>上午</p>
-                    <span><a target="_blank">王斌</a></span>
-
-                    <span><a target="_blank">王斌</a><a target="_blank"
-                        >周鲲</a></span>
-
-                    <span><a target="_blank">王斌</a><a target="_blank"
-                        >周鲲</a></span>
-
-                    <span><a target="_blank">王斌</a><a target="_blank"
-                        >周鲲</a></span>
-
-                    <span><a target="_blank">王斌</a><a target="_blank"
-                        >周鲲</a></span>
-
-                    <span><a target="_blank">王斌</a><a target="_blank"
-                        >周鲲</a></span>
-
-                    <span><a target="_blank">周鲲</a></span></dd>
-                <dd class="pm"><p>下午</p>
-
-                    <span><a target="_blank">王斌</a></span>
-
-                    <span><a target="_blank">王斌</a><a target="_blank"
-                        >周鲲</a></span>
-
-                    <span><a target="_blank">王斌</a><a target="_blank"
-                        >周鲲</a></span>
-
-                    <span><a target="_blank">王斌</a><a target="_blank"
-                        >周鲲</a></span>
-
-                    <span><a target="_blank">王斌</a><a target="_blank"
-                        >周鲲</a></span>
-
-                    <span><a target="_blank">王斌</a><a target="_blank"
-                        >周鲲</a></span>
-
-                    <span><a target="_blank">周鲲</a></span>
-                </dd>
-                <dd class="clear"></dd>
-            </dl>
-
-            <dl>
-                <dt><a href="Office-7.html">感染性疾病科</a></dt>
-                <dd class="am"><p>上午</p>
-                    <span><a target="_blank">马新社 </a></span>
-
-                    <span><a target="_blank">马新社 </a></span>
-
-                    <span><a target="_blank">马新社 </a></span>
-
-                    <span><a target="_blank">马新社 </a></span>
-
-                    <span>&nbsp;</span>
-
-                    <span>&nbsp;</span>
-
-                    <span>&nbsp;</span></dd>
-                <dd class="pm"><p>下午</p>
-
-                    <span>&nbsp;</span>
-
-                    <span>&nbsp;</span>
-
-                    <span>&nbsp;</span>
-
-                    <span>&nbsp;</span>
-
-                    <span>&nbsp;</span>
-
-                    <span>&nbsp;</span>
-
-                    <span>&nbsp;</span>
-                </dd>
-                <dd class="clear"></dd>
-            </dl>
+            
 
         </div>
     </div>
@@ -534,6 +263,7 @@
         <div class="QRcode"><img src="/static/images/QRcode.jpg" width="104" height="104"><br/>手机扫一扫关注人民医院官方微信</div>
     </div>
 </footer>
+
 <div id="Footer_CodeDiv">
     <script>
         var _hmt = _hmt || [];

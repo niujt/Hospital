@@ -21,11 +21,13 @@
 <body>
 
 <header>
-    <a class="logo" href="/hospital"><img src="/static/images/logo.png" width="350" height="51"/></a>
-    <ul>
-        <li><a href="/hospital/seekguide">来院路线</a></li>
+    <a class="logo" href="/hospital"><img src="/static/images/logoa.png" width="120" height="70"/>
+    <img src="/static/images/zt.png" width="300" height="70"/></a>
+    <!--<ul>
+        <li><a href="javascript:;">预约挂号</a></li>
+        <li><a href="/hospital/guide">来院路线</a></li>
         <li><a href="/hospital/login">内部登录</a></li>
-    </ul>
+    </ul>-->
     <div class="searchBase">
         <form method="get" action="Search.html" onsubmit="return Kunyi.CheckSearchForm()">
             <input type="submit" value="" class="search"/>
@@ -40,214 +42,15 @@
     <div class="nav">
         <ul>
             <li class="PMenu"><a href="/hospital" class="PAMenu">网站首页</a></li>
-            <li class="PMenu"><a href="/hospital/introduction" id="Nav_AMenu0" class="PAMenu" title="医院简介">医院简介</a>
-                <div class="navboxBase">
-                    <div class="navbox">
-                        <div class="navMenus">
-                            <ul>
-                                <li><a href="/hospital/introduction" title="医院简介">医院简介</a></li>
-                                <li><a href="Article-11.html" title="院长寄语">院长寄语</a></li>
-                                <li><a href="Leaders.html" title="领导团队">领导团队</a></li>
-                                <li><a href="Article-13.html" title="医院文化">医院文化</a></li>
-                                <li><a href="Article-14.html" title="医院标识">医院标识</a></li>
-                                <li><a href="ImagesList-15.html" title="荣誉资质">荣誉资质</a></li>
-                                <li><a href="Article-16.html" title="发展历程">发展历程</a></li>
-                                <li><a href="Newspaper.html" title="院报">院报</a></li>
-                                <li><a href="Article-18.html" title="联系我们">联系我们</a></li>
-                                <li><a href="Article-19.html" title="院区环境">院区环境</a></li>
-                            </ul>
-                        </div>
-                        <div class="nav_Menu01">
-                            <dl>
-                                <dt>医院简介</dt>
-                                <dd>
-                                    <img src="/static/imagespic/01.jpg" width="260" height="130">
-                                    <p>
-                                        人民医院是最大的一所集医疗、教学、科研三位一体的综合性医院。始建于1952年，1995年荣获国家卫生部首批命名的“二级甲等”医院和“爱婴”医院。连年被评为市文明单位，并成为市职工医疗保险……</p>
-                                    <a class="more" href="Article-11.html">了解更多</a>
-                                </dd>
-                            </dl>
-                            <dl class="second">
-                                <dt>领导班子</dt>
-                                <dd>
-                                    <img src="/static/images/pic02.jpg" width="260" height="130">
-                                    <h3>白金娥</h3>
-                                    <p>人民医院院长 </p>
-                                    <p>省市党代表,政协委员,市人大代表</p>
-                                    <a class="more" href="Leaders.html">了解更多</a>
-                                </dd>
-                            </dl>
-                        </div>
-                        <div class="nav_Route">
-                            <dl>
-                                <dt>联系我们</dt>
-                                <dd class="adress"><em>东区地址：</em>省市城关解放路64号</dd>
-                                <dd class="adress"><em>西区地址：</em>省市商都大道2996号</dd>
-                                <dd class="bus"><em>乘车路线（东区）：</em>
-                                    <p>汽车东站乘坐：至公交车解放路官渡西路下车，向北步行300米。
-                                        <br/>汽车站(公交站)乘坐：6路（绿博园方向）邮政局下车，步行300米</p></dd>
-                                <dd class="bus"><em>乘车路线（西区）：</em>
-                                    <p> 汽车东站高铁站乘坐：至公交人民医院（新区）下车<br/>汽车站（公交站）乘坐：1路公交人民医院（新区）下车
-                                    </p></dd>
-                                <dd class="tel"><em>门诊导医电话：</em>1111111 <br/><em>医院办公室电话：</em>111111（全天）</dd>
-                            </dl>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
+            <li class="PMenu"><a href="/hospital/introduction" id="Nav_AMenu0" class="PAMenu" title="医院简介">医院简介</a>             
             </li>
-            <li class="PMenu"><a href="/hospital/patientservice" id="Nav_AMenu1" class="PAMenu" title="患者服务">患者服务</a>
-                <div class="navboxBase">
-                    <div class="navbox">
-                        <div class="navMenus">
-                            <ul>
-                                <li><a href="/hospital/service" title="科室介绍">科室介绍</a></li>
-                                <li><a href="/hospital/expert" title="专家介绍">专家介绍</a></li>
-                                <li><a href="ArticleList-22.html" title="特色技术">特色技术</a></li>
-                            </ul>
-                        </div>
-                        <div class="nav_Menu02">
-                            <dl class="list01">
-                                <dt>专家介绍</dt>
-                                <dd><a href="Doctor-157.html">李瑞</a>西区门诊</dd>
-
-                                <dd><a href="Doctor-217.html">马仲顺</a>西区门诊</dd>
-
-                                <dd><a href="Doctor-155.html">孔秀珍</a>西区门诊</dd>
-
-                                <dd><a href="Doctor-216.html">韩书安</a>东区门诊</dd>
-
-                                <dd><a href="Doctor-218.html">吕建伟</a>东区门诊</dd>
-
-                                <dd><a href="Doctor-219.html">张豫庆</a>西区门诊</dd>
-
-                                <dd><a href="Doctor-220.html">武国兴</a>西区门诊</dd>
-
-                                <dd><a href="Doctor-86.html">袁宝先</a>东区门诊</dd>
-
-                                <dd><a href="Doctor-39.html">马新社 </a>感染性疾病科</dd>
-
-                                <dd><a class="more" href="/hospital/expert">了解更多</a></dd>
-                            </dl>
-                            <dl>
-                                <dt>特色技术</dt>
-                                <dd><a href='NewsDetail-216.html' title='神经内科脑血管造影及脑血管疾病介入治疗'><img
-                                                src="/static/imagespic03.jpg" width="260" height="130"></a>
-                                    <h3><a href='NewsDetail-216.html'
-                                           title='神经内科脑血管造影及脑血管疾病介入治疗'>神经内科脑血管造影及脑血管疾病介入治疗</a><br/><em>2016-10-24</em>
-                                    </h3></dd>
-                                <dd>
-                                    <ul>
-                                        <li><a href="NewsDetail-215.html">心内科心血管介入技术</a></li>
-
-                                        <li><a href="NewsDetail-214.html">胸外科腔镜肺肿瘤手术</a></li>
-
-                                        <li><a href="NewsDetail-213.html">普外科腔镜简介</a></li>
-
-                                    </ul>
-                                </dd>
-                                <dd><a class="more" href="ArticleList-22.html">了解更多</a></dd>
-                            </dl>
-                        </div>
-                        <div class="nav_Route2 nav_Route8">
-                            <ul>
-                                <li><a class="green" href="javascript:;"><img alt="" src="/static/images/ico_27.png" width="50"
-                                                                              height="50"></a>
-                                    <h2><a href="javascript:;">信息查询</a></h2><em>Information Service</em></li>
-                                <li><a class="yellow" href="NewsList-53.html"><img alt="" src="images/ico_28.png"
-                                                                                   width="54" height="40"></a>
-                                    <h2><a href="NewsList-53.html">医保服务</a></h2><em>Medical Insurance Service</em></li>
-                            </ul>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
+            <li class="PMenu"><a href="/hospital/service" id="Nav_AMenu1" class="PAMenu" title="患者服务">患者服务</a>               
             </li>
-            <li class="PMenu"><a href="/hospital/seekguide" id="Nav_AMenu2" class="PAMenu" title="就医指南">就医指南</a>
-                <div class="navboxBase">
-                    <div class="navbox">
-                        <div class="navMenus">
-                            <ul>
-                                <li><a href="/hospital/seekguide" title="来院路线">来院路线</a></li>
-                                <li><a href="javascript:;" title="预约挂号">预约挂号</a></li>
-                                <li><a href="/hospital/seekguide" title="坐诊时间表">坐诊时间表</a></li>
-                                <li><a href="Article-26.html" title="一卡通就诊流程">一卡通就诊流程</a></li>
-                                <li><a href="Article-27.html" title="急诊就诊流程">急诊就诊流程</a></li>
-                                <li><a href="Article-28.html" title="门诊住院流程">门诊住院流程</a></li>
-                                <li><a href="Article-29.html" title="医保患者门诊流程">医保患者门诊流程</a></li>
-                                <li><a href="Article-30.html" title="医保患者住院流程">医保患者住院流程</a></li>
-                            </ul>
-                        </div>
-                        <div class="nav_Route2 nav_Route3">
-                            <ul>
-                                <li class="first"><a class="green" href="javascript:;"><img src="/static/images/ico_30.png"
-                                                                                            width="50" height="54"></a>
-                                    <h2><a href="javascript:;">预约挂号</a></h2><em>Make an Appointment</em></li>
-                                <li><a class="yellow" href="/hospital/seekguide"><img src="images/ico_29.png" width="40"
-                                                                               height="50"></a>
-                                    <h2><a href="/hospital/seekguide">坐诊时间表</a></h2><em>坐诊时间表</em></li>
-                            </ul>
-                        </div>
-                        <div class="nav_Route nav_Route3">
-                            <dl>
-                                <dt>联系我们</dt>
-                                <dd class="adress"><em>东区地址：</em>省市城关解放路64号</dd>
-                                <dd class="adress"><em>西区地址：</em>省市商都大道2996号</dd>
-                                <dd class="bus"><em>乘车路线（东区）：</em>
-                                    <p>汽车东站乘坐：至公交车解放路官渡西路下车，向北步行300米。
-                                        <br/>汽车站(公交站)乘坐：6路（绿博园方向）邮政局下车，步行300米</p></dd>
-                                <dd class="bus"><em>乘车路线（西区）：</em>
-                                    <p> 汽车东站高铁站乘坐：至公交人民医院（新区）下车<br/>汽车站（公交站）乘坐：1路公交人民医院（新区）下车
-                                    </p></dd>
-                                <dd class="tel"><em>门诊导医电话：</em>1111111 <br/><em>医院办公室电话：</em>111111（全天）</dd>
-                            </dl>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
+            <li class="PMenu"><a href="/hospital/guide" id="Nav_AMenu2" class="PAMenu" title="就医指南">就医指南</a>               
             </li>
-            <li class="PMenu current"><a href="/hospital/news" id="Nav_AMenu4" class="PAMenu" title="新闻中心">新闻中心</a>
-                <div class="navboxBase">
-                    <div class="navbox">
-                        <div class="navMenus">
-                            <ul>
-                                <li><a href="/hospital/news" title="新闻中心">新闻中心</a></li>
-                                <li><a href="NewsList-36.html" title="医院公告">医院公告</a></li>
-                                <li><a href="NewsList-37.html" title="院务公开">院务公开</a></li>
-                                <li><a href="NewsList-38.html" title="媒体报道">媒体报道</a></li>
-                                <li><a href="NewsList-39.html" title="专题报道">专题报道</a></li>
-                            </ul>
-                        </div>
-                        <div class="nav_Mine02">
-                            <dl>
-                                <dt>新闻中心</dt>
-                                <dd><a href="NewsDetail-273.html">牟医 故事 | 他用两个小时，帮她拨开了“半辈子”的雾霾......</a><br/><em>2017-01-12</em>
-                                </dd>
-                                <dd><a href="NewsDetail-266.html">牟医 故事 | “十面埋伏”下，他们奋勇突围！</a><br/><em>2017-01-04</em>
-                                </dd>
-                                <dd><a href="NewsDetail-265.html">一天内三人入院，有76岁老人、64岁阿姨、还有44岁壮年，到底发生了什么...</a><br/><em>2016-12-24</em>
-                                </dd>
-                                <dd><a href="NewsDetail-264.html">牟医 新闻 | 市政法委督导小组莅临我院检查“平安医院”创建工作</a><br/><em>2016-12-24</em>
-                                </dd>
-                                <dd><a href="NewsDetail-262.html">小伙身上被扎了24针，究竟是谁这么狠？</a><br/><em>2016-12-24</em></dd>
-                                <dd><a href="NewsDetail-261.html">注意，注意！三九贴开始啦</a><br/><em>2016-12-23</em></dd>
-                                <a class="more" href="/hospital/news">了解更多</a>
-                            </dl>
-                        </div>
-                        <div class="nav_Route2 nav_Route5">
-                            <ul>
-                                <li><a class="green" href="NewsList-38.html"><img src="/static/images/ico_31.png" width="50"
-                                                                                  height="49"></a>
-                                    <h2><a href="NewsList-38.html">媒体报道</a></h2><em>Media Coverage</em></li>
-                                <li class="first"><a class="yellow" href="NewsList-39.html"><img src="/static/images/ico_32.png"
-                                                                                                 width="50" height="48"></a>
-                                    <h2><a href="NewsList-39.html">专题报道</a></h2><em>Special Report</em></li>
-                            </ul>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
+            <li class="PMenu current"><a href="/hospital/news" id="Nav_AMenu4" class="PAMenu" title="新闻中心">新闻中心</a>               
             </li>
+            <li class="PMenu"><a href="/hospital/login" id="Nav_AMenu5" class="PAMenu" title="登录注册">登录注册</a></li>
         </ul>
         <div class="clear"></div>
     </div>
@@ -260,59 +63,33 @@
 </section>
 
 <section class="BaseMark listmain">
-    <div class="bread">当前位置：<a href="/hospital">首页</a> > <a href="news.html">新闻中心</a> > 新闻中心</div>
+    <div class="bread">当前位置：<a href="/hospital">首页</a>  > 新闻中心</div>
     <div class="listleft">
         <div class="tools"><a class="first" href="javascript:;"><em class="t01"></em>预约挂号</a><a href="/hospital/expert"><em
                         class="t02"></em>专家介绍</a><a class="first" href="/hospital/service"><em class="t03"></em>科室介绍</a><a
-                    href="/hospital/seekguide"><em class="t04"></em>就医指南</a></div>
+                    href="/hospital/guide"><em class="t04"></em>就医指南</a></div>
     </div>
     <div class="listright">
         <div class="title">新闻中心</div>
         <div class="listnews">
             <ul>
-                <li><a href="NewsDetail-273.html" title="牟医 故事 | 他用两个小时，帮她拨开了“半辈子”的雾霾......" target="_blank"><em></em>牟医
-                        故事 | 他用两个小时，帮她拨开了“半辈子”的雾霾......<span>[2017-01-12]</span></a></li>
-                <li><a href="NewsDetail-266.html" title="牟医  故事 | “十面埋伏”下，他们奋勇突围！" target="_blank"><em></em>牟医 故事 |
-                        “十面埋伏”下，他们奋勇突围！<span>[2017-01-04]</span></a></li>
-                <li><a href="NewsDetail-265.html" title="一天内三人入院，有76岁老人、64岁阿姨、还有44岁壮年，到底发生了什么..."
-                       target="_blank"><em></em>一天内三人入院，有76岁老人、64岁阿姨、还有44岁壮年，到底发生了什么...<span>[2016-12-24]</span></a>
+                <li><h4>医院 故事 | 他用两个小时，帮她拨开了“半辈子”的雾霾......<span>[2018-12-12]</span></h4></li>
+                <li><h4>医院 故事 |“十面埋伏”下，他们奋勇突围！<span>[2019-01-04]</span></h4></li>
+                <li><h4>一天内三人入院，有76岁老人、64岁阿姨、还有44岁壮年，到底发生了什么...<span>[2018-12-24]</span></h4>
                 </li>
-                <li><a href="NewsDetail-264.html" title="牟医 新闻 | 市政法委督导小组莅临我院检查“平安医院”创建工作" target="_blank"><em></em>牟医
-                        新闻 | 市政法委督导小组莅临我院检查“平安医院”创建工作<span>[2016-12-24]</span></a></li>
-                <li><a href="NewsDetail-262.html" title="小伙身上被扎了24针，究竟是谁这么狠？" target="_blank"><em></em>小伙身上被扎了24针，究竟是谁这么狠？<span>[2016-12-24]</span></a>
+                <li><h4>医院  新闻 | 市政法委督导小组莅临我院检查“平安医院”创建工作<span>[2018-12-28]</span></h4></li>
+                <li><h4>小伙身上被扎了24针，究竟是谁这么狠？<span>[2018-12-28]</span></h4>
                 </li>
-                <li><a href="NewsDetail-261.html" title="注意，注意！三九贴开始啦" target="_blank"><em></em>注意，注意！三九贴开始啦<span>[2016-12-23]</span></a>
+                <li><h4>注意，注意！三九贴开始啦!<span>[2018-12-30]</span></h4>
                 </li>
-                <li><a href="NewsDetail-258.html" title="牟医   故事 | NICU,呵护幼小生命的地方。" target="_blank"><em></em>牟医 故事 |
-                        NICU,呵护幼小生命的地方。<span>[2016-12-07]</span></a></li>
-                <li><a href="NewsDetail-249.html" title="牟医   故事 | 明明可以靠脸，还那么有实力，原来是他们......" target="_blank"><em></em>牟医
-                        故事 | 明明可以靠脸，还那么有实力，原来是他们......<span>[2016-12-02]</span></a></li>
-                <li><a href="NewsDetail-243.html" title="牟医   提升  郑医“大咖秀”，给你不一样的“新闻眼”！" target="_blank"><em></em>牟医 提升
-                        郑医“大咖秀”，给你不一样的“新闻眼”！<span>[2016-11-18]</span></a></li>
-                <li><a href="NewsDetail-234.html" title="我院被中国卒中学会授予“红手环志愿单位”荣誉称号" target="_blank"><em></em>我院被中国卒中学会授予“红手环志愿单位”荣誉称号<span>[2016-11-07]</span></a>
-                </li>
-                <li><a href="NewsDetail-228.html" title="牟医   新闻 | 人民医院、刘集镇卫生院 医联体及对口支援协作单位签字揭牌仪式"
-                       target="_blank"><em></em>牟医 新闻 | 人民医院、刘集镇卫生院 医联体及对口支援协作单位签字揭牌仪式<span>[2016-10-29]</span></a></li>
-                <li><a href="NewsDetail-225.html" title="牟医  提升 | 苦练基本技能 提升急救能力" target="_blank"><em></em>牟医 提升 | 苦练基本技能
-                        提升急救能力<span>[2016-10-24]</span></a></li>
+                <li><h4>医院  故事 |NICU,呵护幼小生命的地方。<span>[2019-01-07]</span></h4></li>
+                <li><h4>医院   故事 | 明明可以靠脸，还那么有实力，原来是他们......<span>[2019-01-09]</span></h4></li>
+                
+               
             </ul>
         </div>
 
-        <!-- AspNetPager 7.3.2  Copyright:2003-2010 Webdiyer (www.webdiyer.com) -->
-        <div id="anpNews">
-            <a class="FLBtn" disabled="disabled" style="margin-right:5px;">&nbsp;</a><a class="PNBtn"
-                                                                                        disabled="disabled"
-                                                                                        style="margin-right:5px;">&nbsp;</a><span
-                    class="cpd" style="margin-right:5px;">1</span><a href="/NewsList-35-2.html"
-                                                                     style="margin-right:5px;">2</a><a class="PNBtn"
-                                                                                                       href="/NewsList-35-2.html"
-                                                                                                       style="margin-right:5px;">上一页</a><a
-                    class="FLBtn" href="/NewsList-35-2.html" style="margin-right:5px;"> 尾 页 </a>
-        </div>
-        <!-- AspNetPager 7.3.2  Copyright:2003-2010 Webdiyer (www.webdiyer.com) -->
-
-
-    </div>
+      
     <div class="clear"></div>
 </section>
 <footer>
@@ -324,6 +101,7 @@
         <div class="QRcode"><img src="/static/images/QRcode.jpg" width="104" height="104"><br/>手机扫一扫关注人民医院官方微信</div>
     </div>
 </footer>
+
 <div id="Footer_CodeDiv">
     <script>
         var _hmt = _hmt || [];
@@ -335,8 +113,8 @@
         })();
     </script>
 </div>
-<script language="javascript" type="text/javascript" src="/static/js/Kunyi.Common.js"></script>
-<script language="javascript" type="text/javascript" src="/static/js/Kunyi.Secondary.js"></script>
+<script language="javascript" type="text/javascript" src="js/Kunyi.Common.js"></script>
+<script language="javascript" type="text/javascript" src="js/Kunyi.Secondary.js"></script>
 
 </body>
 </html>

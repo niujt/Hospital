@@ -18,14 +18,13 @@
 <body>
 
 <header>
-    <a class="logo" href="/hospital"><img src="/static/images/logo.png" width="350" height="51"/></a>
-    <ul>
-        <li><a href="javascript:">预约挂号</a></li>
-        <li><a href="/hospital/seekguide">来院路线</a></li>
-        <li><a href="/hospital/login">内部登录</a></li>
-    </ul>
+    <a class="logo" href="/hospital"><img src="/static/images/logoa.png" width="120" height="70"/>
+        <img src="/static/images/zt.png" width="300" height="70"/></a>
+
     <div class="searchBase">
+
         <form method="get" action="Search.html" onSubmit="return Kunyi.CheckSearchForm()">
+
             <input type="submit" value="" class="search"/>
             <input type="text" name="SearchWords" placeholder="输入你想要搜索的内容..." value="" autocomplete="off"
                    onFocus="Kunyi.cls(event)" onBlur="Kunyi.res(event)" maxlength="28" id="SearchWords"
@@ -39,193 +38,10 @@
         <ul>
             <li class="PMenu"><a href="/hospital" class="PAMenu">网站首页</a></li>
             <li class="PMenu"><a href="/hospital/introduction" id="Nav_AMenu0" class="PAMenu" title="医院简介">医院简介</a>
-                <div class="navboxBase">
-                    <div class="navbox">
-                        <div class="navMenus">
-                            <ul>
-                                <li><a href="/hospital/introduction" title="医院简介">医院简介</a></li>
-                                <li><a href="Article-11.html" title="院长寄语">院长寄语</a></li>
-                                <li><a href="Leaders.html" title="领导团队">领导团队</a></li>
-                                <li><a href="Article-13.html" title="医院文化">医院文化</a></li>
-                                <li><a href="Article-14.html" title="医院标识">医院标识</a></li>
-                                <li><a href="ImagesList-15.html" title="荣誉资质">荣誉资质</a></li>
-                                <li><a href="Article-16.html" title="发展历程">发展历程</a></li>
-                                <li><a href="Newspaper.html" title="院报">院报</a></li>
-                                <li><a href="Article-18.html" title="联系我们">联系我们</a></li>
-                                <li><a href="Article-19.html" title="院区环境">院区环境</a></li>
-                            </ul>
-                        </div>
-                        <div class="nav_Menu01">
-                            <dl>
-                                <dt>医院简介</dt>
-                                <dd>
-                                    <img src="/static/images/pic01.jpg" width="260" height="130">
-                                    <p>
-                                        人民医院是最大的一所集医疗、教学、科研三位一体的综合性医院。始建于1952年，1995年荣获国家卫生部首批命名的“二级甲等”医院和“爱婴”医院。连年被评为市文明单位，并成为市职工医疗保险……</p>
-                                    <a class="more" href="Article-11.html">了解更多</a>
-                                </dd>
-                            </dl>
-                            <dl class="second">
-                                <dt>领导班子</dt>
-                                <dd>
-                                    <img src="/static/images/pic02.jpg" width="260" height="130">
-                                    <h3>白金娥</h3>
-                                    <p>人民医院院长 </p>
-                                    <p>省市党代表,政协委员,市人大代表</p>
-                                    <a class="more" href="Leaders.html">了解更多</a>
-                                </dd>
-                            </dl>
-                        </div>
-                        <div class="nav_Route">
-                            <dl>
-                                <dt>联系我们</dt>
-                                <dd class="adress"><em>东区地址：</em>省市城关解放路64号</dd>
-                                <dd class="adress"><em>西区地址：</em>省市商都大道2996号</dd>
-                                <dd class="bus"><em>乘车路线（东区）：</em>
-                                    <p>汽车东站乘坐：至公交车解放路官渡西路下车，向北步行300米。
-                                        <br/>汽车站(公交站)乘坐：6路（绿博园方向）邮政局下车，步行300米</p></dd>
-                                <dd class="bus"><em>乘车路线（西区）：</em>
-                                    <p> 汽车东站高铁站乘坐：至公交人民医院（新区）下车<br/>汽车站（公交站）乘坐：1路公交人民医院（新区）下车
-                                    </p></dd>
-                                <dd class="tel"><em>门诊导医电话：</em>1111111 <br/><em>医院办公室电话：</em>111111（全天）</dd>
-                            </dl>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </li>
-            <li class="PMenu"><a href="/hospital/service" id="Nav_AMenu1" class="PAMenu" title="患者服务">患者服务</a>
-                <div class="navboxBase">
-                    <div class="navbox">
-                        <div class="navMenus">
-                            <ul>
-                                <li><a href="/hospital/service" title="科室介绍">科室介绍</a></li>
-                                <li><a href="hospital/expert" title="专家介绍">专家介绍</a></li>
-                            </ul>
-                        </div>
-                        <div class="nav_Menu02">
-                            <dl class="list01">
-                                <dt>专家介绍</dt>
-                                <dd><a href="Doctor-157.html">李瑞</a>西区门诊</dd>
-
-                                <dd><a href="Doctor-217.html">马仲顺</a>西区门诊</dd>
-
-                                <dd><a href="Doctor-155.html">孔秀珍</a>西区门诊</dd>
-
-                                <dd><a href="Doctor-216.html">韩书安</a>东区门诊</dd>
-
-                                <dd><a href="Doctor-218.html">吕建伟</a>东区门诊</dd>
-
-                                <dd><a href="Doctor-219.html">张豫庆</a>西区门诊</dd>
-
-                                <dd><a href="Doctor-220.html">武国兴</a>西区门诊</dd>
-
-                                <dd><a href="Doctor-86.html">袁宝先</a>东区门诊</dd>
-
-                                <dd><a href="Doctor-39.html">马新社 </a>感染性疾病科</dd>
-
-                                <dd><a class="more" href="/hospital/expert">了解更多</a></dd>
-                            </dl>
-                            <dl>
-                                <dt>特色技术</dt>
-                                <dd><a href='NewsDetail-216.html' title='神经内科脑血管造影及脑血管疾病介入治疗'><img
-                                                src="/static/images/pic03.jpg" width="260" height="130"></a>
-                                    <h3><a href='NewsDetail-216.html'
-                                           title='神经内科脑血管造影及脑血管疾病介入治疗'>神经内科脑血管造影及脑血管疾病介入治疗</a><br/><em>2016-10-24</em>
-                                    </h3></dd>
-                                <dd>
-                                    <ul>
-                                        <li><a href="NewsDetail-215.html">心内科心血管介入技术</a></li>
-
-                                        <li><a href="NewsDetail-214.html">胸外科腔镜肺肿瘤手术</a></li>
-
-                                        <li><a href="NewsDetail-213.html">普外科腔镜简介</a></li>
-
-                                    </ul>
-                                </dd>
-                                <dd><a class="more" href="ArticleList-22.html">了解更多</a></dd>
-                            </dl>
-                        </div>
-                        <div class="nav_Route2 nav_Route8">
-                            <ul>
-                                <li><a class="green" href="javascript:"><img alt="" src="/static/images/ico_27.png"
-                                                                             width="50"
-                                                                             height="50"></a>
-                                    <h2><a href="javascript:">信息查询</a></h2><em>Information Service</em></li>
-                            </ul>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </li>
-            <li class="PMenu"><a href="/hospital/seekguide" id="Nav_AMenu2" class="PAMenu" title="就医指南">就医指南</a>
-                <div class="navboxBase">
-                    <div class="navbox">
-                        <div class="navMenus">
-                            <ul>
-                                <li><a href="/hospital/guide" title="来院路线">来院路线</a></li>
-                                <li><a href="javascript:" title="预约挂号">预约挂号</a></li>
-                                <li><a href="/hospital/seekguide" title="坐诊时间表">坐诊时间表</a></li>
-                            </ul>
-                        </div>
-                        <div class="nav_Route2 nav_Route3">
-                            <ul>
-                                <li class="first"><a class="green" href="javascript:"><img
-                                                src="/static/images/ico_30.png"
-                                                width="50" height="54"></a>
-                                    <h2><a href="javascript:">预约挂号</a></h2><em>Make an Appointment</em></li>
-                                <li><a class="yellow" href="/hospital/seekguide"><img src="/static/images/ico_29.png"
-                                                                                      width="40"
-                                                                                      height="50"></a>
-                                    <h2><a href="/hospital/seekguide">坐诊时间表</a></h2><em>坐诊时间表</em></li>
-                            </ul>
-                        </div>
-                        <div class="nav_Route nav_Route3">
-                            <dl>
-                                <dt>联系我们</dt>
-                                <dd class="adress"><em>东区地址：</em>省市城关解放路64号</dd>
-                                <dd class="adress"><em>西区地址：</em>省市商都大道2996号</dd>
-                                <dd class="bus"><em>乘车路线（东区）：</em>
-                                    <p>汽车东站乘坐：至公交车解放路官渡西路下车，向北步行300米。
-                                        <br/>汽车站(公交站)乘坐：6路（绿博园方向）邮政局下车，步行300米</p></dd>
-                                <dd class="bus"><em>乘车路线（西区）：</em>
-                                    <p> 汽车东站高铁站乘坐：至公交人民医院（新区）下车<br/>汽车站（公交站）乘坐：1路公交人民医院（新区）下车
-                                    </p></dd>
-                                <dd class="tel"><em>门诊导医电话：</em>1111111 <br/><em>医院办公室电话：</em>111111（全天）</dd>
-                            </dl>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </li>
-            <li class="PMenu"><a href="/hospital/news" id="Nav_AMenu4" class="PAMenu" title="新闻中心">新闻中心</a>
-                <div class="navboxBase">
-                    <div class="navbox">
-                        <div class="navMenus">
-                            <ul>
-                                <li><a href="/hospital/news" title="新闻中心">新闻中心</a></li>
-                            </ul>
-                        </div>
-                        <div class="nav_Mine02">
-                            <dl>
-                                <dt>新闻中心</dt>
-                                <dd><a>牟医 故事 | 他用两个小时，帮她拨开了“半辈子”的雾霾......</a><br/><em>2017-01-12</em>
-                                </dd>
-                                <dd><a>牟医 故事 | “十面埋伏”下，他们奋勇突围！</a><br/><em>2017-01-04</em>
-                                </dd>
-                                <dd><a>一天内三人入院，有76岁老人、64岁阿姨、还有44岁壮年，到底发生了什么...</a><br/><em>2016-12-24</em>
-                                </dd>
-                                <dd><a>牟医 新闻 | 市政法委督导小组莅临我院检查“平安医院”创建工作</a><br/><em>2016-12-24</em>
-                                </dd>
-                                <dd><a>小伙身上被扎了24针，究竟是谁这么狠？</a><br/><em>2016-12-24</em></dd>
-                                <dd><a>注意，注意！三九贴开始啦</a><br/><em>2016-12-23</em></dd>
-                                <a class="more" href="/hospital/news">了解更多</a>
-                            </dl>
-                        </div>
-                        <div class="clear"></div>
-                    </div>
-                </div>
-            </li>
+            <li class="PMenu"><a href="/hospital/service" id="Nav_AMenu1" class="PAMenu" title="患者服务">患者服务</a></li>
+            <li class="PMenu"><a href="/hospital/guide" id="Nav_AMenu2" class="PAMenu" title="就医指南">就医指南</a></li>
+            <li class="PMenu"><a href="/hospital/news" id="Nav_AMenu4" class="PAMenu" title="新闻中心">新闻中心</a></li>
+            <li class="PMenu"><a href="/hospital/login" id="Nav_AMenu5" class="PAMenu" title="登录注册">登录注册</a></li>
         </ul>
         <div class="clear"></div>
     </div>
@@ -234,35 +50,35 @@
     <div class="quickMenu">
         <div class="title">快捷导航</div>
         <ul>
-            <li><a href="/hospital/seekguide"><span class="style01"></span>专家介绍</a></li>
+            <li><a href="/hospital/expert"><span class="style01"></span>专家介绍</a></li>
             <li class="grey"><a href="/hospital/service"><span class="style02"></span>科室介绍</a></li>
-            <li class="grey bgff"><a href="/hospital/seekguide"><span class="style03"></span>就医指南</a></li>
+            <li class="grey bgff"><a href="/hospital/guide"><span class="style03"></span>就医指南</a></li>
             <li class="bggrey"><a href="/hospital/seekguide"><span class="style04"></span>坐诊时间</a></li>
-            <li class="grey"><a href="/hospital/seekguide"><span class="style06"></span>来院路线</a></li>
-            <li class="bggrey"><a href="javascript:"><span class="style08"></span>信息查询</a></li>
+            <li class="bggrey"><a href="/hospital/guide"><span class="style06"></span>来院路线</a></li>
+            <li class="grey"><a href="javascript:"><span class="style08"></span>信息查询</a></li>
         </ul>
     </div>
     <div class="focusBox">
         <ul class="pic">
 
             <li><a href="http://www.zmxrmyy.org/NewsDetail-274.html" target="_blank"
-                   title="我院举办“深入解读十八届六中全会精神”专题讲座"><img src="/static/images/2017011216421587.jpg" width="848"
-                                                        height="440" alt="我院举办“深入解读十八届六中全会精神”专题讲座"/></a></li>
-            <li><a href="http://www.zmxrmyy.com/NewsDetail-243.html" target="_blank" title="牟医 提升 郑医“大咖秀”，给你不一样的“新闻眼”！"><img
+                   title="我院举办专题讲座"><img src="/static/images/2017011216421587.jpg" width="848"
+                                         height="440" alt="我院举办专题讲座"/></a></li>
+            <li><a href="http://www.zmxrmyy.com/NewsDetail-243.html" target="_blank" title="医者仁心！"><img
                             src="/static/images/2016111822464861.jpg" width="848" height="440"
-                            alt="牟医 提升 郑医“大咖秀”，给你不一样的“新闻眼”！"/></a></li>
+                            alt="医者仁心!"/></a></li>
             <li><a href="http://www.zmxrmyy.org/NewsDetail-274.html" target="_blank"
-                   title="我院举办“深入解读十八届六中全会精神”专题讲座"><img src="/static/images/2017011216421587.jpg" width="848"
-                                                        height="440" alt="我院举办“深入解读十八届六中全会精神”专题讲座"/></a></li>
-            <li><a href="http://www.zmxrmyy.com/NewsDetail-243.html" target="_blank" title="牟医 提升 郑医“大咖秀”，给你不一样的“新闻眼”！"><img
+                   title="我院举办专题讲座"><img src="/static/images/2017011216421587.jpg" width="848"
+                                         height="440" alt="我院举办专题讲座"/></a></li>
+            <li><a href="http://www.zmxrmyy.com/NewsDetail-243.html" target="_blank" title="医者仁心！"><img
                             src="/static/images/2016111822464861.jpg" width="848" height="440"
-                            alt="牟医 提升 郑医“大咖秀”，给你不一样的“新闻眼”！"/></a></li>
+                            alt="医者仁心”！"/></a></li>
             <li><a href="http://www.zmxrmyy.org/NewsDetail-274.html" target="_blank"
-                   title="我院举办“深入解读十八届六中全会精神”专题讲座"><img src="/static/images/2017011216421587.jpg" width="848"
-                                                        height="440" alt="我院举办“深入解读十八届六中全会精神”专题讲座"/></a></li>
-            <li><a href="http://www.zmxrmyy.com/NewsDetail-243.html" target="_blank" title="牟医 提升 郑医“大咖秀”，给你不一样的“新闻眼”！"><img
+                   title="我院举办专题讲座"><img src="/static/images/2017011216421587.jpg" width="848"
+                                         height="440" alt="我院举办专题讲座"/></a></li>
+            <li><a href="http://www.zmxrmyy.com/NewsDetail-243.html" target="_blank" title="医者仁心！"><img
                             src="/static/images/2016111822464861.jpg" width="848" height="440"
-                            alt="牟医 提升 郑医“大咖秀”，给你不一样的“新闻眼”！"/></a></li>
+                            alt="医者仁心”！"/></a></li>
         </ul>
         <div class="txt-bg"></div>
         <div class="txt" id="BannerInfo"></div>
@@ -369,132 +185,56 @@
     </div>
     <div class="experts">
         <ul data-num="0">
-            <li><a title="李瑞"><img src="/static/images/2016102617103196.JPG" alt="李瑞"
+            <li><a title="李雷"><img src="/static/images/d1.JPG" alt="李雷"
                                    width="120" height="179"></a>
-                <div class="txt"><em>李瑞</em>
-                    <p>普外胸外科 主任医师</p></div>
+                <div class="txt"><em>李雷</em>
+                    <p>内科 主任医师</p></div>
 
             </li>
-            <li><a title="马仲顺"><img src="/static/images/2016102617183251.JPG"
-                                    alt="马仲顺" width="120" height="179"></a>
-                <div class="txt"><em>马仲顺</em>
-                    <p>泌尿外科 副主任医师</p></div>
+            <li><a title="韩梅梅"><img src="/static/images/d2.JPG"
+                                    alt="韩梅梅" width="120" height="179"></a>
+                <div class="txt"><em>韩梅梅</em>
+                    <p>内科 副主任医师</p></div>
 
             </li>
-            <li><a title="孔秀珍"><img src="/static/images/2016102617041418.jpg"
-                                    alt="孔秀珍" width="120" height="179"></a>
-                <div class="txt"><em>孔秀珍</em>
-                    <p>心血管内科 主任医师</p></div>
+
+
+            <li><a title="王五"><img src="/static/images/d5.jpg"
+                                   alt="王五" width="120" height="179"></a>
+                <div class="txt"><em>王五</em>
+                    <p>普外科  主任医师</p></div>
 
             </li>
-            <li><a title="韩书安"><img src="/static/images/2016102616584315.JPG"
-                                    alt="韩书安" width="120" height="179"></a>
-                <div class="txt"><em>韩书安</em>
-                    <p>泌尿外科 副主任医师</p></div>
+            <li><a title="王青"><img src="/static/images/d6.JPG"
+                                   alt="王青" width="120" height="179"></a>
+                <div class="txt"><em>王青</em>
+                    <p>普外科  副主任医师</p></div>
 
             </li>
-            <li><a title="吕建伟"><img src="/static/images/2016102817232622.JPG"
-                                    alt="吕建伟" width="120" height="179"></a>
-                <div class="txt"><em>吕建伟</em>
-                    <p>普外科 副主任医师</p></div>
+            <li><a title="杨丽娟"><img src="/static/images/d9.JPG"
+                                    alt="杨丽娟" width="120" height="179"></a>
+                <div class="txt"><em>杨丽娟</em>
+                    <p>急诊  副主任医师</p></div>
 
             </li>
-            <li><a title="张豫庆"><img src="/static/images/2016110110441567.JPG"
-                                    alt="张豫庆" width="120" height="179"></a>
-                <div class="txt"><em>张豫庆</em>
-                    <p>普外科 副主任医师</p></div>
+            <li><a title="郝新景"><img src="/static/images/d10.JPG"
+                                    alt="郝新景" width="120" height="179"></a>
+                <div class="txt"><em>郝新景</em>
+                    <p>急诊  副主任医师</p></div>
+            </li>
+            <li><a title="丁晓"><img src="/static/images/d14.JPG" alt="丁晓"
+                                   width="120" height="179"></a>
+                <div class="txt"><em>丁晓</em>
+                    <p>急诊  主任医师</p></div>
 
             </li>
-            <li><a title="武国兴"><img src="/static/images/2016102617284261.JPG"
-                                    alt="武国兴" width="120" height="179"></a>
-                <div class="txt"><em>武国兴</em>
-                    <p>普外科 副主任医师</p></div>
+            <li><a title="邵一博"><img src="/static/images/d15.JPG"
+                                    alt="邵一博" width="122" height="179"></a>
+                <div class="txt"><em>邵一博</em>
+                    <p>急诊  副主任医师</p></div>
 
             </li>
-            <li><a title="袁宝先"><img src="/static/images/2016102617350647.JPG" alt="袁宝先"
-                                    width="120" height="179"></a>
-                <div class="txt"><em>袁宝先</em>
-                    <p>心血管内科 副主任医师</p></div>
 
-            </li>
-            <li><a title="马新社 "><img src="/static/images/2016111417035353.JPG"
-                                     alt="马新社 " width="120" height="179"></a>
-                <div class="txt"><em>马新社 </em>
-                    <p>感病科 主任医师</p></div>
-
-            </li>
-            <li><a title="王刚琴"><img src="/static/images/2016102617463898.JPG" alt="王刚琴"
-                                    width="120" height="179"></a>
-                <div class="txt"><em>王刚琴</em>
-                    <p>妇科 主任医师</p></div>
-
-            </li>
-            <li><a title="雍医英"><img src="/static/images/201611141904542.JPG" alt="雍医英"
-                                    width="120" height="179"></a>
-                <div class="txt"><em>雍医英</em>
-                    <p>眼科 主任医师</p></div>
-
-            </li>
-            <li><a title="丁晓岚 "><img src="/static/images/2016102918135639.JPG"
-                                     alt="丁晓岚 " width="120" height="179"></a>
-                <div class="txt"><em>丁晓岚 </em>
-                    <p>神经内科 主任医师</p></div>
-
-            </li>
-            <li><a title="张国营"><img src="/static/images/2016103008565749.JPG"
-                                    alt="张国营" width="120" height="179"></a>
-                <div class="txt"><em>张国营</em>
-                    <p>外科 副主任医师</p></div>
-
-            </li>
-            <li><a title="袁国宝"><img src="/static/images/2016083014243017.jpg" alt="袁国宝"
-                                    width="120" height="179"></a>
-                <div class="txt"><em>袁国宝</em>
-                    <p>神经外科 副主任医师</p></div>
-
-            </li>
-            <li><a title="蒋书亭"><img src="/static/images/2016111418204567.JPG" alt="蒋书亭"
-                                    width="120" height="179"></a>
-                <div class="txt"><em>蒋书亭</em>
-                    <p>神经外科 副主任医师</p></div>
-
-            </li>
-            <li><a title="韩书明"><img src="/static/images/2016103009435590.JPG"
-                                    alt="韩书明" width="120" height="179"></a>
-                <div class="txt"><em>韩书明</em>
-                    <p>心血管内科 副主任医师</p></div>
-
-            </li>
-            <li><a title="张国强 "><img src="/static/images/2016111418463546.JPG"
-                                     alt="张国强 " width="120" height="179"></a>
-                <div class="txt"><em>张国强 </em>
-                    <p>骨科 副主任医师</p></div>
-
-            </li>
-            <li><a title="张敏 "><img src="/static/images/2016083015093024.jpg"
-                                    alt="张敏 " width="120" height="179"></a>
-                <div class="txt"><em>张敏 </em>
-                    <p>耳鼻喉科 副主任医师</p></div>
-
-            </li>
-            <li><a title="杨栓葆"><img src="/static//images/2016082917221938.jpg" alt="杨栓葆"
-                                    width="120" height="179"></a>
-                <div class="txt"><em>杨栓葆</em>
-                    <p>急诊科 副主任医师 </p></div>
-
-            </li>
-            <li><a title="潘国选"><img src="/static/images/201611141810044.JPG" alt="潘国选"
-                                    width="120" height="179"></a>
-                <div class="txt"><em>潘国选</em>
-                    <p>神经外科 副主任医师</p></div>
-
-            </li>
-            <li><a title="朱玲 "><img src="/static/images/2016082914484422.jpg" alt="朱玲 "
-                                    width="120" height="179"></a>
-                <div class="txt"><em>朱玲 </em>
-                    <p>产科 副主任医师</p></div>
-
-            </li>
         </ul>
     </div>
 </section>
@@ -503,65 +243,19 @@
     <div class="notice">
         <div class="tab-bd active">
             <ul>
-                <li><span><b>12</b><br/><em>2017.01</em></span>
-                    <a title="牟医 故事 | 他用两个小时，帮她拨开了“半辈子”的雾霾......" target="_blank">牟医 故事 |
-                        他用两个小时，帮她拨开了“半辈子”的雾霾......</a>
+                <li><span><b>12</b><br/><em>2018.12</em></span>
+                    <h5> 医者 故事 |  他用两个小时，帮她拨开了“半辈子”的雾霾......</h5>
                     <p>
-                        俗话说：“七十不留宿，八十不留饭，九十不留坐”，可见老年人一旦上了岁数，稍不注意，就容易出现问题。常见的突发意外事件多为心脑血管方面的疾病，但也有相当多一部分是因为跌倒导致骨折，多为髋部骨折，它有……</p>
+                        俗话说：“七十不留宿，八十不留饭，九十不留坐”，可见老年人一旦上了岁数，稍不注意，就容易出现问题。常见的突发意外事件多为心脑血管方面的疾病……</p>
                 </li>
-                <li><span><b>04</b><br/><em>2017.01</em></span>
-                    <a title="牟医  故事 | “十面埋伏”下，他们奋勇突围！" target="_blank">牟医 故事 |
-                        “十面埋伏”下，他们奋勇突围！</a>
-                    <p>如果说医院是一个生与死较量的战场，那么急诊室医生和护士们就是这场战争的先头部队。 新年伊始，大雾迷城，整个城市好似在半睡半醒的朦胧中，但对于急诊科的全体医护人员，时刻准备着迎……</p>
+                <li><span><b>04</b><br/><em>2019.01</em></span>
+                    <h5>医者 故事 |“十面埋伏”下，他们奋勇突围！</h5>
+                    <p>如果说医院是一个生与死较量的战场，那么急诊室医生和护士们就是这场战争的先头部队。 新年伊始，整个城市好似在半睡半醒的朦胧中，但急诊科的人员，时刻准备着……</p>
                 </li>
-                <li><span><b>24</b><br/><em>2016.12</em></span>
-                    <a title="一天内三人入院，有76岁老人、64岁阿姨、还有44岁壮年，到底发生了什么..." target="_blank">一天内三人入院，有76岁老人、64岁阿姨、还有44岁壮年，到底发生了什么...</a>
+                <li><span><b>24</b><br/><em>2019.03</em></span>
+                    <h5>一天内三人入院，有76岁老人、64岁阿姨、还有44岁壮年，到底发生了什么...</h5>
                     <p>
-                        2016年12月17日，在我院神经内科，陆陆续续接到了三例脑梗病人，而且囊括了不同年龄段的人，这下子可忙坏了神经内二科的医务工作者。52分钟、47分钟及34分钟，三位病人得到确诊并接受静脉溶栓治疗……</p>
-                </li>
-            </ul>
-        </div>
-        <div class="tab-bd">
-            <ul>
-                <li><span><b>11</b><br/><em>2017.01</em></span>
-                    <a title="2017年1.9-1.15日东区门诊排班表"
-                       target="_blank">2017年1.9-1.15日东区门诊排班表</a>
-                    <p></p></li>
-                <li><span><b>11</b><br/><em>2017.01</em></span>
-                    <a title="西区门诊部医生排班表2017年1月9日——2017年1月15日" target="_blank">西区门诊部医生排班表2017年1月9日——2017年1月15日</a>
-                    <p></p></li>
-                <li><span><b>04</b><br/><em>2017.01</em></span>
-                    <a title="西区门诊部医生排班表2017年1月2日——2017年1月8日" target="_blank">西区门诊部医生排班表2017年1月2日——2017年1月8日</a>
-                    <p></p></li>
-            </ul>
-        </div>
-        <div class="tab-bd">
-            <ul>
-                <li><span><b>07</b><br/><em>2016.11</em></span>
-                    <a title="人民医院获“红手环志愿单位” 重在卒中防治" target="_blank">人民医院获“红手环志愿单位”
-                        重在卒中防治</a>
-                    <p>讯
-                        11月6日上午，人民医院隆重举行“红手环志愿单位”授牌仪式，而该院红手环志愿者服务团也同时成立，中国卒中学会红手环志愿者服务团秘书长王少石教授进行了授牌。“红手环志愿者服务团”是中……</p>
-                </li>
-                <li><span><b>06</b><br/><em>2016.09</em></span>
-                    <a title="【两学一做看实效】人民医院组织党员学党章" target="_blank">【两学一做看实效】人民医院组织党员学党章</a>
-                    <p>讯 5月30日获悉，为深入开展“两学一做”学习教育，进一步提高全院党员的自觉性、主动性、思想性、深刻性，人民医院于日前组织了贯彻党的十八大精神、领会新党章内涵专题学习活动。该院党总……</p>
-                </li>
-                <li><span><b>06</b><br/><em>2016.09</em></span>
-                    <a title="全民健身日舞出新生活 人民医院宣传健康知识" target="_blank">全民健身日舞出新生活
-                        人民医院宣传健康知识</a>
-                    <p>讯
-                        8月8日是全民健身日，为了宣传全民健身理念，进一步推广和普及全民健身运动，以此引领大家走向积极、向上、时尚、健康的生活方式。8月7日晚，人民医院与县教体局联合举办了“健康生活，远离……</p>
-                </li>
-            </ul>
-        </div>
-        <div class="tab-bd">
-            <ul>
-                <li><span><b>11</b><br/><em>2017.01</em></span>
-                    <a title="“十三五”医改路线图面世 看病就医将有哪些变化？（转自人民网）" target="_blank">“十三五”医改路线图面世
-                        看病就医将有哪些变化？（转自人民网）</a>
-                    <p>
-                        居民人均预期寿命比2015年提高1岁、家庭医生签约服务扩大到全人群、控制公立医院医疗费用不合理增长……9日，国务院印发的《“十三五”深化医药卫生体制改革规划》正式公布，“十三五”时期中国医改的路线……</p>
+                        2019年3月15日，在我院神经内科，陆续接到三例脑梗病人，囊括了不同年龄段的人。52分钟、47分钟及34分钟，三位病人得到确诊并接受静脉溶栓治疗……</p>
                 </li>
             </ul>
         </div>
@@ -569,14 +263,14 @@
 
     <div class="DepartNav">
         <div class="title"><span>科室导航</span></div>
-        <div class="list"><a href="Office-1.html" title="心血管内科一病区"><em></em>心血管内科一病区</a><a
-                    title="心血管内科二病区	"><em></em>心血管内科二病区
-            </a><a href="Office-3.html" title="神经内科一病区"><em></em>神经内科一病区</a><a
-                    title="神经内科二病区"><em></em>神经内科二病区</a><a
-                    title="中医康复科"><em></em>中医康复科</a><a
-                    title="新生儿重症监护室（NICU）"><em></em>新生儿重症监护室（NICU）</a><a
-                    title="妇科"><em></em>妇科</a><a
-                    title="呼吸内科"><em></em>呼吸内科</a>
+        <div class="list"><h3>心血管内科一病区<em></em>
+                心血管内科二病区</h3></br>
+                    <h3>神经内科一病区<em></em>
+                        神经内科二病区</h3></br>
+                            <h3>中医康复科<em></em>
+                                皮肤科</h3></br>
+                                    <h3>妇科<em></em>
+                                        呼吸内科<h3>
         </div>
     </div>
     <div class="clear"></div>
@@ -591,13 +285,7 @@
         <div class="QRcode"><img src="/static/images/QRcode.jpg" width="104" height="104"><br/>手机扫一扫关注人民医院官方微信</div>
     </div>
 </footer>
-<div class="zfk"><a class="weibo" target="_blank" href="javascript:"><em>新浪微博</em></a><a class="yy" target="_blank"
-                                                                                         href="javascript:"><em>zmxrmyy</em></a><a
-            class="qq" target="_blank"
-            href="tencent://message/?amp;Uin=2747519242&Site=zmxrmyy.com&Menu=yes"><em>QQ在线</em></a><a class="top"
-                                                                                                       target="_blank"
-                                                                                                       href="javascript:"><em>返回顶部</em></a>
-</div>
+
 <div id="Footer_CodeDiv">
     <script>
         var _hmt = _hmt || [];

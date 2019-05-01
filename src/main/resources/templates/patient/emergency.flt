@@ -26,7 +26,7 @@
 <header>
     <a class="logo" href="/hospital"><img src="/static/images/logoa.png" width="120" height="70"/>
     <img src="/static/images/zt.png" width="300" height="70"/></a>
-    <!--<ul>
+   <!-- <ul>
         <li><a href="javascript:;">预约挂号</a></li>
         <li><a href="/hospital/guide">来院路线</a></li>
         <li><a href="/hospital/login">内部登录</a></li>
@@ -65,14 +65,15 @@
     </div>
 </section>
 <section class="BaseMark listmain">
-    <div class="bread">当前位置：<a href="/hospital">首页</a> > <a href="/hospital/guide">就医指南</a> > 来院路线</div>
+    <div class="bread">当前位置：<a href="/hospital">首页</a> > <a href="/hospital/guide">就医指南</a> >急诊就诊流程</div>
     <div class="listleft">
         <div class="slidebar">
             <ul>
                 <li class="active"><a href="/hospital/guide" title="来院路线"><em></em>来院路线</a></li>
                 <li><a href="javascript:;" title="预约挂号"><em></em>预约挂号</a></li>
-                <li><a href="/hospital/emergency" title="急诊就诊流程"><em></em>急诊就诊流程</a></li>
-                              
+                <li><a title="急诊就诊流程"><em></em>急诊就诊流程</a></li>
+                
+
             </ul>
         </div>
         <div class="QRcode"><span>手机扫一扫关注</span><br/>人民医院官方微信</div>
@@ -81,68 +82,15 @@
                     href="/hospital/guide"><em class="t04"></em>就医指南</a></div>
     </div>
     <div class="listright">
-        <div class="title">来院路线</div>
-
-        <div id="DIVContent" class="yywh"><p>
-                <span style="line-height:1.5;color:#0084C6;font-size:18px;">东区地址：</span><span
-                        style="line-height:1.5;font-size:18px;">省市城关解放路64号</span>
-            </p>
-            <p>
-                <span style="color:#0084C6;font-size:18px;">西区地址：</span><span style="font-size:18px;">省市商都大道2996号</span>
-            </p>
-            <p>
-	<span style="font-size:18px;"><br/>
-</span>
-            </p>
-            <p style="text-align:justify;">
-                <span style="color:#0084C6;font-size:18px;">乘车路线（东区）：</span>
-            </p>
-            <p style="text-align:justify;">
-                <span style="font-size:18px;">汽车东站乘坐：至公交车解放路官渡西路下车，向北步行300米。&nbsp;</span>
-            </p>
-            <p style="text-align:justify;">
-                <span style="font-size:18px;">汽车站(公交站)乘坐：6路（绿博园方向）邮政局下车，步行300米</span>
-            </p>
-            <p style="text-align:justify;">
-	<span style="font-size:18px;"><br/>
-</span>
-            </p>
-            <p style="text-align:justify;">
-                <span style="line-height:1.5;color:#0084C6;font-size:18px;">乘车路线（西区）：</span>
-            </p>
-            <p style="text-align:justify;">
-                <span style="line-height:1.5;font-size:18px;">汽车东站高铁站乘坐：至公交人民医院（新区）下车</span>
-            </p>
-            <p style="text-align:justify;">
-                <span style="font-size:18px;">汽车站（公交站）乘坐：1路公交人民医院（新区）下车</span>
-            </p>
-            <p style="text-align:justify;">
-	<span style="font-size:18px;"><br/>
-</span>
-            </p>
-            <p style="text-align:justify;">
-                <span style="line-height:1.5;color:#0084C6;font-size:18px;">门诊导医电话：</span><span
-                        style="line-height:1.5;color:#0084C6;font-size:18px;">1111111&nbsp;</span>
-            </p>
-            <p style="text-align:justify;">
-                <span style="color:#0084C6;line-height:1.5;font-size:18px;">医院办公室电话：</span><span
-                        style="color:#0084C6;line-height:1.5;font-size:18px;">111111（全天）</span>
-            </p>
-            <p style="text-align:justify;">
-	<span style="color:#0084C6;line-height:1.5;font-size:18px;"><br/>
-</span>
-            </p>
-            <p style="text-align:justify;">
-	<span style="color:#0084C6;line-height:1.5;font-size:18px;"><br/>
-</span>
-            </p></div>
-        <div style="text-align:center;">
-                <img src="/static/images/dt.jpg" alt=""/>
+        <div class="title">急诊就诊流程</div>
+      <div style="text-align:center;">
+                <img src="/static/images/jz.jpg" alt=""/>
             </p>
             <p style="text-align:center;">
                 <br/>
             </p>
-    </div>
+            </div>
+            </div>
     <div class="clear"></div>
 </section>
 <footer>
