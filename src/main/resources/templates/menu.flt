@@ -2,9 +2,9 @@
     <div class="layui-logo"><span style="display: none">欢迎进入</span>医疗系统<span <#if login.role!=1>style="display:none"</#if>>后台管理<span></div>
     <!-- 头部区域（可配合layui已有的水平导航） -->
     <ul class="layui-nav layui-layout-left">
-        <li class="layui-nav-item"><a href="/hospital/admin/index" <#if login.role!=1>style="display:none"</#if>>首页</a></li>
-        <li class="layui-nav-item"><a href="/hospital/patient/index" <#if login.role!=2>style="display:none"</#if>>首页</a></li>
-        <li class="layui-nav-item"><a href="/hospital/doctor/index" <#if login.role!=3>style="display:none"</#if>>首页</a></li>
+        <#--<li class="layui-nav-item"><a href="/hospital/admin/index" <#if login.role!=1>style="display:none"</#if>>首页</a></li>-->
+        <#--<li class="layui-nav-item"><a href="/hospital/patient/index" <#if login.role!=2>style="display:none"</#if>>首页</a></li>-->
+        <#--<li class="layui-nav-item"><a href="/hospital/doctor/index" <#if login.role!=3>style="display:none"</#if>>首页</a></li>-->
         <li class="layui-nav-item" <#if login.role!=1>style="display:none"</#if>>
             <a href="javascript:">系统管理</a>
             <dl class="layui-nav-child">
