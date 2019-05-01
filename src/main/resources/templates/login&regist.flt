@@ -72,7 +72,8 @@
 			  success:function(data){
 				  console.log(data.message);
 				  if(data.message=="注册成功"){
-					  location.href="/hospital"
+					  alert('注册成功！！！\n请返回登录页面进行登录或继续注册')
+					  location.href="/hospital/login";
 				  }
 				  else {
 					  $("#message2").text(data.message);

@@ -17,9 +17,9 @@
                 <table>
                     <tr>
                         <td>昵称:</td>
-                        <td><input name="name" autocomplete="off"  class="layui-input lay-size=sm" ></td>
+                        <td><input name="name" value="${name!''}" autocomplete="off"  class="layui-input lay-size=sm" ></td>
                         <td>&nbsp;&nbsp;证件号:</td>
-                        <td><input name="certId" autocomplete="off" class="layui-input lay-size=sm" ></td>
+                        <td><input name="certId" value="${certId!''}" autocomplete="off" class="layui-input lay-size=sm" ></td>
                         <td>   <button class="layui-btn" type="submit"><i class="layui-icon">&#xe615;</i></button></div></td>
         </tr>
         </table>

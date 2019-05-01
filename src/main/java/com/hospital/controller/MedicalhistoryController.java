@@ -18,6 +18,8 @@ public class MedicalhistoryController {
     MedicalhistoryService medicalhistoryService;
     @RequestMapping("/admin/medicalhistoryManage")
     public String medicalhistoryManage(HttpServletRequest request,@RequestParam(value = "doctorname",required = false)String doctorname,@RequestParam(value = "patientname",required = false)String patientname){
+        request.setAttribute("doctorname",doctorname);
+        request.setAttribute("patientname",patientname);
         request.setAttribute("medicalhistorys",medicalhistoryService.getAllMedicalhistorys(doctorname,patientname));
         return "admin/medicalhistoryManage";
     }

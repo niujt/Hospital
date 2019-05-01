@@ -18,17 +18,17 @@
             <table>
                 <tr>
                     <td>药品名称:</td>
-                    <td><input name="name" autocomplete="off"  class="layui-input lay-size=sm" ></td>
+                    <td><input name="name" value="${name!''}" autocomplete="off"  class="layui-input lay-size=sm" ></td>
                     <td>&nbsp;&nbsp;药品类型:</td>
                     <td>
-                        <select name="type" >
+                        <select name="type">
                             <option value="">请选择药品类型</option>
-                            <option value="0">颗粒剂</option>
-                            <option value="1">丸剂</option>
-                            <option value="2">散剂</option>
-                            <option value="3">酊剂</option>
-                            <option value="4">片剂</option>
-                            <option value="5">胶囊剂</option>
+                            <option value="0" >颗粒剂</option>
+                            <option value="1" >丸剂</option>
+                            <option value="2" >散剂</option>
+                            <option value="3" >酊剂</option>
+                            <option value="4" >片剂</option>
+                            <option value="5" >胶囊剂</option>
                         </select>
                     </td>
                     <td>   <button class="layui-btn" type="submit"><i class="layui-icon">&#xe615;</i></button></div></td>

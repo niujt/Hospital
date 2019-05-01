@@ -16,9 +16,9 @@
             <table>
                 <tr>
                     <td>患者名称:</td>
-                    <td><input name="patientname" autocomplete="off"  class="layui-input lay-size=sm" ></td>
+                    <td><input name="patientname" value="${patientname!''}" autocomplete="off"  class="layui-input lay-size=sm" ></td>
                     <td>&nbsp;&nbsp;预约医生:</td>
-                    <td><input name="doctorname" autocomplete="off" class="layui-input lay-size=sm" ></td>
+                    <td><input name="doctorname" value="${doctorname!''}" autocomplete="off" class="layui-input lay-size=sm" ></td>
                     <td>   <button class="layui-btn" type="submit"><i class="layui-icon">&#xe615;</i></button></div></td>
     </tr>
     </table>

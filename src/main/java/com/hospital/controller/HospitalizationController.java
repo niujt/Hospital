@@ -22,6 +22,8 @@ public class HospitalizationController {
     PatientService patientService;
     @RequestMapping("/admin/hospitalizationManage")
     public String hospitalizationManage(HttpServletRequest request,@RequestParam(value = "patientname",required = false)String patientname,@RequestParam(value = "intime",required = false)String intime){
+        request.setAttribute("patientname",patientname);
+        request.setAttribute("intime",intime);
         request.setAttribute("hospitalizations",hospitalizationService.getAllHospitalizations(patientname,intime));
         return "admin/hospitalizationManage";
     }

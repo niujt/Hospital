@@ -31,6 +31,8 @@ public class DoctorController {
     MedicalhistoryService medicalhistoryService;
     @RequestMapping("/admin/doctorManage")
     public String doctorManage(HttpServletRequest request,@RequestParam(value="name",required = false) String name,@RequestParam(value="certId",required = false) String certId){
+        request.setAttribute("name",name);
+        request.setAttribute("certId",certId);
         request.setAttribute("doctors",doctorService.getAllDoctor(name,certId));
         return "admin/doctorManage";
     }

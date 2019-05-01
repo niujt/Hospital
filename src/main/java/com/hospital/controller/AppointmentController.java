@@ -22,6 +22,8 @@ public class AppointmentController {
     PatientService patientService;
     @RequestMapping("/admin/appointmentManage")
     public String appointmentManage(HttpServletRequest request,@RequestParam(value = "doctorname",required = false)String doctorname,@RequestParam(value = "patientname",required = false)String patientname){
+        request.setAttribute("doctorname",doctorname);
+        request.setAttribute("patientname",patientname);
         List<Appointment> appointmentList=appointmentService.getAllAppointments(doctorname,patientname);
         request.setAttribute("appointments" ,appointmentList);
         return"admin/appointmentManage";

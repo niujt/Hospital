@@ -15,6 +15,8 @@ public class DrugsController {
     DrugsService drugsService;
     @RequestMapping("admin/drugsManage")
     public String drugsManage(HttpServletRequest request,@RequestParam(value="name",required = false) String name,@RequestParam(value="type",required = false) Integer type){
+        request.setAttribute("name",name);
+//        request.setAttribute("type",type);
         Drugs drugs=new Drugs();
         drugs.setName(name);
         drugs.setType(type);

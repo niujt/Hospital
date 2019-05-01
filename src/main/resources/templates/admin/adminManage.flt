@@ -20,7 +20,7 @@
                 <table>
                     <tr>
                         <td>账号:</td>
-                        <td><input name="username" autocomplete="off"  class="layui-input lay-size=sm" ></td>
+                        <td><input name="username" value="${username!''}" autocomplete="off"  class="layui-input lay-size=sm" ></td>
                         <td>   <button class="layui-btn" type="submit"><i class="layui-icon">&#xe615;</i></button></div></td>
         </tr>
         </table>

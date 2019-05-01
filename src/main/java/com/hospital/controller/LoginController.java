@@ -20,6 +20,7 @@ public class LoginController {
     }
     @RequestMapping("/admin/adminManage")
     public String adminManage(HttpServletRequest request,@RequestParam(value = "username",required = false)String username){
+        request.setAttribute("username",username);
         request.setAttribute("admins",loginService.findAllAdmin(username));
         return "/admin/adminManage";
     }
