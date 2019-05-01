@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>新增页面</title>
+    <title>预约挂号页面</title>
     <link rel="stylesheet" href="/static/css/layui.min.css">
     <link rel="stylesheet" href="/static/css/normalize.css" type="text/css"/>
     <link rel="stylesheet" href="/static/css/secondary.css" type="text/css"/>
