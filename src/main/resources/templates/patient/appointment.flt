@@ -28,7 +28,7 @@
         <form class="layui-form" onsubmit="return appointment()">
             <table class="layui-table" lay-even lay-skin="nob" style="width: 60%;margin: 0 auto">
                 <tr>
-                    <td>科室：</td>
+                    <td style="white-space:nowrap">科室：</td>
                     <td colspan="2">
                         <div class="layui-form">
                             <div class="layui-form-item">
@@ -46,7 +46,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>预约医生：</td>
+                    <td style="white-space:nowrap">预约医生：</td>
                     <td colspan="2">
                         <div class="layui-form">
                             <div class="layui-form-item">
@@ -57,7 +57,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>预约时间：</td>
+                    <td style="white-space:nowrap">预约时间：</td>
                     <td colspan="2">
                         <input type="date" name="time" required lay-verify="required" autocomplete="off"
                                class="layui-input">
@@ -66,7 +66,7 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>门诊收费(元)：</td>
+                    <td style="white-space:nowrap">门诊收费(元)：</td>
                     <td colspan="2">
                         <input type="text" name="expenses" required lay-verify="required" autocomplete="off"
                                class="layui-input">
