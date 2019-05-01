@@ -112,7 +112,7 @@ public class LoginServiceImpl implements LoginService {
         else if(loginMapper.findByUsername(login.getUsername())!=null){
             message="该用户名已被注册";
         }
-        else if(loginMapper.findByUsername(login.getUsername())==null&&(login.getCertId()==null||login.getCertId().equals(""))){
+        else if(loginMapper.findByUsername(login.getUsername())==null&&(login.getCertId()==null||login.getCertId().trim().equals(""))){
             login.setRole(1);
             loginMapper.insert(login);
             message="注册成功";

@@ -33,7 +33,7 @@
   <insert id="insert" parameterType="com.hospital.entity.Login">
     insert into login (id, username, password,role
       )
-    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},0
+    values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},#{role}
       )
   </insert>
   <insert id="insertAdmin" parameterType="com.hospital.entity.Login">
