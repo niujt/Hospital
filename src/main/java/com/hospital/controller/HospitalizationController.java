@@ -79,8 +79,8 @@ public class HospitalizationController {
             row.createCell(1).setCellValue(hospitalization.getFloor());
             row.createCell(2).setCellValue(hospitalization.getBed());
             row.createCell(3).setCellValue(hospitalization.getDoor());
-            row.createCell(4).setCellValue(hospitalization.getMedicalname());
-            row.createCell(5).setCellValue(hospitalization.getPatientname());
+            row.createCell(4).setCellValue(hospitalization.getPatientname());
+            row.createCell(5).setCellValue(hospitalization.getMedicalname());
             HSSFCell cell1 = row.createCell(6);
             HSSFCell cell2 = row.createCell(7);
             cell1.setCellValue(hospitalization.getIntime());
