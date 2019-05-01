@@ -106,10 +106,10 @@
 						location.href="/hospital/patient/index"
 					}
 					else  if(data.message.indexOf("2")!=-1){
-						location.href="/hospital/doctor/index"
+						location.href="/hospitaldoctor/seekMedicalAdvice"
 					  }
 					else if(data.message.indexOf("1")!=-1){
-						location.href="/hospital/admin/index"
+						location.href="/hospital/admin/doctorManage"
 					  }
 
 				  }
