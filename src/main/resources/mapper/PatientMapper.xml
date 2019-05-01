@@ -151,7 +151,8 @@
       age = #{age,jdbcType=INTEGER},
       sex = #{sex,jdbcType=INTEGER},
       address = #{address,jdbcType=VARCHAR},
-      loginid = #{loginid,jdbcType=INTEGER}
+      loginid = #{loginid,jdbcType=INTEGER},
+      certId=#{certId}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
