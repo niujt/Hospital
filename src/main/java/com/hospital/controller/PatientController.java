@@ -55,7 +55,7 @@ public class PatientController {
         json.put("message",patientService.updatePatient(patient));
         return json;
     }
-    @RequestMapping(value = "/admin/patient",method = RequestMethod.DELETE)
+    @RequestMapping(value = "/admin/patient",method = RequestMethod.POST)
     @ResponseBody
     public JSONObject delPatient(@RequestBody Patient patient){
         JSONObject json=new JSONObject();
