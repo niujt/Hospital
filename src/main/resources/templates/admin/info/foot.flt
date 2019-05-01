@@ -23,6 +23,7 @@
                     $("#message").text(data.message);
                 }
                 else {
+                    alert(data.message);
                     parent.location.reload();
                 }
             },

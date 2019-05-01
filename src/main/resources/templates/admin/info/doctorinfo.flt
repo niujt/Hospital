@@ -21,19 +21,19 @@
                     <col width="200">
                     <col>
                 </colgroup>
-                <tr>
-                    <td style="width: 100px">登录账号：</td>
-                    <td>
-                        <input type="text" value="${doctor.username}" name="username" required  class="layui-input" >
-                        <input type="hidden" value="${doctor.loginid}" name="loginid" required  class="layui-input" >
-                    </td>
-                </tr>
-                <tr>
-                    <td style="width: 100px">登录密码：</td>
-                    <td>
-                        <input type="text" value="${doctor.password}" name="password" required  class="layui-input" >
-                    </td>
-                </tr>
+                    <tr>
+                        <td style="width: 100px">登录账号：</td>
+                        <td>
+                            <input type="text" value="${doctor.username!''}" name="username" required  class="layui-input" >
+                            <input type="hidden" value="${doctor.loginid!''}" name="loginid" required  class="layui-input" >
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="width: 100px">登录密码：</td>
+                        <td>
+                            <input type="text" value="${doctor.password!''}" name="password" required  class="layui-input" >
+                        </td>
+                    </tr>
                 <tr>
                     <td style="width: 100px">姓名：</td>
                     <td>

@@ -7,7 +7,6 @@ import com.hospital.dao.PatientMapper;
 import com.hospital.entity.Doctor;
 import com.hospital.entity.Login;
 import com.hospital.service.DoctorService;
-import com.hospital.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -51,18 +50,27 @@ public class DoctorServiceImpl implements DoctorService {
     public Doctor getDoctor(Integer id) {
         Doctor doctor=doctorMapper.selectByPrimaryKey(id);
         Login login=loginMapper.selectByPrimaryKey(doctor.getLoginid());
-        doctor.setUsername(login.getUsername());
-        doctor.setPassword(login.getPassword());
+        if(login!=null){
+            doctor.setUsername(login.getUsername());
+            doctor.setPassword(login.getPassword());
+        }
         return doctor;
     }
 
     @Override
     public String upDoctor(Doctor doctor) {
         Login login=loginMapper.selectByPrimaryKey(doctor.getLoginid());
-        login.setUsername(doctor.getUsername());
-        login.setPassword(doctor.getPassword());
-        login.setId(doctor.getLoginid());
-        return (doctorMapper.updateByPrimaryKey(doctor)>0&&loginMapper.updateByPrimaryKey(login)>0)?CommonService.upd_message_success:CommonService.upd_message_error;
+        if(login==null){
+            return doctorMapper.updateByPrimaryKey(doctor)>0?CommonService.upd_message_success2:CommonService.upd_message_error;
+        }
+        else {
+            login.setUsername(doctor.getUsername());
+            login.setPassword(doctor.getPassword());
+            login.setId(doctor.getLoginid());
+            return (doctorMapper.updateByPrimaryKey(doctor)>0&&loginMapper.updateByPrimaryKey(login)>0)?CommonService.upd_message_success:CommonService.upd_message_error;
+        }
+
+
     }
 
     @Override

@@ -34,7 +34,7 @@
   </select>
   <select id="selectByPatientId" parameterType="java.lang.Integer" resultType="com.hospital.entity.Hospitalization">
     select *
-    from Hospitalization
+    from hospitalization
     where patientid = #{patientid}
   </select>
   <select id="findTheLastHospitalization" resultType="com.hospital.entity.Hospitalization" parameterType="Integer">

@@ -35,18 +35,26 @@ public class PatientServiceImpl implements PatientService {
     public Patient getPatient(Integer id) {
         Patient patient=patientMapper.selectByPrimaryKey(id);
         Login login=loginMapper.selectByPrimaryKey(patient.getLoginid());
-        patient.setUsername(login.getUsername());
-        patient.setPassword(login.getPassword());
+        if(login!=null){
+            patient.setUsername(login.getUsername());
+            patient.setPassword(login.getPassword());
+        }
         return patient;
     }
 
     @Override
     public String updatePatient(Patient patient) {
         Login login=loginMapper.selectByPrimaryKey(patient.getLoginid());
-        login.setUsername(patient.getUsername());
-        login.setPassword(patient.getPassword());
-        login.setId(patient.getLoginid());
-        return (patientMapper.updateByPrimaryKey(patient)>0&&loginMapper.updateByPrimaryKey(login)>0)?CommonService.upd_message_success:CommonService.upd_message_error;
+        if(login==null){
+            return patientMapper.updateByPrimaryKey(patient)>0?CommonService.upd_message_success2:CommonService.upd_message_error;
+        }
+        else {
+            login.setUsername(patient.getUsername());
+            login.setPassword(patient.getPassword());
+            login.setId(patient.getLoginid());
+            return (patientMapper.updateByPrimaryKey(patient)>0&&loginMapper.updateByPrimaryKey(login)>0)?CommonService.upd_message_success:CommonService.upd_message_error;
+        }
+
     }
 
     @Override
