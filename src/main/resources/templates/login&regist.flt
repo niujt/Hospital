@@ -109,7 +109,7 @@
 						location.href="/hospitaldoctor/seekMedicalAdvice"
 					  }
 					else if(data.message.indexOf("1")!=-1){
-						location.href="/hospital/admin/doctorManage"
+						location.href="/admin/doctorManage"
 					  }
 
 				  }
