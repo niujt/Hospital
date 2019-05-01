@@ -47,6 +47,17 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>确诊人：</td>
+                    <td>
+                        <select name="doctorid">
+                            <option value=""></option>
+                            <#list doctors as d>
+                                <option value="${d.id}">${d.name}</option>
+                            </#list>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
                     <td>操作：</td>
                     <td>
                         <button type="submit" class="layui-btn">添加</button>

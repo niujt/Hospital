@@ -35,10 +35,8 @@
     left join doctor d on m.doctorid=d.id
     where patientid = #{patientid}
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List" />
-    from medicalhistory
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultType="com.hospital.entity.Medicalhistory">
+    select * from medicalhistory
     where id = #{id,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
@@ -46,9 +44,9 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.hospital.entity.Medicalhistory">
-    insert into medicalhistory (id, patientid, name,time
+    insert into medicalhistory (id, patientid, name,time,doctorid
       )
-    values (#{id,jdbcType=INTEGER}, #{patientid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},#{time}
+    values (#{id,jdbcType=INTEGER}, #{patientid,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR},#{time},#{doctorid}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.hospital.entity.Medicalhistory">
@@ -100,7 +98,7 @@
   <update id="updateByPrimaryKey" parameterType="com.hospital.entity.Medicalhistory">
     update medicalhistory
     set patientid = #{patientid,jdbcType=INTEGER},
-      name = #{name,jdbcType=VARCHAR},time=#{time}
+      name = #{name,jdbcType=VARCHAR},time=#{time},doctorid=#{doctorid}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
