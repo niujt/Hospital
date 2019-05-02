@@ -9,8 +9,8 @@
 <body>
 <div class="layui-tab">
     <ul class="layui-tab-title">
-        <li>诊断</li>
-        <li class="layui-this">开药</li>
+        <li class="layui-this">诊断</li>
+        <li >开药</li>
         <li>入院手续</li>
     </ul>
     <div class="layui-tab-content">
