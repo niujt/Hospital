@@ -115,6 +115,7 @@
             contentType: "application/json;charset=utf-8",
             success: function (data) {
                 console.log(data.message);
+                alert(data.message);
                 // if(data.message=="已存在"){
                 //     $("#message").text(data.message);
                 // }

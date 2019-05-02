@@ -4,4 +4,5 @@ import com.hospital.entity.Seek;
 
 public interface SeekMapper {
     Integer insert(Seek seek);
+    Integer updateDrugs(Seek seek);
 }

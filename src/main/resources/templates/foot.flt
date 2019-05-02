@@ -44,7 +44,7 @@
                 url:url+id,
                 type:'delete',
                 success:function(data){
-                    console.log(data.message);
+                    alert(data.message);
                     parent.location.reload();
                 },
                 error:function (data) {

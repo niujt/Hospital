@@ -88,7 +88,7 @@ public class DoctorController {
         System.out.println(map);
         patient.setDrugsids(DrugsUtils.vaild(map));
         patient.setId(Integer.parseInt((String)map.get("patientid")));
-       // json.put("message",patientService.seek(patient));
+        json.put("message",patientService.seek(patient));
         return json;
     }
     @RequestMapping(value = "/doctor/zation",method = RequestMethod.POST)
