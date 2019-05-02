@@ -69,7 +69,7 @@ public class HospitalizationController {
 
         //设置日期格式
         HSSFCellStyle style = workbook.createCellStyle();
-        style.setDataFormat(HSSFDataFormat.getBuiltinFormat("m/d/yy h:mm"));
+        style.setDataFormat(HSSFDataFormat.getBuiltinFormat("m/d/yy"));
 
         //新增数据行，并且设置单元格数据
         int rowNum=1;
