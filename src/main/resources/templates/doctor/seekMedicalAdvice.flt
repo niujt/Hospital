@@ -61,8 +61,8 @@
                     <td>${a.patientname!''}</td>
                     <td>${(a.time?string("yyyy-MM-dd"))!}</td>
                     <td colspan="2">
-                        <button class="layui-btn" onclick="seek(${a.patientid})">就医</button>
-                        <button class="layui-btn" onclick="check(${a.patientid})">查看病史</button>
+                        <button style="width: 120px;" class="layui-btn" onclick="seek(${a.patientid})">就医</button>
+                        <button style="width: 120px;" class="layui-btn" onclick="check(${a.patientid})">查看病史</button>
                     </td>
                 </tr>
             </#list>
