@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hospital.dao.SeekMapper">
+  <select id="selectAll" resultType="com.hospital.entity.Seek" >
+    select * from seek
+  </select>
+  <select id="getSeek" resultType="com.hospital.entity.Seek" parameterType="Integer">
+    select * from seek where id=#{id}
+  </select>
+  <update id="updateById" parameterType="com.hospital.entity.Seek" >
+    update seek
+     set patientid=#{patientid},describes=#{describes},illname=#{illname},days=#{days},price=#{price}
+     where id=#{id}
+  </update>
+  <delete id="deleteById" parameterType="java.lang.Integer">
+    delete from seek
+    where id = #{id}
+  </delete>
+  <insert id="insert" parameterType="com.hospital.entity.Seek">
+    insert into seek (patientid, describes, illname, drugs, options, days, price)
+    values (#{patientid},#{describes},#{illname},#{drugs},#{options},#{days},#{price})
+  </insert>
+</mapper>
