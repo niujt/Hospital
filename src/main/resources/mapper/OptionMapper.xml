@@ -8,14 +8,23 @@
     select * from hospital.option where id=#{id}
   </select>
   <update id="updateById" parameterType="com.hospital.entity.Option" >
-    update hospital.option set name=#{name},type=#{type} where id=#{id}
+    update hospital.option set name=#{name},type=#{type},price=#{price} where id=#{id}
   </update>
   <delete id="deleteById" parameterType="java.lang.Integer">
     delete from hospital.option
     where id = #{id}
   </delete>
   <insert id="insert" parameterType="com.hospital.entity.Option">
-    insert into hospital.option (name, type)
-    values (#{name},#{type})
+    insert into hospital.option (name, type,price)
+    values (#{name},#{type},#{price})
   </insert>
+  <select id="getTotalPrice" resultType="BigDecimal">
+    select sum(price) from hospital.option  <if test="optionids !=null">
+    where hospital.option.id in
+    <foreach collection="optionids" item="id" index="index" open="(" close=")" separator=",">
+      #{id}
+    </foreach>
+
+  </if>
+  </select>
 </mapper>

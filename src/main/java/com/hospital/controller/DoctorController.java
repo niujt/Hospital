@@ -1,10 +1,7 @@
 package com.hospital.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.hospital.entity.Doctor;
-import com.hospital.entity.Hospitalization;
-import com.hospital.entity.Login;
-import com.hospital.entity.Patient;
+import com.hospital.entity.*;
 import com.hospital.service.*;
 import com.hospital.uitls.DrugsUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +26,8 @@ public class DoctorController {
     HospitalizationService hospitalizationService;
     @Autowired
     MedicalhistoryService medicalhistoryService;
+    @Autowired
+    OptionService optionService;
     @RequestMapping("/admin/doctorManage")
     public String doctorManage(HttpServletRequest request,@RequestParam(value="name",required = false) String name,@RequestParam(value="certId",required = false) String certId){
         request.setAttribute("name",name);
@@ -76,6 +75,7 @@ public class DoctorController {
     }
     @RequestMapping("/doctor/seek/{id}")
     public String seek(@PathVariable Integer id,HttpServletRequest request){
+        request.setAttribute("options",optionService.getAll());
         request.setAttribute("patient",patientService.getPatient(id));
         request.setAttribute("drugs",drugsService.getAllDrugs());
         return "doctor/seek";
@@ -88,7 +88,7 @@ public class DoctorController {
         System.out.println(map);
         patient.setDrugsids(DrugsUtils.vaild(map));
         patient.setId(Integer.parseInt((String)map.get("patientid")));
-        json.put("message",patientService.seek(patient));
+       // json.put("message",patientService.seek(patient));
         return json;
     }
     @RequestMapping(value = "/doctor/zation",method = RequestMethod.POST)
@@ -109,6 +109,15 @@ public class DoctorController {
     public JSONObject getDoctorByDepartment(@PathVariable String department){
         JSONObject json=new JSONObject();
         json.put("doctors",doctorService.getDoctorByDepartment(department));
+        return json;
+    }
+    @RequestMapping( value = "/doctor/seekinfo",method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject seekinfo(@RequestBody Map map){
+        JSONObject json=new JSONObject();
+        System.out.println(map);
+        String message=doctorService.seekInfo(map);
+        json.put("message",message);
         return json;
     }
 

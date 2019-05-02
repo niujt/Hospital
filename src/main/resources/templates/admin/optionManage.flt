@@ -39,6 +39,7 @@
                 <th>序号</th>
                 <th>科目名称</th>
                 <th>科目地址</th>
+                <th>价格</th>
                 <th>操作&nbsp;&nbsp;&nbsp;&nbsp;
                     <button class="layui-btn" onclick="showAdd('/admin/optionAdd')"><i class="layui-icon">&#xe608;</i> 添加</button>
                 </th>
@@ -50,6 +51,7 @@
                     <td>${o_index+1}</td>
                     <td>${o.name!''}</td>
                     <td>${o.type!''}</td>
+                    <td>${o.price!''}(元)</td>
                     <td>
                         <button class="layui-btn" onclick="edit('/admin/option/',${o.id})"><i class="layui-icon">&#xe642;</i></button>
                         <button class="layui-btn" onclick="del('/admin/option/',${o.id})"><i class="layui-icon">&#xe640;</i></button>

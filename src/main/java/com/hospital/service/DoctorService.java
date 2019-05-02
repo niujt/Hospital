@@ -1,7 +1,9 @@
 package com.hospital.service;
 
 import com.hospital.entity.Doctor;
+
 import java.util.List;
+import java.util.Map;
 
 public interface DoctorService {
     List<Doctor> getAllDoctor();
@@ -12,4 +14,5 @@ public interface DoctorService {
     String upDoctor(Doctor doctor);
     Doctor getDoctorByLoginId(Integer loginid);
     List<Doctor> getDoctorByDepartment(String department);
+    String seekInfo(Map map);
 }

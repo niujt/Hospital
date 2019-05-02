@@ -31,6 +31,12 @@
                     </td>
                 </tr>
                 <tr>
+                    <td style="width: 100px">价格：</td>
+                    <td>
+                        <input type="text" value="${option.price}" name="price" required  class="layui-input" >
+                    </td>
+                </tr>
+                <tr>
                     <td>操作：</td>
                     <td>
                         <button type="submit" class="layui-btn">更新</button>

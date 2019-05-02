@@ -1,16 +1,20 @@
 package com.hospital.service.impl;
 
 import com.hospital.common.CommonService;
-import com.hospital.dao.DoctorMapper;
-import com.hospital.dao.LoginMapper;
-import com.hospital.dao.PatientMapper;
+import com.hospital.dao.*;
 import com.hospital.entity.Doctor;
 import com.hospital.entity.Login;
+import com.hospital.entity.Seek;
 import com.hospital.service.DoctorService;
+import com.hospital.uitls.DrugsUtils;
+import com.hospital.uitls.PatientDoctorutils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
 import java.util.List;
+import java.util.Map;
+
 @Service
 public class DoctorServiceImpl implements DoctorService {
     @Autowired
@@ -19,6 +23,10 @@ public class DoctorServiceImpl implements DoctorService {
     PatientMapper patientMapper;
     @Autowired
     LoginMapper loginMapper;
+    @Autowired
+    SeekMapper seekMapper;
+    @Autowired
+    OptionMapper optionMapper;
     @Override
     public List<Doctor> getAllDoctor() {
         return doctorMapper.getAll("","");
@@ -81,5 +89,20 @@ public class DoctorServiceImpl implements DoctorService {
     @Override
     public List<Doctor> getDoctorByDepartment(String department) {
         return doctorMapper.getDoctorByDepartment(department);
+    }
+
+    @Override
+    public String seekInfo(Map map) {
+        Seek seek=new Seek();
+        seek.setOptions(DrugsUtils.vaild2(map));
+        seek.setDays(Integer.parseInt((String)map.get("days")));
+        seek.setDescribes((String)map.get("describes"));
+        seek.setIllname((String)map.get("illname"));
+        seek.setPatientid(Integer.parseInt((String)map.get("patientid")));
+        BigDecimal price=optionMapper.getTotalPrice(PatientDoctorutils.getOptionIds(seek.getOptions()));
+        seek.setPrice(price);
+        Integer index=seekMapper.insert(seek);
+        System.out.println(seek);
+        return index>0?CommonService.add_message_success:CommonService.add_message_error;
     }
 }

@@ -15,10 +15,44 @@
     </ul>
     <div class="layui-tab-content">
         <div class="layui-tab-item layui-show">
-             就诊信息
+            <form class="layui-form" id="form1" onsubmit="return seekinfo()">
+                <table class="layui-table">
+                    <tr>
+                        <td>患者名称</td>
+                        <td><input type="text" value="${patient.name}" readonly class="layui-input">
+                            <input type="hidden" value="${patient.id}" name="patientid" readonly class="layui-input">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>患者描述</td>
+                        <td><textarea class="layui-input" name="describes"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td>确诊病情</td>
+                        <td><input class="layui-input" name="illname" placeholder="请输入得了什么病"></td>
+                    </tr>
+                    <tr>
+                        <td>检查项目</td>
+                        <td>
+                            <#list options as option><input type="checkbox" name="${"option_"+option_index}" value="${option.id}">${option.name}(${option.price}元)</#list>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>住院天数</td>
+                        <td><input name="days" class="layui-input" type="text" min="0" required placeholder="０天则不住院，不需要在填写住院信息"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <button class="layui-btn" type="submit">确诊</button>
+                            <button class="layui-btn" type="button" onclick="alert('打印')">打印</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+
         </div>
         <div class="layui-tab-item">
-            <form class="layui-form" onsubmit="return drug()">
+            <form class="layui-form" id="form2" onsubmit="return drug()">
                 <table class="layui-table">
                     <tr>
                         <td>患者名称</td>
@@ -28,7 +62,10 @@
                     </tr>
                     <tr>
                         <td>配药</td>
-                        <td><#list drugs as drug><input type="checkbox" name="${"drugid_"+drug_index}" value="${drug.id}">${drug.name}</#list></td>
+                        <td>
+                            <#list drugs as drug><input type="checkbox" name="${"drugid_"+drug_index}" value="${drug.id}">${drug.name}&nbsp;&nbsp;
+                               数量：<input type="number" min="0" name="${drug.id+"_number"}" class="layui-input"><br></#list>
+                        </td>
                     </tr>
                     <tr>
                         <td colspan="2"><button class="layui-btn" type="submit">配药</button></td>
@@ -37,7 +74,7 @@
             </form>
         </div>
         <div class="layui-tab-item">
-            <form class="layui-form"  onsubmit="return zation()">
+            <form class="layui-form" id="form3"  onsubmit="return zation()">
                 <table class="layui-table">
                     <colgroup>
                         <col width="150" >
@@ -128,9 +165,34 @@
 
         //…
     });
+    function seekinfo(){
+        var d = {};
+        var t = $('#form1').serializeArray();
+        $.each(t, function() {
+            d[this.name] = this.value;
+        });
+        var json=JSON.stringify(d);
+        $.ajax({
+            url:"/doctor/seekinfo",
+            type:'post',
+            data:json,
+            contentType: "application/json;charset=utf-8",
+            success:function(data){
+                console.log(data.message);
+              //  parent.location.reload();
+
+            },
+            error:function (data) {
+                layer.msg(data.message, {
+                    time: 2000, //2s后自动关闭
+                });
+            }
+        });
+        return false
+    }
     function drug(){
         var d = {};
-        var t = $('form').serializeArray();
+        var t = $('#form2').serializeArray();
         $.each(t, function() {
             d[this.name] = this.value;
         });
@@ -159,7 +221,7 @@
     }
     function zation(){
         var d = {};
-        var t = $('form').serializeArray();
+        var t = $('#form3').serializeArray();
         $.each(t, function() {
             d[this.name] = this.value;
         });

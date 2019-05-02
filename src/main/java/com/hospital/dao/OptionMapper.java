@@ -3,6 +3,7 @@ package com.hospital.dao;
 import com.hospital.entity.Option;
 import org.apache.ibatis.annotations.Param;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public interface OptionMapper {
@@ -11,4 +12,5 @@ public interface OptionMapper {
     Integer updateById(Option option);
     List<Option> selectAll();
     Option getOption(@Param("id")Integer id);
+    BigDecimal getTotalPrice(@Param("optionids")List<Integer> optionids);
 }

@@ -30,6 +30,12 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>价格：</td>
+                    <td>
+                        <input type="text" name="price" required  lay-verify="required"  autocomplete="off" class="layui-input">
+                    </td>
+                </tr>
+                <tr>
                     <td>操作：</td>
                     <td>
                         <button type="submit" class="layui-btn">添加</button>&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: red;" id="message"></span>
