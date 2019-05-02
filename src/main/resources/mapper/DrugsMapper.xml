@@ -77,7 +77,10 @@
   <update id="updateByPrimaryKey" parameterType="com.hospital.entity.Drugs">
     update drugs
     set name = #{name,jdbcType=VARCHAR},
-      type = #{type,jdbcType=INTEGER},number=#{number},price=#{price}
+      type = #{type,jdbcType=INTEGER},number=#{number},price=#{price},text=#{text}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="getDrugsByName" resultType="com.hospital.entity.Drugs" parameterType="String">
+    select * from drugs where name like concat('%',#{name},'%')
+  </select>
 </mapper>

@@ -11,4 +11,5 @@ public interface IllnessMapper {
     Integer updateById(Illness illness);
     List<Illness> selectAll();
     Illness getIllness(@Param("id")Integer id);
+    List<Illness> getIllnessByName(@Param("name")String name);
 }

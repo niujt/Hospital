@@ -19,4 +19,5 @@ public interface DrugsMapper {
     int updateByPrimaryKey(Drugs record);
     List<Drugs> findAll(Drugs drugs);
     Drugs findByName(@Param("name")String name);
+    List<Drugs> getDrugsByName(@Param("name")String name);
 }

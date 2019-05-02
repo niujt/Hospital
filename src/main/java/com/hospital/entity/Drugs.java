@@ -17,5 +17,6 @@ public class Drugs {
     private Integer type;
     private BigDecimal price;
     private Integer number;
+    private String text;
 
 }

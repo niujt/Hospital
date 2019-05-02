@@ -19,20 +19,32 @@
         <li><a href="/patient/appointment">挂号</a></li>
         <li><a href="/patient/search">查询</a></li>
     </ul>
-    <div class="searchBase">
-        <form method="get" action="Search.html" onsubmit="return Kunyi.CheckSearchForm()">
-            <input type="submit" value="" class="search"/>
-            <input type="text" name="SearchWords" placeholder="输入你想要搜索的内容..." value="" autocomplete="off"
-                   onfocus="Kunyi.cls(event)" onblur="Kunyi.res(event)" maxlength="28" id="SearchWords"
-                   class="searchword"/>
-        </form>
-    </div>
 </header>
 <div class="layui-layout layui-layout-admin">
     <#--<#include "../menu.flt"/>-->
     <!-- 内容主体区域 -->
     <div style="padding: 15px;">
-            查询页面！！！！！
+        <form class="layui-form" action="/patient/searchinfo" onsubmit="return search()" method="get">
+            <table>
+                <tr>
+                    <td>查询类型：</td>
+                    <td>
+                        <select id="type" name="type">
+                            <option value="">--请选择查询类型--</option>
+                            <option value="illness">疾病</option>
+                            <option value="doctor">医生</option>
+                            <option value="drugs">药品</option>
+                        </select>
+                    </td>
+                    <td><input type="text" id="name" name="name" autocomplete="off" placeholder="请输入你要查询的内容" class="layui-input"></td>
+                    <td>
+                        <button style="width: 60px;margin-top: 0px" type="submit" class="btn layui-btn"><i
+                                    class="layui-icon">&#xe615;</i></button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
     </div>
 </div>
 <footer>
@@ -44,6 +56,34 @@
         <div class="QRcode"><img src="/static/images/QRcode.jpg" width="104" height="104"><br/>手机扫一扫关注人民医院官方微信</div>
     </div>
 </footer>
-<script src="../static/js/layui.all.js"></script>
+<script src="/static/js/layui.all.js"></script>
+<script src="/static/js/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+    function search() {
+        var name=$("#name").val();
+        var type=$("#type").val();
+        $.ajax({
+            url:"/patient/searchinfo?name="+name+"&type="+type,
+            type:'get',
+            contentType: "application/json;charset=utf-8",
+            success:function(data){
+                var json=data.map;
+                var type,list;
+                for (var key in json){
+                    type=key;
+                    list=json[key];
+                }
+
+            },
+            error:function (data) {
+                layer.msg(data.map, {
+                    time: 2000 //2s后自动关闭
+                });
+            }
+        });
+        return false;
+
+    }
+</script>
 </body>
 </html>

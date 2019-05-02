@@ -1,7 +1,10 @@
 package com.hospital.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.hospital.entity.*;
+import com.hospital.entity.Appointment;
+import com.hospital.entity.Hospitalization;
+import com.hospital.entity.Login;
+import com.hospital.entity.Patient;
 import com.hospital.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -103,6 +106,15 @@ public class PatientController {
     @RequestMapping(value="/patient/search",method=RequestMethod.GET)
     public String search(){
         return "/patient/search";
+    }
+    @RequestMapping(value="/patient/searchinfo",method=RequestMethod.GET)
+    @ResponseBody
+    public JSONObject searchinfo(@RequestParam("name")String name,@RequestParam("type")String type){
+        //System.out.println(name);
+        //System.out.println(type);
+        JSONObject json=new JSONObject();
+        json.put("map",patientService.serrchInfo(name,type));
+        return json;
     }
     @RequestMapping(value = "/hospital/{view}")
     public String test(@PathVariable String view){

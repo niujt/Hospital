@@ -125,7 +125,8 @@
       address = #{address,jdbcType=VARCHAR},
       loginid = #{loginid,jdbcType=INTEGER},
       department=#{department},
-      certId=#{certId}
+      certId=#{certId},
+      text=#{text}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

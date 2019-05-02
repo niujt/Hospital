@@ -18,4 +18,7 @@
     insert into illness (name, text)
     values (#{name},#{text})
   </insert>
+  <select id="getIllnessByName" resultType="com.hospital.entity.Illness" parameterType="String">
+    select * from illness where name like concat('%',#{name},'%')
+  </select>
 </mapper>

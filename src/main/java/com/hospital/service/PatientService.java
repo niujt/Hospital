@@ -3,6 +3,7 @@ package com.hospital.service;
 import com.hospital.entity.Patient;
 
 import java.util.List;
+import java.util.Map;
 
 public interface PatientService {
     List<Patient> getAllPatients(String name,String certId);
@@ -14,4 +15,5 @@ public interface PatientService {
     String seek(Patient patient);
     Patient findPatientByLoginId(Integer loginid);
     String updateAppointMent(Patient patient);
+    Map<String,List> serrchInfo(String name, String type);
 }

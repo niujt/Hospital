@@ -126,7 +126,7 @@
         <div class="QRcode"><img src="/static/images/QRcode.jpg" width="104" height="104"><br/>手机扫一扫关注人民医院官方微信</div>
     </div>
 </footer>
-<script src="../static/js/layui.all.js"></script>
+<script src="/static/js/layui.all.js"></script>
 <script src="/static/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
     function showHistroy() {

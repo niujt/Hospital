@@ -1,21 +1,29 @@
 package com.hospital.service.impl;
 
 import com.hospital.common.CommonService;
-import com.hospital.dao.LoginMapper;
-import com.hospital.dao.PatientMapper;
+import com.hospital.dao.*;
 import com.hospital.entity.Login;
 import com.hospital.entity.Patient;
 import com.hospital.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 @Service
 public class PatientServiceImpl implements PatientService {
     @Autowired
     PatientMapper patientMapper;
     @Autowired
     LoginMapper loginMapper;
+    @Autowired
+    DoctorMapper doctorMapper;
+    @Autowired
+    IllnessMapper illnessMapper;
+    @Autowired
+    DrugsMapper drugsMapper;
     @Override
     public List<Patient> getAllPatients(String name,String certId) {
         return patientMapper.findAll(name,certId);
@@ -82,5 +90,27 @@ public class PatientServiceImpl implements PatientService {
     @Override
     public String updateAppointMent(Patient patient) {
         return patientMapper.updateByPrimaryKeySelective(patient)>0?CommonService.upd_message_success:CommonService.upd_message_error;
+    }
+
+    @Override
+    public Map<String,List> serrchInfo(String name, String type) {
+        Map<String,List> map=new HashMap<>();
+        List list=null;
+        if("doctor".equals(type)){
+            list=doctorMapper.getDoctorByName(name);
+            map.put(type,list);
+
+        }
+        else if("illness".equals(type)){
+            list=illnessMapper.getIllnessByName(name);
+            map.clear();
+            map.put(type,list);
+        }
+        else {
+            list=drugsMapper.getDrugsByName(name);
+            map.clear();
+            map.put(type,list);
+        }
+        return map;
     }
 }

@@ -54,6 +54,14 @@
                     </td>
                 </tr>
                 <tr>
+                    <td style="width: 100px">简介：</td>
+                    <td>
+                        <textarea  name="text" required  class="layui-input" >
+                            ${drug.text}
+                        </textarea>
+                    </td>
+                </tr>
+                <tr>
                     <td>操作：</td>
                     <td>
                         <button type="submit" class="layui-btn">更新</button>

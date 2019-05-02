@@ -18,16 +18,18 @@
                     <col>
                 </colgroup>
                 <tr>
-                    <td style="width: 100px">检查类型（名称）：</td>
+                    <td style="width: 100px">疾病名称：</td>
                     <td>
                         <input type="text" value="${illness.name}" name="name" required  class="layui-input" >
                         <input type="hidden" value="${illness.id}" name="id" required  class="layui-input" >
                     </td>
                 </tr>
                 <tr>
-                    <td style="width: 100px">检查地点：</td>
+                    <td style="width: 100px">疾病介绍：</td>
                     <td>
-                        <input type="text" value="${illness.text}" name="type" required  class="layui-input" >
+                        <textarea  name="text" required  class="layui-input" >
+                            ${illness.text}
+                        </textarea>
                     </td>
                 </tr>
                 <tr>
