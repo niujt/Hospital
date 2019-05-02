@@ -28,7 +28,6 @@
     </div>
     <!-- 内容主体区域 -->
     <div style="padding: 15px;">
-        <h3>预约挂号</h3>
         <form class="layui-form" onsubmit="return appointment()">
             <table class="layui-table" lay-even lay-skin="nob" style="width: 60%;margin: 0 auto">
                 <tr>
@@ -85,12 +84,10 @@
                         <button type="submit" class="layui-btn layui-btn-normal" onclick="alert('pdf')">生成预约挂号单</button>
                     </td>
                 </tr>
-                <tbody>
-
-                </tbody>
             </table>
         </form>
     </div>
+    <div style="height: 400px;"></div>
 </div>
 <footer>
     <div class="footBase">
