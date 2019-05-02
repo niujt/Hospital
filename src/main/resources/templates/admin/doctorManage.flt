@@ -27,19 +27,21 @@
             <table class="layui-table">
                 <colgroup>
                     <col width="150">
-                    <col width="200">
-                    <col width="200">
-                    <col width="200">
-                    <col width="200">
-                    <col width="200">
-                    <col width="200">
-                    <col width="200">
+                    <col width="150">
+                    <col width="150">
+                    <col width="150">
+                    <col width="150">
+                    <col width="150">
+                    <col width="150">
+                    <col width="150">
+                    <col width="150">
                     <col>
                 </colgroup>
                 <thead>
                 <tr>
                     <th>序号</th>
                     <th>昵称</th>
+                    <th>是否为专家</th>
                     <th>年纪</th>
                     <th>性别</th>
                     <th>证件号</th>
@@ -55,6 +57,10 @@
                     <tr>
                         <td>${d_index+1}</td>
                         <td>${d.name}</td>
+                        <td>
+                            <#if d.expert==0>非专家</#if>
+                            <#if d.expert==1>专家</#if>
+                        </td>
                         <td>${d.age}</td>
                         <td>
                             <#if d.sex==0>男</#if>

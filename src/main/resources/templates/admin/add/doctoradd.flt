@@ -28,6 +28,16 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>是否为专家：</td>
+                    <td>
+                        <select name="expert">
+                            <option value="">请选择</option>
+                            <option value="0" >非专家</option>
+                            <option value="1" >专家</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
                     <td>年龄：</td>
                     <td>
                         <input type="text" name="age" required  lay-verify="required"  autocomplete="off" class="layui-input">

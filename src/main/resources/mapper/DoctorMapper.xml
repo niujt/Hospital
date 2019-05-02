@@ -48,10 +48,10 @@
   <insert id="insert" parameterType="com.hospital.entity.Doctor">
     insert into doctor (id, name, age, 
       sex, address,department,
-      loginid,certId)
+      loginid,certId,expert)
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, 
       #{sex,jdbcType=INTEGER}, #{address,jdbcType=VARCHAR},
-        #{department},#{loginid,jdbcType=INTEGER},#{certId})
+        #{department},#{loginid,jdbcType=INTEGER},#{certId},#{expert})
   </insert>
   <insert id="insertSelective" parameterType="com.hospital.entity.Doctor">
     insert into doctor
@@ -126,7 +126,8 @@
       loginid = #{loginid,jdbcType=INTEGER},
       department=#{department},
       certId=#{certId},
-      text=#{text}
+      text=#{text},
+      expert=#{expert}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

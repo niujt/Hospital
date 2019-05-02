@@ -41,6 +41,16 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>是否为专家：</td>
+                    <td>
+                        <select name="expert">
+                            <option value="">请选择</option>
+                            <option value="0" <#if doctor.expert==0>selected</#if>>非专家</option>
+                            <option value="1" <#if doctor.expert==1>selected</#if>>专家</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
                     <td>年龄：</td>
                     <td>
                         <input type="text" value="${doctor.age}" name="age" required  class="layui-input">

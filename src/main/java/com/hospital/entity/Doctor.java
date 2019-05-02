@@ -21,6 +21,7 @@ public class Doctor {
     private String department;
     private String certId;
     private String text;
+    private Integer expert;
     /***/
     private String username;
     private String password;

@@ -146,10 +146,17 @@
                     data = data.doctors;
                     data.forEach(function (item) {
                         var name = item.name;
+                        var expert = item.expert;
+                        if(expert==0){
+                            expert='非专家';
+                        }
+                        else {
+                            expert='专家';
+                        }
                         console.log(name);
                         var id = item.id;
                         console.log(id);
-                        $("#doctorid").append("<option value=" + id + ">" + name + "</option>");
+                        $("#doctorid").append("<option value=" + id + ">" + name +"----"+expert+"</option>");
                     });
                     form.render('select');
                 }
