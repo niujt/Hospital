@@ -102,7 +102,7 @@ public class PatientController {
     }
     @RequestMapping(value="/patient/search",method=RequestMethod.GET)
     public String search(){
-        return "patient/search";
+        return "/patient/search";
     }
     @RequestMapping(value = "/hospital/{view}")
     public String test(@PathVariable String view){

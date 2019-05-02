@@ -57,7 +57,7 @@ public class LoginController {
     @RequestMapping(value = "/loginout",method = RequestMethod.GET)
     public String loginout(HttpSession session){
         session.removeAttribute("login");
-        return "login&regist";
+        return "/hospital";
     }
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     @ResponseBody

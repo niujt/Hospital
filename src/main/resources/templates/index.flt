@@ -21,16 +21,16 @@
     <a class="logo" href="/hospital"><img src="/static/images/logoa.png" width="120" height="70"/>
         <img src="/static/images/zt.png" width="300" height="70"/></a>
 
-    <div class="searchBase">
+    <#--<div class="searchBase">-->
 
-        <form method="get" action="Search.html" onSubmit="return Kunyi.CheckSearchForm()">
+    <#--<form method="get" action="Search.html" onSubmit="return Kunyi.CheckSearchForm()">-->
 
-            <input type="submit" value="" class="search"/>
-            <input type="text" name="SearchWords" placeholder="输入你想要搜索的内容..." value="" autocomplete="off"
-                   onFocus="Kunyi.cls(event)" onBlur="Kunyi.res(event)" maxlength="28" id="SearchWords"
-                   class="searchword"/>
-        </form>
-    </div>
+    <#--<input type="submit" value="" class="search"/>-->
+    <#--<input type="text" name="SearchWords" placeholder="输入你想要搜索的内容..." value="" autocomplete="off"-->
+    <#--onFocus="Kunyi.cls(event)" onBlur="Kunyi.res(event)" maxlength="28" id="SearchWords"-->
+    <#--class="searchword"/>-->
+    <#--</form>-->
+    <#--</div>-->
 </header>
 
 <nav>
@@ -55,7 +55,7 @@
             <li class="grey bgff"><a href="/hospital/guide"><span class="style03"></span>就医指南</a></li>
             <li class="bggrey"><a href="/hospital/seekguide"><span class="style04"></span>坐诊时间</a></li>
             <li class="bggrey"><a href="/hospital/guide"><span class="style06"></span>来院路线</a></li>
-            <li class="grey"><a href="javascript:"><span class="style08"></span>信息查询</a></li>
+            <li class="grey"><a href="/patient/search"><span class="style08"></span>信息查询</a></li>
         </ul>
     </div>
     <div class="focusBox">
@@ -202,36 +202,36 @@
             <li><a title="王五"><img src="/static/images/d5.jpg"
                                    alt="王五" width="120" height="179"></a>
                 <div class="txt"><em>王五</em>
-                    <p>普外科  主任医师</p></div>
+                    <p>普外科 主任医师</p></div>
 
             </li>
             <li><a title="王青"><img src="/static/images/d6.JPG"
                                    alt="王青" width="120" height="179"></a>
                 <div class="txt"><em>王青</em>
-                    <p>普外科  副主任医师</p></div>
+                    <p>普外科 副主任医师</p></div>
 
             </li>
             <li><a title="杨丽娟"><img src="/static/images/d9.JPG"
                                     alt="杨丽娟" width="120" height="179"></a>
                 <div class="txt"><em>杨丽娟</em>
-                    <p>急诊  副主任医师</p></div>
+                    <p>急诊 副主任医师</p></div>
 
             </li>
             <li><a title="郝新景"><img src="/static/images/d10.JPG"
                                     alt="郝新景" width="120" height="179"></a>
                 <div class="txt"><em>郝新景</em>
-                    <p>急诊  副主任医师</p></div>
+                    <p>急诊 副主任医师</p></div>
             </li>
             <li><a title="丁晓"><img src="/static/images/d14.JPG" alt="丁晓"
                                    width="120" height="179"></a>
                 <div class="txt"><em>丁晓</em>
-                    <p>急诊  主任医师</p></div>
+                    <p>急诊 主任医师</p></div>
 
             </li>
             <li><a title="邵一博"><img src="/static/images/d15.JPG"
                                     alt="邵一博" width="122" height="179"></a>
                 <div class="txt"><em>邵一博</em>
-                    <p>急诊  副主任医师</p></div>
+                    <p>急诊 副主任医师</p></div>
 
             </li>
 
@@ -244,7 +244,7 @@
         <div class="tab-bd active">
             <ul>
                 <li><span><b>12</b><br/><em>2018.12</em></span>
-                    <h5> 医者 故事 |  他用两个小时，帮她拨开了“半辈子”的雾霾......</h5>
+                    <h5> 医者 故事 | 他用两个小时，帮她拨开了“半辈子”的雾霾......</h5>
                     <p>
                         俗话说：“七十不留宿，八十不留饭，九十不留坐”，可见老年人一旦上了岁数，稍不注意，就容易出现问题。常见的突发意外事件多为心脑血管方面的疾病……</p>
                 </li>
@@ -265,12 +265,12 @@
         <div class="title"><span>科室导航</span></div>
         <div class="list"><h3>心血管内科一病区<em></em>
                 心血管内科二病区</h3></br>
-                    <h3>神经内科一病区<em></em>
-                        神经内科二病区</h3></br>
-                            <h3>中医康复科<em></em>
-                                皮肤科</h3></br>
-                                    <h3>妇科<em></em>
-                                        呼吸内科<h3>
+            <h3>神经内科一病区<em></em>
+                神经内科二病区</h3></br>
+            <h3>中医康复科<em></em>
+                皮肤科</h3></br>
+            <h3>妇科<em></em>
+                呼吸内科<h3>
         </div>
     </div>
     <div class="clear"></div>
