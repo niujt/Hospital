@@ -77,6 +77,12 @@
                     </td>
                 </tr>
                 <tr>
+                    <td>患病</td>
+                    <td>
+                        <input type="text" name="medicalname"  required  lay-verify="required"  autocomplete="off" class="layui-input">
+                    </td>
+                </tr>
+                <tr>
                     <td>住院时间：</td>
                     <td>
                         <input type="date" name="intime" required  lay-verify="required"  autocomplete="off" class="layui-input">
