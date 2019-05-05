@@ -42,10 +42,10 @@ public class PDFUtils {
 //        createAppointMent(appointment);
 //        createSeekInfo(new Seek("浑身不舒服","花柳病","1,2,3,4,5",12,new BigDecimal("32.6"),"张安"));
 //    }
-    public static String createSeekInfo(Seek seek) {
+    public static String createSeekInfo(Seek seek,String path) {
         Document document = new Document();
         try {
-            PdfWriter.getInstance(document, new FileOutputStream("诊断书.pdf"));
+            PdfWriter.getInstance(document, new FileOutputStream(path));
             document.open();
             PdfPTable pdfPTable = new PdfPTable(4);
             createCell("诊断书", 4, pdfPTable, font);
