@@ -88,14 +88,26 @@ public class PatientServiceImpl implements PatientService {
         seek.setPatientid(patient.getId());
         seek.setDrugs(drugsids);
         BigDecimal price=new BigDecimal("0.0");
+        String message="";
         for(String drug:drugsids.split(",")){
           Drugs drugs=drugsMapper.selectByPrimaryKey(Integer.parseInt(drug.split("@")[0]));
           BigDecimal drugprice=drugs.getPrice();
           Integer drugnumber=Integer.parseInt(drug.split("@")[1]);
-            price=price.add(drugprice.multiply(BigDecimal.valueOf(drugnumber)));
+          Integer realnumber=drugs.getNumber();
+          if(realnumber<=0){
+              message="对不起"+drugs.getNumber()+"数量不足";
+              break;
+          }
+          else {
+              drugs.setNumber(drugnumber);
+              drugsMapper.updateNumber(drugs);
+              price=price.add(drugprice.multiply(BigDecimal.valueOf(drugnumber)));
+
+          }
         }
         seek.setPrice(price);
-        return (patientMapper.updateByPrimaryKeySelective(patient) > 0 && seekMapper.updateDrugs(seek) > 0) ? CommonService.upd_message_success : CommonService.upd_message_error;
+        message=(patientMapper.updateByPrimaryKeySelective(patient) > 0 && seekMapper.updateDrugs(seek) > 0) ? CommonService.upd_message_success : CommonService.upd_message_error;
+        return message;
     }
 
     @Override
