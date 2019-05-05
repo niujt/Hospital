@@ -42,7 +42,7 @@ public class PDFUtils {
 //        createAppointMent(appointment);
 //        createSeekInfo(new Seek("浑身不舒服","花柳病","1,2,3,4,5",12,new BigDecimal("32.6"),"张安"));
 //    }
-    public static void createSeekInfo(Seek seek) {
+    public static String createSeekInfo(Seek seek) {
         Document document = new Document();
         try {
             PdfWriter.getInstance(document, new FileOutputStream("诊断书.pdf"));
@@ -67,8 +67,10 @@ public class PDFUtils {
             createCell(seek.getPrice() + "  (元)", 2, pdfPTable, font);
             document.add(pdfPTable);
             document.close();
+            return "已生成";
         } catch (Exception e) {
-            System.out.println("file create exception");
+            e.printStackTrace();
+            return "系统内部错误，生成失败";
         }
     }
 
