@@ -56,7 +56,6 @@ public class MedicalhistoryController {
     @RequestMapping(value = "/admin/medicalhistory",method = RequestMethod.POST)
     @ResponseBody
     public JSONObject medicalhistoryAdd(@RequestBody Medicalhistory medicalhistory){
-        System.out.println(medicalhistory);
         JSONObject json=new JSONObject();
         json.put("message",medicalhistoryService.addMedicalhistory(medicalhistory));
         return json;

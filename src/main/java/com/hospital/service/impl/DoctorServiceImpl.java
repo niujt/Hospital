@@ -102,7 +102,6 @@ public class DoctorServiceImpl implements DoctorService {
         BigDecimal price=optionMapper.getTotalPrice(PatientDoctorutils.getOptionIds(seek.getOptions()));
         seek.setPrice(price);
         Integer index=seekMapper.insert(seek);
-        System.out.println(seek);
         return index>0?CommonService.add_message_success:CommonService.add_message_error;
     }
 }

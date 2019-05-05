@@ -110,8 +110,6 @@ public class PatientController {
     @RequestMapping(value="/patient/searchinfo",method=RequestMethod.GET)
     @ResponseBody
     public JSONObject searchinfo(@RequestParam("name")String name,@RequestParam("type")String type){
-        //System.out.println(name);
-        //System.out.println(type);
         JSONObject json=new JSONObject();
         json.put("map",patientService.serrchInfo(name,type));
         return json;

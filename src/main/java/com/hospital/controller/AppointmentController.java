@@ -58,7 +58,6 @@ public class AppointmentController {
     @RequestMapping(value = "/admin/appointment",method = RequestMethod.POST)
     @ResponseBody
     public JSONObject AppointmentAdd(@RequestBody Appointment appointment){
-        System.out.println(appointment);
         JSONObject json=new JSONObject();
         json.put("message",appointmentService.addAppointment(appointment));
         return json;

@@ -85,7 +85,6 @@ public class DoctorController {
     public JSONObject drug(@RequestBody Map map){
         JSONObject json=new JSONObject();
         Patient patient=new Patient();
-        System.out.println(map);
         patient.setDrugsids(DrugsUtils.vaild(map));
         patient.setId(Integer.parseInt((String)map.get("patientid")));
         json.put("message",patientService.seek(patient));
@@ -115,7 +114,6 @@ public class DoctorController {
     @ResponseBody
     public JSONObject seekinfo(@RequestBody Map map){
         JSONObject json=new JSONObject();
-        System.out.println(map);
         String message=doctorService.seekInfo(map);
         json.put("message",message);
         return json;
