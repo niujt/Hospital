@@ -6,6 +6,7 @@ import com.hospital.entity.Hospitalization;
 import com.hospital.entity.Login;
 import com.hospital.entity.Patient;
 import com.hospital.service.*;
+import com.hospital.uitls.PDFUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -117,5 +118,16 @@ public class PatientController {
     @RequestMapping(value = "/hospital/{view}")
     public String test(@PathVariable String view){
         return "patient/"+view;
+    }
+    @RequestMapping(value = "/patient/downloadpdf",method = RequestMethod.POST)
+    @ResponseBody
+    public JSONObject downloadpdf(HttpSession session){
+        JSONObject json=new JSONObject();
+        Login login=(Login)session.getAttribute("login");
+        Patient patient=patientService.findPatientByLoginId(login.getId());
+        Integer idlast=appointmentService.selectTheLastAppointment(patient.getId());
+        Appointment appointment=appointmentService.getAppointment(idlast);
+        json.put("message",PDFUtils.createAppointMent(appointment,"预约单.pdf"));
+        return json;
     }
 }

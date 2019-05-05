@@ -81,7 +81,7 @@
                         <button type="submit" class="layui-btn layui-btn-normal">预约</button>
                     </td>
                     <td>
-                        <button type="submit" class="layui-btn layui-btn-normal" onclick="alert('pdf')">生成预约挂号单</button>
+                        <button type="button" class="layui-btn layui-btn-normal" onclick="downloadpdf()">生成预约挂号单</button>
                     </td>
                 </tr>
             </table>
@@ -101,6 +101,23 @@
 <script src="/static/js/layui.all.js"></script>
 <script src="/static/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
+    function downloadpdf(){
+        $.ajax({
+            url: "/patient/downloadpdf",
+            type: 'post',
+            contentType: "application/json;charset=utf-8",
+            success: function (data) {
+                console.log(data.message);
+                alert(data.message);
+            },
+            error: function (data) {
+                layer.msg(data.message, {
+                    time: 2000, //2s后自动关闭
+                });
+            }
+        });
+        return false
+    }
     function appointment() {
         var d = {};
         var t = $('form').serializeArray();

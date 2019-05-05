@@ -2,7 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.hospital.dao.SeekMapper">
   <select id="selectAll" resultType="com.hospital.entity.Seek" >
-    select * from seek
+    select s.*,p.name as patientname from seek s
+    left join patient p
+    on s.patientid=p.id
   </select>
   <select id="getSeek" resultType="com.hospital.entity.Seek" parameterType="Integer">
     select * from seek where id=#{id}
