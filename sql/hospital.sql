@@ -279,6 +279,6 @@ CREATE TABLE `seek`  (
 -- Records of seek
 -- ----------------------------
 INSERT INTO `seek` VALUES (1, '2e3wsdasda', '1212', '1@12,2@12', '1,6', '0', 1320.00, 1);
-INSERT INTO `seek` VALUES (2, 'dasdasdas', '??', NULL, '10', '10', 0.00, 1);
+INSERT INTO `seek` VALUES (2, 'dasdasdas', '脑膜炎', NULL, '10', '10', 0.00, 1);
 
 SET FOREIGN_KEY_CHECKS = 1;
