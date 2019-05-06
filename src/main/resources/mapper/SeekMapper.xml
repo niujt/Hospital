@@ -9,6 +9,9 @@
   <select id="getSeek" resultType="com.hospital.entity.Seek" parameterType="Integer">
     select * from seek where id=#{id}
   </select>
+  <select id="getSeekByPatientId" resultType="com.hospital.entity.Seek" parameterType="Integer">
+    select * from seek where patientid=#{patientid} order by id desc limit 0,1
+  </select>
   <update id="updateById" parameterType="com.hospital.entity.Seek" >
     update seek
      set patientid=#{patientid},describes=#{describes},illname=#{illname},days=#{days},price=#{price}
@@ -22,10 +25,10 @@
     insert into seek (patientid, describes, illname, drugs, options, days, price)
     values (#{patientid},#{describes},#{illname},#{drugs},#{options},#{days},#{price})
   </insert>
-  <update id="updateDrugs" parameterType="com.hospital.entity.Seek">
-     update seek
-     set drugs=#{drugs},price=price+#{price}
-     where patientid=#{patientid}
-  </update>
+  <!--<update id="updateDrugs" parameterType="com.hospital.entity.Seek">-->
+     <!--update seek-->
+     <!--set drugs=#{drugs},price=price+#{price}-->
+     <!--where patientid=#{patientid}-->
+  <!--</update>-->
 
 </mapper>

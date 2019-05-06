@@ -43,8 +43,6 @@
                 <col width="200">
                 <col width="200">
                 <col width="200">
-                <col width="200">
-                <col width="200">
             </colgroup>
             <thead>
             <tr>
@@ -63,6 +61,7 @@
                     <td colspan="2">
                         <button style="width: 120px;" class="layui-btn" onclick="seek(${a.patientid})">就医</button>
                         <button style="width: 120px;" class="layui-btn" onclick="check(${a.patientid})">查看病史</button>
+                        <button style="width: 120px;" class="layui-btn" type="button" onclick="printseek(${a.patientid})">打印就诊单</button>
                     </td>
                 </tr>
             </#list>
@@ -109,6 +108,23 @@
                 layer.close(index);
             }
         });
+    }
+    function printseek(id){
+        $.ajax({
+            url: "/doctor/printseek/"+id,
+            type: 'post',
+            contentType: "application/json;charset=utf-8",
+            success: function (data) {
+                console.log(data.message);
+                alert(data.message);
+            },
+            error: function (data) {
+                layer.msg(data.message, {
+                    time: 2000, //2s后自动关闭
+                });
+            }
+        });
+        return false
     }
 </script>
 </body>

@@ -31,6 +31,7 @@ public class Seek {
   private BigDecimal price;
   private Integer patientid;
   private String patientname;
+  private String doctorname;
 
 
 }

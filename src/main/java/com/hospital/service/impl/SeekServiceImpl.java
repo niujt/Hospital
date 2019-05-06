@@ -15,4 +15,9 @@ public class SeekServiceImpl implements SeekService {
     public String addSeek(Seek seek) {
         return seekMapper.insert(seek)>0? CommonService.add_message_success:CommonService.add_message_error;
     }
+
+    @Override
+    public Seek getSeekByPatientId(Integer patientid) {
+        return seekMapper.getSeekByPatientId(patientid);
+    }
 }

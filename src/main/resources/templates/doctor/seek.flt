@@ -39,12 +39,11 @@
                     </tr>
                     <tr>
                         <td>住院天数</td>
-                        <td><input name="days" class="layui-input" type="text" min="0" required placeholder="０天则不住院，不需要在填写住院信息"></td>
+                        <td><input name="days" class="layui-input" type="text" min="0" required placeholder="0天则不住院，不需要在填写住院信息"></td>
                     </tr>
                     <tr>
                         <td colspan="2">
                             <button class="layui-btn" type="submit">确诊</button>
-                            <button class="layui-btn" type="button" onclick="alert('打印')">打印</button>
                         </td>
                     </tr>
                 </table>
