@@ -11,7 +11,7 @@
  Target Server Version : 50726
  File Encoding         : 65001
 
- Date: 06/05/2019 10:18:01
+ Date: 06/05/2019 15:32:45
 */
 
 SET NAMES utf8mb4;
@@ -66,10 +66,10 @@ CREATE TABLE `doctor`  (
 -- ----------------------------
 INSERT INTO `doctor` VALUES (1, '韩梅梅', 32, '320586198807191278', 1, '内科', '江苏/苏州', 3, '手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2', 1);
 INSERT INTO `doctor` VALUES (2, '李雷', 32, '320283198802102526', 0, '呼吸内科', '江苏/无锡', 4, '手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2', 1);
-INSERT INTO `doctor` VALUES (4, '赵志', 38, '310103198212062428', 0, '口腔科', '上海', 12, NULL, 1);
-INSERT INTO `doctor` VALUES (5, '杨丽娟', 45, '320283197504207624', 1, '急诊科', '江苏/无锡', 18, NULL, 1);
-INSERT INTO `doctor` VALUES (6, '王五', 45, '320283197508091516', 1, '神经内科', '江苏/无锡', 17, NULL, 0);
-INSERT INTO `doctor` VALUES (7, '王一一', 40, '320586198807191279', 1, '内科', '江苏/无锡', NULL, NULL, 0);
+INSERT INTO `doctor` VALUES (4, '赵志', 38, '310103198212062428', 0, '口腔科', '上海', 12, '手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2', 1);
+INSERT INTO `doctor` VALUES (5, '杨丽娟', 45, '320283197504207624', 1, '急诊科', '江苏/无锡', 18, '手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2', 1);
+INSERT INTO `doctor` VALUES (6, '王五', 45, '320283197508091516', 1, '神经内科', '江苏/无锡', 17, '手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2', 0);
+INSERT INTO `doctor` VALUES (7, '王一一', 40, '320586198807191279', 1, '内科', '江苏/无锡', NULL, '手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2', 0);
 
 -- ----------------------------
 -- Table structure for drugs
@@ -273,11 +273,12 @@ CREATE TABLE `seek`  (
   `price` decimal(10, 2) NULL DEFAULT NULL,
   `patientid` int(11) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of seek
 -- ----------------------------
 INSERT INTO `seek` VALUES (1, '2e3wsdasda', '1212', '1@12,2@12', '1,6', '0', 1320.00, 1);
+INSERT INTO `seek` VALUES (2, 'dasdasdas', '??', NULL, '10', '10', 0.00, 1);
 
 SET FOREIGN_KEY_CHECKS = 1;
