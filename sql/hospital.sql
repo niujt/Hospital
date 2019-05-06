@@ -1,280 +1,283 @@
--- MySQL dump 10.13  Distrib 5.7.26, for Linux (x86_64)
---
--- Host: 127.0.0.1    Database: hospital
--- ------------------------------------------------------
--- Server version	5.7.26
+/*
+ Navicat Premium Data Transfer
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
-/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
-/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
-/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+ Source Server         : mysql
+ Source Server Type    : MySQL
+ Source Server Version : 50726
+ Source Host           : localhost:3306
+ Source Schema         : hospital
 
---
--- Table structure for table `appointment`
---
+ Target Server Type    : MySQL
+ Target Server Version : 50726
+ File Encoding         : 65001
 
+ Date: 06/05/2019 10:18:01
+*/
+
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+-- ----------------------------
+-- Table structure for appointment
+-- ----------------------------
 DROP TABLE IF EXISTS `appointment`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `appointment` (
-                             `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
-                             `patientid` int(11) DEFAULT NULL COMMENT '患者id',
-                             `doctorid` int(11) DEFAULT NULL COMMENT '医生id',
-                             `time` date DEFAULT NULL COMMENT '预约时间',
-                             `expenses` decimal(10,2) DEFAULT NULL COMMENT '门诊费',
-                             PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE `appointment`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `patientid` int(11) NULL DEFAULT NULL COMMENT '患者id',
+  `doctorid` int(11) NULL DEFAULT NULL COMMENT '医生id',
+  `time` date NULL DEFAULT NULL COMMENT '预约时间',
+  `expenses` decimal(10, 2) NULL DEFAULT NULL COMMENT '门诊费',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 24 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
---
--- Dumping data for table `appointment`
---
+-- ----------------------------
+-- Records of appointment
+-- ----------------------------
+INSERT INTO `appointment` VALUES (1, 1, 1, '2018-12-08', 30.00);
+INSERT INTO `appointment` VALUES (2, 3, 2, '2018-11-27', 30.00);
+INSERT INTO `appointment` VALUES (3, 1, 1, '2019-03-07', 15.00);
+INSERT INTO `appointment` VALUES (4, 4, 1, '2019-03-14', 30.00);
+INSERT INTO `appointment` VALUES (5, 5, 4, '2019-03-16', 10.00);
+INSERT INTO `appointment` VALUES (6, 4, 7, '2019-03-28', 15.00);
+INSERT INTO `appointment` VALUES (7, 5, 6, '2019-04-02', 30.00);
+INSERT INTO `appointment` VALUES (8, 3, 4, '2019-04-10', 10.00);
+INSERT INTO `appointment` VALUES (9, 2, 1, '2019-04-13', 30.00);
 
-LOCK TABLES `appointment` WRITE;
-/*!40000 ALTER TABLE `appointment` DISABLE KEYS */;
-INSERT INTO `appointment` (`id`, `patientid`, `doctorid`, `time`, `expenses`) VALUES (1,1,2,'2017-03-07',15.00),(7,2,2,'2018-11-27',15.00),(8,3,2,'2018-12-01',15.00),(9,4,1,'2023-02-01',15.00),(10,4,2,'2019-03-05',15.00),(13,3,1,'2019-03-31',15.00),(14,4,1,'2017-02-05',15.00),(15,1,1,'2019-04-06',15.00),(19,1,1,'2019-04-21',1312312.00),(20,1,1,'2019-04-21',21212121.00);
-/*!40000 ALTER TABLE `appointment` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `doctor`
---
-
+-- ----------------------------
+-- Table structure for doctor
+-- ----------------------------
 DROP TABLE IF EXISTS `doctor`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `doctor` (
-                        `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键',
-                        `name` varchar(255) DEFAULT NULL COMMENT '姓名',
-                        `age` int(11) DEFAULT NULL COMMENT '年龄',
-                        `certId` varchar(255) DEFAULT NULL COMMENT '身份证',
-                        `sex` int(10) DEFAULT NULL COMMENT '性别',
-                        `department` varchar(255) DEFAULT NULL COMMENT '部门',
-                        `address` varchar(255) DEFAULT NULL COMMENT '家庭住址',
-                        `loginid` int(11) DEFAULT NULL COMMENT '登录',
-                        `text` text COMMENT '介绍',
-                        PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE `doctor`  (
+  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '姓名',
+  `age` int(11) NULL DEFAULT NULL COMMENT '年龄',
+  `certId` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '身份证',
+  `sex` int(10) NULL DEFAULT NULL COMMENT '性别',
+  `department` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '部门',
+  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '家庭住址',
+  `loginid` int(11) NULL DEFAULT NULL COMMENT '登录',
+  `text` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '介绍',
+  `expert` int(10) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
---
--- Dumping data for table `doctor`
---
+-- ----------------------------
+-- Records of doctor
+-- ----------------------------
+INSERT INTO `doctor` VALUES (1, '韩梅梅', 32, '320586198807191278', 1, '内科', '江苏/苏州', 3, '手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2', 1);
+INSERT INTO `doctor` VALUES (2, '李雷', 32, '320283198802102526', 0, '呼吸内科', '江苏/无锡', 4, '手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2', 1);
+INSERT INTO `doctor` VALUES (4, '赵志', 38, '310103198212062428', 0, '口腔科', '上海', 12, NULL, 1);
+INSERT INTO `doctor` VALUES (5, '杨丽娟', 45, '320283197504207624', 1, '急诊科', '江苏/无锡', 18, NULL, 1);
+INSERT INTO `doctor` VALUES (6, '王五', 45, '320283197508091516', 1, '神经内科', '江苏/无锡', 17, NULL, 0);
+INSERT INTO `doctor` VALUES (7, '王一一', 40, '320586198807191279', 1, '内科', '江苏/无锡', NULL, NULL, 0);
 
-LOCK TABLES `doctor` WRITE;
-/*!40000 ALTER TABLE `doctor` DISABLE KEYS */;
-INSERT INTO `doctor` (`id`, `name`, `age`, `certId`, `sex`, `department`, `address`, `loginid`, `text`) VALUES (1,'张三',32,'666',1,'精神科','江苏/无锡',3,'手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2'),(2,'李四',32,'777',1,'妇产科','江苏/无锡',4,'手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2'),(3,'王五',56,'888',1,'妇产科','sasasas',12,'手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2'),(4,'2323',12,'１１２１２１２１',0,'口腔科','21212',NULL,NULL);
-/*!40000 ALTER TABLE `doctor` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `drugs`
---
-
+-- ----------------------------
+-- Table structure for drugs
+-- ----------------------------
 DROP TABLE IF EXISTS `drugs`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `drugs` (
-                       `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键',
-                       `name` varchar(255) DEFAULT NULL COMMENT '药品名称',
-                       `type` int(10) DEFAULT NULL COMMENT '药品类型',
-                       `price` decimal(10,2) DEFAULT NULL COMMENT '单价',
-                       `number` int(11) DEFAULT NULL COMMENT '数量',
-                       `text` text COMMENT '介绍',
-                       PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE `drugs`  (
+  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '药品名称',
+  `type` int(10) NULL DEFAULT NULL COMMENT '药品类型',
+  `price` decimal(10, 2) NULL DEFAULT NULL COMMENT '单价',
+  `number` int(11) NULL DEFAULT NULL COMMENT '数量',
+  `text` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL COMMENT '介绍',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
---
--- Dumping data for table `drugs`
---
+-- ----------------------------
+-- Records of drugs
+-- ----------------------------
+INSERT INTO `drugs` VALUES (1, '乙酰氨基酚片', 4, 65.00, 200, '手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2');
+INSERT INTO `drugs` VALUES (2, '复方益肝灵片', 1, 20.00, 100, '手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2');
+INSERT INTO `drugs` VALUES (3, '胆维他片', 2, 50.00, 100, '手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2');
+INSERT INTO `drugs` VALUES (4, '抗菌消炎胶囊', 3, 45.00, 100, '手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2');
+INSERT INTO `drugs` VALUES (5, '健脑益气片', 4, 120.00, 100, '手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2');
+INSERT INTO `drugs` VALUES (7, '口服液', 5, 30.00, 100, '手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2');
+INSERT INTO `drugs` VALUES (13, '支气管舒张剂', 2, 60.00, 100, '手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2');
+INSERT INTO `drugs` VALUES (14, '阿莫西林', 1, 25.00, 50, NULL);
 
-LOCK TABLES `drugs` WRITE;
-/*!40000 ALTER TABLE `drugs` DISABLE KEYS */;
-INSERT INTO `drugs` (`id`, `name`, `type`, `price`, `number`, `text`) VALUES (1,'111111',4,4.66,100,'手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2'),(2,'22',1,4.55,100,'手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2'),(3,'33',2,4.56,100,'手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2'),(4,'44',3,4.76,100,'手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2'),(5,'55',4,5.23,100,'手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2'),(7,'66',5,14.12,100,'手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2'),(13,'werwer',2,4.66,100,'手动阀手动阀手动阀手动阀啊JKDASJDKLADLASLDKASL1312KASDKLASDKASJFLASFJKSGFJSDAKJFSAKFJSKFJSDKFJSDKLFJSDKLFJSCMxlSKkdosadkfsd看风使舵李开复十六分就开了反射定律攻击速度老师的课反对法工地上可22插卡式西欧的靠谱的看312课程搜房参考2');
-/*!40000 ALTER TABLE `drugs` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `hospitalization`
---
-
+-- ----------------------------
+-- Table structure for hospitalization
+-- ----------------------------
 DROP TABLE IF EXISTS `hospitalization`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `hospitalization` (
-                                 `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
-                                 `floor` varchar(10) DEFAULT NULL COMMENT '楼层',
-                                 `bed` varchar(255) DEFAULT NULL COMMENT '床号',
-                                 `door` varchar(255) DEFAULT NULL COMMENT '房间号',
-                                 `medicalname` varchar(255) DEFAULT NULL COMMENT '病名称',
-                                 `patientid` int(11) DEFAULT NULL COMMENT '患者id',
-                                 `intime` date DEFAULT NULL COMMENT '住院时间',
-                                 `outtime` date DEFAULT NULL COMMENT '出院时间',
-                                 PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE `hospitalization`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `floor` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '楼层',
+  `bed` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '床号',
+  `door` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '房间号',
+  `medicalname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '病名称',
+  `patientid` int(11) NULL DEFAULT NULL COMMENT '患者id',
+  `intime` date NULL DEFAULT NULL COMMENT '住院时间',
+  `outtime` date NULL DEFAULT NULL COMMENT '出院时间',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
---
--- Dumping data for table `hospitalization`
---
+-- ----------------------------
+-- Records of hospitalization
+-- ----------------------------
+INSERT INTO `hospitalization` VALUES (1, '1', '4', '104', '头疼', 1, '2018-12-08', '2018-12-09');
+INSERT INTO `hospitalization` VALUES (2, '2', '3', '203', '呼吸系统疾病', 3, '2019-03-07', '2019-03-10');
+INSERT INTO `hospitalization` VALUES (3, '2', '1', '201', '慢性阻塞性肺疾病', 1, '2019-03-12', '2019-03-18');
+INSERT INTO `hospitalization` VALUES (4, '3', '1', '301', '胆石症', 4, '2019-03-14', '2019-03-25');
+INSERT INTO `hospitalization` VALUES (5, '3', '2', '302', '胆管疾病', 5, '2019-03-16', '2019-03-22');
+INSERT INTO `hospitalization` VALUES (6, '2', '2', '202', '肺结石', 3, '2019-04-10', NULL);
+INSERT INTO `hospitalization` VALUES (8, '1', '2', '102', '阑尾炎', 4, '2019-03-28', '2019-03-31');
+INSERT INTO `hospitalization` VALUES (10, '3', '3', '303', '脑血管疾病', 5, '2019-04-02', NULL);
+INSERT INTO `hospitalization` VALUES (11, '5', '4', '3', '心血管', 4, '2019-04-25', NULL);
 
-LOCK TABLES `hospitalization` WRITE;
-/*!40000 ALTER TABLE `hospitalization` DISABLE KEYS */;
-INSERT INTO `hospitalization` (`id`, `floor`, `bed`, `door`, `medicalname`, `patientid`, `intime`, `outtime`) VALUES (1,'3','4','304','qweq',1,'2019-03-07','2019-03-08'),(2,'2','3','305','asd',2,'2019-03-07','2019-03-10'),(3,'2','2','305','asd',3,'2019-03-07','2019-03-10'),(4,'2','1','305','dsad',4,'2019-03-07','2019-03-18'),(5,'3','2','306','add',4,'2019-03-07','2019-03-19'),(8,'1','2','102','adasdasd',3,'2019-03-28','2019-03-31'),(9,'1','1','102','脑残',1,'2019-04-06',NULL);
-/*!40000 ALTER TABLE `hospitalization` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `illness`
---
-
+-- ----------------------------
+-- Table structure for illness
+-- ----------------------------
 DROP TABLE IF EXISTS `illness`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `illness` (
-                         `id` int(11) NOT NULL AUTO_INCREMENT,
-                         `name` varchar(255) DEFAULT NULL,
-                         `text` varchar(255) DEFAULT NULL,
-                         PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE `illness`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `text` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
---
--- Dumping data for table `illness`
---
+-- ----------------------------
+-- Records of illness
+-- ----------------------------
+INSERT INTO `illness` VALUES (1, '牙疼', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+INSERT INTO `illness` VALUES (2, '头疼', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+INSERT INTO `illness` VALUES (3, '呼吸性疾病', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+INSERT INTO `illness` VALUES (4, '胆结石', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+INSERT INTO `illness` VALUES (5, '胆管疾病', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
+INSERT INTO `illness` VALUES (6, '阑尾炎', 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
 
-LOCK TABLES `illness` WRITE;
-/*!40000 ALTER TABLE `illness` DISABLE KEYS */;
-INSERT INTO `illness` (`id`, `name`, `text`) VALUES (1,'狂犬病','xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),(2,'艾滋病','xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),(3,'甲型H1N1','xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),(4,'dasd','xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),(5,'dasd','xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'),(6,'wqeqwe','xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx');
-/*!40000 ALTER TABLE `illness` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `login`
---
-
+-- ----------------------------
+-- Table structure for login
+-- ----------------------------
 DROP TABLE IF EXISTS `login`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `login` (
-                       `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
-                       `username` varchar(255) DEFAULT NULL COMMENT '账号',
-                       `password` varchar(255) DEFAULT NULL COMMENT '密码',
-                       `role` int(255) DEFAULT NULL COMMENT '权限',
-                       PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE `login`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `username` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '账号',
+  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '密码',
+  `role` int(255) NULL DEFAULT NULL COMMENT '权限',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 21 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
---
--- Dumping data for table `login`
---
+-- ----------------------------
+-- Records of login
+-- ----------------------------
+INSERT INTO `login` VALUES (1, 'admin1', '123456', 1);
+INSERT INTO `login` VALUES (2, 'admin2', '123456', 1);
+INSERT INTO `login` VALUES (3, 'hanmeimei', '12345', 2);
+INSERT INTO `login` VALUES (4, 'lilei', '123456', 2);
+INSERT INTO `login` VALUES (5, 'haoyi', '123456', 3);
+INSERT INTO `login` VALUES (6, 'liyiyi', '123456', 3);
+INSERT INTO `login` VALUES (7, 'zhangxiaoxiao', '123456', 3);
+INSERT INTO `login` VALUES (8, 'wumei', '123456', 3);
+INSERT INTO `login` VALUES (9, 'nini', '123456', 3);
+INSERT INTO `login` VALUES (10, 'admin3', '123456', 1);
+INSERT INTO `login` VALUES (11, 'admin4', '123456', 1);
+INSERT INTO `login` VALUES (12, 'zhaozhi', '12345', 2);
+INSERT INTO `login` VALUES (14, 'admin5', '123456', 1);
+INSERT INTO `login` VALUES (15, 'admin7', '123456', 1);
+INSERT INTO `login` VALUES (17, 'wangwu', '123456', 2);
+INSERT INTO `login` VALUES (18, 'yanglijuan', '123456', 2);
+INSERT INTO `login` VALUES (19, 'sunzhi', '123456', 3);
+INSERT INTO `login` VALUES (20, 'wangyiyi', '123456', 2);
 
-LOCK TABLES `login` WRITE;
-/*!40000 ALTER TABLE `login` DISABLE KEYS */;
-INSERT INTO `login` (`id`, `username`, `password`, `role`) VALUES (1,'admin1','123456',1),(2,'admin2','123456',1),(3,'zhangsan','1234567',2),(4,'lisi','123456',2),(5,'zhaoone','123456',3),(6,'zhaotwo','123456',3),(7,'zhaothree','123456',3),(8,'zhaofour','123456',3),(9,'zhaofive','123456',3),(10,'admin3','123456',1),(11,'admin4','123456',1),(12,'wangwu','123456',2),(17,'admin1qwqwqw','123456',1);
-/*!40000 ALTER TABLE `login` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `medicalhistory`
---
-
+-- ----------------------------
+-- Table structure for medicalhistory
+-- ----------------------------
 DROP TABLE IF EXISTS `medicalhistory`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `medicalhistory` (
-                                `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
-                                `patientid` int(10) DEFAULT NULL COMMENT '患者id',
-                                `name` varchar(255) DEFAULT NULL COMMENT '病史名称',
-                                `time` date DEFAULT NULL COMMENT '患病时间',
-                                `hospitalizationid` int(11) DEFAULT NULL COMMENT '住院信息',
-                                `doctorid` int(11) DEFAULT NULL COMMENT '确诊人',
-                                PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE `medicalhistory`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `patientid` int(10) NULL DEFAULT NULL COMMENT '患者id',
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '病史名称',
+  `time` date NULL DEFAULT NULL COMMENT '患病时间',
+  `hospitalizationid` int(11) NULL DEFAULT NULL COMMENT '住院信息',
+  `doctorid` int(11) NULL DEFAULT NULL COMMENT '确诊人',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
---
--- Dumping data for table `medicalhistory`
---
+-- ----------------------------
+-- Records of medicalhistory
+-- ----------------------------
+INSERT INTO `medicalhistory` VALUES (1, 1, '头疼', '2018-12-08', 1, 1);
+INSERT INTO `medicalhistory` VALUES (2, 3, '呼吸系统疾病', '2019-03-07', 2, 2);
+INSERT INTO `medicalhistory` VALUES (3, 4, '胆结石', '2019-03-14', 4, 4);
+INSERT INTO `medicalhistory` VALUES (4, 5, '胆管疾病', '2019-03-16', 5, 7);
+INSERT INTO `medicalhistory` VALUES (8, 1, '阑尾炎', '2019-04-08', NULL, 5);
 
-LOCK TABLES `medicalhistory` WRITE;
-/*!40000 ALTER TABLE `medicalhistory` DISABLE KEYS */;
-INSERT INTO `medicalhistory` (`id`, `patientid`, `name`, `time`, `hospitalizationid`, `doctorid`) VALUES (1,1,'狂犬病','2019-03-07',1,1),(2,2,'狂犬病','2019-03-07',2,1),(3,3,'狂犬病','2019-03-07',3,2),(4,4,'狂犬病','2019-03-07',4,2),(5,1,'狂犬病','2019-03-23',1,4);
-/*!40000 ALTER TABLE `medicalhistory` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `option`
---
-
+-- ----------------------------
+-- Table structure for option
+-- ----------------------------
 DROP TABLE IF EXISTS `option`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `option` (
-                        `id` int(11) NOT NULL AUTO_INCREMENT,
-                        `name` varchar(255) DEFAULT NULL,
-                        `type` varchar(255) DEFAULT NULL,
-                        PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE `option`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `price` decimal(10, 2) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
---
--- Dumping data for table `option`
---
+-- ----------------------------
+-- Records of option
+-- ----------------------------
+INSERT INTO `option` VALUES (1, '大血', '血液科室', 100.00);
+INSERT INTO `option` VALUES (2, '小血', '血液科室', 200.00);
+INSERT INTO `option` VALUES (3, 'B超（彩超）', '超生室', 300.00);
+INSERT INTO `option` VALUES (4, '心电图', '心电图室', 200.00);
+INSERT INTO `option` VALUES (5, '大便', '厕所门口自行拿管', 200.00);
+INSERT INTO `option` VALUES (6, '小便', '厕所门口自行拿管', 200.00);
+INSERT INTO `option` VALUES (7, 'CT', '放射科室', 200.00);
+INSERT INTO `option` VALUES (8, 'X光片', '放射科室', 200.00);
+INSERT INTO `option` VALUES (9, '核磁共振', '放射科室', 200.00);
+INSERT INTO `option` VALUES (10, '其他', '无', 0.00);
 
-LOCK TABLES `option` WRITE;
-/*!40000 ALTER TABLE `option` DISABLE KEYS */;
-INSERT INTO `option` (`id`, `name`, `type`) VALUES (1,'大血','血液科室'),(2,'小血','血液科室'),(3,'B超（彩超）','超生室'),(4,'心电图','心电图室'),(5,'大便','厕所门口自行拿管'),(6,'小便','厕所门口自行拿管'),(7,'CT','放射科室'),(8,'X光片','放射科室'),(9,'核磁共振','放射科室');
-/*!40000 ALTER TABLE `option` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `patient`
---
-
+-- ----------------------------
+-- Table structure for patient
+-- ----------------------------
 DROP TABLE IF EXISTS `patient`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `patient` (
-                         `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键',
-                         `name` varchar(255) DEFAULT NULL COMMENT '姓名',
-                         `age` int(10) DEFAULT NULL COMMENT '年龄',
-                         `certId` varchar(255) DEFAULT NULL COMMENT '身份证',
-                         `sex` int(10) DEFAULT NULL COMMENT '性别',
-                         `address` varchar(255) DEFAULT NULL COMMENT '家庭住址',
-                         `Hospitalizationid` int(10) DEFAULT NULL COMMENT '住院信息',
-                         `drugsids` varchar(255) DEFAULT NULL COMMENT '药品信息',
-                         `isout` int(255) DEFAULT NULL COMMENT '是否出院',
-                         `appointmentid` int(11) DEFAULT NULL COMMENT '预约信息',
-                         `loginid` int(11) DEFAULT NULL COMMENT '登录',
-                         PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 ROW_FORMAT=DYNAMIC;
-/*!40101 SET character_set_client = @saved_cs_client */;
+CREATE TABLE `patient`  (
+  `id` int(10) NOT NULL AUTO_INCREMENT COMMENT '主键',
+  `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '姓名',
+  `age` int(10) NULL DEFAULT NULL COMMENT '年龄',
+  `certId` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '身份证',
+  `sex` int(10) NULL DEFAULT NULL COMMENT '性别',
+  `address` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '家庭住址',
+  `Hospitalizationid` int(10) NULL DEFAULT NULL COMMENT '住院信息',
+  `drugsids` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '药品信息',
+  `isout` int(255) NULL DEFAULT NULL COMMENT '是否出院',
+  `appointmentid` int(11) NULL DEFAULT NULL COMMENT '预约信息',
+  `loginid` int(11) NULL DEFAULT NULL COMMENT '登录',
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
---
--- Dumping data for table `patient`
---
+-- ----------------------------
+-- Records of patient
+-- ----------------------------
+INSERT INTO `patient` VALUES (1, '郝一', 22, '320283199805201625', 1, '江苏/无锡', 1, '1@12,2@12', 2, 23, 5);
+INSERT INTO `patient` VALUES (2, '李依依', 21, '320283199903106214', 1, '江苏/无锡', 0, '', 0, 9, 6);
+INSERT INTO `patient` VALUES (3, '赵康', 22, '320586199807122289', 0, '江苏/苏州', 3, '', 2, 8, 7);
+INSERT INTO `patient` VALUES (4, '吴威', 23, '310103199712241820', 0, '上海', 4, '', 2, 6, 8);
+INSERT INTO `patient` VALUES (5, '孙志', 30, '320283199011105234', 0, '江苏/无锡', 5, '', 1, 7, 19);
+INSERT INTO `patient` VALUES (6, '胡图', 34, '320586198609191226', 0, '江苏/无锡', NULL, NULL, 0, NULL, NULL);
 
-LOCK TABLES `patient` WRITE;
-/*!40000 ALTER TABLE `patient` DISABLE KEYS */;
-INSERT INTO `patient` (`id`, `name`, `age`, `certId`, `sex`, `address`, `Hospitalizationid`, `drugsids`, `isout`, `appointmentid`, `loginid`) VALUES (1,'赵老一',20,'111',0,'江苏/苏州',1,'1,2,3,4',0,23,5),(2,'赵老二',21,'222',0,'江苏/无锡',2,'2',0,7,6),(3,'赵老三',22,'333',0,'江苏/淮安',3,'3',1,8,7),(4,'赵老四',23,'444',0,'江苏/镇江',4,'4',2,9,8),(5,'赵老五',32,'555',1,'江苏/徐州',1,'2',1,9,9),(9,'sqeqe１１１１',121,'2121',1,'飒飒撒所',NULL,NULL,0,NULL,NULL),(10,'张伟',12,'1111',0,'212121212121',NULL,NULL,0,NULL,NULL);
-/*!40000 ALTER TABLE `patient` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+-- ----------------------------
+-- Table structure for seek
+-- ----------------------------
+DROP TABLE IF EXISTS `seek`;
+CREATE TABLE `seek`  (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `describes` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `illname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `drugs` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `options` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `days` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL,
+  `price` decimal(10, 2) NULL DEFAULT NULL,
+  `patientid` int(11) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+-- ----------------------------
+-- Records of seek
+-- ----------------------------
+INSERT INTO `seek` VALUES (1, '2e3wsdasda', '1212', '1@12,2@12', '1,6', '0', 1320.00, 1);
 
--- Dump completed on 2019-05-02  2:04:24
+SET FOREIGN_KEY_CHECKS = 1;

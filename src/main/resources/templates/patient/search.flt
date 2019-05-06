@@ -8,6 +8,44 @@
     <link rel="stylesheet" href="/static/css/secondary.css" type="text/css"/>
     <script language="javascript" type="text/javascript" src="/static/js/KunyiHTML5.min.js"></script>
     <script language="javascript" type="text/javascript" src="/static/js/Kunyilibrary.js"></script>
+    <style>
+        .item{
+          float: left;
+        }
+        .item li{
+            margin-right: 40px;
+            text-align: left;
+            width: 200px;
+            padding-right: 100px;
+            /*white-space: nowrap;*/
+            /*overflow: hidden;*/
+            word-wrap: break-word;
+            word-break: break-all;
+            height:auto;
+            /*text-overflow: ellipsis;*/
+            border: 1px dotted #000;
+            border-radius: 5px;
+            box-shadow: inset 1px 1px #ccc;
+            background: #ccc;
+            font-size: 20px;
+            color: black;
+            font-family: fantasy;
+            margin-top: 10px;
+        }
+        /*#list {*/
+        /*display: block;*/
+        /*overflow: hidden;*/
+        /*white-space: nowrap;*/
+        /*}*/
+
+        /*#list li {*/
+        /*float: left;*/
+        /*list-style: none;*/
+        /*display: inline-block;*/
+        /*margin-left: 15px;*/
+        /*width: 130px;*/
+        /*}*/
+    </style>
 </head>
 <body>
 <header>
@@ -41,7 +79,8 @@
                             <option value="drugs">药品</option>
                         </select>
                     </td>
-                    <td><input type="text" id="name" name="name" autocomplete="off" placeholder="请输入你要查询的内容" class="layui-input"></td>
+                    <td><input type="text" id="name" name="name" autocomplete="off" placeholder="请输入你要查询的内容"
+                               class="layui-input"></td>
                     <td>
                         <button style="width: 60px;margin-top: 0px" type="submit" class="btn layui-btn"><i
                                     class="layui-icon">&#xe615;</i></button>
@@ -49,6 +88,9 @@
                 </tr>
             </table>
         </form>
+        <ul id="list">
+
+        </ul>
     </div>
     <div style="height: 400px;"></div>
 </div>
@@ -65,29 +107,89 @@
 <script src="/static/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
     function search() {
-        var name=$("#name").val();
-        var type=$("#type").val();
+        var name = $("#name").val();
+        var type = $("#type").val();
         $.ajax({
-            url:"/patient/searchinfo?name="+name+"&type="+type,
-            type:'get',
+            url: "/patient/searchinfo?name=" + name + "&type=" + type,
+            type: 'get',
             contentType: "application/json;charset=utf-8",
-            success:function(data){
-                var json=data.map;
-                var type,list;
-                for (var key in json){
-                    type=key;
-                    list=json[key];
+            success: function (data) {
+                var json = data.map;
+                var type, list;
+                var str = '';
+                for (var key in json) {
+                    type = key;
+                    list = json[key];
+                    if (type == 'doctor') {
+                        $("#list").empty();
+                        $.each(list, function (n, value) {
+                            if (value.expert == '1') {
+                                value.expert = '专业';
+                            } else {
+                                value.expert = '非专业';
+                            }
+                            if (value.text == null) {
+                                value.text = "无";
+                            }
+                            if (value.sex == 0) {
+                                value.sex = "男";
+                            } else {
+                                value.sex = "女";
+                            }
+                            str = "<li>姓名：" + value.name + "</li>" +
+                                "<li>性别：" + value.sex + "</li>" +
+                                "<li>家庭住址：" + value.address + "</li>" +
+                                "<li>年龄：" + value.age + "(周岁)</li>" +
+                                "<li>身份证号码：" + value.certId + "</li>" +
+                                "<li>科室" + value.department + "</li>" +
+                                "<li>" + value.expert + "</li>" +
+                                "<li>简介: " + value.text + "</li>";
+                            $("#list").append("<li><ul class='item'>" + str + "</ul></li>");
+                        });
+
+                    } else if (type == 'illness') {
+                        $("#list").empty();
+                        $.each(list, function (n, value) {
+                            str = "疾病名称：<li>" + value.name + "</li><li>简介: " + value.text + "</li>";
+                            $("#list").append("<li><ul class='item'>" + str + "</ul></li>")
+                        });
+
+                    } else {
+                        $("#list").empty();
+                        $.each(list, function (n, value) {
+                            if (value.text == null) {
+                                value.text = "无";
+                            }
+                            if (value.type == 0) {
+                                value.type = "颗粒剂";
+                            } else if (value.type == 1) {
+                                value.type = "丸剂";
+                            } else if (value.type == 2) {
+                                value.type = "散剂";
+                            } else if (value.type == 3) {
+                                value.type = "酊剂";
+                            } else if (value.type == 4) {
+                                value.type = "片剂";
+                            } else {
+                                value.type = "胶囊剂";
+                            }
+                            str = "<li>药品名称：" + value.name + "</li><li>数量：" + value.number + "</li>" +
+                                "<li>市场价：" + value.price + " (元)</li><li>简介: " + value.text + "</li>" +
+                                "<li>药品类型" + value.type + "</li>";
+                            $("#list").append("<li><ul class='item'>" + str + "</ul></li>");
+                        });
+
+                    }
                 }
 
             },
-            error:function (data) {
+            error: function (data) {
                 layer.msg(data.map, {
                     time: 2000 //2s后自动关闭
                 });
             }
         });
         return false;
-
     }
 </script>
 </body>
