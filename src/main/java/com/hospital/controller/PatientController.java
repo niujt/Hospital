@@ -8,6 +8,7 @@ import com.hospital.entity.Patient;
 import com.hospital.service.*;
 import com.hospital.uitls.PDFUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,6 +27,8 @@ public class PatientController {
     HospitalizationService hospitalizationService;
     @Autowired
     MedicalhistoryService medicalhistoryService;
+    @Value("${filepath.appointpdf}")
+    private String path;
     @RequestMapping("/admin/patientManage")
     public String patientlist(HttpServletRequest request,@RequestParam(value="name",required = false) String name,@RequestParam(value="certId",required = false) String certId){
         request.setAttribute("name",name);
@@ -128,7 +131,7 @@ public class PatientController {
         Integer idlast=appointmentService.selectTheLastAppointment(patient.getId());
         Appointment appointment=appointmentService.getAppointment(idlast);
         //createAppointMent，第三个参数填空字符串就是生成在项目根目录里面，要是想生成在别的路径，例：D:\\ 就是生成在D盘根目录
-        json.put("message",PDFUtils.createAppointMent(appointment,""));
+        json.put("message",PDFUtils.createAppointMent(appointment,path));
         return json;
     }
 }
