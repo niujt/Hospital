@@ -25,10 +25,10 @@
     insert into seek (patientid, describes, illname, drugs, options, days, price)
     values (#{patientid},#{describes},#{illname},#{drugs},#{options},#{days},#{price})
   </insert>
-  <!--<update id="updateDrugs" parameterType="com.hospital.entity.Seek">-->
-     <!--update seek-->
-     <!--set drugs=#{drugs},price=price+#{price}-->
-     <!--where patientid=#{patientid}-->
-  <!--</update>-->
+  <update id="updateDrugs" parameterType="com.hospital.entity.Seek">
+     update seek
+     set drugs=#{drugs},price=price+#{price}
+     where patientid=#{patientid}
+  </update>
 
 </mapper>
