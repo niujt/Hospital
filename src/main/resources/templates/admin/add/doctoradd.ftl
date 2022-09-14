@@ -8,19 +8,9 @@
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <!-- 内容主体区域 -->
-    <div style="padding: 15px;">
+    <div style="padding: 15px;width: 80%">
         <form class="layui-form"  onsubmit="return add('/admin/doctor/')">
             <table class="layui-table">
-                <colgroup>
-                    <col width="150" >
-                    <col width="200" >
-                    <col width="200" >
-                    <col width="200" >
-                    <col width="200" >
-                    <col width="200" >
-                    <col width="200" >
-                    <col>
-                </colgroup>
                 <tr>
                     <td style="width: 100px">姓名：</td>
                     <td>

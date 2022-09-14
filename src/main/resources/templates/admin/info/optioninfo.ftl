@@ -11,12 +11,6 @@
     <div style="padding: 15px;">
         <form class="layui-form"  onsubmit="return upd('/admin/option')">
             <table class="layui-table">
-                <colgroup>
-                    <col width="150" >
-                    <col width="200" >
-                    <col width="200" >
-                    <col>
-                </colgroup>
                 <tr>
                     <td style="width: 100px">检查类型（名称）：</td>
                     <td>

@@ -29,14 +29,6 @@
     <!-- 内容主体区域 -->
     <div style="padding: 15px;">
         <table class="layui-table" lay-even lay-skin="nob" style="width: 60%;margin: 0 auto">
-            <colgroup>
-                <col width="150">
-                <col width="200">
-                <col width="200">
-                <col width="200">
-                <col width="200">
-                <col width="200">
-            </colgroup>
             <tr>
                 <td style="width: 100px">楼层：</td>
                 <td>${theLast.floor}</td>
@@ -81,18 +73,6 @@
     <hr>
     <hr>
     <table id="table" class="layui-table" lay-even lay-skin="nob" style="width: 60%;margin: 0 auto;display: none">
-        <colgroup>
-            <col width="150">
-            <col width="150">
-            <col width="150">
-            <col width="150">
-            <col width="150">
-            <col width="150">
-            <col width="150">
-            <col width="150">
-            <col width="300">
-            <col>
-        </colgroup>
         <thead>
         <tr>
             <th>序号</th>

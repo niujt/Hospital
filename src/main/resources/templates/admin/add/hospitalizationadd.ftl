@@ -11,16 +11,6 @@
     <div style="padding: 15px;">
         <form class="layui-form"  onsubmit="return add('/admin/hospitalization')">
             <table class="layui-table">
-                <colgroup>
-                    <col width="150" >
-                    <col width="200" >
-                    <col width="200" >
-                    <col width="200">
-                    <col width="200">
-                    <col width="200">
-                    <col width="200">
-                    <col>
-                </colgroup>
                 <tbody>
                 <tr>
                     <td style="width: 100px">楼层：</td>

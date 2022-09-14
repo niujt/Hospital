@@ -38,12 +38,6 @@
             </table>
         </form>
         <table class="layui-table">
-            <colgroup>
-                <col width="150">
-                <col width="200">
-                <col width="200">
-                <col width="200">
-            </colgroup>
             <thead>
             <tr>
                 <th>序号</th>
@@ -85,7 +79,7 @@
             type: 2,
             title: '就医',
             closeBtn: 0,
-            area: ['800px', '600px'],
+            area: ['80%', '60%'],
             content: ['/doctor/seek/' + id, 'yes'],
             btn: ['取消'],
             yes: function (index) {
@@ -100,7 +94,7 @@
             type: 2,
             title: '查看病史',
             closeBtn: 0,
-            area: ['800px', '600px'],
+            area: ['80%', '60%'],
             content: ['/doctor/medicalhistory/' + id, 'yes'],
             btn: ['取消'],
             yes: function (index) {

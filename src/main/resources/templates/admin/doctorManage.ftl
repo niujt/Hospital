@@ -25,18 +25,6 @@
             </table>
             </form>
             <table class="layui-table">
-                <colgroup>
-                    <col width="150">
-                    <col width="150">
-                    <col width="150">
-                    <col width="150">
-                    <col width="150">
-                    <col width="150">
-                    <col width="150">
-                    <col width="150">
-                    <col width="150">
-                    <col>
-                </colgroup>
                 <thead>
                 <tr>
                     <th>序号</th>

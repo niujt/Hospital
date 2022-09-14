@@ -75,17 +75,6 @@
         <div class="layui-tab-item">
             <form class="layui-form" id="form3"  onsubmit="return zation()">
                 <table class="layui-table">
-                    <colgroup>
-                        <col width="150" >
-                        <col width="200" >
-                        <col width="200" >
-                        <col width="200">
-                        <col width="200">
-                        <col width="200">
-                        <col width="200">
-                        <col width="200">
-                        <col>
-                    </colgroup>
                     <tr>
                         <td style="width: 100px">楼层：</td>
                         <td>

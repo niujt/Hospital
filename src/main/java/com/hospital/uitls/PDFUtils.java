@@ -1,6 +1,5 @@
 package com.hospital.uitls;
 
-import com.hospital.dao.OptionMapper;
 import com.hospital.entity.Appointment;
 import com.hospital.entity.Option;
 import com.hospital.entity.Seek;
@@ -14,53 +13,40 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 public class PDFUtils {
-    private static BaseFont bf;//创建字体
     private static Font font;
 
     static {
         try {
-            bf = BaseFont.createFont("STSong-Light", "UniGB-UCS2-H", BaseFont.NOT_EMBEDDED);
+            //创建字体
+            BaseFont bf = BaseFont.createFont("STSong-Light", "UniGB-UCS2-H", BaseFont.NOT_EMBEDDED);
             font = new Font(bf, 12);//使用字体
-        } catch (DocumentException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (DocumentException | IOException e) {
             e.printStackTrace();
         }
     }
-
-    //    public static void main(String[] args) {
-//        Appointment appointment = new Appointment();
-//        appointment.setId(1);
-//        appointment.setDepartment("dadadad");
-//        appointment.setDoctorname("小明");
-//        appointment.setPatientname("小王");
-//        appointment.setExpenses(new BigDecimal("23.6"));
-//        appointment.setTime(new Date());
-//        createAppointMent(appointment);
-//        createSeekInfo(new Seek("浑身不舒服","花柳病","1,2,3,4,5",12,new BigDecimal("32.6"),"张安"));
-//    }
     public static String createSeekInfo(Seek seek, OptionService optionService, String path) {
-        List ids=PatientDoctorutils.getOptionIds(seek.getOptions());
+        List<Integer> ids=PatientDoctorutils.getOptionIds(seek.getOptions());
         List<Option> options=new ArrayList<>();
         ids.forEach(id->{
-          Option option =optionService.getOption((Integer)id);
+          Option option =optionService.getOption(id);
             options.add(option);
         });
         Document document = new Document();
         try {
-            String str="";
+            StringBuilder str= new StringBuilder();
             for(int i=0;i<options.size();i++){
-                str+=options.get(i).getName()+"----"+options.get(i).getType()+"("+options.get(i).getPrice()+"元)\n";
+                str.append(options.get(i).getName()).append("----").append(options.get(i).getType()).append("(").append(options.get(i).getPrice()).append("元)\n");
             }
-            PdfWriter.getInstance(document, new FileOutputStream(path+seek.getPatientname()+DateUtils.date2String(new Date())+"就诊单.pdf"));
+            PdfWriter.getInstance(document, Files.newOutputStream(Paths.get(path + seek.getPatientname() + DateUtils.date2String(new Date()) + "就诊单.pdf")));
             document.open();
             PdfPTable pdfPTable = new PdfPTable(4);
             createCell("诊断书", 4, pdfPTable, font);
@@ -71,7 +57,7 @@ public class PDFUtils {
             createCell("初步诊断病情:", 2, pdfPTable, font);
             createCell(seek.getIllname(), 2, pdfPTable, font);
             createCell("需要检查的项目", 4, pdfPTable, font);
-            createCell(str, 4, pdfPTable, font);
+            createCell(str.toString(), 4, pdfPTable, font);
             createCell("诊断人:", 2, pdfPTable, font);
             createCell(seek.getDoctorname(), 2, pdfPTable, font);
             createCell("是否需要住院:", 2, pdfPTable, font);
@@ -94,7 +80,7 @@ public class PDFUtils {
     public static String createAppointMent(Appointment appointment,String path) {
         Document document = new Document();
         try {
-            PdfWriter.getInstance(document, new FileOutputStream(path+appointment.getPatientname()+DateUtils.date2String(new Date())+"挂号单.pdf"));
+            PdfWriter.getInstance(document, Files.newOutputStream(Paths.get(path + appointment.getPatientname() + DateUtils.date2String(new Date()) + "挂号单.pdf")));
             document.open();
             PdfPTable pdfPTable = new PdfPTable(4);
             createCell("挂号单", 4, pdfPTable, font);
@@ -120,7 +106,7 @@ public class PDFUtils {
     }
 
     private static String date2String(Date date) {
-        SimpleDateFormat sdf = new SimpleDateFormat("YYYY年MM月dd日");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日");
         return sdf.format(date);
     }
 
@@ -130,4 +116,5 @@ public class PDFUtils {
         pdfPTable.addCell(cell);
 
     }
+
 }

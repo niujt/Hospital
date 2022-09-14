@@ -28,5 +28,5 @@ mybatis:
       maxFileSize: 500Mb
       maxRequestSize: 500Mb
 filepath:
-  appointpdf: D:\\
-  seekpdfpath: D:\\
+  appointpdf: ./
+  seekpdfpath: ./

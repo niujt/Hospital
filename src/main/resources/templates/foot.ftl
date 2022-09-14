@@ -11,7 +11,7 @@
             type: 2,
             title: '添加页面',
             closeBtn: 0,
-            area:['800px','600px'],
+            area:['80%','60%'],
             content: [url,'yes'],
             btn: ['取消'],
             yes: function(index){
@@ -25,7 +25,7 @@
             type: 2,
             title: '详情页面',
             closeBtn: 0,
-            area:['800px','600px'],
+            area:['80%','60%'],
             content: [url+id,'yes'],
             btn: ['取消'],
             yes: function(index){
