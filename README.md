@@ -8,12 +8,12 @@ Hospital/sql/hospital.sql
 ## 关于gen.xml
 Hospital/src/main/java/com/hospital/uitls/MybatisGen.java 这个类执行可以生成初始化的mybatis的xml
 ## 系统截图
-![](../Hospital/img/管理员页面.png)
-![](../Hospital/img/新增.png)
-![](../Hospital/img/医生页面.png)
-![](../Hospital/img/患者1.png)
-![](../Hospital/img/1.jpg)
-![](../Hospital/img/2.jpg)
-![](../Hospital/img/3.jpg)
-![](../Hospital/img/4.jpg)
+![](./img/管理员页面.png)
+![](./img/新增.png)
+![](./img/医生页面.png)
+![](./img/患者1.png)
+![](./img/1.jpg)
+![](./img/2.jpg)
+![](./img/3.jpg)
+![](./img/4.jpg)
 
