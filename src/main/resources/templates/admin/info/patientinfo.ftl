@@ -26,7 +26,7 @@
                     <tr>
                         <td style="width: 100px">登录密码：</td>
                         <td>
-                            <input type="text" value="${patient.password!''}" name="password" required  class="layui-input" >
+                            <input type="password"  value="${patient.password!''}" name="password" required  class="layui-input" >
                         </td>
                     </tr>
                 <tr>

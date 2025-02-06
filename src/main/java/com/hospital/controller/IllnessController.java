@@ -1,6 +1,6 @@
 package com.hospital.controller;
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONObject;
 import com.hospital.entity.Illness;
 import com.hospital.service.IllnessService;
 import org.springframework.beans.factory.annotation.Autowired;

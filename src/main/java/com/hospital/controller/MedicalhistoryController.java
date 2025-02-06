@@ -1,6 +1,6 @@
 package com.hospital.controller;
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONObject;
 import com.hospital.entity.Medicalhistory;
 import com.hospital.service.DoctorService;
 import com.hospital.service.MedicalhistoryService;

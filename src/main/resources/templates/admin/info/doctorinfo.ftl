@@ -21,7 +21,7 @@
                     <tr>
                         <td style="width: 100px">登录密码：</td>
                         <td>
-                            <input type="text" value="${doctor.password!''}" name="password" required  class="layui-input" >
+                            <input type="password" data="passworedtype" value="${doctor.password!''}" name="password" required  class="layui-input" >
                         </td>
                     </tr>
                 <tr>

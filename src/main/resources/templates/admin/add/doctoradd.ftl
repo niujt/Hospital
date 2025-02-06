@@ -5,12 +5,12 @@
     <title>新增页面</title>
     <link rel="stylesheet" href="/static/css/layui.min.css">
 </head>
-<body class="layui-layout-body">
+<body>
 <div class="layui-layout layui-layout-admin">
     <!-- 内容主体区域 -->
-    <div style="padding: 15px;width: 80%">
+    <div style="padding: 15px;width: 80%;">
         <form class="layui-form"  onsubmit="return add('/admin/doctor/')">
-            <table class="layui-table">
+            <table class="layui-table" >
                 <tr>
                     <td style="width: 100px">姓名：</td>
                     <td>
