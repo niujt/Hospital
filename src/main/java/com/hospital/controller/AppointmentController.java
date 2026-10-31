@@ -1,6 +1,7 @@
 package com.hospital.controller;
 
 import com.alibaba.fastjson2.JSONObject;
+import com.hospital.web.MessageResponses;
 import com.hospital.entity.Appointment;
 import com.hospital.service.AppointmentService;
 import com.hospital.service.DoctorService;
@@ -37,9 +38,7 @@ public class AppointmentController {
     @RequestMapping(value = "/admin/appointment/{id}",method = RequestMethod.DELETE)
     @ResponseBody
     public JSONObject delAppointment(@PathVariable Integer id){
-        JSONObject json=new JSONObject();
-        json.put("message",appointmentService.delAppointment(id));
-        return json;
+        return MessageResponses.message(appointmentService.delAppointment(id));
     }
     @RequestMapping(value = "/admin/appointment/{id}",method = RequestMethod.GET)
     public String AppointmentInfo(@PathVariable Integer id,HttpServletRequest request){
@@ -51,15 +50,11 @@ public class AppointmentController {
     @RequestMapping(value = "/admin/appointment",method = RequestMethod.PUT)
     @ResponseBody
     public JSONObject AppointmentUpdate(@RequestBody Appointment appointment){
-        JSONObject json=new JSONObject();
-        json.put("message",appointmentService.UpdateAppointment(appointment));
-        return json;
+        return MessageResponses.message(appointmentService.UpdateAppointment(appointment));
     }
     @RequestMapping(value = "/admin/appointment",method = RequestMethod.POST)
     @ResponseBody
     public JSONObject AppointmentAdd(@RequestBody Appointment appointment){
-        JSONObject json=new JSONObject();
-        json.put("message",appointmentService.addAppointment(appointment));
-        return json;
+        return MessageResponses.message(appointmentService.addAppointment(appointment));
     }
 }

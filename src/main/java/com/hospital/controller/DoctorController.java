@@ -1,6 +1,7 @@
 package com.hospital.controller;
 
 import com.alibaba.fastjson2.JSONObject;
+import com.hospital.web.MessageResponses;
 import com.hospital.entity.*;
 import com.hospital.service.*;
 import com.hospital.uitls.DrugsUtils;
@@ -44,9 +45,7 @@ public class DoctorController {
     @RequestMapping(value = "/admin/doctor/{id}",method = RequestMethod.DELETE)
     @ResponseBody
     public JSONObject delDoctor(@PathVariable Integer id){
-        JSONObject json=new JSONObject();
-        json.put("message",doctorService.delDoctor(id));
-        return json;
+        return MessageResponses.message(doctorService.delDoctor(id));
     }
     @RequestMapping(value = "/admin/doctor/{id}",method = RequestMethod.GET)
     public String doctorInfo(@PathVariable Integer id,HttpServletRequest request){
@@ -56,16 +55,12 @@ public class DoctorController {
     @RequestMapping(value = "/admin/doctor",method = RequestMethod.POST)
     @ResponseBody
     public JSONObject AddDoctor(@RequestBody Doctor doctor){
-        JSONObject json=new JSONObject();
-        json.put("message",doctorService.addDoctor(doctor));
-        return json;
+        return MessageResponses.message(doctorService.addDoctor(doctor));
     }
     @RequestMapping(value = "/admin/doctor",method = RequestMethod.PUT)
     @ResponseBody
     public JSONObject updateDoctor(@RequestBody Doctor doctor){
-        JSONObject json=new JSONObject();
-        json.put("message",doctorService.upDoctor(doctor));
-        return json;
+        return MessageResponses.message(doctorService.upDoctor(doctor));
     }
     @RequestMapping("/admin/doctorAdd")
     public String doctorAddPage(){
@@ -99,9 +94,7 @@ public class DoctorController {
     @RequestMapping(value = "/doctor/zation",method = RequestMethod.POST)
     @ResponseBody
     public JSONObject zation(@RequestBody Hospitalization hospitalization){
-        JSONObject json=new JSONObject();
-        json.put("message",hospitalizationService.AddHospitalization(hospitalization));
-        return json;
+        return MessageResponses.message(hospitalizationService.AddHospitalization(hospitalization));
     }
     @RequestMapping(value = "/doctor/medicalhistory/{id}")
     public String medicalhistory(@PathVariable Integer id,HttpServletRequest request){
@@ -113,7 +106,7 @@ public class DoctorController {
     @ResponseBody
     public JSONObject getDoctorByDepartment(@PathVariable String department){
         JSONObject json=new JSONObject();
-        json.put("doctors",doctorService.getDoctorByDepartment(department));
+        json.put("doctors",com.hospital.web.PublicDoctorView.from(doctorService.getDoctorByDepartment(department)));
         return json;
     }
     @RequestMapping( value = "/doctor/seekinfo",method = RequestMethod.POST)

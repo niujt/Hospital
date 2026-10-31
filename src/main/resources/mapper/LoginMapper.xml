@@ -17,6 +17,9 @@
 
     </if>
   </select>
+  <update id="migratePassword">
+    update login set password=#{encoded} where id=#{id} and cast(password as binary(1024))=cast(#{expected} as binary(1024))
+  </update>
   <select id="findByUsername" resultType="com.hospital.entity.Login" parameterType="String">
     select * from login where username=#{username}
   </select>

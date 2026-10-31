@@ -1,111 +1,71 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>查看病史</title>
-    <link rel="stylesheet" href="/static/css/layui.min.css">
-    <link rel="stylesheet" href="/static/css/normalize.css" type="text/css"/>
-    <link rel="stylesheet" href="/static/css/secondary.css" type="text/css"/>
-    <script language="javascript" type="text/javascript" src="/static/js/KunyiHTML5.min.js"></script>
-    <script language="javascript" type="text/javascript" src="/static/js/Kunyilibrary.js"></script>
-    <style>
-        .item{
-          float: left;
-        }
-        .item li{
-            margin-right: 40px;
-            text-align: left;
-            width: 200px;
-            padding-right: 100px;
-            /*white-space: nowrap;*/
-            /*overflow: hidden;*/
-            word-wrap: break-word;
-            word-break: break-all;
-            height:auto;
-            /*text-overflow: ellipsis;*/
-            border: 1px dotted #000;
-            border-radius: 5px;
-            box-shadow: inset 1px 1px #ccc;
-            background: #ccc;
-            font-size: 20px;
-            color: black;
-            font-family: fantasy;
-            margin-top: 10px;
-        }
-        /*#list {*/
-        /*display: block;*/
-        /*overflow: hidden;*/
-        /*white-space: nowrap;*/
-        /*}*/
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>就医服务与信息查询 · 就医服务</title>
+    <link rel="stylesheet" href="/static/vendor/layui/2.13.9/css/layui.css">
 
-        /*#list li {*/
-        /*float: left;*/
-        /*list-style: none;*/
-        /*display: inline-block;*/
-        /*margin-left: 15px;*/
-        /*width: 130px;*/
-        /*}*/
-    </style>
+    <link rel="stylesheet" href="/static/css/patient-portal.css?v=20261031-1">
 </head>
-<body>
-<header>
-    <a class="logo" href="/hospital"><img src="/static/images/logo.png" width="350" height="51"/></a>
-</header>
-<div class="layui-layout layui-layout-admin">
-    <#--<#include "../menu.ftl"/>-->
-    <div>
-        <table style="margin: 0 auto;">
-            <tr>
-                <td><a href="/patient/appointment">挂号</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td><a href="/patient/search">查询</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td><a href="/patient/medicalhistory">病史</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td><a href="/patient/hospitalization">住院</a>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-                <td><a href="/loginout">退出登录</a></td>
-            </tr>
-        </table>
-    </div>
+<body class="patient-portal">
+<#include "header.ftl"/>
+<main class="layui-container">
+<hr>
+<blockquote class="layui-elem-quote">您好，欢迎使用就医服务。您可以预约医生，也可以查看自己的就诊记录。</blockquote>
+<div class="layui-row layui-col-space15">
+    <div class="layui-col-xs12 layui-col-sm4"><div class="layui-card"><div class="layui-card-header">预约挂号</div><div class="layui-card-body"><p>选择科室、医生与就诊日期。</p><hr><a class="layui-btn layui-btn-normal" href="/patient/appointment">去预约</a></div></div></div>
+    <div class="layui-col-xs12 layui-col-sm4"><div class="layui-card"><div class="layui-card-header">我的病史</div><div class="layui-card-body"><p>查看已有病史与就诊医生。</p><hr><a class="layui-btn layui-btn-primary" href="/patient/medicalhistory">查看记录</a></div></div></div>
+    <div class="layui-col-xs12 layui-col-sm4"><div class="layui-card"><div class="layui-card-header">住院信息</div><div class="layui-card-body"><p>查看当前及历史住院记录。</p><hr><a class="layui-btn layui-btn-primary" href="/patient/hospitalization">查看住院信息</a></div></div></div>
+</div>
+<hr>
     <!-- 内容主体区域 -->
-    <div style="padding: 15px;">
+    <div class="layui-card">
+        <div class="layui-card-header">就医服务与信息查询</div>
+        <div class="layui-card-body">
 
         <form class="layui-form" action="/patient/searchinfo" onsubmit="return search()" method="get">
-            <table>
-                <tr>
-                    <td>查询类型：</td>
-                    <td>
-                        <select id="type" name="type">
-                            <option value="">--请选择查询类型--</option>
-                            <option value="illness">疾病</option>
-                            <option value="doctor">医生</option>
-                            <option value="drugs">药品</option>
-                        </select>
-                    </td>
-                    <td><input type="text" id="name" name="name" autocomplete="off" placeholder="请输入你要查询的内容"
-                               class="layui-input"></td>
-                    <td>
-                        <button style="width: 60px;margin-top: 0px" type="submit" class="btn layui-btn"><i
-                                    class="layui-icon">&#xe615;</i></button>
-                    </td>
-                </tr>
-            </table>
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-xs12 layui-col-sm4">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" for="type">查询类型</label>
+                        <div class="layui-input-block">
+                            <select id="type" name="type">
+                                <option value="">请选择查询类型</option>
+                                <option value="illness">疾病</option>
+                                <option value="doctor">医生</option>
+                                <option value="drugs">药品</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs12 layui-col-sm6">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label" for="name">查询内容</label>
+                        <div class="layui-input-block">
+                            <input type="text" id="name" name="name" autocomplete="off"
+                                   placeholder="请输入你要查询的内容" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs12 layui-col-sm2">
+                    <button type="submit" class="layui-btn layui-btn-normal layui-btn-fluid">查询</button>
+                </div>
+            </div>
         </form>
-        <ul id="list">
+        <ul id="list" class="layui-row layui-col-space15">
 
         </ul>
     </div>
-    <div style="height: 400px;"></div>
-</div>
-<footer>
-    <div class="footBase">
-        <h3>咨询电话：门诊导医电话 ：1111111 （上午8：00至12:00）（下午14:00至17:00）
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>医院办公室电话：111111（全天）</span></h3>
-        <p>主办单位：人民医院 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;东区地址：省市城关解放路64号 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;西区地址：省市商都大道2996号<br/>版权所有：省人民医院
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备案号：000000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
-        <div class="QRcode"><img src="/static/images/QRcode.jpg" width="104" height="104"><br/>手机扫一扫关注人民医院官方微信</div>
     </div>
-</footer>
-<script src="/static/js/layui.all.js"></script>
+</main>
+<script src="/static/vendor/layui/2.13.9/layui.js"></script>
 <script src="/static/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
+    function escapeSearch(value) {
+        return String(value == null ? '' : value).replace(/[&<>"']/g, function(c) {
+            return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+        });
+    }
     function search() {
         var name = $("#name").val();
         var type = $("#type").val();
@@ -131,27 +91,18 @@
                             if (value.text == null) {
                                 value.text = "无";
                             }
-                            if (value.sex == 0) {
-                                value.sex = "男";
-                            } else {
-                                value.sex = "女";
-                            }
-                            str = "<li>姓名：" + value.name + "</li>" +
-                                "<li>性别：" + value.sex + "</li>" +
-                                "<li>家庭住址：" + value.address + "</li>" +
-                                "<li>年龄：" + value.age + "(周岁)</li>" +
-                                "<li>身份证号码：" + value.certId + "</li>" +
-                                "<li>科室" + value.department + "</li>" +
-                                "<li>" + value.expert + "</li>" +
-                                "<li>简介: " + value.text + "</li>";
-                            $("#list").append("<li><ul class='item'>" + str + "</ul></li>");
+                            str = "<li>姓名：" + escapeSearch(value.name) + "</li>" +
+                                "<li>科室" + escapeSearch(value.department) + "</li>" +
+                                "<li>" + escapeSearch(value.expert) + "</li>" +
+                                "<li>简介: " + escapeSearch(value.text) + "</li>";
+                            $("#list").append("<li class='layui-col-xs12 layui-col-md6'><div class='layui-card'><div class='layui-card-body'><ul>" + str + "</ul></div></div></li>");
                         });
 
                     } else if (type == 'illness') {
                         $("#list").empty();
                         $.each(list, function (n, value) {
-                            str = "疾病名称：<li>" + value.name + "</li><li>简介: " + value.text + "</li>";
-                            $("#list").append("<li><ul class='item'>" + str + "</ul></li>")
+                            str = "疾病名称：<li>" + escapeSearch(value.name) + "</li><li>简介: " + escapeSearch(value.text) + "</li>";
+                            $("#list").append("<li class='layui-col-xs12 layui-col-md6'><div class='layui-card'><div class='layui-card-body'><ul>" + str + "</ul></div></div></li>")
                         });
 
                     } else {
@@ -173,10 +124,10 @@
                             } else {
                                 value.type = "胶囊剂";
                             }
-                            str = "<li>药品名称：" + value.name + "</li><li>数量：" + value.number + "</li>" +
-                                "<li>市场价：" + value.price + " (元)</li><li>简介: " + value.text + "</li>" +
-                                "<li>药品类型" + value.type + "</li>";
-                            $("#list").append("<li><ul class='item'>" + str + "</ul></li>");
+                            str = "<li>药品名称：" + escapeSearch(value.name) + "</li><li>数量：" + escapeSearch(value.number) + "</li>" +
+                                "<li>市场价：" + escapeSearch(value.price) + " (元)</li><li>简介: " + escapeSearch(value.text) + "</li>" +
+                                "<li>药品类型" + escapeSearch(value.type) + "</li>";
+                            $("#list").append("<li class='layui-col-xs12 layui-col-md6'><div class='layui-card'><div class='layui-card-body'><ul>" + str + "</ul></div></div></li>");
                         });
 
                     }
@@ -184,13 +135,19 @@
 
             },
             error: function (data) {
-                layer.msg(data.map, {
+                layui.layer.msg(data.map, {
                     time: 2000 //2s后自动关闭
                 });
             }
         });
         return false;
     }
+</script>
+<script>
+    layui.use(['element', 'form'], function () {
+        layui.element.render('nav');
+        layui.form.render();
+    });
 </script>
 </body>
 </html>

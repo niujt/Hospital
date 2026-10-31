@@ -1,27 +1,27 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>详情页面</title>
-    <link rel="stylesheet" href="/static/css/layui.min.css">
+    <link rel="stylesheet" href="/static/vendor/layui/2.13.9/css/layui.css">
 </head>
 <body >
 <div class="layui-layout layui-layout-admin">
     <!-- 内容主体区域 -->
     <div style="padding: 15px;">
-        <form class="layui-form"  onsubmit="return upd('/admin/doctor')">
+        <form data-modal-form class="layui-form"  onsubmit="return upd('/admin/doctor')">
             <table class="layui-table">
                     <tr>
                         <td style="width: 100px">登录账号：</td>
                         <td>
-                            <input type="text" value="${doctor.username!''}" name="username" required  class="layui-input" >
+                            <input type="text" value="${(doctor.username!'')?html}" name="username" <#if doctor.loginid??>required<#else>disabled placeholder="请由管理员在财务工作台分配账号"</#if> class="layui-input" >
                             <input type="hidden" value="${doctor.loginid!''}" name="loginid" required  class="layui-input" >
                         </td>
                     </tr>
                     <tr>
                         <td style="width: 100px">登录密码：</td>
                         <td>
-                            <input type="password" data="passworedtype" value="${doctor.password!''}" name="password" required  class="layui-input" >
+                            <input type="password" data="passworedtype" value="" name="password" minlength="8" maxlength="72" autocomplete="new-password" placeholder="留空不修改；新密码至少8位" class="layui-input" >
                         </td>
                     </tr>
                 <tr>
@@ -84,11 +84,11 @@
                     <td>简介：</td>
                     <td>
                         <textarea name="text" required  class="layui-input" >
-                            ${doctor.text}
+                            ${(doctor.text!'')?html}
                         </textarea>
                     </td>
                 </tr>
-                <tr>
+                <tr data-modal-actions>
                     <td>操作：</td>
                     <td>
                         <button type="submit" class="layui-btn">更新</button>

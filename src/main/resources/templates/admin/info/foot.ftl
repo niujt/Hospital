@@ -1,4 +1,6 @@
-<script src="/static/js/layui.all.js"></script>
+<script src="/static/vendor/layui/2.13.9/layui.js"></script>
+<link rel="stylesheet" href="/static/css/hospital-feedback.css?v=20261031-1">
+<script src="/static/js/hospital-feedback.js?v=20261031-1"></script>
 <script src="/static/js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
     layui.use('form', function(){
@@ -12,7 +14,7 @@
             d[this.name] = this.value;
         });
         var json=JSON.stringify(d);
-        $.ajax({
+        HospitalFeedback.request({
             url:url,
             type:'put',
             data:json,
@@ -20,19 +22,18 @@
             success:function(data){
                 console.log(data.message);
                 if(data.message=="已存在"){
-                    $("#message").text(data.message);
+                    HospitalFeedback.result(data.message);
                 }
                 else {
-                    alert(data.message);
-                    parent.location.reload();
+                    HospitalFeedback.result(data.message, function () { parent.location.reload(); });
                 }
             },
             error:function (data) {
-                layer.msg(data.message, {
-                    time: 2000, //2s后自动关闭
-                });
+                HospitalFeedback.error(data);
             }
         });
         return false
     }
 </script>
+<script src="/static/js/hospital-drafts.js"></script>
+<script src="/static/js/hospital-modal-form.js?v=20261031-2"></script>

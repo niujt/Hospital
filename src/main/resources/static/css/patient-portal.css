@@ -1,0 +1,118 @@
+/* Patient service pages only. Staff/admin pages retain unmodified Layui defaults. */
+.patient-portal {
+    background: #f5f8fc;
+    color: #29394c;
+    line-height: 1.7;
+}
+.patient-portal > header {
+    padding-top: 20px;
+}
+.patient-portal > header .layui-field-title {
+    margin: 12px 0 22px;
+    border: 0;
+}
+.patient-portal > header legend {
+    padding: 0;
+    font-size: 27px;
+    font-weight: 600;
+    color: #1d527c;
+}
+.patient-portal .patient-services-nav {
+    display: flex;
+    padding: 0 12px;
+    background: #fff;
+    border: 1px solid #e2eaf3;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px #254d7210;
+}
+.patient-portal .patient-services-nav > .layui-nav-item {
+    flex: 1;
+    text-align: center;
+}
+.patient-portal .patient-services-nav .layui-nav-item a {
+    padding: 0 10px;
+    color: #45647f;
+}
+.patient-portal .patient-services-nav .layui-nav-item a:hover {
+    color: #166bb0;
+}
+.patient-portal .patient-services-nav .layui-nav-bar {
+    background: #1682d4;
+}
+.patient-portal main {
+    padding-top: 12px;
+    padding-bottom: 36px;
+}
+.patient-portal .layui-card {
+    border: 1px solid #e3ebf3;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px #284f7410;
+}
+.patient-portal .layui-card-header {
+    height: auto;
+    padding: 15px 20px;
+    line-height: 1.5;
+    font-size: 17px;
+    font-weight: 600;
+    color: #254a6b;
+}
+.patient-portal .layui-card-body {
+    padding: 20px;
+}
+.patient-portal .layui-card-body p {
+    color: #708295;
+}
+.patient-portal .layui-elem-quote {
+    border-left-color: #1682d4;
+    background: #eaf4fd;
+    border-radius: 8px;
+    color: #365d7e;
+    padding: 18px 20px;
+}
+.patient-portal .layui-btn,
+.patient-portal .layui-input,
+.patient-portal .layui-select-title input {
+    border-radius: 7px;
+}
+.patient-portal .layui-table td,
+.patient-portal .layui-table th {
+    padding: 13px 15px;
+}
+.patient-portal a:focus-visible,
+.patient-portal button:focus-visible {
+    outline: 3px solid #84bdeb;
+    outline-offset: 3px;
+}
+@media (max-width: 600px) {
+    .patient-portal > header {
+        padding-top: 10px;
+    }
+    .patient-portal > header legend {
+        font-size: 24px;
+    }
+    .patient-portal .patient-services-nav {
+        padding: 0 3px;
+    }
+    .patient-portal .patient-services-nav .layui-nav-item a {
+        padding: 0 4px;
+        font-size: 12px;
+        line-height: 52px;
+    }
+    .patient-portal .layui-card-header {
+        padding: 14px 16px;
+    }
+    .patient-portal .layui-card-body {
+        padding: 16px;
+    }
+    .patient-portal .layui-form-label {
+        width: 76px;
+        padding-left: 0;
+    }
+    .patient-portal .layui-input-block {
+        margin-left: 91px;
+    }
+    .patient-portal .layui-table td,
+    .patient-portal .layui-table th {
+        padding: 10px 8px;
+    }
+}

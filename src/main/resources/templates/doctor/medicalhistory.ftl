@@ -1,11 +1,11 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>查看病史</title>
-    <link rel="stylesheet" href="/static/css/layui.min.css">
+    <link rel="stylesheet" href="/static/vendor/layui/2.13.9/css/layui.css">
 </head>
-<body class="layui-layout-body">
+<body>
 <div class="layui-layout layui-layout-admin">
     <!-- 内容主体区域 -->
     <div style="padding: 15px;">
@@ -34,6 +34,6 @@
         </#list>
     </div>
 </div>
-<script src="../static/js/layui.all.js"></script>
+<script src="/static/vendor/layui/2.13.9/layui.js"></script>
 </body>
 </html>

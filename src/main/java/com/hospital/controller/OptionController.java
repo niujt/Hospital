@@ -1,6 +1,7 @@
 package com.hospital.controller;
 
 import com.alibaba.fastjson2.JSONObject;
+import com.hospital.web.MessageResponses;
 import com.hospital.entity.Option;
 import com.hospital.service.OptionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,16 +22,12 @@ public class OptionController {
     @RequestMapping(value = "/admin/option/{id}",method = RequestMethod.DELETE)
     @ResponseBody
     public JSONObject delOption(@PathVariable Integer id){
-        JSONObject json=new JSONObject();
-        json.put("message",optionService.deleteOption(id));
-        return json;
+        return MessageResponses.message(optionService.deleteOption(id));
     }
     @RequestMapping(value = "/admin/option",method = RequestMethod.POST)
     @ResponseBody
     public JSONObject addOption(@RequestBody Option option){
-        JSONObject json=new JSONObject();
-        json.put("message",optionService.insert(option));
-        return json;
+        return MessageResponses.message(optionService.insert(option));
     }
     @RequestMapping("/admin/optionAdd")
     public String optionAddPage(){
@@ -44,8 +41,6 @@ public class OptionController {
     @RequestMapping(value = "/admin/option",method = RequestMethod.PUT)
     @ResponseBody
     public JSONObject updateOption(@RequestBody Option option) {
-        JSONObject json=new JSONObject();
-        json.put("message",optionService.updateBOption(option));
-        return  json;
+        return MessageResponses.message(optionService.updateBOption(option));
     }
 }

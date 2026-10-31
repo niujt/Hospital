@@ -1,70 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/css/layui.min.css">
-    <script type="text/javascript" src="/static/js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="/static/js/jquery.indexSlidePattern.js"></script>
-    <title>管理员首页</title>
-    <style>
-        * { padding: 0; margin: 0; list-style-type: none; }
-        a, img { border: 0; }
-        /* demo */
-        /*五张图片在缩略图时所显示的位置调整*/
-        #demo li:nth-of-type(1) img { transform: translate(-210px); }
-        #demo li:nth-of-type(2) img { transform: translate(-180px); }
-        #demo li:nth-of-type(3) img { transform: translate(-380px); }
-        #demo li:nth-of-type(4) img { transform: translate(-450px); }
-        #demo li:nth-of-type(5) img { transform: translate(-320px); }
-        #demo { width: 1160px; height: 512px; margin: 60px auto 0 auto; }
-        #demo img { width: 820px; height: 512px; max-width: 820px; }
-        #demo li { float: left; position: relative; width: 82px; height: 100%; overflow: hidden; cursor: pointer; transition: 0.5s; transform-origin: bottom; filter: alpha(opacity=50); opacity: 0.5; }
-        #demo li img { transition: 1.2s; }
-        #demo li a { display: block; }
-        #demo li div { position: absolute; bottom: 0; left: 0; width: 100%; background: #000; line-height: 32px; filter: alpha(opacity=70); opacity: 0.7; text-indent: 2em; }
-        #demo li div a { color: #FFF; text-decoration: none; }
-        #demo li div a:hover { color: #F00; text-decoration: none; }
-        #demo li.active { cursor: pointer; transform: scale(1.02, 1.08); z-index: 3; width: 820px; filter: alpha(opacity=100); opacity: 1; }
-        #demo li.active img { transform: translate(0px); }
-        #demo li:nth-of-type(1) { transform-origin: bottom left; }
-        #demo li:nth-of-type(5) { transform-origin: bottom right; }
-    </style>
-    <script type="text/javascript">
-        $(document).ready(function(e){
-            var opt	=	{
-                "speed"	:	"fast"		,	//变换速度,三速度可选 slow,normal,fast;
-                "by"	:	"mouseover"		,	//触发事件,click或者mouseover;
-                "auto"	:	true		,	//是否自动播放;
-                "sec"	:	3000	 		//自动播放间隔;
-            };
-            $("#demo").IMGDEMO(opt);
-        });
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>医生工作台 · 医疗系统</title>
+    <link rel="stylesheet" href="/static/vendor/layui/2.13.9/css/layui.css">
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <#include "../menu.ftl"/>
-    <div class="layui-body">
-    <h3>欢迎进入医疗管理系统</h3>
-    <br><br>
-    <ul id="demo">
-        <li class="active">
-            <img src="/static/images/1.png"  />
-        </li>
-        <li>
-            <img src="/static/images/2.png"  />
-        </li>
-        <li>
-            <img src="/static/images/3.png"  />
-        </li>
-        <li>
-            <img src="/static/images/4.png"  />
-        </li>
-        <li>
-            <img src="/static/images/5.png"  />
-        </li>
-    </ul>
+    <main class="layui-body layui-bg-gray">
+        <div class="layui-fluid">
+            <fieldset class="layui-elem-field layui-field-title">
+                <legend>医生工作台</legend>
+            </fieldset>
+            <blockquote class="layui-elem-quote">医生工作台 · 先定位预约患者，再进入诊疗与病史工作。</blockquote>
+            <div class="layui-row layui-col-space15">
+            <div class="layui-col-xs12 layui-col-md8">
+                <div class="layui-card">
+                    <div class="layui-card-header">接诊工作区</div>
+                    <div class="layui-card-body">
+                        <p>按患者姓名或预约时间查看预约记录；核对患者后，完成诊疗、查阅病史或打印就诊单。</p>
+                        <hr>
+                        <a class="layui-btn layui-btn-sm" href="/doctor/seekMedicalAdvice">进入接诊工作区</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <fieldset class="layui-elem-field">
+                <legend>工作提示</legend>
+                <div class="layui-field-box">接诊顺序：筛选预约记录 → 核对患者 → 查看病史 → 进入就医。诊断、开药与入院操作均在患者对应的诊疗窗口中完成。</div>
+            </fieldset>
+        </div>
+    </main>
 </div>
-    <script src="../../static/js/layui.all.js"></script>
+<script src="/static/vendor/layui/2.13.9/layui.js"></script>
+<script>
+    layui.use('element', function () {
+        layui.element.init();
+    });
+</script>
 </body>
 </html>

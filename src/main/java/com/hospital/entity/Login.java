@@ -12,6 +12,7 @@ public class Login {
 
     private String username;
 
+    @ToString.Exclude
     private String password;
     private Integer role;
     private String certId;

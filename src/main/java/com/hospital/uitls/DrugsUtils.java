@@ -33,6 +33,6 @@ public class DrugsUtils {
                 ids += value + ",";
             }
         }
-        return ids.substring(0, ids.length() - 1);
+        return ids.isEmpty() ? "" : ids.substring(0, ids.length() - 1);
     }
 }

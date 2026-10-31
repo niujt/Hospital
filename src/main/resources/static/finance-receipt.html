@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>药品购买凭证 · 模拟票据</title>
+    <link rel="stylesheet" href="/static/css/finance-receipt.css?v=2">
+    <script src="/static/js/finance-receipt.js?v=4" defer></script>
+</head>
+<body>
+    <div class="receipt-toolbar" aria-label="票据操作">
+        <div><strong>药品购买凭证</strong><span>模拟票据，非报销凭证</span></div>
+        <div class="receipt-actions"><a id="download-receipt" hidden target="_blank" rel="noopener">下载 PDF</a> <button id="print-receipt" type="button" disabled>浏览器打印</button></div>
+    </div>
+    <main>
+        <p id="receipt-state" class="receipt-state" role="status" aria-live="polite">正在读取购买记录，请稍候…</p>
+        <article id="purchase-receipt" class="receipt-sheet" hidden aria-labelledby="receipt-title">
+            <header class="receipt-heading">
+                <p class="receipt-kicker">系统内购买记录</p>
+                <h1 id="receipt-title">药品购买凭证</h1>
+                <p class="receipt-notice">模拟票据，非报销凭证</p>
+            </header>
+            <dl class="receipt-meta">
+                <div><dt>订单编号</dt><dd id="receipt-sale-id"></dd></div>
+                <div><dt>开具时间</dt><dd id="receipt-issued-at"></dd></div>
+                <div><dt>就诊人</dt><dd id="receipt-patient"></dd></div>
+                <div><dt>支付方式</dt><dd id="receipt-payment-method"></dd></div>
+            </dl>
+            <table class="receipt-items">
+                <caption>购买明细（金额单位：人民币元）</caption>
+                <thead><tr><th scope="col">序号</th><th scope="col">药品名称</th><th scope="col">数量</th><th scope="col">单价</th><th scope="col">金额</th></tr></thead>
+                <tbody id="receipt-items"></tbody>
+            </table>
+            <section class="receipt-totals" aria-label="金额汇总">
+                <dl>
+                    <div><dt>演示税率</dt><dd id="receipt-tax-rate"></dd></div>
+                    <div><dt>未税金额</dt><dd id="receipt-tax-net"></dd></div>
+                    <div><dt>税额</dt><dd id="receipt-tax-amount"></dd></div>
+                    <div><dt>含税合计</dt><dd id="receipt-total"></dd></div>
+                    <div><dt>已退款（含税）</dt><dd id="receipt-refunded"></dd></div>
+                    <div><dt>其中退回税额</dt><dd id="receipt-tax-refunded"></dd></div>
+                    <div class="receipt-net"><dt>实付净额</dt><dd id="receipt-net"></dd></div>
+                </dl>
+                <p>退款状态：<strong id="receipt-refund-status"></strong></p>
+            </section>
+            <footer class="receipt-footnote">
+                <strong>模拟票据，非报销凭证</strong>
+                <p>仅供系统内演示及购买记录核对，不是税务发票，不可用于报销。</p>
+                <p>演示税率，不代表实际适用税率；未配置不表示免税。税额仅拆分已付含税总额，不额外收费。</p>
+                <p id="receipt-name-note" hidden></p>
+                <p>金额及退款状态来自当前可访问的订单记录；本页不含银行凭据、佣金或税务认证信息。</p>
+            </footer>
+        </article>
+    </main>
+</body>
+</html>

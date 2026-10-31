@@ -57,23 +57,28 @@ public class DoctorServiceImpl implements DoctorService {
     @Override
     public Doctor getDoctor(Integer id) {
         Doctor doctor=doctorMapper.selectByPrimaryKey(id);
-        Login login=loginMapper.selectByPrimaryKey(doctor.getLoginid());
+        if(doctor!=null)doctor.setPassword(null);
+        Login login=doctor==null||doctor.getLoginid()==null?null:loginMapper.selectByPrimaryKey(doctor.getLoginid());
         if(login!=null){
             doctor.setUsername(login.getUsername());
-            doctor.setPassword(login.getPassword());
+            doctor.setPassword(null);
         }
         return doctor;
     }
 
     @Override
+    @org.springframework.transaction.annotation.Transactional
     public String upDoctor(Doctor doctor) {
-        Login login=loginMapper.selectByPrimaryKey(doctor.getLoginid());
+        Doctor stored=doctorMapper.selectByPrimaryKey(doctor.getId());
+        if(stored==null)return CommonService.upd_message_error;
+        doctor.setLoginid(stored.getLoginid());
+        Login login=stored.getLoginid()==null?null:loginMapper.selectByPrimaryKey(stored.getLoginid());
         if(login==null){
             return doctorMapper.updateByPrimaryKey(doctor)>0?CommonService.upd_message_success2:CommonService.upd_message_error;
         }
         else {
-            login.setUsername(doctor.getUsername());
-            login.setPassword(doctor.getPassword());
+            if(doctor.getUsername()!=null&&!doctor.getUsername().trim().isEmpty())login.setUsername(doctor.getUsername());
+            if(doctor.getPassword()!=null&&!doctor.getPassword().trim().isEmpty())login.setPassword(com.hospital.finance.auth.LoginPasswordCodec.encode(doctor.getPassword()));
             login.setId(doctor.getLoginid());
             return (doctorMapper.updateByPrimaryKey(doctor)>0&&loginMapper.updateByPrimaryKey(login)>0)?CommonService.upd_message_success:CommonService.upd_message_error;
         }

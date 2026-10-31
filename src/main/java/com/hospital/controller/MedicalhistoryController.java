@@ -1,6 +1,7 @@
 package com.hospital.controller;
 
 import com.alibaba.fastjson2.JSONObject;
+import com.hospital.web.MessageResponses;
 import com.hospital.entity.Medicalhistory;
 import com.hospital.service.DoctorService;
 import com.hospital.service.MedicalhistoryService;
@@ -35,9 +36,7 @@ public class MedicalhistoryController {
     @RequestMapping(value = "/admin/medicalhistory/{id}",method = RequestMethod.DELETE)
     @ResponseBody
     public JSONObject delmedicalhistory(@PathVariable Integer id){
-        JSONObject json=new JSONObject();
-        json.put("message",medicalhistoryService.delMedicalhistory(id));
-        return json;
+        return MessageResponses.message(medicalhistoryService.delMedicalhistory(id));
     }
     @RequestMapping(value = "/admin/medicalhistory/{id}",method = RequestMethod.GET)
     public String medicalhistoryInfo(@PathVariable Integer id,HttpServletRequest request){
@@ -49,15 +48,11 @@ public class MedicalhistoryController {
     @RequestMapping(value = "/admin/medicalhistory",method = RequestMethod.PUT)
     @ResponseBody
     public JSONObject medicalhistoryUpdate(@RequestBody Medicalhistory medicalhistory){
-        JSONObject json=new JSONObject();
-        json.put("message",medicalhistoryService.UpdateMedicalhistory(medicalhistory));
-        return json;
+        return MessageResponses.message(medicalhistoryService.UpdateMedicalhistory(medicalhistory));
     }
     @RequestMapping(value = "/admin/medicalhistory",method = RequestMethod.POST)
     @ResponseBody
     public JSONObject medicalhistoryAdd(@RequestBody Medicalhistory medicalhistory){
-        JSONObject json=new JSONObject();
-        json.put("message",medicalhistoryService.addMedicalhistory(medicalhistory));
-        return json;
+        return MessageResponses.message(medicalhistoryService.addMedicalhistory(medicalhistory));
     }
 }

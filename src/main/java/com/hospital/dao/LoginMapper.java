@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface LoginMapper {
+    int migratePassword(@Param("id") Integer id, @Param("expected") String expected, @Param("encoded") String encoded);
+
     int deleteByPrimaryKey(Integer id);
 
     int insert(Login record);

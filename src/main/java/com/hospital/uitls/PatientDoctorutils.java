@@ -69,17 +69,10 @@ public class PatientDoctorutils {
     }
     public static List<Integer> getOptionIds(String ids){
         List<Integer> integerList=new ArrayList<>();
-        String[] idarray=ids.split(",");
-        if (idarray.length==0){
-            integerList.add(Integer.parseInt(ids));
-            return integerList;
-        }else{
-        integerList.clear();
-            for(String id:idarray){
-                integerList.add(Integer.parseInt(id));
-            }
-            return integerList;
+        if(ids == null || ids.trim().isEmpty()) return integerList;
+        for(String id : ids.split(",", -1)) {
+            integerList.add(Integer.parseInt(id));
         }
-
+        return integerList;
     }
 }

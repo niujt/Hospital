@@ -1,70 +1,106 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="/static/css/layui.min.css">
-    <script type="text/javascript" src="/static/js/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="/static/js/jquery.indexSlidePattern.js"></script>
-    <title>管理员首页</title>
-    <style>
-        * { padding: 0; margin: 0; list-style-type: none; }
-        a, img { border: 0; }
-        /* demo */
-        /*五张图片在缩略图时所显示的位置调整*/
-        #demo li:nth-of-type(1) img { transform: translate(-210px); }
-        #demo li:nth-of-type(2) img { transform: translate(-180px); }
-        #demo li:nth-of-type(3) img { transform: translate(-380px); }
-        #demo li:nth-of-type(4) img { transform: translate(-450px); }
-        #demo li:nth-of-type(5) img { transform: translate(-320px); }
-        #demo { width: 1160px; height: 512px; margin: 60px auto 0 auto; }
-        #demo img { width: 820px; height: 512px; max-width: 820px; }
-        #demo li { float: left; position: relative; width: 82px; height: 100%; overflow: hidden; cursor: pointer; transition: 0.5s; transform-origin: bottom; filter: alpha(opacity=50); opacity: 0.5; }
-        #demo li img { transition: 1.2s; }
-        #demo li a { display: block; }
-        #demo li div { position: absolute; bottom: 0; left: 0; width: 100%; background: #000; line-height: 32px; filter: alpha(opacity=70); opacity: 0.7; text-indent: 2em; }
-        #demo li div a { color: #FFF; text-decoration: none; }
-        #demo li div a:hover { color: #F00; text-decoration: none; }
-        #demo li.active { cursor: pointer; transform: scale(1.02, 1.08); z-index: 3; width: 820px; filter: alpha(opacity=100); opacity: 1; }
-        #demo li.active img { transform: translate(0px); }
-        #demo li:nth-of-type(1) { transform-origin: bottom left; }
-        #demo li:nth-of-type(5) { transform-origin: bottom right; }
-    </style>
-    <script type="text/javascript">
-        $(document).ready(function(e){
-            var opt	=	{
-                "speed"	:	"fast"		,	//变换速度,三速度可选 slow,normal,fast;
-                "by"	:	"mouseover"		,	//触发事件,click或者mouseover;
-                "auto"	:	true		,	//是否自动播放;
-                "sec"	:	3000	 		//自动播放间隔;
-            };
-            $("#demo").IMGDEMO(opt);
-        });
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>管理工作台 · 医疗系统</title>
+    <link rel="stylesheet" href="/static/vendor/layui/2.13.9/css/layui.css">
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
     <#include "../menu.ftl"/>
-    <div class="layui-body">
-    <h3>欢迎进入医疗管理系统</h3>
-    <br><br>
-    <ul id="demo">
-        <li class="active">
-            <img src="/static/images/1.png"  />
-        </li>
-        <li>
-            <img src="/static/images/2.png"  />
-        </li>
-        <li>
-            <img src="/static/images/3.png"  />
-        </li>
-        <li>
-            <img src="/static/images/4.png"  />
-        </li>
-        <li>
-            <img src="/static/images/5.png"  />
-        </li>
-    </ul>
+    <main class="layui-body layui-bg-gray">
+        <div class="layui-fluid">
+            <div class="layui-btn-container"><button id="workspace-refresh" type="button" class="layui-btn layui-btn-primary layui-btn-sm">刷新当前标签</button><span class="layui-font-gray">模块切换保留当前页面；关闭未保存内容前将提示确认。</span></div>
+            <div class="layui-tabs layui-tabs-card" id="admin-workspace">
+                <ul class="layui-tabs-header"><li lay-id="overview" lay-closable="false">工作台概览</li></ul>
+                <div class="layui-tabs-body"><div class="layui-tabs-item">
+        <div class="layui-fluid">
+            <fieldset class="layui-elem-field layui-field-title">
+                <legend>管理工作台</legend>
+            </fieldset>
+            <blockquote class="layui-elem-quote">欢迎进入医疗系统。请从左侧导航或下方入口选择工作模块。</blockquote>
+            <div class="layui-row layui-col-space15">
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md4">
+                <div class="layui-card">
+                    <div class="layui-card-header">医生管理</div>
+                    <div class="layui-card-body">
+                        <p>维护医生资料、科室与专家信息。</p>
+                        <hr>
+                        <a class="layui-btn layui-btn-sm" href="/admin/doctorManage">进入医生管理</a>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md4">
+                <div class="layui-card">
+                    <div class="layui-card-header">患者管理</div>
+                    <div class="layui-card-body">
+                        <p>查看患者档案，维护基础信息。</p>
+                        <hr>
+                        <a class="layui-btn layui-btn-sm" href="/admin/patientManage">进入患者管理</a>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md4">
+                <div class="layui-card">
+                    <div class="layui-card-header">预约管理</div>
+                    <div class="layui-card-body">
+                        <p>集中查看与管理预约记录。</p>
+                        <hr>
+                        <a class="layui-btn layui-btn-sm" href="/admin/appointmentManage">进入预约管理</a>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md4">
+                <div class="layui-card">
+                    <div class="layui-card-header">药品管理</div>
+                    <div class="layui-card-body">
+                        <p>维护药品资料与库存信息。</p>
+                        <hr>
+                        <a class="layui-btn layui-btn-sm" href="/admin/drugsManage">进入药品管理</a>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md4">
+                <div class="layui-card">
+                    <div class="layui-card-header">病史管理</div>
+                    <div class="layui-card-body">
+                        <p>查阅历史就诊与诊疗记录。</p>
+                        <hr>
+                        <a class="layui-btn layui-btn-sm" href="/admin/medicalhistoryManage">进入病史管理</a>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs12 layui-col-sm6 layui-col-md4">
+                <div class="layui-card">
+                    <div class="layui-card-header">住院信息</div>
+                    <div class="layui-card-body">
+                        <p>查看与维护患者住院记录。</p>
+                        <hr>
+                        <a class="layui-btn layui-btn-sm" href="/admin/hospitalizationManage">进入住院信息</a>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <fieldset class="layui-elem-field">
+                <legend>工作提示</legend>
+                <div class="layui-field-box">修改或删除记录前，请核对患者与业务信息，确认无误后再提交。</div>
+            </fieldset>
+        </div>
+                </div></div>
+            </div>
+        </div>
+    </main>
 </div>
-    <script src="../../static/js/layui.all.js"></script>
+<script src="/static/vendor/layui/2.13.9/layui.js"></script>
+<script>
+    layui.use('element', function () {
+        layui.element.init();
+    });
+</script>
+<script src="/static/js/hospital-feedback.js?v=20261031-1"></script>
+<script src="/static/js/hospital-drafts.js?v=1"></script>
+<script src="/static/js/hospital-frame.js?v=1"></script>
+<script src="/static/js/admin-workspace.js?v=2"></script>
 </body>
 </html>

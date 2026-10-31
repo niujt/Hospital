@@ -19,12 +19,15 @@
     values (#{name},#{type},#{price})
   </insert>
   <select id="getTotalPrice" resultType="BigDecimal">
-    select sum(price) from hospital.option  <if test="optionids !=null">
-    where hospital.option.id in
-    <foreach collection="optionids" item="id" index="index" open="(" close=")" separator=",">
-      #{id}
-    </foreach>
-
-  </if>
+    select coalesce(sum(o.price), 0) from hospital.option o
+    <choose>
+      <when test="optionids != null and optionids.size > 0">
+        where o.id in
+        <foreach collection="optionids" item="id" open="(" close=")" separator=",">
+          #{id}
+        </foreach>
+      </when>
+      <otherwise>where 1 = 0</otherwise>
+    </choose>
   </select>
 </mapper>

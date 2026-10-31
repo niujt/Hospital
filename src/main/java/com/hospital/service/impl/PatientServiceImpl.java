@@ -125,7 +125,7 @@ public class PatientServiceImpl implements PatientService {
         Map<String, List> map = new HashMap<>();
         List list = null;
         if ("doctor".equals(type)) {
-            list = doctorMapper.getDoctorByName(name);
+            list = com.hospital.web.PublicDoctorView.from(doctorMapper.getDoctorByName(name));
             map.put(type, list);
 
         } else if ("illness".equals(type)) {

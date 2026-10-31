@@ -1,0 +1,124 @@
+/* Public homepage and authentication only; no patient/staff/admin theme overrides. */
+.hospital-public {
+    margin: 0;
+    background: #f7fafb;
+    color: #203e4b;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft YaHei", sans-serif;
+    line-height: 1.65;
+}
+.hospital-public *, .hospital-public *::before, .hospital-public *::after { box-sizing: border-box; }
+.hospital-public a { text-decoration: none; }
+.hospital-public button, .hospital-public input { font: inherit; }
+.hospital-public a:focus-visible, .hospital-public button:focus-visible { outline: 3px solid #6bbdb4; outline-offset: 4px; }
+.hospital-public .public-shell { width: min(1160px, calc(100% - 64px)); margin: 0 auto; }
+.hospital-public .public-header { background: #fff; border-bottom: 1px solid #e6eef0; }
+.hospital-public .public-header-inner { min-height: 88px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.hospital-public .public-brand { display: flex; gap: 12px; align-items: center; color: #1d4a54; font-size: 20px; font-weight: 650; white-space: nowrap; }
+.hospital-public .public-brand small { display: block; font-size: 9px; font-weight: 500; letter-spacing: 2px; color: #81949b; }
+.hospital-public .public-brand-icon { width: 42px; height: 42px; display: inline-flex; align-items: center; justify-content: center; border-radius: 12px; background: #177d78; color: #fff; font-size: 32px; font-weight: 400; flex-shrink: 0; }
+.hospital-public .public-topnav { display: flex; align-items: center; gap: 30px; font-size: 14px; }
+.hospital-public .public-topnav a { color: #5d737e; }
+.hospital-public .public-topnav a:hover { color: #117870; }
+.hospital-public .public-topnav .public-nav-login { padding: 9px 18px; border: 1px solid #d5e6e3; border-radius: 7px; color: #117870; }
+.hospital-public .public-hero { background: linear-gradient(115deg, #edf7f4, #f3f8fb 72%); border-bottom: 1px solid #e5eeef; }
+.hospital-public .public-hero-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 86px; align-items: center; padding-top: 64px; padding-bottom: 64px; }
+.hospital-public .public-eyebrow { display: block; color: #27847f; font-size: 12px; font-weight: 650; letter-spacing: 2px; margin-bottom: 15px; }
+.hospital-public h1 { font-size: 42px; font-weight: 650; line-height: 1.42; letter-spacing: -.7px; margin: 0 0 22px; color: #173f4b; }
+.hospital-public .public-lead { font-size: 16px; line-height: 1.9; color: #6e858e; margin: 0 0 28px; }
+.hospital-public .public-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.hospital-public .public-primary, .hospital-public .public-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 16px; min-height: 46px; padding: 10px 22px; border-radius: 7px; font-size: 14px; font-weight: 550; cursor: pointer; }
+.hospital-public .public-primary { background: #147d77; color: #fff; border: 1px solid #147d77; }
+.hospital-public .public-primary:hover { background: #106c67; color: #fff; }
+.hospital-public .public-secondary { background: #fff; color: #45636e; border: 1px solid #dbe6e9; }
+.hospital-public .public-hero-note { font-size: 11px; color: #87999f; margin-top: 17px; }
+.hospital-public .public-service-overview { border: 1px solid #dce9e9; border-radius: 18px; background: #ffffffdf; padding: 28px 30px; box-shadow: 0 16px 45px #385f6810; }
+.hospital-public .public-overview-heading { display: flex; gap: 14px; align-items: center; padding-bottom: 24px; border-bottom: 1px solid #e8eff0; }
+.hospital-public .public-overview-heading strong { font-size: 17px; }
+.hospital-public .public-overview-heading p { font-size: 12px; color: #8a9ba1; margin: 3px 0 0; }
+.hospital-public .public-steps { padding: 0; margin: 24px 0 0; list-style: none; }
+.hospital-public .public-steps li { display: flex; align-items: flex-start; gap: 17px; margin-bottom: 22px; }
+.hospital-public .public-steps li:last-child { margin-bottom: 0; }
+.hospital-public .public-steps li > span { font-size: 12px; color: #318b82; background: #eaf5f1; border-radius: 50%; width: 32px; height: 32px; display: grid; place-items: center; flex-shrink: 0; }
+.hospital-public .public-steps strong { font-size: 14px; font-weight: 600; }
+.hospital-public .public-steps p { font-size: 12px; color: #87999f; margin: 4px 0 0; }
+.hospital-public .public-services { padding-top: 42px; padding-bottom: 40px; }
+.hospital-public .public-section-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+.hospital-public .public-section-heading .public-eyebrow { margin-bottom: 7px; font-size: 11px; }
+.hospital-public h2 { font-size: 24px; font-weight: 600; color: #294b58; margin: 0; }
+.hospital-public .public-section-heading > p { color: #89999f; font-size: 12px; }
+.hospital-public .public-service-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.hospital-public .public-service-card { display: block; background: #fff; border: 1px solid #e2ebed; border-radius: 12px; padding: 24px; color: #284c59; transition: border-color .15s, transform .15s; }
+.hospital-public .public-service-card:hover { border-color: #9fc8c2; transform: translateY(-2px); }
+.hospital-public .public-service-symbol { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 10px; background: #edf6f4; color: #1c8179; font-size: 25px; margin-bottom: 17px; }
+.hospital-public .public-service-card h3 { margin: 0 0 8px; font-size: 17px; font-weight: 600; }
+.hospital-public .public-service-card p { margin: 0 0 23px; color: #87979e; font-size: 12px; line-height: 1.8; }
+.hospital-public .public-card-link, .hospital-public .public-text-link { color: #23857d; font-size: 13px; font-weight: 550; }
+.hospital-public .public-bottom-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 24px; padding-bottom: 48px; }
+.hospital-public .public-information, .hospital-public .public-staff { background: #fff; border: 1px solid #e2ebed; border-radius: 12px; padding: 26px 28px; }
+.hospital-public .public-information h2, .hospital-public .public-staff h2 { font-size: 18px; margin-bottom: 8px; }
+.hospital-public .public-information p, .hospital-public .public-staff p { color: #82959d; font-size: 13px; margin: 0 0 18px; }
+.hospital-public .public-info-links { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.hospital-public .public-info-links a { color: #4c707e; font-size: 13px; }
+.hospital-public .public-staff .public-eyebrow { font-size: 10px; margin-bottom: 6px; }
+.hospital-public .public-footer { background: #fff; border-top: 1px solid #e6eef0; color: #94a2a8; font-size: 11px; }
+.hospital-public .public-footer .public-shell { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 22px; padding-bottom: 22px; }
+.hospital-public .public-footer a { color: #75929b; }
+.hospital-public .auth-layout { display: grid; grid-template-columns: 1.15fr 1fr; gap: 100px; align-items: center; min-height: calc(100vh - 160px); padding-top: 55px; padding-bottom: 55px; }
+.hospital-public.hospital-auth { background: linear-gradient(120deg, #eff7f4, #f8fafc 75%); }
+.hospital-public .auth-intro h1 { font-size: 44px; }
+.hospital-public .auth-benefits { list-style: none; padding: 0; margin: 32px 0; }
+.hospital-public .auth-benefits li { display: flex; align-items: flex-start; gap: 15px; margin-bottom: 20px; }
+.hospital-public .auth-benefits li > span { font-size: 11px; width: 29px; height: 29px; display: grid; place-items: center; background: #e0efea; color: #3f8a7e; border-radius: 8px; flex-shrink: 0; }
+.hospital-public .auth-benefits strong { font-size: 14px; font-weight: 600; }
+.hospital-public .auth-benefits p { font-size: 12px; color: #8b9da3; margin: 3px 0 0; }
+.hospital-public .auth-card { border-radius: 16px; border: 1px solid #e1ebed; box-shadow: 0 16px 50px #294c6410; background: #fff; padding: 30px 36px; }
+.hospital-public .auth-tabs { display: flex; gap: 25px; border-bottom: 1px solid #e9eff1; margin-bottom: 28px; }
+.hospital-public .auth-tabs button { border: 0; border-bottom: 3px solid transparent; padding: 0 0 14px; margin: 0 0 -1px; font-size: 14px; background: none; color: #8a9da4; cursor: pointer; }
+.hospital-public .auth-tabs button[aria-selected="true"] { color: #147d77; border-bottom-color: #147d77; font-weight: 600; }
+.hospital-public .auth-caption { color: #94a2a8; font-size: 12px; margin: 7px 0 22px; }
+.hospital-public .auth-card label { display: block; font-size: 13px; color: #5f7680; margin: 14px 0 7px; }
+.hospital-public .auth-card .layui-input { height: 45px; border-radius: 7px; border-color: #dee8ec; padding: 0 12px; font-size: 14px; }
+.hospital-public .auth-card .layui-input:focus { border-color: #5ca89d !important; box-shadow: 0 0 0 3px #5ca89d15; }
+.hospital-public .auth-message { min-height: 23px; margin: 9px 0 6px; color: #b94148; font-size: 12px; }
+.hospital-public .auth-submit { width: 100%; }
+.hospital-public .auth-reset { display: block; padding: 10px; margin: 3px auto 0; border: 0; background: none; color: #8c9fa6; font-size: 11px; cursor: pointer; }
+.hospital-public .auth-note { border-top: 1px solid #edf1f3; color: #8c9fa6; font-size: 11px; line-height: 1.9; margin: 16px 0 0; padding-top: 16px; }
+.hospital-public [hidden] { display: none !important; }
+@media (max-width: 1000px) {
+    .hospital-public .public-hero-grid, .hospital-public .auth-layout { gap: 40px; }
+    .hospital-public .public-hero-copy h1, .hospital-public .auth-intro h1 { font-size: 35px; }
+    .hospital-public .public-service-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .hospital-public .auth-card { padding: 28px; }
+}
+@media (max-width: 700px) {
+    .hospital-public .public-shell { width: calc(100% - 32px); }
+    .hospital-public .public-header-inner { min-height: 78px; gap: 12px; }
+    .hospital-public .public-brand { font-size: 16px; gap: 9px; }
+    .hospital-public .public-brand-icon { width: 34px; height: 34px; font-size: 27px; }
+    .hospital-public .public-brand small { font-size: 7px; letter-spacing: 1px; }
+    .hospital-public .public-topnav { gap: 10px; font-size: 12px; }
+    .hospital-public .public-topnav > a:not(.public-nav-login) { display: none; }
+    .hospital-public .public-topnav .public-nav-login { padding: 7px 10px; }
+    .hospital-public .public-hero-grid { grid-template-columns: 1fr; padding-top: 36px; padding-bottom: 32px; gap: 28px; }
+    .hospital-public .public-hero-copy h1 { font-size: 31px; margin-bottom: 16px; }
+    .hospital-public .public-lead { font-size: 14px; margin-bottom: 24px; }
+    .hospital-public .public-service-overview { padding: 23px; }
+    .hospital-public .public-services { padding-top: 30px; padding-bottom: 24px; }
+    .hospital-public .public-section-heading > p { display: none; }
+    .hospital-public .public-section-heading h2 { font-size: 22px; }
+    .hospital-public .public-service-grid { gap: 12px; }
+    .hospital-public .public-service-card { padding: 18px 15px; }
+    .hospital-public .public-service-card h3 { font-size: 15px; }
+    .hospital-public .public-service-card p { font-size: 11px; }
+    .hospital-public .public-bottom-grid { grid-template-columns: 1fr; gap: 14px; padding-bottom: 28px; }
+    .hospital-public .auth-layout { display: flex; flex-direction: column; align-items: stretch; min-height: 0; padding-top: 30px; padding-bottom: 32px; gap: 24px; }
+    .hospital-public .auth-intro h1 { font-size: 28px; margin-bottom: 10px; }
+    .hospital-public .auth-intro h1 br, .hospital-public .public-desktop-break { display: none; }
+    .hospital-public .auth-intro .public-lead { margin-bottom: 10px; font-size: 13px; }
+    .hospital-public .auth-benefits { display: none; }
+    .hospital-public .auth-card { padding: 25px 22px; }
+    .hospital-public .auth-tabs { margin-bottom: 22px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .hospital-public .public-service-card { transition: none; }
+}

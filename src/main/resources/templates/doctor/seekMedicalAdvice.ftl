@@ -2,23 +2,19 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>就医</title>
-    <link rel="stylesheet" href="/static/css/layui.min.css">
-    <link rel="stylesheet" href="/static/css/normalize.css" type="text/css"/>
-    <link rel="stylesheet" href="/static/css/secondary.css" type="text/css"/>
-    <script language="javascript" type="text/javascript" src="/static/js/KunyiHTML5.min.js"></script>
-    <script language="javascript" type="text/javascript" src="/static/js/Kunyilibrary.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>接诊工作区 · 医生工作台</title>
+    <link rel="stylesheet" href="/static/vendor/layui/2.13.9/css/layui.css">
 </head>
-<body>
-<header>
-    <a class="logo" href="/hospital"><img src="/static/images/logo.png" width="350" height="51"/></a>
-</header>
+<body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
-
-    <#--<#include "../menu.ftl"/>-->
-    <!-- 内容主体区域 -->
-    <div style="padding: 15px;">
+<#include "../menu.ftl"/>
+<main class="layui-body layui-bg-gray"><div class="layui-fluid">
+<fieldset class="layui-elem-field layui-field-title"><legend>接诊工作区</legend></fieldset>
+<blockquote class="layui-elem-quote">按患者或预约时间筛选记录，进入诊疗、查阅病史或打印就诊单。</blockquote>
+    <div class="layui-card">
+        <div class="layui-card-header">接诊工作区</div>
+        <div class="layui-card-body">
         <form action="/doctor/seekMedicalAdvice" method="get">
             <table>
                 <tr>
@@ -27,7 +23,7 @@
                     <td>&nbsp;&nbsp;预约时间:</td>
                     <td><input name="time" type="date" autocomplete="off" class="layui-input lay-size=sm"></td>
                     <td>
-                        <button class="layui-btn"style="width: 60px;margin: 0 auto;" type="submit"><i class="layui-icon">&#xe615;</i></button>
+                        <button class="layui-btn" aria-label="查询患者" type="submit"><i class="layui-icon">&#xe615;</i></button>
                     </td>
                     <td>
                         &nbsp;&nbsp;&nbsp;&nbsp;
@@ -43,7 +39,7 @@
                 <th>序号</th>
                 <th>患者名称</th>
                 <th>预约时间</th>
-                <th colspan="2">操作</th>
+                <th colspan="2" width="320" scope="col">操作</th>
             </tr>
             </thead>
             <tbody>
@@ -53,73 +49,53 @@
                     <td>${a.patientname!''}</td>
                     <td>${(a.time?string("yyyy-MM-dd"))!}</td>
                     <td colspan="2">
-                        <button style="width: 120px;" class="layui-btn" onclick="seek(${a.patientid})">就医</button>
-                        <button style="width: 120px;" class="layui-btn" onclick="check(${a.patientid})">查看病史</button>
-                        <button style="width: 120px;" class="layui-btn" type="button" onclick="printseek(${a.patientid})">打印就诊单</button>
+                        <div class="layui-btn-container" role="group" aria-label="就诊操作">
+                            <button type="button" class="layui-btn layui-btn-sm" onclick="seek(${a.patientid}, ${a.id})"><i class="layui-icon" aria-hidden="true">&#xe642;</i> 就医</button>
+                            <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" onclick="check(${a.patientid})"><i class="layui-icon layui-icon-read" aria-hidden="true"></i> 查看病史</button>
+                            <button class="layui-btn layui-btn-primary layui-btn-sm" type="button" onclick="printseek(${a.patientid})"><i class="layui-icon" aria-hidden="true">&#xe66d;</i> 打印就诊单</button>
+                        </div>
                     </td>
                 </tr>
             </#list>
             </tbody>
         </table>
     </div>
-</div>
-<footer>
-    <div class="footBase">
-        <h3>咨询电话：门诊导医电话 ：1111111 （上午8：00至12:00）（下午14:00至17:00）
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span>医院办公室电话：111111（全天）</span></h3>
-        <p>主办单位：人民医院 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;东区地址：省市城关解放路64号 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;西区地址：省市商都大道2996号<br/>版权所有：省人民医院
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;备案号：000000 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </p>
-        <div class="QRcode"><img src="/static/images/QRcode.jpg" width="104" height="104"><br/>手机扫一扫关注人民医院官方微信</div>
     </div>
-</footer>
-<script src="/static/js/layui.all.js"></script>
+</div></main>
+</div>
+<script src="/static/vendor/layui/2.13.9/layui.js"></script>
+<link rel="stylesheet" href="/static/css/hospital-feedback.css?v=20261031-1">
+<script src="/static/js/hospital-feedback.js?v=20261031-1"></script>
+<script src="/static/js/jquery-3.3.1.min.js"></script>
+<script src="/static/js/hospital-modal.js?v=20261031-2"></script>
 <script type="text/javascript">
-    function seek(id) {
-        layer.open({
-            type: 2,
-            title: '就医',
-            closeBtn: 0,
-            area: ['80%', '60%'],
-            content: ['/doctor/seek/' + id, 'yes'],
-            btn: ['取消'],
-            yes: function (index) {
-                //事件
-                layer.close(index);
-            }
-        });
+    function seek(id, appointmentId) {
+        HospitalModal.open({url: '/doctor/seek/' + id + '?appointmentId=' + encodeURIComponent(appointmentId), title: '就医'});
     }
-
     function check(id) {
-        layer.open({
-            type: 2,
-            title: '查看病史',
-            closeBtn: 0,
-            area: ['80%', '60%'],
-            content: ['/doctor/medicalhistory/' + id, 'yes'],
-            btn: ['取消'],
-            yes: function (index) {
-                //事件
-                layer.close(index);
-            }
-        });
+        HospitalModal.open({url: '/doctor/medicalhistory/' + id, title: '查看病史', editable: false});
     }
     function printseek(id){
-        $.ajax({
+        HospitalFeedback.request({
             url: "/doctor/printseek/"+id,
             type: 'post',
             contentType: "application/json;charset=utf-8",
             success: function (data) {
                 console.log(data.message);
-                alert(data.message);
+                HospitalFeedback.result(data.message);
             },
             error: function (data) {
-                layer.msg(data.message, {
-                    time: 2000, //2s后自动关闭
-                });
+                HospitalFeedback.error(data);
             }
         });
         return false
     }
+</script>
+<script>
+    layui.use(['element', 'form'], function () {
+        layui.element.render('nav');
+        layui.form.render();
+    });
 </script>
 </body>
 </html>

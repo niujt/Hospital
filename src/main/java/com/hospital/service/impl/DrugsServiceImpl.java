@@ -26,12 +26,18 @@ public class DrugsServiceImpl implements DrugsService {
 
     @Override
     public String delDrug(Integer id) {
+        Drugs existing = drugsMapper.selectByPrimaryKey(id);
+        if (existing != null && existing.getNumber() != null && existing.getNumber() > 0)
+            return "药品仍有库存，不能删除；财务历史关联记录也需保留";
         return drugsMapper.deleteByPrimaryKey(id)>0? CommonService.del_message_success:CommonService.del_message_error;
     }
 
     @Override
     public String addDrug(Drugs drugs) {
         String message;
+        if (drugs.getNumber() != null && drugs.getNumber() != 0)
+            return "新药品初始库存须为0，请通过财务进货登记增加库存";
+        drugs.setNumber(0);
         if(drugsMapper.findByName(drugs.getName())!=null){
             message=CommonService.add_message_error2;
         }
@@ -48,6 +54,10 @@ public class DrugsServiceImpl implements DrugsService {
 
     @Override
     public String updateDrug(Drugs drugs) {
+        Drugs existing = drugsMapper.selectByPrimaryKey(drugs.getId());
+        if (existing == null) return CommonService.upd_message_error;
+        if (drugs.getNumber() != null && !drugs.getNumber().equals(existing.getNumber()))
+            return "库存只能通过进货登记或已支付订单变更";
         return drugsMapper.updateByPrimaryKey(drugs)>0?CommonService.upd_message_success:CommonService.upd_message_error;
     }
 }

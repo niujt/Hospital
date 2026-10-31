@@ -1,6 +1,7 @@
 package com.hospital.controller;
 
 import com.alibaba.fastjson2.JSONObject;
+import com.hospital.web.MessageResponses;
 import com.hospital.entity.Hospitalization;
 import com.hospital.service.HospitalizationService;
 import com.hospital.service.PatientService;
@@ -35,16 +36,12 @@ public class HospitalizationController {
     @RequestMapping(value = "/admin/hospitalization",method = RequestMethod.POST)
     @ResponseBody
     public JSONObject hospitalizationAdd(@RequestBody Hospitalization hospitalization){
-        JSONObject json=new JSONObject();
-        json.put("message",hospitalizationService.AddHospitalization(hospitalization));
-        return json;
+        return MessageResponses.message(hospitalizationService.AddHospitalization(hospitalization));
     }
     @RequestMapping(value = "/admin/hospitalization/{id}",method = RequestMethod.DELETE)
     @ResponseBody
     public JSONObject delHospitalization(@PathVariable Integer id){
-        JSONObject json=new JSONObject();
-        json.put("message",hospitalizationService.deleteHospitalization(id));
-        return json;
+        return MessageResponses.message(hospitalizationService.deleteHospitalization(id));
     }
     @RequestMapping(value = "/admin/hospitalization/{id}",method = RequestMethod.GET)
     public String hospitalizationInfo(HttpServletRequest request,@PathVariable Integer id){
@@ -55,13 +52,11 @@ public class HospitalizationController {
     @RequestMapping(value = "/admin/hospitalization",method = RequestMethod.PUT)
     @ResponseBody
     public JSONObject delHospitalization(@RequestBody Hospitalization hospitalization){
-        JSONObject json=new JSONObject();
-        json.put("message",hospitalizationService.updateHospitalization(hospitalization));
-        return json;
+        return MessageResponses.message(hospitalizationService.updateHospitalization(hospitalization));
     }
     //生成user表excel
     @GetMapping(value = "/admin/getHospitalization")
-    public String getUser(HttpServletResponse response) throws Exception{
+    public void getUser(HttpServletResponse response) throws Exception{
         HSSFWorkbook workbook = new HSSFWorkbook();
         HSSFSheet sheet = workbook.createSheet("统计表");
         ExcelUtils.createTitle(workbook,sheet);
@@ -77,8 +72,8 @@ public class HospitalizationController {
             HSSFRow row = sheet.createRow(rowNum);
             row.createCell(0).setCellValue(rowNum);
             row.createCell(1).setCellValue(hospitalization.getFloor());
-            row.createCell(2).setCellValue(hospitalization.getBed());
-            row.createCell(3).setCellValue(hospitalization.getDoor());
+            row.createCell(2).setCellValue(hospitalization.getDoor());
+            row.createCell(3).setCellValue(hospitalization.getBed());
             row.createCell(4).setCellValue(hospitalization.getPatientname());
             row.createCell(5).setCellValue(hospitalization.getMedicalname());
             HSSFCell cell1 = row.createCell(6);
@@ -98,6 +93,6 @@ public class HospitalizationController {
         //浏览器下载excel
         ExcelUtils.buildExcelDocument(fileName,workbook,response);
 
-        return "download excel";
+        // Response is the XLS attachment; do not resolve a second HTML view.
     }
 }

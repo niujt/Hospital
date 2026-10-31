@@ -1,6 +1,10 @@
 package com.hospital.controller;
 
 import com.alibaba.fastjson2.JSONObject;
+import com.hospital.web.MessageResponses;
+import com.hospital.finance.auth.FinanceAccess;
+import org.springframework.web.server.ResponseStatusException;
+import org.springframework.http.HttpStatus;
 import com.hospital.entity.Appointment;
 import com.hospital.entity.Hospitalization;
 import com.hospital.entity.Login;
@@ -17,6 +21,8 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class PatientController {
+    @Autowired
+    FinanceAccess financeAccess;
     @Autowired
     PatientService patientService;
     @Autowired
@@ -39,9 +45,7 @@ public class PatientController {
     @RequestMapping(value = "/admin/patient/{id}",method = RequestMethod.DELETE)
     @ResponseBody
     public JSONObject delPatient(@PathVariable Integer id){
-        JSONObject json=new JSONObject();
-        json.put("message",patientService.delPatient(id));
-        return json;
+        return MessageResponses.message(patientService.delPatient(id));
     }
     @RequestMapping(value = "/admin/patient/{id}",method = RequestMethod.GET)
     public String patientInfo(@PathVariable Integer id,HttpServletRequest request){
@@ -58,16 +62,12 @@ public class PatientController {
     @RequestMapping(value = "/admin/patient",method = RequestMethod.PUT)
     @ResponseBody
     public JSONObject patientInfo(@RequestBody Patient patient){
-        JSONObject json=new JSONObject();
-        json.put("message",patientService.updatePatient(patient));
-        return json;
+        return MessageResponses.message(patientService.updatePatient(patient));
     }
     @RequestMapping(value = "/admin/patient",method = RequestMethod.POST)
     @ResponseBody
     public JSONObject delPatient(@RequestBody Patient patient){
-        JSONObject json=new JSONObject();
-        json.put("message",patientService.addPatient(patient));
-        return json;
+        return MessageResponses.message(patientService.addPatient(patient));
     }
     @RequestMapping(value = "/patient/medicalhistory")
     public String medicalhistory(HttpSession session,HttpServletRequest request){
@@ -97,7 +97,11 @@ public class PatientController {
     }
     @RequestMapping(value = "/patient/appointment",method = RequestMethod.POST)
     @ResponseBody
-    public JSONObject appointment(@RequestBody Appointment appointment){
+    public JSONObject appointment(@RequestBody Appointment appointment,HttpSession session){
+        FinanceAccess.Actor actor=financeAccess.requireRoles(session,3);
+        Patient owner=patientService.findPatientByLoginId(actor.getId());
+        if(owner==null||owner.getId()==null)throw new ResponseStatusException(HttpStatus.FORBIDDEN,"当前账号没有患者档案");
+        appointment.setPatientid(owner.getId());
         JSONObject json=new JSONObject();
         Patient patient=new Patient();
         String message=appointmentService.addAppointment(appointment);

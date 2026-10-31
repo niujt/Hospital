@@ -1,6 +1,7 @@
 package com.hospital.controller;
 
 import com.alibaba.fastjson2.JSONObject;
+import com.hospital.web.MessageResponses;
 import com.hospital.entity.Illness;
 import com.hospital.service.IllnessService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,16 +22,12 @@ public class IllnessController {
     @RequestMapping(value = "/admin/illness/{id}",method = RequestMethod.DELETE)
     @ResponseBody
     public JSONObject delIllness(@PathVariable Integer id){
-        JSONObject json=new JSONObject();
-        json.put("message",illnessService.deleteIllness(id));
-        return json;
+        return MessageResponses.message(illnessService.deleteIllness(id));
     }
     @RequestMapping(value = "/admin/illness",method = RequestMethod.POST)
     @ResponseBody
     public JSONObject addDrug(@RequestBody Illness illness){
-        JSONObject json=new JSONObject();
-        json.put("message",illnessService.insert(illness));
-        return json;
+        return MessageResponses.message(illnessService.insert(illness));
     }
     @RequestMapping("/admin/illnessAdd")
     public String illnessAddPage(){
@@ -44,8 +41,6 @@ public class IllnessController {
     @RequestMapping(value = "/admin/illness",method = RequestMethod.PUT)
     @ResponseBody
     public JSONObject updateIllness(@RequestBody Illness illness) {
-        JSONObject json=new JSONObject();
-        json.put("message",illnessService.updateIllness(illness));
-        return  json;
+        return MessageResponses.message(illnessService.updateIllness(illness));
     }
 }

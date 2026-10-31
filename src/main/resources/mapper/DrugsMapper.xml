@@ -77,7 +77,7 @@
   <update id="updateByPrimaryKey" parameterType="com.hospital.entity.Drugs">
     update drugs
     set name = #{name,jdbcType=VARCHAR},
-      type = #{type,jdbcType=INTEGER},number=#{number},price=#{price},text=#{text}
+      type = #{type,jdbcType=INTEGER},price=#{price},text=#{text}
     where id = #{id,jdbcType=INTEGER}
   </update>
   <update id="updateNumber" parameterType="com.hospital.entity.Drugs">

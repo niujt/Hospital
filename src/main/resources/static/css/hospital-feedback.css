@@ -1,0 +1,73 @@
+/* Patient/public feedback matches the portal. Admin/doctor keep native Layui. */
+.layui-layer.patient-dialog {
+    border: 1px solid #cbe5e2;
+    border-radius: 14px;
+    background: #fff;
+    color: #234449;
+    box-shadow: 0 12px 36px rgba(28, 83, 82, .14);
+    max-width: calc(100vw - 32px);
+}
+.patient-dialog .layui-layer-content {
+    color: #234449;
+    line-height: 1.7;
+    overflow-wrap: anywhere;
+}
+.patient-dialog .layui-layer-title {
+    background: #f0f8f7;
+    color: #234449;
+    border-radius: 14px 14px 0 0;
+}
+.patient-dialog .layui-layer-btn a {
+    min-height: 42px;
+    line-height: 42px;
+    border-radius: 8px;
+}
+.patient-dialog .layui-layer-btn .layui-layer-btn0 {
+    background: #167e7b;
+    border-color: #167e7b;
+}
+.patient-dialog .layui-layer-btn a:focus-visible {
+    outline: 3px solid #167e7b;
+    outline-offset: 3px;
+}
+
+/* Patient-only compact status HUD, not a horizontal message strip. */
+.layui-layer.patient-feedback {
+    width: 188px;
+    min-width: 0;
+    max-width: calc(100vw - 40px);
+    border: 0;
+    border-radius: 32px;
+    background: linear-gradient(150deg, #edf8ff 0%, #e2f1fc 100%);
+    color: #234c65;
+    backdrop-filter: blur(16px);
+    box-shadow: 0 8px 28px rgba(48,99,134,.09);
+}
+.patient-feedback .layui-layer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 28px 18px 22px;
+    min-height: 126px;
+    color: #234c65;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+.patient-feedback-mark { display: inline-flex; flex: 0 0 64px; width: 64px; height: 64px; }
+.patient-feedback-mark svg { width: 64px; height: 64px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.patient-feedback-mark.is-success { color: #168557; }
+.patient-feedback-mark.is-error { color: #c13e4b; }
+.patient-feedback-mark circle { opacity: .12; fill: currentColor; stroke: none; }
+.patient-feedback-mark path { stroke-dasharray: 28; stroke-dashoffset: 0; animation: patient-status-draw .36s ease-out both; }
+.patient-feedback-text { overflow-wrap: anywhere; line-height: 1.45; }
+.patient-feedback-details { max-width: 100%; font-size: 12px; font-weight: normal; color: #4f6d82; }
+.patient-feedback-details summary { cursor: pointer; padding: 4px 8px; border-radius: 6px; }
+.patient-feedback-details summary:focus-visible { outline: 2px solid #5296be; }
+.patient-feedback-details p { max-height: 120px; overflow: auto; overflow-wrap: anywhere; margin-top: 8px; }
+.patient-feedback .layui-layer-setwin { right: 11px; top: 11px; filter: none; }
+@keyframes patient-status-draw { from { stroke-dashoffset: 28; opacity: .3; transform: scale(.92); } to { stroke-dashoffset: 0; opacity: 1; transform: scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+    .patient-feedback, .patient-feedback-mark path { animation: none !important; transition: none !important; }
+}
