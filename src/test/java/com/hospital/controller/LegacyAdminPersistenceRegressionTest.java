@@ -9,7 +9,7 @@ import org.apache.ibatis.datasource.unpooled.UnpooledDataSource;
 import org.apache.ibatis.mapping.Environment;
 import org.apache.ibatis.session.*;
 import org.apache.ibatis.transaction.jdbc.JdbcTransactionFactory;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.junit.jupiter.api.*;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.test.web.servlet.MockMvc;
@@ -122,10 +122,10 @@ class LegacyAdminPersistenceRegressionTest {
     @Test void exportedWorkbookHasCorrectHeadersDataAndHttpAttachment()throws Exception{
         mvc.perform(post("/admin/hospitalization").contentType("application/json").content(stay("BED3"))).andExpect(status().isOk());
         byte[] bytes=mvc.perform(get("/admin/getHospitalization")).andExpect(status().isOk())
-                .andExpect(content().contentType("application/vnd.ms-excel"))
-                .andExpect(header().exists("Content-Disposition"))
+                .andExpect(content().contentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
+                .andExpect(header().string("Content-Disposition", "attachment; filename=\"hospitalization.xlsx\"; filename*=UTF-8''" + java.net.URLEncoder.encode("住院信息.xlsx", "UTF-8")))
                 .andReturn().getResponse().getContentAsByteArray();
-        try(HSSFWorkbook book=new HSSFWorkbook(new ByteArrayInputStream(bytes))){
+        try(XSSFWorkbook book=new XSSFWorkbook(new ByteArrayInputStream(bytes))){
             assertEquals(1,book.getNumberOfSheets());assertEquals(1,book.getSheetAt(0).getLastRowNum());
             assertEquals("患者",book.getSheetAt(0).getRow(0).getCell(4).getStringCellValue());
             assertEquals("Synthetic patient",book.getSheetAt(0).getRow(1).getCell(4).getStringCellValue());
@@ -134,6 +134,44 @@ class LegacyAdminPersistenceRegressionTest {
             assertEquals("ROOM201",book.getSheetAt(0).getRow(1).getCell(2).getStringCellValue());
             assertEquals("床号",book.getSheetAt(0).getRow(0).getCell(3).getStringCellValue());
             assertEquals("BED3",book.getSheetAt(0).getRow(1).getCell(3).getStringCellValue());
+            assertEquals("统计表",book.getSheetName(0));
+            assertEquals("m/d/yy",book.getSheetAt(0).getRow(1).getCell(6).getCellStyle().getDataFormatString());
+            assertTrue(org.apache.poi.ss.usermodel.DateUtil.isCellDateFormatted(book.getSheetAt(0).getRow(1).getCell(6)));
+            assertEquals(sql.getMapper(HospitalizationMapper.class).selectByPrimaryKey(901).getIntime().getTime(),book.getSheetAt(0).getRow(1).getCell(6).getDateCellValue().getTime());
+            assertEquals(org.apache.poi.ss.usermodel.HorizontalAlignment.CENTER,book.getSheetAt(0).getRow(0).getCell(0).getCellStyle().getAlignment());
+            assertTrue(book.getFontAt(book.getSheetAt(0).getRow(0).getCell(0).getCellStyle().getFontIndex()).getBold());
+            assertEquals("Arial",book.getFontAt(book.getSheetAt(0).getRow(0).getCell(0).getCellStyle().getFontIndex()).getFontName());
+            assertEquals(10,book.getFontAt(book.getSheetAt(0).getRow(0).getCell(0).getCellStyle().getFontIndex()).getFontHeightInPoints());
+            assertEquals("Arial",book.getFontAt(0).getFontName());
+            assertEquals(10,book.getFontAt(0).getFontHeightInPoints());
         }
     }
+    @Test void emptyExportStillContainsXlsxHeader() throws Exception {
+        byte[] bytes = mvc.perform(get("/admin/getHospitalization")).andExpect(status().isOk())
+                .andReturn().getResponse().getContentAsByteArray();
+        try (XSSFWorkbook book = new XSSFWorkbook(new ByteArrayInputStream(bytes))) {
+            assertEquals(0, book.getSheetAt(0).getLastRowNum());
+            assertEquals(8, book.getSheetAt(0).getRow(0).getLastCellNum());
+        }
+    }
+
+    @Test void exportPreservesNullDatesAndFormulaLikeTextAsLiteral() throws Exception {
+        try (Statement statement = sql.getConnection().createStatement()) {
+            statement.execute("update patient set name='演示患者'");
+            statement.execute("insert into hospitalization values(902,'F1','BED1','ROOM1',1,null,null,'=1+1')");
+        }
+        byte[] bytes = mvc.perform(get("/admin/getHospitalization")).andExpect(status().isOk())
+                .andReturn().getResponse().getContentAsByteArray();
+        try (XSSFWorkbook book = new XSSFWorkbook(new ByteArrayInputStream(bytes))) {
+            org.apache.poi.ss.usermodel.Row row = book.getSheetAt(0).getRow(1);
+            assertEquals("演示患者", row.getCell(4).getStringCellValue());
+            assertEquals(org.apache.poi.ss.usermodel.CellType.STRING, row.getCell(5).getCellType());
+            assertEquals("=1+1", row.getCell(5).getStringCellValue());
+            assertEquals(org.apache.poi.ss.usermodel.CellType.BLANK, row.getCell(6).getCellType());
+            assertEquals(org.apache.poi.ss.usermodel.CellType.BLANK, row.getCell(7).getCellType());
+            assertEquals(12 * 256, book.getSheetAt(0).getColumnWidth(1));
+            assertEquals(17 * 256, book.getSheetAt(0).getColumnWidth(3));
+        }
+    }
+
 }

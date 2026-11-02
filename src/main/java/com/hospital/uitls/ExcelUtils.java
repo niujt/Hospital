@@ -1,7 +1,7 @@
 package com.hospital.uitls;
 
-import org.apache.poi.hssf.usermodel.*;
-import org.apache.poi.ss.usermodel.HorizontalAlignment;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.FileOutputStream;
@@ -9,20 +9,25 @@ import java.io.OutputStream;
 import java.net.URLEncoder;
 
 public class ExcelUtils {
-    public static void createTitle(HSSFWorkbook workbook, HSSFSheet sheet){
-        HSSFRow row = sheet.createRow(0);
+    public static void createTitle(XSSFWorkbook workbook, Sheet sheet){
+        // Preserve the legacy XLS font metrics when moving to OOXML defaults.
+        workbook.getFontAt(0).setFontName("Arial");
+        workbook.getFontAt(0).setFontHeightInPoints((short) 10);
+        Row row = sheet.createRow(0);
         //设置列宽，setColumnWidth的第二个参数要乘以256，这个参数的单位是1/256个字符宽度
         sheet.setColumnWidth(1,12*256);
         sheet.setColumnWidth(3,17*256);
 
         //设置为居中加粗
-        HSSFCellStyle style = workbook.createCellStyle();
-        HSSFFont font = workbook.createFont();
+        CellStyle style = workbook.createCellStyle();
+        Font font = workbook.createFont();
+        font.setFontName("Arial");
+        font.setFontHeightInPoints((short) 10);
         font.setBold(true);
         style.setAlignment(HorizontalAlignment.CENTER);
         style.setFont(font);
 
-        HSSFCell cell;
+        Cell cell;
         cell = row.createCell(0);
         cell.setCellValue("序号");
         cell.setCellStyle(style);
@@ -57,17 +62,17 @@ public class ExcelUtils {
     }
 
     //生成excel文件
-    public static void buildExcelFile(String filename,HSSFWorkbook workbook) throws Exception{
-        FileOutputStream fos = new FileOutputStream(filename);
-        workbook.write(fos);
-        fos.flush();
-        fos.close();
+    public static void buildExcelFile(String filename,XSSFWorkbook workbook) throws Exception{
+        try (FileOutputStream fos = new FileOutputStream(filename)) {
+            workbook.write(fos);
+        }
     }
 
     //浏览器下载excel
-    public static void buildExcelDocument(String filename, HSSFWorkbook workbook, HttpServletResponse response) throws Exception{
-        response.setContentType("application/vnd.ms-excel");
-        response.setHeader("Content-Disposition", "attachment;filename="+ URLEncoder.encode(filename, "utf-8"));
+    public static void buildExcelDocument(String filename, XSSFWorkbook workbook, HttpServletResponse response) throws Exception{
+        response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+        String encoded = URLEncoder.encode(filename, "UTF-8").replace("+", "%20");
+        response.setHeader("Content-Disposition", "attachment; filename=\"hospitalization.xlsx\"; filename*=UTF-8''" + encoded);
         OutputStream outputStream = response.getOutputStream();
         workbook.write(outputStream);
         outputStream.flush();

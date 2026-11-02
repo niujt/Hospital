@@ -13,6 +13,11 @@
         <version>2.3.12.RELEASE</version>
         <relativePath/>
     </parent>
+    <properties>
+        <poi.version>5.4.0</poi.version>
+        <!-- Keep POI/XMLBeans and Boot's SLF4J bridge on the same Log4j API version. -->
+        <log4j2.version>2.24.3</log4j2.version>
+    </properties>
     <dependencies>
         <dependency>
             <groupId>org.mybatis.generator</groupId>
@@ -84,12 +89,12 @@
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
-            <version>5.2.2</version>
+            <version>${poi.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
-            <version>5.2.2</version>
+            <version>${poi.version}</version>
         </dependency>
         <dependency>
             <groupId>com.h2database</groupId>

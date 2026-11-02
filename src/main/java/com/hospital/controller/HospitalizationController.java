@@ -6,7 +6,8 @@ import com.hospital.entity.Hospitalization;
 import com.hospital.service.HospitalizationService;
 import com.hospital.service.PatientService;
 import com.hospital.uitls.ExcelUtils;
-import org.apache.poi.hssf.usermodel.*;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -57,42 +58,43 @@ public class HospitalizationController {
     //生成user表excel
     @GetMapping(value = "/admin/getHospitalization")
     public void getUser(HttpServletResponse response) throws Exception{
-        HSSFWorkbook workbook = new HSSFWorkbook();
-        HSSFSheet sheet = workbook.createSheet("统计表");
-        ExcelUtils.createTitle(workbook,sheet);
-        List<Hospitalization> rows = hospitalizationService.getAllHospitalizations();
+        try (XSSFWorkbook workbook = new XSSFWorkbook()) {
+            Sheet sheet = workbook.createSheet("统计表");
+            ExcelUtils.createTitle(workbook,sheet);
+            List<Hospitalization> rows = hospitalizationService.getAllHospitalizations();
 
-        //设置日期格式
-        HSSFCellStyle style = workbook.createCellStyle();
-        style.setDataFormat(HSSFDataFormat.getBuiltinFormat("m/d/yy"));
+            //设置日期格式
+            CellStyle style = workbook.createCellStyle();
+            style.setDataFormat(workbook.createDataFormat().getFormat("m/d/yy"));
 
-        //新增数据行，并且设置单元格数据
-        int rowNum=1;
-        for(Hospitalization hospitalization:rows){
-            HSSFRow row = sheet.createRow(rowNum);
-            row.createCell(0).setCellValue(rowNum);
-            row.createCell(1).setCellValue(hospitalization.getFloor());
-            row.createCell(2).setCellValue(hospitalization.getDoor());
-            row.createCell(3).setCellValue(hospitalization.getBed());
-            row.createCell(4).setCellValue(hospitalization.getPatientname());
-            row.createCell(5).setCellValue(hospitalization.getMedicalname());
-            HSSFCell cell1 = row.createCell(6);
-            HSSFCell cell2 = row.createCell(7);
-            cell1.setCellValue(hospitalization.getIntime());
-            cell2.setCellValue(hospitalization.getOuttime());
-            cell1.setCellStyle(style);
-            cell2.setCellStyle(style);
-            rowNum++;
+            //新增数据行，并且设置单元格数据
+            int rowNum=1;
+            for(Hospitalization hospitalization:rows){
+                Row row = sheet.createRow(rowNum);
+                row.createCell(0).setCellValue(rowNum);
+                row.createCell(1).setCellValue(hospitalization.getFloor());
+                row.createCell(2).setCellValue(hospitalization.getDoor());
+                row.createCell(3).setCellValue(hospitalization.getBed());
+                row.createCell(4).setCellValue(hospitalization.getPatientname());
+                row.createCell(5).setCellValue(hospitalization.getMedicalname());
+                Cell cell1 = row.createCell(6);
+                Cell cell2 = row.createCell(7);
+                cell1.setCellValue(hospitalization.getIntime());
+                cell2.setCellValue(hospitalization.getOuttime());
+                cell1.setCellStyle(style);
+                cell2.setCellStyle(style);
+                rowNum++;
+            }
+
+            String fileName = "住院信息.xlsx";
+
+            //生成excel文件
+            //ExcelUtils.buildExcelFile(fileName, workbook);
+
+            //浏览器下载excel
+            ExcelUtils.buildExcelDocument(fileName,workbook,response);
+
+            // Response is the XLSX attachment; do not resolve a second HTML view.
         }
-
-        String fileName = "住院信息.xls";
-
-        //生成excel文件
-        //ExcelUtils.buildExcelFile(fileName, workbook);
-
-        //浏览器下载excel
-        ExcelUtils.buildExcelDocument(fileName,workbook,response);
-
-        // Response is the XLS attachment; do not resolve a second HTML view.
     }
 }
